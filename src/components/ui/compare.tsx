@@ -1,0 +1,181 @@
+"use client";
+import React, { useState, useRef, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+interface CompareProps {
+  firstImage: string;
+  secondImage: string;
+  className?: string;
+  firstImageClassName?: string;
+  secondImageClassname?: string;
+  initialSliderPercentage?: number;
+  slideMode?: "hover" | "click" | "drag";
+  showHandlebar?: boolean;
+  autoplay?: boolean;
+  autoplayDuration?: number;
+}
+
+export const Compare: React.FC<CompareProps> = ({
+  firstImage,
+  secondImage,
+  className,
+  firstImageClassName,
+  secondImageClassname,
+  initialSliderPercentage = 50,
+  slideMode = "hover",
+  showHandlebar = true,
+  autoplay = false,
+  autoplayDuration = 5000,
+}) => {
+  const [sliderXPercent, setSliderXPercent] = useState<number>(initialSliderPercentage);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (!autoplay) return;
+
+    autoplayRef.current = setInterval(() => {
+      setSliderXPercent((prev) => {
+        if (prev >= 95) return 5;
+        return prev + 2;
+      });
+    }, autoplayDuration / 50);
+  }, [autoplay, autoplayDuration]);
+
+  const stopAutoplay = useCallback(() => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => stopAutoplay();
+  }, [startAutoplay, stopAutoplay]);
+
+  const handleStart = useCallback(
+    (clientX: number) => {
+      if (slideMode === "hover") return;
+      setIsDragging(true);
+      stopAutoplay();
+    },
+    [slideMode, stopAutoplay]
+  );
+
+  const handleEnd = useCallback(() => {
+    setIsDragging(false);
+    startAutoplay();
+  }, [startAutoplay]);
+
+  const handleMove = useCallback(
+    (clientX: number) => {
+      if (!sliderRef.current) return;
+      if (slideMode === "hover" || isDragging) {
+        const rect = sliderRef.current.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const percent = (x / rect.width) * 100;
+        setSliderXPercent(Math.max(0, Math.min(100, percent)));
+      }
+    },
+    [slideMode, isDragging]
+  );
+
+  const handleMouseDown = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      handleStart(e.clientX);
+    },
+    [handleStart]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    handleEnd();
+  }, [handleEnd]);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      handleMove(e.clientX);
+    },
+    [handleMove]
+  );
+
+  const handleMouseEnter = useCallback(() => {
+    setIsMouseOver(true);
+    if (slideMode === "hover") {
+      stopAutoplay();
+    }
+  }, [slideMode, stopAutoplay]);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsMouseOver(false);
+    if (slideMode === "hover") {
+      startAutoplay();
+    }
+  }, [slideMode, startAutoplay]);
+
+  return (
+    <div
+      ref={sliderRef}
+      className={cn("relative w-[400px] h-[400px] overflow-hidden cursor-col-resize", className)}
+      style={{ aspectRatio: "1" }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
+      <AnimatePresence>
+        <motion.div
+          className="h-full w-px absolute top-0 m-auto z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-indigo-500 to-transparent"
+          style={{
+            left: `${sliderXPercent}%`,
+            top: "0",
+            zIndex: 40,
+          }}
+          transition={{ duration: 0 }}
+        >
+          {showHandlebar && (
+            <div className="w-3 h-3 rounded-full bg-indigo-500 top-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-30 border-2 border-white shadow-lg">
+              <div className="w-full h-full rounded-full bg-indigo-500" />
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+      <div className="overflow-hidden absolute top-0 left-0 right-0 w-full h-full select-none">
+        <motion.div
+          className="absolute top-0 left-0 right-0 w-full h-full select-none"
+          style={{
+            clipPath: `polygon(0 0, ${sliderXPercent}% 0, ${sliderXPercent}% 100%, 0 100%)`,
+          }}
+        >
+          <img
+            alt="first image"
+            src={firstImage}
+            className={cn("absolute inset-0 z-20 w-full h-full select-none", firstImageClassName)}
+            draggable={false}
+          />
+        </motion.div>
+      </div>
+      <div className="overflow-hidden absolute top-0 left-0 right-0 w-full h-full">
+        <motion.div
+          className="absolute top-0 left-0 right-0 w-full h-full"
+          style={{
+            clipPath: `polygon(${sliderXPercent}% 0, 100% 0, 100% 100%, ${sliderXPercent}% 100%)`,
+          }}
+        >
+          <img
+            alt="second image"
+            src={secondImage}
+            className={cn("absolute inset-0 z-20 w-full h-full", secondImageClassname)}
+            draggable={false}
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
+};

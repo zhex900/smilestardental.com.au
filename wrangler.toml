@@ -1,0 +1,20 @@
+name = "dent-app"
+compatibility_date = "2024-01-01"
+
+[pages]
+# The directory to upload for Pages
+directory = "dist"
+
+# The command to build your project
+build-command = "npm run build"
+
+# The directory where the build output is located
+build-output-dir = "dist"
+pages_build_output_dir = "dist"
+
+# Environment variables (optional)
+# [pages.env.production]
+# MY_VAR = "production-value"
+
+# [pages.env.preview]
+# MY_VAR = "preview-value"
