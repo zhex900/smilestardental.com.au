@@ -1,11 +1,12 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { HeroCarousel } from "./HeroCarousel";
-import { BlinkingStar } from "./BlinkingStar";
+import { HeroCarousel } from "./hero-carousel";
+import { BlinkingStar } from "./blinking-star";
 import AnimatedText from "./ui/animated-text";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { AvatarStack } from "./ui/avatar-stack";
+import { ReviewStack } from "./ui/review-stack";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -20,9 +21,21 @@ export function HeroSection() {
       <div className="relative max-w-6xl mx-auto flex  items-center gap-12">
         <div className="flex-1 max-w-lg">
           <div className="flex items-center space-x-2 mb-4">
-            <div className="w-2 h-2 bg-slate-800 rounded-full" />
             <span className="text-sm font-medium text-slate-600 uppercase tracking-wide">
-              DENTAL CARE
+              DENTAL CARE{" "}
+            </span>
+            <Avatar className="size-10 animate-bounce">
+              <AvatarImage src="/images/logo.png" alt="Dental Care" />
+            </Avatar>
+            <span className="relative">
+              <span className="relative z-10">
+                NEWCASTLE{" "}
+                <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+                  |
+                </span>{" "}
+                WARNERS BAY
+              </span>
+              <span className="absolute bottom-[-8px] left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 to-teal-400"></span>
             </span>
           </div>
 
@@ -42,7 +55,7 @@ Priority`}
               multiline={true}
               wordStyles={{
                 Star: "text-blue-500 text-6xl ",
-                Priority: "text-gray-500 font-bold animate-bounce",
+                Priority: "text-gray-500 font-bold animate-pulse",
               }}
             />
           </h1>
@@ -62,7 +75,7 @@ Priority`}
           </div>
           <div className="flex flex-wrap items-center p-2 mt-15">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 pr-10">
-              <AvatarStack />
+              <ReviewStack />
             </div>
             <span className="hidden md:block mb-[41px] text-sm whitespace-nowrap">
               More then 1000+ happy patients

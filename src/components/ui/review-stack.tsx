@@ -1,4 +1,4 @@
-import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { AnimatedTooltip } from "./animated-tooltip";
 const people = [
   {
     id: 1,
@@ -67,23 +67,34 @@ const dentistReviews = [
 ];
 const randomAvatars = (number: number) => {
   const avatars = [];
+  // Create a copy of reviews array to shuffle
+  const availableReviews = [...dentistReviews];
+
+  // Fisher-Yates shuffle algorithm
+  for (let i = availableReviews.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [availableReviews[i], availableReviews[j]] = [
+      availableReviews[j],
+      availableReviews[i],
+    ];
+  }
+
   for (let i = 0; i < number; i++) {
     const gender = Math.random() < 0.5 ? "women" : "men";
     avatars.push({
       id: i,
       image: `https://randomuser.me/api/portraits/${gender}/${i}.jpg`,
       alt: `Avatar ${i}`,
-      name: ``,
-      //randomly select a review comment, do not repeat the same comment
-      designation:
-        dentistReviews[Math.floor(Math.random() * dentistReviews.length)],
+      name: `Avatar ${i}`,
+      // Take reviews in order from shuffled array
+      designation: availableReviews[i % availableReviews.length],
       fallback: `A${i}`,
     });
   }
   return avatars;
 };
 
-export function AvatarStack() {
+export function ReviewStack() {
   const people = randomAvatars(8);
 
   return (

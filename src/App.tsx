@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Layout } from './components/Layout'
-import { HomePage } from './pages/HomePage'
-import { ServicesPage } from './pages/ServicesPage'
-import { MembershipPage } from './pages/MembershipPage'
-import { ContactPage } from './pages/ContactPage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/layout";
+import { HomePage } from "./pages/home-page";
+import { ServicesPage } from "./pages/services-page";
+import { MembershipPage } from "./pages/membership-page";
+import { ContactPage } from "./pages/contact-page";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

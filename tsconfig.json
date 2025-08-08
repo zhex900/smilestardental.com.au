@@ -20,6 +20,7 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": true,
 
     /* Aliases */
     "baseUrl": ".",
