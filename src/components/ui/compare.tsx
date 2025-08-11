@@ -22,14 +22,17 @@ export const Compare: React.FC<CompareProps> = ({
   className,
   firstImageClassName,
   secondImageClassname,
-  initialSliderPercentage = 50,
+  initialSliderPercentage = 0,
   slideMode = "hover",
   showHandlebar = true,
   autoplay = false,
   autoplayDuration = 5000,
 }) => {
-  const [sliderXPercent, setSliderXPercent] = useState<number>(initialSliderPercentage);
+  const [sliderXPercent, setSliderXPercent] = useState<number>(
+    initialSliderPercentage
+  );
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [ignoreMouseMove, setIgnoreMouseMove] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -39,9 +42,14 @@ export const Compare: React.FC<CompareProps> = ({
   const startAutoplay = useCallback(() => {
     if (!autoplay) return;
 
+    // Clear any existing interval
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+    }
+
     autoplayRef.current = setInterval(() => {
       setSliderXPercent((prev) => {
-        if (prev >= 95) return 5;
+        if (prev >= 100) return 0;
         return prev + 2;
       });
     }, autoplayDuration / 50);
@@ -55,17 +63,18 @@ export const Compare: React.FC<CompareProps> = ({
   }, []);
 
   useEffect(() => {
-    startAutoplay();
+    if (autoplay) {
+      startAutoplay();
+    }
     return () => stopAutoplay();
-  }, [startAutoplay, stopAutoplay]);
+  }, [autoplay, startAutoplay, stopAutoplay]);
 
   const handleStart = useCallback(
     (clientX: number) => {
-      if (slideMode === "hover") return;
       setIsDragging(true);
       stopAutoplay();
     },
-    [slideMode, stopAutoplay]
+    [stopAutoplay]
   );
 
   const handleEnd = useCallback(() => {
@@ -75,15 +84,15 @@ export const Compare: React.FC<CompareProps> = ({
 
   const handleMove = useCallback(
     (clientX: number) => {
-      if (!sliderRef.current) return;
-      if (slideMode === "hover" || isDragging) {
+      if (!sliderRef.current || ignoreMouseMove) return;
+      if (isDragging) {
         const rect = sliderRef.current.getBoundingClientRect();
         const x = clientX - rect.left;
         const percent = (x / rect.width) * 100;
         setSliderXPercent(Math.max(0, Math.min(100, percent)));
       }
     },
-    [slideMode, isDragging]
+    [isDragging, ignoreMouseMove]
   );
 
   const handleMouseDown = useCallback(
@@ -104,30 +113,60 @@ export const Compare: React.FC<CompareProps> = ({
     [handleMove]
   );
 
+  // Global mouse event handlers to handle mouse escape
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      if (isDragging) {
+        handleEnd();
+      }
+    };
+
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        handleMove(e.clientX);
+      }
+    };
+
+    if (isDragging) {
+      document.addEventListener("mouseup", handleGlobalMouseUp);
+      document.addEventListener("mousemove", handleGlobalMouseMove);
+    }
+
+    return () => {
+      document.removeEventListener("mouseup", handleGlobalMouseUp);
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+    };
+  }, [isDragging, handleEnd, handleMove]);
+
   const handleMouseEnter = useCallback(() => {
     setIsMouseOver(true);
-    if (slideMode === "hover") {
-      stopAutoplay();
-    }
-  }, [slideMode, stopAutoplay]);
+    // Don't stop autoplay on mouse enter anymore
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     setIsMouseOver(false);
-    if (slideMode === "hover") {
-      startAutoplay();
-    }
-  }, [slideMode, startAutoplay]);
+    // Don't start autoplay on mouse leave anymore
+  }, []);
+
+  const handleClick = useCallback(() => {
+    // Stop autoplay when clicked
+    stopAutoplay();
+  }, [stopAutoplay]);
 
   return (
     <div
       ref={sliderRef}
-      className={cn("relative w-[400px] h-[400px] overflow-hidden cursor-col-resize", className)}
+      className={cn(
+        "relative w-[400px] h-[400px] overflow-hidden cursor-pointer",
+        className
+      )}
       style={{ aspectRatio: "1" }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
+      onClick={handleClick}
     >
       <AnimatePresence>
         <motion.div
@@ -156,7 +195,10 @@ export const Compare: React.FC<CompareProps> = ({
           <img
             alt="first image"
             src={firstImage}
-            className={cn("absolute inset-0 z-20 w-full h-full select-none", firstImageClassName)}
+            className={cn(
+              "absolute inset-0 z-20 w-full h-full select-none",
+              firstImageClassName
+            )}
             draggable={false}
           />
         </motion.div>
@@ -171,7 +213,10 @@ export const Compare: React.FC<CompareProps> = ({
           <img
             alt="second image"
             src={secondImage}
-            className={cn("absolute inset-0 z-20 w-full h-full", secondImageClassname)}
+            className={cn(
+              "absolute inset-0 z-20 w-full h-full",
+              secondImageClassname
+            )}
             draggable={false}
           />
         </motion.div>
