@@ -1,6 +1,7 @@
+"use client";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { HeroCarousel } from "./hero-carousel";
 import { BlinkingStar } from "./blinking-star";
 import AnimatedText from "./ui/animated-text";
@@ -9,7 +10,7 @@ import { ReviewStack } from "./ui/review-stack";
 import { Avatar, AvatarImage } from "./ui/avatar";
 
 export function HeroSection() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className="relative px-6 py-16 overflow-hidden">
@@ -27,7 +28,7 @@ export function HeroSection() {
             <Avatar className="size-10 animate-bounce">
               <AvatarImage src="/images/logo.png" alt="Dental Care" />
             </Avatar>
-            <span className="relative">
+            <span className="relative text-black">
               <span className="relative z-10">
                 NEWCASTLE{" "}
                 <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
@@ -67,7 +68,7 @@ Priority`}
           </p>
           <div className="flex">
             <BackgroundGradient className="rounded-[22px]">
-              <Button onClick={() => navigate("/contact")}>
+              <Button onClick={() => router.push("/contact")}>
                 Book Now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -77,7 +78,7 @@ Priority`}
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 pr-10">
               <ReviewStack />
             </div>
-            <span className="hidden md:block mb-[41px] text-sm whitespace-nowrap">
+            <span className="hidden text-black md:block mb-[41px] text-sm whitespace-nowrap">
               More then 1000+ happy patients
             </span>
           </div>

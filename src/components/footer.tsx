@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import {
   MapPin,
   Phone,
@@ -74,7 +76,7 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    to="/"
+                    href="/"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Home
@@ -82,7 +84,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     About
@@ -90,7 +92,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Services
@@ -98,15 +100,15 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/membership"
+                    href="/testimonials"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
-                    Membership
+                    Testimonials
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Contact
@@ -121,7 +123,7 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     General Dentistry
@@ -129,7 +131,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Cosmetic Dentistry
@@ -137,7 +139,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Restorative Care
@@ -145,7 +147,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Emergency Care
@@ -153,7 +155,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-slate-300 hover:text-white transition-colors"
                   >
                     Dental Implants
@@ -223,19 +225,19 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-6 text-sm">
               <Link
-                to="/privacy"
+                href="/"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                to="/terms"
+                href="/"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
-                to="/sitemap"
+                href="/"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 Sitemap

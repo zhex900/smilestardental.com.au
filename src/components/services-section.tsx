@@ -1,10 +1,11 @@
+"use client";
 import { Shield, Sparkles, Search, Zap, Award } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { CardCarousel } from "./ui/card-carousel";
 
 export function ServicesSection() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const services = [
     {
@@ -112,7 +113,7 @@ export function ServicesSection() {
           <Button
             variant="outline"
             className="rounded-full px-8 py-3 text-lg font-semibold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
-            onClick={() => navigate("/services")}
+            onClick={() => router.push("/services")}
           >
             View All Services
           </Button>

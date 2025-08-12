@@ -63,7 +63,7 @@ export function TreatmentsSection() {
               Expert Dental Care and Cleaning<br />
               Procedures for a Brighter, Healthier<br />
               Smile and Lasting Confidence
-            </p>
+            </p>  
           </div>
         </div>
       </div>

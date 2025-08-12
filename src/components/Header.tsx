@@ -1,16 +1,18 @@
+"use client";
 import { Menu, Phone } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 export function Header() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-transparent relative">
-      <Link to="/" className="flex items-center space-x-3">
+      <Link href="/" className="flex items-center space-x-3">
         <img
           src="/images/logo-text.png"
           alt="Smile Star Dental"
@@ -25,22 +27,28 @@ export function Header() {
 
       <nav className="hidden md:flex items-center space-x-8">
         <Link
-          to="/services"
+          href="/services"
           className="text-slate-700 hover:text-slate-900 font-medium"
         >
           Services
         </Link>
         <Link
-          to="/blogs"
-          className="text-slate-700 hover:text-slate-900 font-medium"
-        >
-          Blogs
-        </Link>
-        <Link
-          to="/about-us"
+          href="/about"
           className="text-slate-700 hover:text-slate-900 font-medium"
         >
           About Us
+        </Link>
+        <Link
+          href="/blog"
+          className="text-slate-700 hover:text-slate-900 font-medium"
+        >
+          Blog
+        </Link>
+        <Link
+          href="/testimonials"
+          className="text-slate-700 hover:text-slate-900 font-medium"
+        >
+          Testimonials
         </Link>
       </nav>
 
@@ -50,7 +58,7 @@ export function Header() {
           <a href="tel:0249488589">02 4948 8589</a>
         </div>
         <BackgroundGradient className="rounded-[22px] bg-white dark:bg-zinc-900">
-          <Button onClick={() => navigate("/contact")}>Contact Us</Button>
+          <Button onClick={() => router.push("/contact")}>Contact Us</Button>
         </BackgroundGradient>
         <Button
           variant="ghost"
@@ -67,28 +75,42 @@ export function Header() {
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
             <Link
-              to="/"
+              href="/"
               className="text-slate-700 hover:text-slate-900 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              to="/services"
+              href="/services"
               className="text-slate-700 hover:text-slate-900 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
-              to="/membership"
+              href="/about"
               className="text-slate-700 hover:text-slate-900 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Membership
+              About Us
             </Link>
             <Link
-              to="/contact"
+              href="/blog"
+              className="text-slate-700 hover:text-slate-900 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/testimonials"
+              className="text-slate-700 hover:text-slate-900 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Testimonials
+            </Link>
+            <Link
+              href="/contact"
               className="text-slate-700 hover:text-slate-900 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >

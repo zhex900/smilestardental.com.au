@@ -1,141 +1,402 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
-import { Button } from '../components/ui/button'
-import { Input } from '../components/ui/input'
-import { Textarea } from '../components/ui/textarea'
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { 
+  MapPin, 
+  Phone, 
+  Clock, 
+  ChevronDown,
+  Mail,
+  Send
+} from "lucide-react";
+
+const faqs = [
+  {
+    id: 1,
+    question: "Do you accept dental insurance?",
+    answer: "Yes, we accept most major dental insurance plans. Please contact our office to verify your specific coverage before your appointment. We also offer flexible payment options for patients without insurance."
+  },
+  {
+    id: 2,
+    question: "How often should I visit the dentist?",
+    answer: "For most patients, we recommend scheduling regular dental checkups and cleanings every six months. However, depending on your specific oral health needs, we may suggest more frequent visits."
+  },
+  {
+    id: 3,
+    question: "What should I do in a dental emergency?",
+    answer: "If you're experiencing a dental emergency, call our emergency line immediately at (123) 456-7899. For severe bleeding or injuries, please go to the nearest emergency room. We reserve time in our daily schedule for emergency patients."
+  },
+  {
+    id: 4,
+    question: "Do you offer payment plans?",
+    answer: "Yes, we offer flexible payment plans to help make dental care more affordable. We work with several financing options and can discuss payment arrangements that fit your budget."
+  },
+  {
+    id: 5,
+    question: "What are your office hours?",
+    answer: "We are open Monday through Friday from 8AM to 6PM, and Saturdays from 9AM to 2PM. We are closed on Sundays and major holidays."
+  },
+  {
+    id: 6,
+    question: "How do I schedule an appointment?",
+    answer: "You can schedule an appointment by calling our office at (123) 456-7890, using our online booking system, or by filling out the contact form on this page. We'll get back to you within 24 hours."
+  }
+];
 
 export function ContactPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Form submitted:", formData);
+  };
+
+  const toggleFaq = (id: number) => {
+    setOpenFaq(openFaq === id ? null : id);
+  };
+
   return (
-    <div className="px-6 py-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-slate-800 mb-6">
-            Contact Us
-          </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ready to start your journey to better oral health? Get in touch with us today 
-            to schedule your appointment or learn more about our services.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-blue-50 h-[300px] flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            >
+              Contact Us
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-600 text-lg max-w-2xl mx-auto"
+            >
+              Have questions or ready to schedule your appointment? Reach out to our friendly team today.
+            </motion.p>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-800 mb-8">Get In Touch</h2>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-slate-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800 mb-1">Phone</h3>
-                  <p className="text-slate-600">+1 (718) 373 7701</p>
-                  <p className="text-sm text-slate-500">Call us for appointments</p>
-                </div>
+      {/* Contact Info Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-blue-50 rounded-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="text-white text-2xl" />
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Visit Our Office
+              </h3>
+              <p className="text-gray-600">
+                123 Dental Way<br />Smile City, SC 12345<br />United States
+              </p>
+              <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
+                Get Directions
+              </button>
+            </motion.div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-slate-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800 mb-1">Email</h3>
-                  <p className="text-slate-600">info@odentrics.com</p>
-                  <p className="text-sm text-slate-500">Send us your questions</p>
-                </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-blue-50 rounded-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="text-white text-2xl" />
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Call Us</h3>
+              <p className="text-gray-600">
+                Main: (123) 456-7890<br />Emergency: (123) 456-7899
+              </p>
+              <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
+                Call Now
+              </button>
+            </motion.div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-slate-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800 mb-1">Address</h3>
-                  <p className="text-slate-600">123 Dental Street<br />New York, NY 10001</p>
-                  <p className="text-sm text-slate-500">Visit our modern clinic</p>
-                </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-blue-50 rounded-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="text-white text-2xl" />
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Opening Hours</h3>
+              <p className="text-gray-600">
+                Monday - Friday: 8AM - 6PM<br />Saturday: 9AM - 2PM<br />Sunday: Closed
+              </p>
+              <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
+                Book Appointment
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-slate-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800 mb-1">Hours</h3>
-                  <div className="text-slate-600 space-y-1">
-                    <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
+      {/* Contact Form & Map Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white p-8 rounded-xl shadow-md"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-gray-700 mb-2">
+                      First Name*
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-gray-700 mb-2">
+                      Last Name*
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      required
+                    />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h2>
-            
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    First Name
-                  </label>
-                  <Input placeholder="Your first name" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="email" className="block text-gray-700 mb-2">
+                      Email Address*
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-gray-700 mb-2">
+                      Phone Number*
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      required
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Last Name
+                <div className="mb-4">
+                  <label htmlFor="service" className="block text-gray-700 mb-2">
+                    Service of Interest
                   </label>
-                  <Input placeholder="Your last name" />
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  >
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+                    <option value="cleaning">Dental Cleaning & Checkups</option>
+                    <option value="whitening">Teeth Whitening</option>
+                    <option value="implants">Dental Implants</option>
+                    <option value="orthodontics">Invisalign & Orthodontics</option>
+                    <option value="crowns">Crowns & Bridges</option>
+                    <option value="pediatric">Pediatric Dentistry</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
-              </div>
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-gray-700 mb-2">
+                    Your Message*
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 w-full flex items-center justify-center"
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  Send Message
+                </button>
+              </form>
+            </motion.div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Email
-                </label>
-                <Input type="email" placeholder="your.email@example.com" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Phone
-                </label>
-                <Input type="tel" placeholder="(555) 123-4567" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Service Interested In
-                </label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500">
-                  <option>Select a service</option>
-                  <option>General Checkup</option>
-                  <option>Teeth Cleaning</option>
-                  <option>Cosmetic Dentistry</option>
-                  <option>Dental Implants</option>
-                  <option>Emergency Care</option>
-                  <option>Membership Information</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Message
-                </label>
-                <Textarea 
-                  placeholder="Tell us about your dental needs or questions..."
-                  rows={4}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white p-4 rounded-xl shadow-md overflow-hidden h-[600px]"
+            >
+              <div className="h-full w-full rounded-lg overflow-hidden">
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f31e17ed28-3430310b2fae2456af10.png"
+                  alt="map of dental clinic location with pin marker, satellite view, city streets, professional mapping style"
                 />
               </div>
-
-              <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-full">
-                Send Message
-              </Button>
-            </form>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold text-gray-900 mb-4"
+            >
+              Frequently Asked Questions
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-600 max-w-3xl mx-auto"
+            >
+              Find answers to our most commonly asked questions. If you don't see what you're looking for, please contact us directly.
+            </motion.p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="mb-4 border border-gray-200 rounded-lg overflow-hidden"
+              >
+                <div
+                  className="flex justify-between items-center p-5 bg-blue-50 cursor-pointer"
+                  onClick={() => toggleFaq(faq.id)}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {faq.question}
+                  </h3>
+                  <ChevronDown 
+                    className={`text-blue-600 transition-transform duration-300 ${
+                      openFaq === faq.id ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </div>
+                {openFaq === faq.id && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="p-5 bg-white"
+                  >
+                    <p className="text-gray-600">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-blue-600">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold text-white mb-4"
+            >
+              Ready to Get Started?
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto"
+            >
+              Don't wait to achieve the smile you've always wanted. Contact us today to schedule your consultation.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <button className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+                Book Appointment
+              </button>
+              <button className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">
+                Call Now
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }

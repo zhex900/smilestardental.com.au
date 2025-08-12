@@ -1,12 +1,9 @@
 "use client";
 import Carousel from "@/components/ui/carousel";
-import { useNavigate } from "react-router-dom";
 import { GlowingEffect } from "./ui/glowing-effect";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 export function HeroCarousel() {
-  const navigate = useNavigate();
-
   const slideData = [
     {
       title: "",

@@ -1,0 +1,688 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E88E5",
+              secondary: "#64B5F6",
+              accent: "#0D47A1",
+              light: "#E3F2FD",
+              dark: "#0A2463",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>DentalCare - Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif !important;
+      }
+
+      /* Preserve Font Awesome icons */
+      .fa,
+      .fas,
+      .far,
+      .fal,
+      .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style>
+    <style>
+      .highlighted-section {
+        outline: 2px solid #3f20fb;
+        background-color: rgba(63, 32, 251, 0.1);
+      }
+
+      .edit-button {
+        position: absolute;
+        z-index: 1000;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      html,
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <span class="flex items-center cursor-pointer">
+            <i class="fa-solid fa-tooth text-primary text-3xl mr-2"></i>
+            <span class="text-2xl font-bold text-dark">DentalCare</span>
+          </span>
+          <nav class="hidden md:flex space-x-8">
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Home</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Services</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >About Us</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Blog</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Contact</span
+            >
+          </nav>
+          <div class="flex items-center space-x-4">
+            <span
+              class="hidden md:block bg-primary hover:bg-accent text-white font-medium py-2 px-6 rounded-full transition duration-300 cursor-pointer"
+            >
+              Book Appointment
+            </span>
+            <button class="md:hidden text-gray-700">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="tos-hero" class="bg-light h-[200px] flex items-center">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">
+            Terms of Service
+          </h1>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Please read these terms carefully before using our dental services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tos-content" class="py-12 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div id="last-updated" class="mb-8 text-center">
+          <p class="text-gray-500">Last Updated: August 1, 2023</p>
+        </div>
+
+        <div id="tos-introduction" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">1. Introduction</h2>
+          <p class="text-gray-700 mb-4">
+            Welcome to DentalCare. These Terms of Service ("Terms") govern your
+            use of our website, mobile applications, and services (collectively,
+            the "Services") operated by DentalCare ("we," "us," or "our").
+          </p>
+          <p class="text-gray-700 mb-4">
+            By accessing or using our Services, you agree to be bound by these
+            Terms. If you disagree with any part of the Terms, you may not
+            access our Services.
+          </p>
+        </div>
+
+        <div id="tos-services" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            2. Dental Services
+          </h2>
+          <p class="text-gray-700 mb-4">
+            DentalCare provides various dental services, including but not
+            limited to preventive care, restorative dentistry, cosmetic
+            dentistry, pediatric dentistry, orthodontics, and oral surgery. The
+            specific services available may vary by location and provider
+            availability.
+          </p>
+          <p class="text-gray-700 mb-4">
+            All dental services are provided by licensed dental professionals in
+            accordance with applicable laws and regulations. The provision of
+            dental services is subject to professional judgment and may be
+            declined if deemed inappropriate or unsafe for a patient.
+          </p>
+        </div>
+
+        <div id="tos-appointments" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            3. Appointments and Cancellations
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Appointments can be scheduled through our website, mobile
+            application, or by contacting our office directly. We require at
+            least 24 hours' notice for appointment cancellations or
+            rescheduling. Failure to provide adequate notice may result in a
+            cancellation fee.
+          </p>
+          <p class="text-gray-700 mb-4">
+            We strive to maintain our schedule and minimize wait times. However,
+            dental emergencies may occasionally cause delays. We will make
+            reasonable efforts to notify you if your appointment time needs to
+            be adjusted.
+          </p>
+        </div>
+
+        <div id="tos-payment" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            4. Payment and Insurance
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Payment for services is due at the time of treatment unless
+            alternative arrangements have been made in advance. We accept
+            various payment methods, including cash, credit cards, and approved
+            financing options.
+          </p>
+          <p class="text-gray-700 mb-4">
+            As a courtesy to our patients, we will submit insurance claims on
+            your behalf if you provide the necessary information. However, you
+            remain ultimately responsible for all charges, regardless of
+            insurance coverage. We recommend verifying your benefits with your
+            insurance provider before treatment.
+          </p>
+        </div>
+
+        <div id="tos-website" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            5. Website and Online Services
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Our website and online services are provided "as is" and "as
+            available" without warranties of any kind, either express or
+            implied. We do not guarantee that our website will be uninterrupted,
+            secure, or error-free.
+          </p>
+          <p class="text-gray-700 mb-4">
+            The content on our website is for informational purposes only and
+            should not be considered medical advice. Always consult with a
+            dental professional regarding your specific dental health needs.
+          </p>
+        </div>
+
+        <div id="tos-account" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            6. User Accounts
+          </h2>
+          <p class="text-gray-700 mb-4">
+            When you create an account with us, you must provide accurate,
+            complete, and current information. You are responsible for
+            safeguarding your account credentials and for all activities that
+            occur under your account.
+          </p>
+          <p class="text-gray-700 mb-4">
+            We reserve the right to disable any user account if we believe you
+            have violated these Terms or if we determine that your account
+            activity poses a risk to our Services or other users.
+          </p>
+        </div>
+
+        <div id="tos-privacy" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            7. Privacy and Data Protection
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Your privacy is important to us. Our Privacy Policy explains how we
+            collect, use, and protect your personal information. By using our
+            Services, you consent to our collection and use of your data as
+            described in our Privacy Policy.
+          </p>
+          <p class="text-gray-700 mb-4">
+            We comply with all applicable privacy laws, including HIPAA (Health
+            Insurance Portability and Accountability Act) in the United States,
+            regarding the protection of your dental and health information.
+          </p>
+        </div>
+
+        <div id="tos-intellectual" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            8. Intellectual Property
+          </h2>
+          <p class="text-gray-700 mb-4">
+            All content, features, and functionality of our Services, including
+            but not limited to text, graphics, logos, icons, images, audio
+            clips, and software, are owned by DentalCare and are protected by
+            copyright, trademark, and other intellectual property laws.
+          </p>
+          <p class="text-gray-700 mb-4">
+            You may not reproduce, distribute, modify, create derivative works
+            of, publicly display, publicly perform, republish, download, store,
+            or transmit any materials from our Services without our prior
+            written consent.
+          </p>
+        </div>
+
+        <div id="tos-liability" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            9. Limitation of Liability
+          </h2>
+          <p class="text-gray-700 mb-4">
+            To the maximum extent permitted by law, DentalCare shall not be
+            liable for any indirect, incidental, special, consequential, or
+            punitive damages, including but not limited to, loss of profits,
+            data, use, goodwill, or other intangible losses, resulting from your
+            access to or use of or inability to access or use the Services.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Our liability for any claim arising from these Terms or your use of
+            our Services shall not exceed the amount you paid for the specific
+            dental service giving rise to such claim.
+          </p>
+        </div>
+
+        <div id="tos-changes" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            10. Changes to Terms
+          </h2>
+          <p class="text-gray-700 mb-4">
+            We reserve the right to modify these Terms at any time. We will
+            provide notice of significant changes by posting the updated Terms
+            on our website and updating the "Last Updated" date at the top of
+            these Terms.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Your continued use of our Services after any changes to these Terms
+            constitutes your acceptance of such changes. We encourage you to
+            review these Terms periodically for any updates.
+          </p>
+        </div>
+
+        <div id="tos-termination" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">11. Termination</h2>
+          <p class="text-gray-700 mb-4">
+            We may terminate or suspend your access to our Services immediately,
+            without prior notice or liability, for any reason, including but not
+            limited to a breach of these Terms.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Upon termination, your right to use our Services will immediately
+            cease. All provisions of these Terms that by their nature should
+            survive termination shall survive, including but not limited to
+            ownership provisions, warranty disclaimers, indemnity, and
+            limitations of liability.
+          </p>
+        </div>
+
+        <div id="tos-governing" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">
+            12. Governing Law
+          </h2>
+          <p class="text-gray-700 mb-4">
+            These Terms shall be governed and construed in accordance with the
+            laws of the state where our main office is located, without regard
+            to its conflict of law provisions.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Any disputes arising under or in connection with these Terms shall
+            be subject to the exclusive jurisdiction of the courts located
+            within the aforementioned state.
+          </p>
+        </div>
+
+        <div id="tos-contact" class="mb-10">
+          <h2 class="text-2xl font-semibold text-dark mb-4">13. Contact Us</h2>
+          <p class="text-gray-700 mb-4">
+            If you have any questions about these Terms, please contact us at:
+          </p>
+          <div class="bg-gray-50 p-5 rounded-lg">
+            <p class="text-gray-700">DentalCare</p>
+            <p class="text-gray-700">123 Dental Way, Smile City, SC 12345</p>
+            <p class="text-gray-700">Phone: (123) 456-7890</p>
+            <p class="text-gray-700">Email: legal@dentalcare.com</p>
+          </div>
+        </div>
+
+        <div
+          id="tos-acknowledgement"
+          class="mt-12 border-t border-gray-200 pt-8"
+        >
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-dark mb-4">
+              Acknowledgement
+            </h3>
+            <p class="text-gray-700 mb-6">
+              By using DentalCare's services, you acknowledge that you have
+              read, understood, and agree to be bound by these Terms of Service.
+            </p>
+            <span
+              class="inline-block bg-primary hover:bg-accent text-white font-medium py-3 px-8 rounded-full transition duration-300 cursor-pointer"
+            >
+              I Accept the Terms of Service
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tos-related-links" class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-2xl font-semibold text-dark mb-6 text-center">
+          Related Policies
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            id="policy-link-1"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fa-solid fa-lock text-primary text-2xl mb-3"></i>
+            <h3 class="text-lg font-semibold text-dark mb-2">Privacy Policy</h3>
+            <p class="text-gray-600 mb-4">
+              Learn how we collect, use, and protect your personal information.
+            </p>
+            <span
+              class="text-primary font-medium hover:underline cursor-pointer"
+              >Read Policy →</span
+            >
+          </div>
+
+          <div
+            id="policy-link-2"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fa-solid fa-cookie-bite text-primary text-2xl mb-3"></i>
+            <h3 class="text-lg font-semibold text-dark mb-2">Cookie Policy</h3>
+            <p class="text-gray-600 mb-4">
+              Understand how we use cookies and similar technologies on our
+              website.
+            </p>
+            <span
+              class="text-primary font-medium hover:underline cursor-pointer"
+              >Read Policy →</span
+            >
+          </div>
+
+          <div
+            id="policy-link-3"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <i
+              class="fa-solid fa-hand-holding-medical text-primary text-2xl mb-3"
+            ></i>
+            <h3 class="text-lg font-semibold text-dark mb-2">Patient Rights</h3>
+            <p class="text-gray-600 mb-4">
+              Review your rights as a patient and our commitment to your care.
+            </p>
+            <span
+              class="text-primary font-medium hover:underline cursor-pointer"
+              >Read Policy →</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tos-faq" class="py-12 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-2xl font-semibold text-dark mb-8 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div id="faq-accordion" class="space-y-4">
+          <div id="faq-1" class="border border-gray-200 rounded-lg">
+            <button
+              class="flex justify-between items-center w-full p-5 text-left font-medium"
+            >
+              <span>Can I request a copy of my dental records?</span>
+              <i class="fa-solid fa-chevron-down text-primary"></i>
+            </button>
+            <div class="p-5 border-t border-gray-200">
+              <p class="text-gray-700">
+                Yes, you have the right to request a copy of your dental
+                records. Please submit a written request to our office, and we
+                will provide your records within the timeframe specified by
+                applicable laws. A nominal fee may apply for copying and mailing
+                physical records.
+              </p>
+            </div>
+          </div>
+
+          <div id="faq-2" class="border border-gray-200 rounded-lg">
+            <button
+              class="flex justify-between items-center w-full p-5 text-left font-medium"
+            >
+              <span>What happens if I miss an appointment?</span>
+              <i class="fa-solid fa-chevron-down text-primary"></i>
+            </button>
+            <div class="p-5 border-t border-gray-200">
+              <p class="text-gray-700">
+                If you miss an appointment without providing at least 24 hours'
+                notice, a cancellation fee may be charged. Repeated missed
+                appointments may affect our ability to reserve future
+                appointments for you. We understand that emergencies happen, so
+                please contact us as soon as possible if you cannot make your
+                appointment.
+              </p>
+            </div>
+          </div>
+
+          <div id="faq-3" class="border border-gray-200 rounded-lg">
+            <button
+              class="flex justify-between items-center w-full p-5 text-left font-medium"
+            >
+              <span>How do I update my personal information?</span>
+              <i class="fa-solid fa-chevron-down text-primary"></i>
+            </button>
+            <div class="p-5 border-t border-gray-200">
+              <p class="text-gray-700">
+                You can update your personal information by logging into your
+                account on our website, contacting our office by phone, or
+                updating your information during your next visit. It's important
+                to keep your contact information, insurance details, and medical
+                history current to ensure proper care.
+              </p>
+            </div>
+          </div>
+
+          <div id="faq-4" class="border border-gray-200 rounded-lg">
+            <button
+              class="flex justify-between items-center w-full p-5 text-left font-medium"
+            >
+              <span>How is my dental information protected?</span>
+              <i class="fa-solid fa-chevron-down text-primary"></i>
+            </button>
+            <div class="p-5 border-t border-gray-200">
+              <p class="text-gray-700">
+                We comply with all applicable laws and regulations regarding the
+                protection of patient information, including HIPAA in the United
+                States. We implement physical, technical, and administrative
+                safeguards to protect your information and only share it as
+                permitted by law or with your explicit consent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-16 bg-primary">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-8 md:mb-0 md:w-2/3">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Have Questions About Our Terms?
+            </h2>
+            <p class="text-white opacity-90 text-lg">
+              Our team is here to help. Contact us for any clarification about
+              our terms of service.
+            </p>
+          </div>
+          <div>
+            <span
+              class="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-full hover:bg-light transition duration-300 cursor-pointer"
+              >Contact Us</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <i class="fa-solid fa-tooth text-white text-2xl mr-2"></i>
+              <span class="text-xl font-bold">DentalCare</span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Providing exceptional dental care with a gentle touch for over 15
+              years.
+            </p>
+            <div class="flex space-x-4">
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-twitter"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-instagram"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Home</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Services</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >About Us</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Blog</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Contact</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Terms of Service</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Privacy Policy</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Cookie Policy</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >HIPAA Notice</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Accessibility</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa-solid fa-location-dot mt-1 mr-3"></i>
+                <span>123 Dental Way, Smile City, SC 12345</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-phone mr-3"></i>
+                <span>(123) 456-7890</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-envelope mr-3"></i>
+                <span>info@dentalcare.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-clock mr-3"></i>
+                <span>Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+          <p class="text-gray-400">© 2023 DentalCare. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // FAQ Accordion functionality
+      document.querySelectorAll("#faq-accordion button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector("i");
+
+          // Toggle content visibility
+          if (content.style.display === "block") {
+            content.style.display = "none";
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          } else {
+            content.style.display = "block";
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

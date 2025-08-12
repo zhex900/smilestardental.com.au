@@ -1,0 +1,1030 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E88E5",
+              secondary: "#64B5F6",
+              accent: "#0D47A1",
+              light: "#E3F2FD",
+              dark: "#0A2463",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>DentalCare - Blog Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif !important;
+      }
+
+      /* Preserve Font Awesome icons */
+      .fa,
+      .fas,
+      .far,
+      .fal,
+      .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style>
+    <style>
+      .highlighted-section {
+        outline: 2px solid #3f20fb;
+        background-color: rgba(63, 32, 251, 0.1);
+      }
+
+      .edit-button {
+        position: absolute;
+        z-index: 1000;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      html,
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <span class="flex items-center cursor-pointer">
+            <i class="fa-solid fa-tooth text-primary text-3xl mr-2"></i>
+            <span class="text-2xl font-bold text-dark">DentalCare</span>
+          </span>
+          <nav class="hidden md:flex space-x-8">
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Home</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Services</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >About Us</span
+            >
+            <span
+              class="text-primary font-medium border-b-2 border-primary pb-1 cursor-pointer"
+              >Blog</span
+            >
+            <span
+              class="text-gray-600 hover:text-primary font-medium cursor-pointer"
+              >Contact</span
+            >
+          </nav>
+          <div class="flex items-center space-x-4">
+            <span
+              class="hidden md:block bg-primary hover:bg-accent text-white font-medium py-2 px-6 rounded-full transition duration-300 cursor-pointer"
+            >
+              Book Appointment
+            </span>
+            <button class="md:hidden text-gray-700">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="blog-hero" class="bg-light h-[300px] flex items-center">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-center">
+          <div class="md:w-2/3">
+            <span
+              class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3"
+              >Oral Health</span
+            >
+            <h1 class="text-3xl md:text-4xl font-bold text-dark mb-3">
+              The Importance of Regular Dental Checkups for Long-term Health
+            </h1>
+            <div class="flex items-center text-gray-600 mb-4">
+              <img
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+                alt="Dr. Michael Brown"
+                class="w-10 h-10 rounded-full mr-3"
+              />
+              <div>
+                <p class="font-medium">Dr. Michael Brown</p>
+                <p class="text-sm">Published on August 11, 2023 • 8 min read</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="blog-content" class="container mx-auto px-4 py-12">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <main id="main-content" class="lg:w-2/3">
+          <div id="feature-image" class="mb-8 rounded-xl overflow-hidden">
+            <img
+              class="w-full h-auto"
+              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ac9674656b-2956843eb45f265c872f.png"
+              alt="Dental checkup with dentist examining patient"
+            />
+          </div>
+
+          <article
+            id="blog-article"
+            class="bg-white rounded-xl shadow-sm p-6 md:p-8"
+          >
+            <div id="article-content" class="prose max-w-none">
+              <p class="text-lg text-gray-700 mb-6">
+                Regular dental checkups are not just about maintaining a bright
+                smile; they're essential for your overall health. Many people
+                underestimate the connection between oral health and systemic
+                health, but research continues to show strong links between the
+                two.
+              </p>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">
+                Why Regular Dental Checkups Matter
+              </h2>
+              <p class="text-gray-700 mb-4">
+                Dental examinations allow your dentist to detect early signs of
+                problems before they become serious. Many dental issues,
+                including gum disease, tooth decay, and even oral cancer, can be
+                identified during routine checkups.
+              </p>
+
+              <div id="benefits-list" class="bg-light rounded-lg p-6 my-6">
+                <h3 class="text-xl font-semibold text-dark mb-4">
+                  Benefits of Regular Dental Visits:
+                </h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                    <span class="text-gray-700"
+                      >Early detection of tooth decay and gum disease</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                    <span class="text-gray-700"
+                      >Professional cleaning to remove plaque and tartar</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                    <span class="text-gray-700"
+                      >Screening for oral cancer and other diseases</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                    <span class="text-gray-700"
+                      >Personalized advice on oral hygiene practices</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                    <span class="text-gray-700"
+                      >Prevention of more serious health problems</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">
+                The Mouth-Body Connection
+              </h2>
+              <p class="text-gray-700 mb-4">
+                Your mouth can offer clues about your overall health, and
+                problems in your mouth can affect the rest of your body.
+                Research has linked periodontal (gum) disease to several health
+                conditions, including:
+              </p>
+
+              <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Heart disease and stroke</li>
+                <li class="mb-2">Diabetes complications</li>
+                <li class="mb-2">Respiratory infections</li>
+                <li class="mb-2">Pregnancy complications</li>
+                <li>Alzheimer's disease</li>
+              </ul>
+
+              <div id="quote-block" class="border-l-4 border-primary pl-4 my-8">
+                <p class="text-lg italic text-gray-700">
+                  "Oral health is a window to your overall health. Taking care
+                  of your teeth isn't just about preventing cavities – it's
+                  about protecting your whole body."
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                  — Dr. Sarah Johnson, Periodontist
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">
+                How Often Should You Visit the Dentist?
+              </h2>
+              <p class="text-gray-700 mb-4">
+                The American Dental Association recommends regular dental
+                visits, with the frequency determined by your dentist based on
+                your oral health needs. For most people, this means a checkup
+                every six months, but some individuals may need more frequent
+                visits.
+              </p>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">
+                What to Expect During a Dental Checkup
+              </h2>
+              <p class="text-gray-700 mb-4">
+                A typical dental examination includes:
+              </p>
+
+              <ol class="list-decimal pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Reviewing your dental and medical history</li>
+                <li class="mb-2">Examining your teeth for decay</li>
+                <li class="mb-2">Evaluating the health of your gums</li>
+                <li class="mb-2">Checking your bite and jaw for problems</li>
+                <li class="mb-2">
+                  Professional cleaning to remove plaque and tartar
+                </li>
+                <li>X-rays, if necessary, to detect hidden problems</li>
+              </ol>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">
+                Taking Care of Your Teeth Between Visits
+              </h2>
+              <p class="text-gray-700 mb-4">
+                While regular dental checkups are crucial, daily oral hygiene
+                practices are equally important. To maintain good oral health
+                between dental visits:
+              </p>
+
+              <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">
+                  Brush your teeth twice a day with fluoride toothpaste
+                </li>
+                <li class="mb-2">Floss daily to clean between teeth</li>
+                <li class="mb-2">Use an antimicrobial mouthwash</li>
+                <li class="mb-2">Limit sugary foods and drinks</li>
+                <li>Don't smoke or use tobacco products</li>
+              </ul>
+
+              <h2 class="text-2xl font-bold text-dark mt-8 mb-4">Conclusion</h2>
+              <p class="text-gray-700 mb-6">
+                Regular dental checkups are an essential part of preventive
+                healthcare. By visiting your dentist regularly, you're not just
+                taking care of your teeth and gums – you're investing in your
+                overall health and well-being. Don't wait until you have a
+                problem to see your dentist. Schedule your next checkup today
+                and take a proactive approach to your oral health.
+              </p>
+
+              <div id="cta-box" class="bg-primary/10 rounded-lg p-6 my-8">
+                <h3 class="text-xl font-semibold text-dark mb-3">
+                  Ready to Schedule Your Checkup?
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  Our team at DentalCare is committed to providing comprehensive
+                  dental care in a comfortable environment. Contact us today to
+                  schedule your appointment.
+                </p>
+                <button
+                  class="bg-primary hover:bg-accent text-white font-medium py-2 px-6 rounded-full transition duration-300"
+                >
+                  Book Your Appointment
+                </button>
+              </div>
+            </div>
+
+            <div id="article-tags" class="mt-8 pt-6 border-t border-gray-200">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Dental Checkups</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Oral Health</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Preventive Care</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Dental Hygiene</span
+                >
+              </div>
+            </div>
+
+            <div id="article-share" class="mt-6 flex items-center">
+              <span class="text-gray-700 mr-4">Share:</span>
+              <div class="flex space-x-3">
+                <span
+                  class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white cursor-pointer"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </span>
+                <span
+                  class="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center text-white cursor-pointer"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </span>
+                <span
+                  class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white cursor-pointer"
+                >
+                  <i class="fa-brands fa-pinterest"></i>
+                </span>
+                <span
+                  class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white cursor-pointer"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <div
+            id="author-bio"
+            class="bg-white rounded-xl shadow-sm p-6 md:p-8 mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-6"
+          >
+            <img
+              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+              alt="Dr. Michael Brown"
+              class="w-24 h-24 rounded-full"
+            />
+            <div>
+              <h3 class="text-xl font-bold text-dark mb-2">
+                Dr. Michael Brown
+              </h3>
+              <p class="text-gray-600 mb-3">
+                Dr. Brown is a board-certified dentist with over 15 years of
+                experience in general and cosmetic dentistry. He is passionate
+                about patient education and preventive care.
+              </p>
+              <div class="flex space-x-3">
+                <span class="text-primary hover:text-accent cursor-pointer">
+                  <i class="fa-brands fa-twitter"></i>
+                </span>
+                <span class="text-primary hover:text-accent cursor-pointer">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </span>
+                <span class="text-primary hover:text-accent cursor-pointer">
+                  <i class="fa-solid fa-globe"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="comments-section"
+            class="bg-white rounded-xl shadow-sm p-6 md:p-8 mt-8"
+          >
+            <h3 class="text-xl font-bold text-dark mb-6">Comments (3)</h3>
+
+            <div id="comment-form" class="mb-8">
+              <div class="flex gap-4 mb-4">
+                <img
+                  src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-9.jpg"
+                  alt="User"
+                  class="w-10 h-10 rounded-full"
+                />
+                <textarea
+                  class="flex-1 border border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                  rows="3"
+                  placeholder="Share your thoughts..."
+                ></textarea>
+              </div>
+              <div class="flex justify-end">
+                <button
+                  class="bg-primary hover:bg-accent text-white font-medium py-2 px-6 rounded-full transition duration-300"
+                >
+                  Post Comment
+                </button>
+              </div>
+            </div>
+
+            <div id="comments-list" class="space-y-6">
+              <!-- Comment 1 -->
+              <div id="comment-1" class="border-b border-gray-100 pb-6">
+                <div class="flex gap-4">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg"
+                    alt="Sarah Johnson"
+                    class="w-10 h-10 rounded-full"
+                  />
+                  <div class="flex-1">
+                    <div class="flex justify-between mb-1">
+                      <h4 class="font-medium text-dark">Sarah Johnson</h4>
+                      <span class="text-sm text-gray-500">2 days ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-3">
+                      This article was really helpful! I've been putting off my
+                      dental visits but now I understand how important they are
+                      for overall health. Scheduling an appointment today.
+                    </p>
+                    <div class="flex gap-4 text-sm text-gray-500">
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-thumbs-up mr-1"></i> Like (12)
+                      </button>
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-comment mr-1"></i> Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Comment 2 -->
+              <div id="comment-2" class="border-b border-gray-100 pb-6">
+                <div class="flex gap-4">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg"
+                    alt="Robert Chen"
+                    class="w-10 h-10 rounded-full"
+                  />
+                  <div class="flex-1">
+                    <div class="flex justify-between mb-1">
+                      <h4 class="font-medium text-dark">Robert Chen</h4>
+                      <span class="text-sm text-gray-500">4 days ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-3">
+                      I didn't realize there was such a strong connection
+                      between oral health and other health conditions. This is
+                      eye-opening information. Thanks for sharing!
+                    </p>
+                    <div class="flex gap-4 text-sm text-gray-500">
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-thumbs-up mr-1"></i> Like (8)
+                      </button>
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-comment mr-1"></i> Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Comment 3 -->
+              <div id="comment-3">
+                <div class="flex gap-4">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg"
+                    alt="Emily Parker"
+                    class="w-10 h-10 rounded-full"
+                  />
+                  <div class="flex-1">
+                    <div class="flex justify-between mb-1">
+                      <h4 class="font-medium text-dark">Emily Parker</h4>
+                      <span class="text-sm text-gray-500">1 week ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-3">
+                      As someone who works in healthcare, I appreciate how well
+                      you've explained the connection between oral health and
+                      systemic health. Many patients don't realize how
+                      interconnected our body systems are. Great article!
+                    </p>
+                    <div class="flex gap-4 text-sm text-gray-500">
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-thumbs-up mr-1"></i> Like (15)
+                      </button>
+                      <button class="flex items-center hover:text-primary">
+                        <i class="fa-regular fa-comment mr-1"></i> Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <aside id="sidebar" class="lg:w-1/3">
+          <div id="about-author" class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h3 class="text-xl font-bold text-dark mb-4">About the Author</h3>
+            <div class="flex items-center mb-4">
+              <img
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+                alt="Dr. Michael Brown"
+                class="w-16 h-16 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold text-dark">Dr. Michael Brown</h4>
+                <p class="text-sm text-gray-600">Dental Surgeon, DDS</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              Dr. Brown specializes in preventive dentistry and patient
+              education. He has authored numerous articles on oral health and
+              its connection to overall wellness.
+            </p>
+            <button
+              class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 rounded-lg transition duration-300"
+            >
+              View Profile
+            </button>
+          </div>
+
+          <div id="search-box" class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h3 class="text-xl font-bold text-dark mb-4">Search</h3>
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search articles..."
+                class="w-full border border-gray-300 rounded-lg pl-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button
+                class="absolute right-3 top-1/2 transform -translate-y-1/2"
+              >
+                <i class="fa-solid fa-search text-gray-400"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="categories" class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h3 class="text-xl font-bold text-dark mb-4">Categories</h3>
+            <ul class="space-y-2">
+              <li
+                class="flex justify-between items-center py-2 border-b border-gray-100"
+              >
+                <span class="text-gray-700 hover:text-primary cursor-pointer"
+                  >Oral Health</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                  >12</span
+                >
+              </li>
+              <li
+                class="flex justify-between items-center py-2 border-b border-gray-100"
+              >
+                <span class="text-gray-700 hover:text-primary cursor-pointer"
+                  >Cosmetic Dentistry</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                  >8</span
+                >
+              </li>
+              <li
+                class="flex justify-between items-center py-2 border-b border-gray-100"
+              >
+                <span class="text-gray-700 hover:text-primary cursor-pointer"
+                  >Pediatric Dentistry</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                  >5</span
+                >
+              </li>
+              <li
+                class="flex justify-between items-center py-2 border-b border-gray-100"
+              >
+                <span class="text-gray-700 hover:text-primary cursor-pointer"
+                  >Dental Technology</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                  >7</span
+                >
+              </li>
+              <li class="flex justify-between items-center py-2">
+                <span class="text-gray-700 hover:text-primary cursor-pointer"
+                  >Dental Tips</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                  >10</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div id="recent-posts" class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h3 class="text-xl font-bold text-dark mb-4">Recent Posts</h3>
+            <div class="space-y-4">
+              <div class="flex gap-3">
+                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e1ee86cdac-7bb93243260dca882176.png"
+                    alt="Teeth Whitening"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4
+                    class="font-medium text-dark hover:text-primary cursor-pointer"
+                  >
+                    5 Myths About Teeth Whitening Debunked
+                  </h4>
+                  <p class="text-sm text-gray-500">August 5, 2023</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/25593eaa87-0376bdd0c670616c9036.png"
+                    alt="Invisalign"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4
+                    class="font-medium text-dark hover:text-primary cursor-pointer"
+                  >
+                    Invisalign vs. Traditional Braces: Which Is Right for You?
+                  </h4>
+                  <p class="text-sm text-gray-500">July 28, 2023</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/967f6829aa-07fd43e4755a1e132bca.png"
+                    alt="Child Dental Care"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4
+                    class="font-medium text-dark hover:text-primary cursor-pointer"
+                  >
+                    How to Make Dental Visits Fun for Children
+                  </h4>
+                  <p class="text-sm text-gray-500">July 15, 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="newsletter"
+            class="bg-primary rounded-xl shadow-sm p-6 mb-8 text-white"
+          >
+            <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3>
+            <p class="mb-4 opacity-90">
+              Get the latest dental health tips and updates delivered to your
+              inbox.
+            </p>
+            <div class="mb-3">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+              />
+            </div>
+            <button
+              class="w-full bg-white text-primary font-medium py-3 rounded-lg hover:bg-light transition duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+
+          <div id="tags" class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="text-xl font-bold text-dark mb-4">Popular Tags</h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Dental Care</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Oral Hygiene</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Teeth Whitening</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Invisalign</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Dental Implants</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Children</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Cosmetic</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Gum Health</span
+              >
+              <span
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                >Checkups</span
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="related-posts" class="py-12 bg-light">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-dark mb-8 text-center">
+          Related Articles
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Related Post 1 -->
+          <div
+            id="related-1"
+            class="bg-white rounded-xl shadow-sm overflow-hidden"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/664b7c3e23-b160e5971ebb76791a87.png"
+                alt="Dental procedures"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3"
+                >Preventive Care</span
+              >
+              <h3 class="text-xl font-semibold text-dark mb-3">
+                How to Properly Brush and Floss Your Teeth
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Learn the correct techniques for daily oral hygiene that can
+                prevent most dental problems.
+              </p>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
+                    alt="Dr. Lisa Wong"
+                    class="w-8 h-8 rounded-full mr-2"
+                  />
+                  <span class="text-sm text-gray-600">Dr. Lisa Wong</span>
+                </div>
+                <span class="text-sm text-gray-500">July 10, 2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Post 2 -->
+          <div
+            id="related-2"
+            class="bg-white rounded-xl shadow-sm overflow-hidden"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b8be7b7c2e-c3533467c114443b4d9c.png"
+                alt="Dental implants"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3"
+                >Restorative Dentistry</span
+              >
+              <h3 class="text-xl font-semibold text-dark mb-3">
+                Understanding Dental Implants: Procedure and Benefits
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A comprehensive guide to dental implants and why they're
+                considered the gold standard for tooth replacement.
+              </p>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg"
+                    alt="Dr. James Wilson"
+                    class="w-8 h-8 rounded-full mr-2"
+                  />
+                  <span class="text-sm text-gray-600">Dr. James Wilson</span>
+                </div>
+                <span class="text-sm text-gray-500">June 22, 2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Post 3 -->
+          <div
+            id="related-3"
+            class="bg-white rounded-xl shadow-sm overflow-hidden"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e1ee86cdac-7bb93243260dca882176.png"
+                alt="Teeth whitening"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3"
+                >Cosmetic Dentistry</span
+              >
+              <h3 class="text-xl font-semibold text-dark mb-3">
+                Professional vs. At-Home Teeth Whitening: What's Best?
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Compare different whitening methods to determine which option is
+                right for your smile goals and budget.
+              </p>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <img
+                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg"
+                    alt="Dr. Emily Davis"
+                    class="w-8 h-8 rounded-full mr-2"
+                  />
+                  <span class="text-sm text-gray-600">Dr. Emily Davis</span>
+                </div>
+                <span class="text-sm text-gray-500">June 8, 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <span
+            class="inline-block bg-primary hover:bg-accent text-white font-medium py-3 px-8 rounded-full transition duration-300 cursor-pointer"
+            >View All Articles</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-16 bg-primary">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-8 md:mb-0 md:w-2/3">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Ready to Transform Your Smile?
+            </h2>
+            <p class="text-white opacity-90 text-lg">
+              Schedule your consultation today and take the first step toward
+              optimal dental health.
+            </p>
+          </div>
+          <div>
+            <span
+              class="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-full hover:bg-light transition duration-300 cursor-pointer"
+              >Book Your Appointment</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <i class="fa-solid fa-tooth text-white text-2xl mr-2"></i>
+              <span class="text-xl font-bold">DentalCare</span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Providing exceptional dental care with a gentle touch for over 15
+              years.
+            </p>
+            <div class="flex space-x-4">
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-twitter"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-instagram"></i
+              ></span>
+              <span class="text-white hover:text-secondary cursor-pointer"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Home</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Services</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >About Us</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Blog</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Contact</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Preventive Dentistry</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Cosmetic Dentistry</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Restorative Dentistry</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Pediatric Dentistry</span
+                >
+              </li>
+              <li>
+                <span class="text-gray-300 hover:text-white cursor-pointer"
+                  >Emergency Dental Care</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa-solid fa-location-dot mt-1 mr-3"></i>
+                <span>123 Dental Way, Smile City, SC 12345</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-phone mr-3"></i>
+                <span>(123) 456-7890</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-envelope mr-3"></i>
+                <span>info@dentalcare.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-clock mr-3"></i>
+                <span>Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+          <p class="text-gray-400">© 2023 DentalCare. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

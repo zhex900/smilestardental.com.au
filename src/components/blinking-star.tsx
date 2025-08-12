@@ -1,4 +1,7 @@
+"use client";
+
 import { StarIcon } from "@radix-ui/react-icons";
+
 import { useEffect, useState, useRef } from "react";
 
 interface BlinkingStarProps {
