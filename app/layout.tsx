@@ -11,6 +11,11 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      process.env.VERCEL_URL ||
+      "https://bayarcadedental.com"
+  ),
   title: "Smile Star Dental",
   description:
     "Your trusted partner for comprehensive dental care and beautiful smiles. We provide exceptional dental services with the latest technology and a caring approach.",

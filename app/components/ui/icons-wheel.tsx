@@ -42,7 +42,7 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
 
   // Calculate how many icons can fit in the semi-circle
   const totalIcons = items.length;
-  const angleStep = Math.PI / (visibleIcons - 1); // Semi-circle spread based on visible icons
+  const angleStep = Number((Math.PI / (visibleIcons - 1)).toFixed(6)); // Semi-circle spread based on visible icons
 
   // Continuous clockwise scrolling
   useEffect(() => {
@@ -88,26 +88,29 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
         {items.map((item, index) => {
           // Calculate the actual position with scroll offset
           const actualIndex = (index + scrollOffset) % totalIcons;
-          const angle = actualIndex * angleStep + Math.PI; // Start from left (90 degrees clockwise)
-          const x = radius + radius * Math.cos(angle);
-          const y = radius + radius * Math.sin(angle);
+
+          // Use fixed decimal precision to prevent hydration mismatches
+          const angle = Number((actualIndex * angleStep + Math.PI).toFixed(6)); // Start from left (90 degrees clockwise)
+          const x = Number((radius + radius * Math.cos(angle)).toFixed(2));
+          const y = Number((radius + radius * Math.sin(angle)).toFixed(2));
           const IconComponent = item.component;
 
-          // Calculate visibility based on angle position
+          // Calculate visibility based on angle position with fixed precision
           // Show icons only in the visible semi-circle (π to 2π radians)
           // Hide icons when they move from end to start across the invisible part
           // Add a buffer zone to hide icons before they reach the edge
           const bufferZone = 0.2; // radians
-          const isVisible =
-            angle >= Math.PI + bufferZone && angle <= 2 * Math.PI - bufferZone;
+          const minAngle = Number((Math.PI + bufferZone).toFixed(6));
+          const maxAngle = Number((2 * Math.PI - bufferZone).toFixed(6));
+          const isVisible = angle >= minAngle && angle <= maxAngle;
 
-          // Debug: Log when icons are at the edges
+          // Debug: Log when icons are at the edges (with fixed precision)
           if (
-            Math.abs(angle - (Math.PI + bufferZone)) < 0.1 ||
-            Math.abs(angle - (2 * Math.PI - bufferZone)) < 0.1
+            Math.abs(angle - minAngle) < 0.1 ||
+            Math.abs(angle - maxAngle) < 0.1
           ) {
             console.log(
-              `Icon ${item.name} at buffer edge: angle=${angle.toFixed(2)}, visible=${isVisible}`
+              `Icon ${item.name} at buffer edge: angle=${angle.toFixed(6)}, visible=${isVisible}`
             );
           }
 

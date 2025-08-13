@@ -36,7 +36,7 @@ export function Footer() {
           {/* Logo and About Section */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <LogoIcon alwaysShowText />
+              <LogoIcon />
             </div>
             <p className="leading-relaxed">
               Since {yearEstablished}, formerly known as Bay Arcade Dental,{" "}

@@ -109,7 +109,12 @@ interface BlogPostPageProps {
   slug: string;
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
