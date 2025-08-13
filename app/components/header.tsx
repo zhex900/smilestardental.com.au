@@ -9,7 +9,7 @@ import { LogoIcon } from "./logo-icon";
 import { phoneNumber } from "@/constants";
 
 const menuItemClassName =
-  "hover:text-white transition-all hover:border-b-2 hover:border-cyan-500";
+  "hover:text-gray-500 transition-all hover:border-b-2 hover:border-cyan-500";
 
 const MenuItems = ({ onClick }: { onClick?: () => void }) => (
   <>
@@ -29,59 +29,62 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex text-slate-700 items-center font-medium text-md justify-between px-6 py-6 bg-gradient-to-r to-sky-300/50 via-sky-400/50 from-blue-500/50 relative">
-      <Link href="/" className="flex items-center space-x-3 z-10 flex-shrink-0">
-        <LogoIcon />
-      </Link>
+    <header className=" text-gray-800 font-medium text-md px-6 py-6 md:px-12 relative">
+      <div className="container mx-auto flex items-center justify-between ">
+        <Link
+          href="/"
+          className="flex items-center space-x-3 z-10 flex-shrink-0"
+        >
+          <LogoIcon />
+        </Link>
 
-      <nav className="hidden md:flex items-center space-x-8 hover:shadow-lg p-2 px-4 rounded-lg ">
-        <MenuItems />
-      </nav>
+        <nav className="hidden md:flex items-center space-x-8 shadow-lg p-2 px-6 rounded-xl bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-500/20 ">
+          <MenuItems />
+        </nav>
 
-      <div className="flex items-center space-x-4">
-        <div className="sm:flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
+          <div className="sm:flex items-center space-x-2">
+            <ButtonGradient
+              className="w-10 h-10 md:w-auto md:h-auto"
+              onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+              aria-label={`Call ${phoneNumber}`}
+            >
+              <div className="flex items-center space-x-2">
+                <Phone className="w-5 h-5" />
+                <a href={`tel:${phoneNumber}`} className="hidden md:block">
+                  {phoneNumber}
+                </a>
+              </div>
+            </ButtonGradient>
+          </div>
           <ButtonGradient
             className="w-10 h-10 md:w-auto md:h-auto"
-            onClick={() => (window.location.href = `tel:${phoneNumber}`)}
-            aria-label={`Call ${phoneNumber}`}
+            onClick={() => router.push("/contact")}
           >
             <div className="flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <a href={`tel:${phoneNumber}`} className="hidden md:block">
-                {phoneNumber}
-              </a>
+              <Calendar className="w-5 h-5" />
+              <span className="hidden md:block">Book an appointment</span>
             </div>
           </ButtonGradient>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden"
+          >
+            <Menu className="w-5 h-5" />
+          </Button>
         </div>
-        <ButtonGradient
-          className="w-10 h-10 md:w-auto md:h-auto"
-          onClick={() => router.push("/contact")}
-        >
-          <div className="flex items-center space-x-2">
-            <Calendar className="w-5 h-5" />
-            <span className="hidden md:block">Book an appointment</span>
-          </div>
-        </ButtonGradient>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden"
-        >
-          <Menu className="w-5 h-5" />
-        </Button>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 text-white bg-gray-800/100 z-10 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
-          <nav className="flex flex-col space-y-4 ">
-            <div className="flex flex-col space-y-4 w-[100px]">
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 text-white bg-gray-800/100 z-10 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
+            <nav className="flex flex-col space-y-4 ">
               <MenuItems onClick={() => setIsMenuOpen(false)} />
-            </div>
-          </nav>
-        </div>
-      )}
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

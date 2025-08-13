@@ -73,11 +73,11 @@ export const AnimatedTooltip = ({
                   rotate: rotate,
                   whiteSpace: "nowrap",
                 }}
-                className={`absolute -top-18 left-20 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-xl bg-black px-4 py-2 text-xs shadow-xl max-w-100 h-16`}
+                className={`absolute -top-20 z-[9999] flex -translate-x-1/2 flex-col items-center justify-center rounded-xl bg-gray-800 px-4 py-2 shadow-xl max-w-100 h-16`}
               >
                 <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
                 <div className="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
-                <div className="text-sm text-white text-center overflow-scroll text-ellipsis whitespace-nowrap w-full">
+                <div className="text-white text-center overflow-scroll text-ellipsis whitespace-nowrap w-full">
                   {item.designation}
                 </div>
               </motion.div>
@@ -89,7 +89,7 @@ export const AnimatedTooltip = ({
             width={100}
             src={item.image}
             alt={item.name}
-            className="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-300 group-hover:z-30 group-hover:scale-150"
+            className="relative !m-0 h-10 w-10 rounded-full border-2 border-none object-cover object-top !p-0 transition duration-300 group-hover:z-30 group-hover:scale-150"
           />
         </div>
       ))}

@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
     <div
       className={cn(
-        "relative w-full h-full overflow-hidden rounded-2xl",
+        "relative w-full h-full overflow-visible rounded-2xl",
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -75,7 +75,7 @@ const Carousel: React.FC<CarouselProps> = ({
           <img
             src={slides[currentIndex].src}
             alt={slides[currentIndex].title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain scale-150 transform-gpu"
           />
 
           {/* Gradient overlay */}

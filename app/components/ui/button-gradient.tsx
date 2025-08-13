@@ -27,8 +27,8 @@ const ButtonGradient = React.forwardRef<HTMLButtonElement, ButtonGradientProps>(
     },
     ref
   ) => {
-    const defaultClassName = "text-black hover:text-white rounded-[22px]";
-    const defaultBoxClassName = "opacity-20 rounded-xl";
+    const defaultClassName = "text-black hover:text-white rounded-xl";
+    const defaultBoxClassName = "opacity-50 rounded-xl";
     return (
       <BackgroundGradient
         className={cn(defaultClassName, gradientClassName)}

@@ -9,7 +9,7 @@ export function HeroCarousel() {
       title: "",
       button: ".",
       description: "",
-      src: "/images/1.png", // Dental chair transparent
+      src: "/images/boy-1.png", // Dental chair transparent
     },
     {
       title: "",

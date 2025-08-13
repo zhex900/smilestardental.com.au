@@ -30,8 +30,8 @@ const areasServed = ["Newcastle", "Lake Macquarie", "Warners Bay"];
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-l to-sky-300 via-sky-400 from-blue-500 text-white py-16 text-sm">
-      <div className="container mx-auto px-6 md:px-12">
+    <footer className="px-6 md:px-12 bg-gradient-to-l to-sky-300 via-sky-400 from-blue-500 text-white py-16 text-sm">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and About Section */}
           <div className="space-y-6">

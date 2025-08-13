@@ -9,10 +9,15 @@ interface BlinkingStarProps {
   delay?: number;
 }
 
+const MAX_SIZE = 30;
+const MIN_SIZE = 10;
+
 export function BlinkingStar({ className = "", delay = 0 }: BlinkingStarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [color, setColor] = useState("text-slate-400");
-  const [size, setSize] = useState(Math.floor(Math.random() * 40) + 5);
+  const [size, setSize] = useState(
+    Math.floor(Math.random() * MAX_SIZE) + MIN_SIZE
+  );
   const sizeDirectionRef = useRef(1); // 1 for up, -1 for down
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMoving, setIsMoving] = useState(false);
@@ -40,10 +45,10 @@ export function BlinkingStar({ className = "", delay = 0 }: BlinkingStarProps) {
 
     const sizeInterval = setInterval(() => {
       setSize((prev) => {
-        if (prev >= 40) {
+        if (prev >= MAX_SIZE) {
           sizeDirectionRef.current = -1; // Start going down
           return prev - 1;
-        } else if (prev <= 5) {
+        } else if (prev <= MIN_SIZE) {
           sizeDirectionRef.current = 1; // Start going up
           return prev + 1;
         } else {
