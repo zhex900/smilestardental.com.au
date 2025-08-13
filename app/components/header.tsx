@@ -1,51 +1,67 @@
 "use client";
-import { Menu, Phone } from "lucide-react";
+import { Calendar, Menu, Phone } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { ButtonGradient } from "./ui/button-gradient";
 import { useState } from "react";
-import { BackgroundGradient } from "./ui/background-gradient";
 import { LogoIcon } from "./logo-icon";
+import { phoneNumber } from "@/constants";
 
+const menuItemClassName =
+  "hover:text-white transition-all hover:border-b-2 hover:border-cyan-500";
+
+const MenuItems = ({ onClick }: { onClick?: () => void }) => (
+  <>
+    <Link href="/services" className={menuItemClassName} onClick={onClick}>
+      Services
+    </Link>
+    <Link href="/about" className={menuItemClassName} onClick={onClick}>
+      About Us
+    </Link>
+    <Link href="/blog" className={menuItemClassName} onClick={onClick}>
+      Blog
+    </Link>
+  </>
+);
 export function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-transparent relative">
-      <Link href="/" className="flex items-center space-x-3">
+    <header className="flex text-slate-700 items-center font-medium text-md justify-between px-6 py-6 bg-gradient-to-r to-sky-300/50 via-sky-400/50 from-blue-500/50 relative">
+      <Link href="/" className="flex items-center space-x-3 z-10 flex-shrink-0">
         <LogoIcon />
       </Link>
 
-      <nav className="hidden md:flex items-center space-x-8">
-        <Link
-          href="/services"
-          className="text-slate-700 hover:text-slate-900 font-medium"
-        >
-          Services
-        </Link>
-        <Link
-          href="/about"
-          className="text-slate-700 hover:text-slate-900 font-medium"
-        >
-          About Us
-        </Link>
-        <Link
-          href="/blog"
-          className="text-slate-700 hover:text-slate-900 font-medium"
-        >
-          Blog
-        </Link>
+      <nav className="hidden md:flex items-center space-x-8 hover:shadow-lg p-2 px-4 rounded-lg ">
+        <MenuItems />
       </nav>
 
       <div className="flex items-center space-x-4">
-        <div className="hidden sm:flex items-center space-x-2 text-sm text-slate-600">
-          <Phone className="w-4 h-4" />
-          <a href="tel:0249488589">02 4948 8589</a>
+        <div className="sm:flex items-center space-x-2">
+          <ButtonGradient
+            className="w-10 h-10 md:w-auto md:h-auto"
+            onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+            aria-label={`Call ${phoneNumber}`}
+          >
+            <div className="flex items-center space-x-2">
+              <Phone className="w-5 h-5" />
+              <a href={`tel:${phoneNumber}`} className="hidden md:block">
+                {phoneNumber}
+              </a>
+            </div>
+          </ButtonGradient>
         </div>
-        <BackgroundGradient className="rounded-[22px] bg-white dark:bg-zinc-900">
-          <Button onClick={() => router.push("/contact")}>Contact Us</Button>
-        </BackgroundGradient>
+        <ButtonGradient
+          className="w-10 h-10 md:w-auto md:h-auto"
+          onClick={() => router.push("/contact")}
+        >
+          <div className="flex items-center space-x-2">
+            <Calendar className="w-5 h-5" />
+            <span className="hidden md:block">Book an appointment</span>
+          </div>
+        </ButtonGradient>
         <Button
           variant="ghost"
           size="icon"
@@ -58,43 +74,11 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
-          <nav className="flex flex-col space-y-4">
-            <Link
-              href="/"
-              className="text-slate-700 hover:text-slate-900 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/services"
-              className="text-slate-700 hover:text-slate-900 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/about"
-              className="text-slate-700 hover:text-slate-900 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="/blog"
-              className="text-slate-700 hover:text-slate-900 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              className="text-slate-700 hover:text-slate-900 font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+        <div className="absolute top-full left-0 right-0 text-white bg-gray-800/100 z-10 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
+          <nav className="flex flex-col space-y-4 ">
+            <div className="flex flex-col space-y-4 w-[100px]">
+              <MenuItems onClick={() => setIsMenuOpen(false)} />
+            </div>
           </nav>
         </div>
       )}

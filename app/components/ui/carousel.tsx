@@ -17,6 +17,8 @@ interface CarouselProps {
   autoplayInterval?: number;
   className?: string;
   showButton?: boolean;
+  showDots?: boolean;
+  showProgress?: boolean;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -25,6 +27,8 @@ const Carousel: React.FC<CarouselProps> = ({
   autoplayInterval = 5000,
   className,
   showButton = true,
+  showDots = true,
+  showProgress = true,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -118,35 +122,39 @@ const Carousel: React.FC<CarouselProps> = ({
       )}
 
       {/* Dots indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={cn(
-              "w-3 h-3 rounded-full transition-all duration-200",
-              index === currentIndex
-                ? "bg-amber-300 scale-110"
-                : "bg-white/50 hover:bg-white/70"
-            )}
-          />
-        ))}
-      </div>
+      {showDots && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={cn(
+                "w-3 h-3 rounded-full transition-all duration-200",
+                index === currentIndex
+                  ? "bg-amber-300 scale-110"
+                  : "bg-white/50 hover:bg-white/70"
+              )}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Progress bar */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
-        <motion.div
-          className="h-full bg-amber-200"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{
-            duration: autoplayInterval / 1000,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          key={currentIndex}
-        />
-      </div>
+      {showProgress && (
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+          <motion.div
+            className="h-full bg-amber-200"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{
+              duration: autoplayInterval / 1000,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            key={currentIndex}
+          />
+        </div>
+      )}
     </div>
   );
 };

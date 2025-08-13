@@ -35,21 +35,14 @@ export function HeroCarousel() {
 
   return (
     <>
-      <GlowingEffect
-        className="rounded-[50px] rounded-tl-[260px]"
-        spread={70}
-        glow={true}
-        disabled={false}
-        proximity={164}
-        inactiveZone={0.01}
-        borderWidth={4}
-      />
-      <div className="relative overflow-hidden w-full h-[500px] md:h-[600px] rounded-[50px] rounded-tl-[260px] shadow-2xl">
+      <div className="relative overflow-hidden w-full h-[500px] md:h-[600px] rounded-[50px]">
         <Carousel
           showButton={false}
           slides={slideData}
           autoplay={true}
           autoplayInterval={6000}
+          showDots={false}
+          showProgress={false}
         />
       </div>
     </>

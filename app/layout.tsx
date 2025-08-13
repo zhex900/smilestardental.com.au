@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Unbounded } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 
-const unbounded = Unbounded({
+const quicksand = Quicksand({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-unbounded",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-quicksand",
 });
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href="https://bayarcadedental.com" />
       </head>
-      <body className={unbounded.className}>
+      <body className={quicksand.className}>
         <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50">
           <Header />
           <main>{children}</main>
