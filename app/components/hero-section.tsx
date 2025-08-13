@@ -7,6 +7,7 @@ import { ButtonGradient } from "./ui/button-gradient";
 import Carousel from "./ui/carousel";
 import { useEffect, useState } from "react";
 import { ServicesWheel } from "./services-wheel";
+import { GoogleReview } from "./ui/google-review";
 // Common carousel configuration
 const heroCarouselSlides = [
   {
@@ -99,11 +100,15 @@ export function HeroSection() {
                   brighter, healthier smile.
                 </p>
               </div>{" "}
-              <div className="flex justify-center md:justify-start pt-2 md:pt-6">
+              <div className="flex justify-between  items-center pt-2 md:pt-6">
                 <ButtonGradient onClick={() => router.push("/contact")}>
                   Make a booking
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </ButtonGradient>
+
+                <div>
+                  <GoogleReview variant="compact" />
+                </div>
               </div>
             </div>
           </div>

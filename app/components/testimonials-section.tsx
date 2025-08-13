@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import { TestimonialCard } from "./ui/testimonial-card";
+import { GoogleReview } from "./ui/google-review";
 
 const testimonials = [
   {
