@@ -29,12 +29,9 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className=" text-gray-800 font-medium text-md px-6 py-6 md:px-12 relative">
+    <header className=" text-gray-800 font-medium text-md px-6 py-4 md:px-12 relative">
       <div className="container mx-auto flex items-center justify-between ">
-        <Link
-          href="/"
-          className="flex items-center space-x-3 z-10 flex-shrink-0"
-        >
+        <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
           <LogoIcon />
         </Link>
 
@@ -57,15 +54,17 @@ export function Header() {
               </div>
             </ButtonGradient>
           </div>
-          <ButtonGradient
-            className="w-10 h-10 md:w-auto md:h-auto"
-            onClick={() => router.push("/contact")}
-          >
-            <div className="flex items-center space-x-2">
-              <Calendar className="w-5 h-5" />
-              <span className="hidden md:block">Book an appointment</span>
-            </div>
-          </ButtonGradient>
+          <div className="sm:flex items-center space-x-2 hidden">
+            <ButtonGradient
+              className="w-10 h-10 md:w-auto md:h-auto"
+              onClick={() => router.push("/contact")}
+            >
+              <div className="flex items-center space-x-2">
+                <Calendar className="w-5 h-5" />
+                <span className="hidden md:block">Book an appointment</span>
+              </div>
+            </ButtonGradient>
+          </div>
           <Button
             variant="ghost"
             size="icon"

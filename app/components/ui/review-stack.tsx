@@ -27,23 +27,15 @@ const randomAvatars = (number: number) => {
   // Create a copy of reviews array to shuffle
   const availableReviews = [...dentistReviews];
 
-  // Fisher-Yates shuffle algorithm
-  for (let i = availableReviews.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [availableReviews[i], availableReviews[j]] = [
-      availableReviews[j],
-      availableReviews[i],
-    ];
-  }
-
+  // Use a deterministic approach - alternate between men and women
   for (let i = 0; i < number; i++) {
-    const gender = Math.random() < 0.5 ? "women" : "men";
+    const gender = i % 2 === 0 ? "women" : "men";
     avatars.push({
       id: i,
       image: `https://randomuser.me/api/portraits/${gender}/${i}.jpg`,
       alt: `Avatar ${i}`,
       name: `Avatar ${i}`,
-      // Take reviews in order from shuffled array
+      // Use reviews in order without shuffling for consistency
       designation: availableReviews[i % availableReviews.length],
       fallback: `A${i}`,
     });

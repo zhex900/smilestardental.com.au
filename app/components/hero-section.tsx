@@ -1,13 +1,12 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { BlinkingStar } from "./blinking-star";
 import AnimatedText from "./ui/animated-text";
 import { ReviewStack } from "./ui/review-stack";
 import { ButtonGradient } from "./ui/button-gradient";
 import Carousel from "./ui/carousel";
 import { useEffect, useState } from "react";
-
+import { ServicesWheel } from "./services-wheel";
 // Common carousel configuration
 const heroCarouselSlides = [
   {
@@ -16,14 +15,29 @@ const heroCarouselSlides = [
     description: "",
     src: "/images/g-1.png",
   },
+  // {
+  //   title: "",
+  //   button: ".",
+  //   description: "",
+  //   src: "/images/boy-2.png",
+  // },
+  // {
+  //   title: "",
+  //   button: ".",
+  //   description: "",
+  //   src: "/images/2.png",
+  // },
+  // {
+  //   title: "",
+  //   button: ".",
+  //   description: "",
+  //   src: "/images/3.png",
+  // },
 ];
 
 const heroCarouselConfig = {
-  showButton: false,
   autoplay: true,
   autoplayInterval: 6000,
-  showDots: false,
-  showProgress: false,
 };
 
 export function HeroSection() {
@@ -46,60 +60,67 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden text-gray-800 px-6"
+      className="relative overflow-hidden text-gray-800 px-2 md:px-6"
       style={{ height: `calc(100vh - ${headerHeight}px)` }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r to-sky-300 via-sky-400 from-blue-500 opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-r to-sky-300 via-sky-400 from-blue-700 opacity-20" />
 
-      <div className="relative max-w-6xl mx-auto flex items-center  h-full">
+      <div className="max-w-6xl mx-auto flex items-end h-full justify-between">
         {/* Decorative blinking stars */}
-        <BlinkingStar className="absolute top-20 left-20" />
+        {/* <BlinkingStar className="absolute top-20 left-20" /> */}
 
-        <div className="flex flex-col max-w-lg justify-evenly h-full">
-          <div>
-            <div className="text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                Your Smile is Our
-                <AnimatedText
-                  text={`Star Priority`}
-                  className="font-bold"
-                  animationType="letters"
-                  staggerDelay={0.08}
-                  duration={0.6}
-                  initialY={10}
-                  initialOpacity={0}
-                  animateY={0}
-                  animateOpacity={1}
-                  multiline={true}
-                  wordStyles={{
-                    Star: "text-yellow-600  animate-pulse",
-                    Priority: "",
-                  }}
-                />
-              </h1>
-              <p className="text-justify text-lg mb-8 leading-relaxed">
-                Experience exceptional dental care, proudly serving the{" "}
-                <span className="border-b-2 border-cyan-500">Newcastle</span>{" "}
-                community where every patient receives star treatment for a
-                brighter, healthier smile.
-              </p>
-            </div>{" "}
-            <div className="flex justify-center md:justify-start pt-6">
-              <ButtonGradient onClick={() => router.push("/contact")}>
-                Make a booking
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </ButtonGradient>
+        <div className="flex flex-col max-w-lg justify-between h-full">
+          <div className="flex-1 flex items-center p-6 md:p-8">
+            <div>
+              <div className="text-center md:text-left">
+                <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-8 leading-tight">
+                  Your Smile is Our
+                  <AnimatedText
+                    text={`Star Priority`}
+                    className="font-bold"
+                    animationType="letters"
+                    staggerDelay={0.08}
+                    duration={0.6}
+                    initialY={10}
+                    initialOpacity={0}
+                    animateY={0}
+                    animateOpacity={1}
+                    multiline={true}
+                    wordStyles={{
+                      Star: "text-yellow-600  animate-pulse",
+                      Priority: "",
+                    }}
+                  />
+                </h1>
+                <p className="text-justify text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">
+                  Experience exceptional dental care, proudly serving the{" "}
+                  <span className="border-b-2 border-cyan-500">Newcastle</span>{" "}
+                  community where every patient receives star treatment for a
+                  brighter, healthier smile.
+                </p>
+              </div>{" "}
+              <div className="flex justify-center md:justify-start pt-2 md:pt-6">
+                <ButtonGradient onClick={() => router.push("/contact")}>
+                  Make a booking
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </ButtonGradient>
+              </div>
             </div>
           </div>
           {/* Mobile Carousel - shown after button */}
-          <div className="block md:hidden mt-8 w-full h-64">
+          <div className="block md:hidden  w-full h-max">
+            <ServicesWheel
+              radius={140}
+              visibleIcons={7}
+              className="ml-[50px] mt-10 z-10"
+            />
             <Carousel
-              className="h-full"
+              className="h-full -mt-[130px] "
               slides={heroCarouselSlides}
               {...heroCarouselConfig}
             />
           </div>
-          <div className="hidden md:flex flex-wrap items-center p-2 mt-6 justify-center md:justify-start">
+          <div className="hidden md:flex flex-wrap items-center pl-7 justify-center md:justify-start">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 pr-10">
               <ReviewStack />
             </div>
@@ -108,9 +129,14 @@ export function HeroSection() {
             </span>
           </div>
         </div>
-        <div className="md:block hidden flex-1 relative h-full items-center">
+        {/* Desktop Carousel */}
+        <div className="hidden relative h-max md:flex items-end flex-col justify-end">
+          <ServicesWheel
+            radius={230}
+            className="absolute -bottom-[150px] -left-[60px] z-20 "
+          />
           <Carousel
-            className="pb-6"
+            className=""
             slides={heroCarouselSlides}
             {...heroCarouselConfig}
           />
