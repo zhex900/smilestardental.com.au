@@ -18,6 +18,7 @@ import FillingsIcon from "./icons/fillings.svg";
 import InvisalignIcon from "./icons/invisalign.svg";
 import SedationsIcon from "./icons/sedations.svg";
 import StraighteningIcon from "./icons/straightening.svg";
+import { motion } from "framer-motion";
 
 const clinicName = "Smile Start Dental";
 export const servicesData = [
@@ -143,18 +144,31 @@ export const ServicesWheel = ({
   radius,
   className,
   visibleIcons,
+  style,
+  debug = false,
 }: {
   radius?: number;
   className?: string;
   visibleIcons?: number;
+  style?: React.CSSProperties;
+  debug?: boolean;
 }) => {
   return (
-    <IconsWheel
-      radius={radius}
-      items={servicesData}
-      className={className}
-      scrollSpeed={1500}
-      visibleIcons={visibleIcons}
-    />
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+      className=""
+    >
+      <IconsWheel
+        radius={radius}
+        items={servicesData}
+        className={className}
+        scrollSpeed={1500}
+        visibleIcons={visibleIcons}
+        style={style}
+        debug={debug}
+      />
+    </motion.div>
   );
 };

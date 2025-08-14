@@ -23,6 +23,8 @@ interface IconsWheelProps {
   className?: string;
   scrollSpeed?: number; // Speed in milliseconds (lower = faster)
   visibleIcons?: number; // Number of icons visible on the wheel at once
+  style?: React.CSSProperties;
+  debug?: boolean;
 }
 
 export const IconsWheel: React.FC<IconsWheelProps> = ({
@@ -31,6 +33,8 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
   iconSize = 45,
   className = "",
   scrollSpeed = 2500,
+  style,
+  debug = false,
   visibleIcons = 10, // Default to 10 visible icons
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -77,7 +81,10 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div
+      className={`absolute ${className} ${debug ? "border-2 border-green-500" : ""}`}
+      style={style}
+    >
       <div
         className="relative"
         style={{
@@ -177,6 +184,18 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
           );
         })}
       </div>
+      {debug && (
+        <>
+          {/* Vertical center line overlay */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+            <div className="relative h-full">
+              {/* Vertical line */}
+              <div className="w-0.5 h-full bg-green-600 "></div>
+              {/* X position indicator */}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

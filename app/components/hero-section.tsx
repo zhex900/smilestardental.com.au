@@ -15,13 +15,15 @@ const heroCarouselSlides = [
     button: ".",
     description: "",
     src: "/images/g-1.png",
+    xOffset: 16,
   },
-  // {
-  //   title: "",
-  //   button: ".",
-  //   description: "",
-  //   src: "/images/boy-2.png",
-  // },
+  {
+    title: "",
+    button: ".",
+    description: "",
+    src: "/images/boy-2.png",
+    xOffset: -2,
+  },
   // {
   //   title: "",
   //   button: ".",
@@ -44,6 +46,19 @@ const heroCarouselConfig = {
 export function HeroSection() {
   const router = useRouter();
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [carouselXPosition, setCarouselXPosition] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile(); // Check initial size
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const calculateHeaderHeight = () => {
@@ -111,19 +126,26 @@ export function HeroSection() {
               </div>
             </div>
           </div>
+
           {/* Mobile Carousel - shown after button */}
-          <div className="block md:hidden  w-full h-max">
+          <div className="relative block md:hidden w-full h-max items-end flex-col justify-end">
             <ServicesWheel
               radius={140}
               visibleIcons={7}
-              className="ml-[50px] mt-10 z-10"
+              className="absolute z-20"
+              style={{
+                left: `${carouselXPosition}px`,
+                bottom: "calc(100% - 100px)", // Bottom of wheel 10px above top of carousel
+                transform: "translateX(-50%)", // Center the wheel on the x position
+              }}
             />
             <Carousel
-              className="h-full -mt-[130px] "
               slides={heroCarouselSlides}
               {...heroCarouselConfig}
+              onXPositionChange={isMobile ? setCarouselXPosition : undefined}
             />
           </div>
+
           <div className="hidden md:flex flex-wrap items-center pl-7 justify-center md:justify-start">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 pr-10">
               <ReviewStack />
@@ -137,12 +159,18 @@ export function HeroSection() {
         <div className="hidden relative h-max md:flex items-end flex-col justify-end">
           <ServicesWheel
             radius={230}
-            className="absolute -bottom-[150px] z-20 "
+            className="absolute z-20"
+            style={{
+              left: `${carouselXPosition}px`,
+              bottom: "calc(100% - 170px)", // Bottom of wheel 10px above top of carousel
+              transform: "translateX(-50%)", // Center the wheel on the x position
+            }}
           />
           <Carousel
-            className=""
             slides={heroCarouselSlides}
             {...heroCarouselConfig}
+            onXPositionChange={!isMobile ? setCarouselXPosition : undefined}
+            debug={false}
           />
         </div>
       </div>

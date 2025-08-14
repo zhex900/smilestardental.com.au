@@ -63,7 +63,7 @@ export const HoverEffect = ({
                     <IconComponent className="w-10 h-10" />
                   </div>
 
-                  <CardTitle className="hover:border-b-2 text-lg justify-center hover:border-cyan-500">
+                  <CardTitle className="group-hover:border-b-2 text-lg justify-center group-hover:border-cyan-500">
                     {item.name}
                   </CardTitle>
                 </a>
