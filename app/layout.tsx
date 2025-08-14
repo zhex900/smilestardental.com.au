@@ -76,10 +76,10 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body className={quicksand.className}>
-        <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50">
+      <body className={`${quicksand.className} overflow-x-hidden`}>
+        <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50 overflow-x-hidden">
           <Header />
-          <main>{children}</main>
+          <main className="overflow-x-hidden">{children}</main>
           <Footer />
         </div>
       </body>
