@@ -11,8 +11,8 @@ import {
 interface IconsWheelProps {
   items: {
     name: string;
-    designation: string;
-    component: React.ComponentType<{
+    tooltip: string;
+    icon: React.ComponentType<{
       width?: number;
       height?: number;
       className?: string;
@@ -93,7 +93,7 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
           const angle = Number((actualIndex * angleStep + Math.PI).toFixed(6)); // Start from left (90 degrees clockwise)
           const x = Number((radius + radius * Math.cos(angle)).toFixed(2));
           const y = Number((radius + radius * Math.sin(angle)).toFixed(2));
-          const IconComponent = item.component;
+          const IconComponent = item.icon;
 
           // Calculate visibility based on angle position with fixed precision
           // Show icons only in the visible semi-circle (π to 2π radians)
@@ -162,7 +162,7 @@ export const IconsWheel: React.FC<IconsWheelProps> = ({
                       <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
                       <div className="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
                       <div className="text-white text-center text-sm md:text-md overflow-scroll text-ellipsis whitespace-nowrap w-full">
-                        {item.designation}
+                        {item.name}
                       </div>
                     </motion.div>
                   )}

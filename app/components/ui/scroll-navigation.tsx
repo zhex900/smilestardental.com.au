@@ -25,12 +25,6 @@ export function ScrollNavigation({
       window.history.replaceState(null, "", window.location.pathname);
     }
 
-    // Scroll to top of page on refresh
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsAtTop(scrollY < 100);
@@ -55,7 +49,6 @@ export function ScrollNavigation({
         }
       }
 
-      //   console.log("Setting currentSectionIndex to:", currentIndex);
       setCurrentSectionIndex(currentIndex);
     };
 
@@ -68,13 +61,6 @@ export function ScrollNavigation({
     const isAtLastSection = currentSectionIndex >= sections.length - 1;
 
     setShouldShowUpArrow(isAtLastSection);
-
-    console.log("shouldShowUpArrow", sections.length, {
-      shouldShowUpArrow: isAtLastSection,
-      currentSectionIndex,
-      isAtLastSection,
-      isAtTop,
-    });
   }, [currentSectionIndex, isAtTop, sections.length]);
 
   const scrollToSection = (index: number) => {
@@ -98,7 +84,6 @@ export function ScrollNavigation({
   };
 
   const handleClick = () => {
-    console.log("handleClick", isAtTop, { currentSectionIndex });
     if (currentSectionIndex >= sections.length - 1) {
       // If at last section, go back to top
       setCurrentSectionIndex(0);

@@ -1,0 +1,80 @@
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+
+import { useState } from "react";
+import { Card, CardDescription, CardTitle } from "./card";
+
+export const HoverEffect = ({
+  items,
+  className,
+}: {
+  items: {
+    name: string;
+    description: string;
+    link?: string;
+    icon: React.ComponentType<{
+      width?: number;
+      height?: number;
+      className?: string;
+    }>;
+  }[];
+  className?: string;
+}) => {
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  return (
+    <>
+      <div
+        className={cn(
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2",
+          className
+        )}
+      >
+        {items.map((item, idx) => {
+          const IconComponent = item.icon;
+          return (
+            <div
+              key={item.name}
+              className="relative group  block p-2 h-full w-full"
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <AnimatePresence>
+                {hoveredIndex === idx && (
+                  <motion.span
+                    className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                    layoutId="hoverBackground"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      transition: { duration: 0.15 },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.15, delay: 0.2 },
+                    }}
+                  />
+                )}
+              </AnimatePresence>
+
+              <Card className="group">
+                <a href={item?.link}>
+                  <div className="flex items-center justify-center md:justify-start">
+                    <IconComponent className="w-20 h-20" />
+                  </div>
+
+                  <CardTitle className="hover:border-b-2 hover:border-cyan-500">
+                    {item.name}
+                  </CardTitle>
+                </a>
+                <CardDescription className="text-sm md:text-base text-justify text-ellipsis line-clamp-5">
+                  {item.description}
+                </CardDescription>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};

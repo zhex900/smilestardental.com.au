@@ -68,9 +68,6 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r to-sky-300 via-sky-400 from-blue-700 opacity-20" />
 
       <div className="max-w-6xl mx-auto flex items-end h-full justify-between">
-        {/* Decorative blinking stars */}
-        {/* <BlinkingStar className="absolute top-20 left-20" /> */}
-
         <div className="flex flex-col max-w-lg justify-between h-full">
           <div className="flex-1 flex items-center p-6 md:p-8">
             <div>
@@ -89,7 +86,7 @@ export function HeroSection() {
                     animateOpacity={1}
                     multiline={true}
                     wordStyles={{
-                      Star: "text-yellow-600  animate-pulse",
+                      Star: "text-yellow-600 animate-pulse",
                       Priority: "",
                     }}
                   />
@@ -101,7 +98,7 @@ export function HeroSection() {
                   brighter, healthier smile.
                 </p>
               </div>{" "}
-              <div className="flex justify-between  items-center pt-2 md:pt-6">
+              <div className="flex justify-between items-center pt-2 md:pt-6">
                 <ButtonGradient onClick={() => router.push("/contact")}>
                   <span className="hidden md:block"> Make a booking</span>
                   <span className="block md:hidden">Book now</span>
