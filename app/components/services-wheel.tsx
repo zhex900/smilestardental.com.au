@@ -22,7 +22,7 @@ import StraighteningIcon from "./icons/straightening.svg";
 const clinicName = "Smile Start Dental";
 export const servicesData = [
   {
-    name: "Emergency",
+    name: "Emergency care",
     tooltip: "Emergency Care",
     icon: EmergencyIcon,
     link: "/services/emergency",
@@ -54,7 +54,7 @@ export const servicesData = [
     description: `Our custom-fitted mouthguards are designed to comfortably fit your mouth and protect your teeth and jaw joints from sports-related injuries. At ${clinicName}, we recommend them for both active children and adults—especially those playing contact sports like boxing, soccer, hockey, and football—since sporting accidents are among the leading causes of dental injury.`,
   },
   {
-    name: "RootCanals",
+    name: "Root canals",
     tooltip: "Root Canals",
     icon: RootCanalsIcon,
     description: `Our root canal services are designed to help you save your tooth from extraction. At ${clinicName}, we offer a range of root canal solutions, including single root canals, multiple root canals, and root canal retreatment.`,
@@ -72,7 +72,7 @@ export const servicesData = [
     description: `Our veneers services are designed to help you achieve a straighter, more beautiful smile. At ${clinicName}, we offer a range of veneer solutions, including porcelain veneers, composite veneers, and Lumineers.`,
   },
   {
-    name: "KidsDentistry",
+    name: "Kids dentistry",
     tooltip: "Kids Dentistry",
     icon: KidsDentistryIcon,
     description: `Our pediatric dentistry services are designed to help your child maintain good oral health and prevent tooth decay and gum disease. At ${clinicName}, we offer a range of pediatric dentistry solutions, including regular cleanings, fluoride treatments, and sealants.`,

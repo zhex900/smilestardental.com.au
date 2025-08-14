@@ -30,7 +30,7 @@ export function ServicesSection() {
         </motion.h2>
 
         <div className="mx-auto">
-          <HoverEffect items={servicesData.slice(0, 6)} />
+          <HoverEffect items={servicesData} />
         </div>
 
         <div className="flex justify-center mt-6">

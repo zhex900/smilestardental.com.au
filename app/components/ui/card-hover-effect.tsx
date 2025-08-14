@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 
 import { useState } from "react";
-import { Card, CardDescription, CardTitle } from "./card";
+import { Card, CardTitle } from "./card";
 
 export const HoverEffect = ({
   items,
@@ -26,7 +26,7 @@ export const HoverEffect = ({
     <>
       <div
         className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2",
+          "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2",
           className
         )}
       >
@@ -59,17 +59,17 @@ export const HoverEffect = ({
 
               <Card className="group">
                 <a href={item?.link}>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <IconComponent className="w-20 h-20" />
+                  <div className="flex items-center justify-center">
+                    <IconComponent className="w-10 h-10" />
                   </div>
 
-                  <CardTitle className="hover:border-b-2 hover:border-cyan-500">
+                  <CardTitle className="hover:border-b-2 text-lg justify-center hover:border-cyan-500">
                     {item.name}
                   </CardTitle>
                 </a>
-                <CardDescription className="text-sm md:text-base text-justify text-ellipsis line-clamp-5">
+                {/* <CardDescription className="text-sm md:text-base text-justify text-ellipsis line-clamp-5">
                   {item.description}
-                </CardDescription>
+                </CardDescription> */}
               </Card>
             </div>
           );

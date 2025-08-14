@@ -30,7 +30,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-md md:text-2xl text-center md:text-start font-bold tracking-wide mt-4",
+        "text-md text-center font-bold tracking-wide mt-4",
         className
       )}
     >
