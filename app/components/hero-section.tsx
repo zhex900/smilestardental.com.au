@@ -137,7 +137,7 @@ export function HeroSection() {
         <div className="hidden relative h-max md:flex items-end flex-col justify-end">
           <ServicesWheel
             radius={230}
-            className="absolute -bottom-[150px] -left-[60px] z-20 "
+            className="absolute -bottom-[150px] z-20 "
           />
           <Carousel
             className=""

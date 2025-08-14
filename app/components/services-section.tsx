@@ -1,8 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { HoverEffect } from "./ui/card-hover-effect";
-import CrownsIcon from "./icons/crowns.svg";
-import FillingsIcon from "./icons/fillings.svg";
 import { ButtonGradient } from "./ui/button-gradient";
 import { servicesData } from "./services-wheel";
 
@@ -10,7 +8,7 @@ export function ServicesSection() {
   const router = useRouter();
 
   return (
-    <section id="services" className="px-6 py-16 bg-white ">
+    <section id="services" className="px-6 py-16 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4">

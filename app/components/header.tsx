@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LogoIcon } from "./logo-icon";
 import { phoneNumber } from "@/constants";
 
@@ -24,12 +24,13 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
     </Link>
   </>
 );
+
 export function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className=" text-gray-800 font-medium text-md px-6 py-4 md:px-12  sticky top-0 z-50 bg-white/50 backdrop-blur-sm">
+    <header className="text-gray-800 font-medium text-md px-6 py-4 md:px-12 sticky top-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex items-center justify-between ">
         <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
           <LogoIcon />
