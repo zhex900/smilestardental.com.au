@@ -1,7 +1,4 @@
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
-
-import { useState } from "react";
 
 export const Card = ({
   className,
@@ -33,7 +30,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-md md:text-2xl font-bold tracking-wide mt-4",
+        "text-md md:text-2xl text-center md:text-start font-bold tracking-wide mt-4",
         className
       )}
     >
@@ -49,13 +46,13 @@ export const CardDescription = ({
   children: React.ReactNode;
 }) => {
   return (
-    <p
+    <div
       className={cn(
         "mt-8 tracking-wide leading-relaxed text-md md:text-sm",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };

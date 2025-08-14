@@ -3,81 +3,89 @@
 import React from "react";
 import { Compare } from "./ui/compare";
 import { motion } from "framer-motion";
+import { Card, CardDescription, CardTitle } from "./ui/card";
+import OrthodonticsIcon from "./icons/orthodontics.svg";
 
 export function BeforeAfterSection() {
   return (
+    //bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20
     <section
       id="before-after"
-      className="py-20 bg-gradient-to-b from-slate-50 to-white"
+      className="px-6 py-16 scroll-mt-20 bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center mb-6 font-bold">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-slate-800 mb-6"
+            className="text-2xl md:text-5xl font-bold text-slate-800 mb-6"
           >
-            Transforming Smiles Every Day
+            Transforming <span className="text-yellow-600">Smiles</span> Every
+            Day
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-slate-600 max-w-3xl mx-auto"
+            className="text-slate-600 text-sm md:text-lg max-w-3xl mx-auto"
           >
             See the incredible results our patients achieve with our advanced
             orthodontic treatments
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20  ">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="relative group  block p-2 h-full w-full"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Advanced Orthodontic Treatment
-              </h3>
-              <p className="text-slate-600 mb-6">
+            <div className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl" />
+
+            <Card className="text-slate-300">
+              <div className="flex items-center justify-center md:justify-start mb-4">
+                <div className="w-16 h-16 md:w-20 md:h-20">
+                  <OrthodonticsIcon />
+                </div>
+              </div>
+              <CardTitle className=" mb-3">
+                Advanced <span className="text-yellow-600">Orthodontic</span>{" "}
+                Treatment...
+              </CardTitle>
+              <CardDescription className="flex-1 text-sm md:text-base">
                 Our state-of-the-art braces and clear aligners can transform
                 even the most complex cases, giving you the confident smile
                 you've always wanted.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-slate-700">Faster treatment times</span>
+                <div className="space-y-2 mt-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                    <span className="">Faster treatment times</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                    <span className="">More comfortable experience</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                    <span className="">Predictable results</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                    <span className="">Improved oral health</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-slate-700">
-                    More comfortable experience
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-slate-700">Predictable results</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-slate-700">Improved oral health</span>
-                </div>
-              </div>
-            </div>
+              </CardDescription>
+            </Card>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center"
+            className="flex justify-center relative group p-2 h-full w-full"
           >
-            <div className="p-4 border rounded-3xl bg-white border-slate-200 shadow-xl">
+            <div className=" rounded-3xl p-4 bg-white/20 shadow-xl">
               <Compare
                 firstImage="/images/after.png"
                 secondImage="/images/before.png"
@@ -89,7 +97,7 @@ export function BeforeAfterSection() {
                 autoplayDuration={5000}
               />
               <div className="mt-4 text-center">
-                <div className="flex justify-between text-sm text-slate-600">
+                <div className="flex justify-between text-md text-slate-600">
                   <span className="font-medium">Before Treatment</span>
                   <span className="font-medium">After Treatment</span>
                 </div>
@@ -104,20 +112,20 @@ export function BeforeAfterSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="text-3xl font-bold text-blue-600 mb-2">
+          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+            <div className="text-3xl font-bold text-slate-600 mb-2">
               3D Digital
             </div>
             <div className="text-slate-600">Scanning</div>
           </div>
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="text-3xl font-bold text-green-600 mb-2">
+          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+            <div className="text-3xl font-bold text-yellow-600 mb-2">
               Invisible
             </div>
             <div className="text-slate-600">Aligners</div>
           </div>
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-            <div className="text-3xl font-bold text-purple-600 mb-2">
+          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+            <div className="text-3xl font-bold text-slate-600 mb-2">
               Advanced
             </div>
             <div className="text-slate-600">Technology</div>
