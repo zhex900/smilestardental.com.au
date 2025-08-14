@@ -83,7 +83,10 @@ export function ServicesSection() {
   ];
 
   return (
-    <section className="px-6 py-16 bg-gradient-to-b from-orange-50 to-orange-100">
+    <section
+      id="services"
+      className="px-6 py-16 bg-gradient-to-b from-orange-50 to-orange-100"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">

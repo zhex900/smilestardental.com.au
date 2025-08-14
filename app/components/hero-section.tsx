@@ -61,6 +61,7 @@ export function HeroSection() {
 
   return (
     <section
+      id="hero"
       className="relative overflow-hidden text-gray-800 px-2 md:px-6"
       style={{ height: `calc(100vh - ${headerHeight}px)` }}
     >
