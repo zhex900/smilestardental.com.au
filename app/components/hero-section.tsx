@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import AnimatedText from "./ui/animated-text";
-import { ReviewStack } from "./ui/review-stack";
+import { ReviewStack } from "./review-stack";
 import { ButtonGradient } from "./ui/button-gradient";
 import Carousel from "./ui/carousel";
 import { useEffect, useState } from "react";
@@ -103,7 +103,8 @@ export function HeroSection() {
               </div>{" "}
               <div className="flex justify-between  items-center pt-2 md:pt-6">
                 <ButtonGradient onClick={() => router.push("/contact")}>
-                  Make a booking
+                  <span className="hidden md:block"> Make a booking</span>
+                  <span className="block md:hidden">Book now</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </ButtonGradient>
 

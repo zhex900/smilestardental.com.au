@@ -1,4 +1,4 @@
-import { AnimatedTooltip } from "./animated-tooltip";
+import { AnimatedTooltip } from "./ui/animated-tooltip";
 
 const dentistReviews = [
   "The best dental experience I've ever had! 😁🦷",

@@ -150,7 +150,7 @@ export const ServicesWheel = ({
       radius={radius}
       items={servicesData}
       className={className}
-      scrollSpeed={1000}
+      scrollSpeed={1500}
       visibleIcons={visibleIcons}
     />
   );

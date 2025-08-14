@@ -28,9 +28,9 @@ interface IconsWheelProps {
 export const IconsWheel: React.FC<IconsWheelProps> = ({
   items,
   radius = 150,
-  iconSize = 32,
+  iconSize = 45,
   className = "",
-  scrollSpeed = 2000,
+  scrollSpeed = 2500,
   visibleIcons = 10, // Default to 10 visible icons
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

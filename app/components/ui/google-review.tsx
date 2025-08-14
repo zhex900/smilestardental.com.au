@@ -80,7 +80,9 @@ export function GoogleReview({
             )}
           </div>
         )}
-        {showReviewCount && <span>{reviewCount} Google reviews</span>}
+        {showReviewCount && (
+          <span className="hidden md:block">{reviewCount} Google reviews</span>
+        )}
       </div>
     </div>
   );
