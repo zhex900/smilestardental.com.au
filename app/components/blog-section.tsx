@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ButtonGradient } from "./ui/button-gradient";
+import router from "next/router";
 
 const blogPosts = [
   {
@@ -95,12 +97,11 @@ export function BlogSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Link
-            href="/blog"
-            className="inline-block px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors"
-          >
-            View All Blog Posts
-          </Link>
+          <div className="flex justify-center mt-6">
+            <ButtonGradient onClick={() => router.push("/blogs")}>
+              <span className=""> View All Blog Posts</span>
+            </ButtonGradient>
+          </div>
         </motion.div>
       </div>
     </section>
