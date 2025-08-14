@@ -10,12 +10,10 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL!;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      process.env.VERCEL_URL ||
-      "https://bayarcadedental.com"
-  ),
+  metadataBase: new URL(siteUrl),
   title: "Smile Star Dental",
   description:
     "Your trusted partner for comprehensive dental care and beautiful smiles. We provide exceptional dental services with the latest technology and a caring approach.",
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
     title: "Smile Star Dental",
     description:
       "Your trusted partner for comprehensive dental care and beautiful smiles.",
-    url: "https://bayarcadedental.com",
+    url: siteUrl,
     siteName: "Smile Star Dental",
     images: [
       {
@@ -76,7 +74,7 @@ export default function RootLayout({
           href="/apple-touch-icon.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="canonical" href="https://bayarcadedental.com" />
+        <link rel="canonical" href={siteUrl} />
       </head>
       <body className={quicksand.className}>
         <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50">
