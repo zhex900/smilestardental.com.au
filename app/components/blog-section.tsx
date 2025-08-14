@@ -37,7 +37,10 @@ const blogPosts = [
 
 export function BlogSection() {
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section
+      id="blog"
+      className="py-20 bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20"
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2
