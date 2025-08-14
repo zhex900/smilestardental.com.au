@@ -128,7 +128,7 @@ export function HeroSection() {
           </div>
 
           {/* Mobile Carousel - shown after button */}
-          <div className="relative block md:hidden w-full h-max items-end flex-col justify-end">
+          <div className="relative block md:hidden w-full h-max items-end flex-col justify-end mt-20">
             <ServicesWheel
               radius={140}
               visibleIcons={7}
