@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface SlideData {
   title: string;
@@ -88,9 +89,12 @@ const Carousel: React.FC<CarouselProps> = ({
           className="relative w-full h-full"
         >
           <div className="relative w-full h-full overflow-hidden">
-            <img
+            <Image
               src={slides[currentIndex].src}
               alt={slides[currentIndex].title}
+              width={1000}
+              height={1000}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className={`w-full h-full object-contain scale-130 transform-gpu ${
                 debug ? "border-2 border-red-500" : ""
               }`}

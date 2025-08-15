@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
 import { useState, useEffect } from "react";
 import { LogoIcon } from "./logo-icon";
-import { phoneNumber } from "@/constants";
+import { backgroundColor, phoneNumber } from "@/constants";
 
 const menuItemClassName =
   "hover:text-gray-500 transition-all hover:border-b-2 hover:border-cyan-500";
@@ -36,7 +36,9 @@ export function Header() {
           <LogoIcon />
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8 shadow-lg p-2 px-6 rounded-xl bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-500/20 ">
+        <nav
+          className={`hidden md:flex items-center space-x-8 shadow-lg p-2 px-6 rounded-xl ${backgroundColor}`}
+        >
           <MenuItems />
         </nav>
 

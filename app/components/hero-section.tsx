@@ -4,38 +4,33 @@ import { useRouter } from "next/navigation";
 import AnimatedText from "./ui/animated-text";
 import { ReviewStack } from "./review-stack";
 import { ButtonGradient } from "./ui/button-gradient";
-import Carousel from "./ui/carousel";
+// import Carousel from "./ui/carousel";
 import { useEffect, useState } from "react";
-import { ServicesWheel } from "./services-wheel";
+// import { ServicesWheel } from "./services-wheel";
 import { GoogleReview } from "./ui/google-review";
-// Common carousel configuration
+import { Highlighter } from "./ui/highlighter";
+import { backgroundColor } from "@/constants";
+import dynamic from "next/dynamic";
+
+const Carousel = dynamic(() => import("./ui/carousel"), { ssr: false });
+const ServicesWheel = dynamic(() => import("./services-wheel"), { ssr: false });
+
+// Carousel slides
 const heroCarouselSlides = [
   {
-    title: "",
-    button: ".",
-    description: "",
     src: "/images/g-1.png",
     xOffset: 16,
-  },
-  {
     title: "",
     button: ".",
     description: "",
+  },
+  {
     src: "/images/boy-2.png",
     xOffset: -2,
+    title: "",
+    button: ".",
+    description: "",
   },
-  // {
-  //   title: "",
-  //   button: ".",
-  //   description: "",
-  //   src: "/images/2.png",
-  // },
-  // {
-  //   title: "",
-  //   button: ".",
-  //   description: "",
-  //   src: "/images/3.png",
-  // },
 ];
 
 const heroCarouselConfig = {
@@ -45,45 +40,29 @@ const heroCarouselConfig = {
 
 export function HeroSection() {
   const router = useRouter();
-  const [headerHeight, setHeaderHeight] = useState(0);
   const [carouselXPosition, setCarouselXPosition] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile(); // Check initial size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
     window.addEventListener("resize", checkMobile);
-
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    const calculateHeaderHeight = () => {
-      const header = document.querySelector("header");
-      if (header) {
-        setHeaderHeight(header.offsetHeight);
-      }
-    };
-
-    calculateHeaderHeight();
-    window.addEventListener("resize", calculateHeaderHeight);
-
-    return () => window.removeEventListener("resize", calculateHeaderHeight);
-  }, []);
+  // const HEADER_HEIGHT = 92;
 
   return (
     <section
       id="hero"
-      className="relative overflow-hidden text-gray-800 px-2 md:px-6"
-      style={{ height: `calc(100vh - ${headerHeight}px)` }}
+      className={`relative flex justify-center text-gray-800 px-2 md:px-6 ${backgroundColor} min-h-[calc(100vh-92px)]`}
     >
-      <div className="absolute inset-0 bg-gradient-to-r to-sky-300 via-sky-400 from-blue-700 opacity-20" />
-
-      <div className="max-w-6xl mx-auto flex items-end h-full justify-between">
-        <div className="flex flex-col max-w-lg justify-between h-full">
+      <div
+        className="max-w-6xl mx-auto  grid grid-cols-1 md:grid-cols-2 gap-4"
+        style={{ alignItems: "end" }}
+      >
+        {/* LEFT COLUMN (Text + Reviews) */}
+        <div className="flex flex-col max-w-lg justify-between h-full order-2 md:order-1">
           <div className="flex-1 flex items-center p-6 md:p-8">
             <div>
               <div className="text-center md:text-left">
@@ -108,42 +87,26 @@ export function HeroSection() {
                 </h1>
                 <p className="text-justify text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">
                   Experience exceptional dental care, proudly serving the{" "}
-                  <span className="border-b-2 border-cyan-500">Newcastle</span>{" "}
+                  <Highlighter action="underline" color="#FF9800">
+                    Newcastle
+                  </Highlighter>{" "}
                   community where every patient receives star treatment for a
-                  brighter, healthier smile.
+                  brighter,{" "}
+                  <Highlighter action="highlight" color="#87CEFA">
+                    healthier
+                  </Highlighter>{" "}
+                  smile.
                 </p>
-              </div>{" "}
+              </div>
               <div className="flex justify-between items-center pt-2 md:pt-6">
                 <ButtonGradient onClick={() => router.push("/contact")}>
                   <span className="hidden md:block"> Make a booking</span>
                   <span className="block md:hidden">Book now</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </ButtonGradient>
-
-                <div>
-                  <GoogleReview variant="compact" />
-                </div>
+                <GoogleReview variant="compact" />
               </div>
             </div>
-          </div>
-
-          {/* Mobile Carousel - shown after button */}
-          <div className="relative block md:hidden w-full h-max items-end flex-col justify-end mt-20">
-            <ServicesWheel
-              radius={140}
-              visibleIcons={7}
-              className="absolute z-20"
-              style={{
-                left: `${carouselXPosition}px`,
-                bottom: "calc(100% - 100px)", // Bottom of wheel 10px above top of carousel
-                transform: "translateX(-50%)", // Center the wheel on the x position
-              }}
-            />
-            <Carousel
-              slides={heroCarouselSlides}
-              {...heroCarouselConfig}
-              onXPositionChange={isMobile ? setCarouselXPosition : undefined}
-            />
           </div>
 
           <div className="hidden md:flex flex-wrap items-center pl-7 justify-center md:justify-start">
@@ -151,25 +114,29 @@ export function HeroSection() {
               <ReviewStack />
             </div>
             <span className="hidden text-black md:block mb-[41px] whitespace-nowrap">
-              More then 1000+ happy patients
+              More than 1000+ happy patients
             </span>
           </div>
         </div>
-        {/* Desktop Carousel */}
-        <div className="hidden relative h-max md:flex items-end flex-col justify-end">
-          <ServicesWheel
-            radius={230}
-            className="absolute z-20"
-            style={{
-              left: `${carouselXPosition}px`,
-              bottom: "calc(100% - 170px)", // Bottom of wheel 10px above top of carousel
-              transform: "translateX(-50%)", // Center the wheel on the x position
-            }}
-          />
+
+        {/* RIGHT COLUMN (Carousel, appears below text on mobile) */}
+        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
+          {carouselXPosition && (
+            <ServicesWheel
+              radius={isMobile ? 140 : 230}
+              visibleIcons={isMobile ? 7 : undefined}
+              className="absolute z-20"
+              style={{
+                left: `${carouselXPosition}px`,
+                bottom: isMobile ? "calc(100% - 100px)" : "calc(100% - 170px)",
+                transform: "translateX(-50%)",
+              }}
+            />
+          )}
           <Carousel
             slides={heroCarouselSlides}
             {...heroCarouselConfig}
-            onXPositionChange={!isMobile ? setCarouselXPosition : undefined}
+            onXPositionChange={setCarouselXPosition}
             debug={false}
           />
         </div>

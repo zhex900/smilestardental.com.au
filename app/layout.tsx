@@ -3,6 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import { backgroundColor } from "./constants";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -76,12 +77,10 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body className={`${quicksand.className} overflow-x-hidden`}>
-        <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50 overflow-x-hidden">
-          <Header />
-          <main className="overflow-x-hidden">{children}</main>
-          <Footer />
-        </div>
+      <body className={`${quicksand.className}`}>
+        <Header />
+        <main className="">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ButtonGradient } from "./ui/button-gradient";
 import router from "next/router";
+import { cn } from "@/lib/utils";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const blogPosts = [
   {
@@ -37,6 +39,48 @@ const blogPosts = [
   },
 ];
 
+const testImage =
+  "https://storage.googleapis.com/uxpilot-auth.appspot.com/e1399329a8-6a3d823a181092934ec7.png";
+export function CardDemo() {
+  return (
+    <div className="max-w-xs w-full group/card">
+      <div
+        className={cn(
+          " cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
+          ` bg-cover text-black group-hover/card:text-white `
+        )}
+        style={{
+          backgroundImage: `url(${testImage})`,
+        }}
+      >
+        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
+        <div className="flex flex-row items-center space-x-4 z-10">
+          <img
+            height="100"
+            width="100"
+            alt="Avatar"
+            src="/manu.png"
+            className="h-10 w-10 rounded-full border-2 object-cover"
+          />
+          <div className="flex flex-col">
+            <p className="font-normal text-base  relative z-10">Manu Arora</p>
+            <p className="text-sm ">2 min read</p>
+          </div>
+        </div>
+        <div className="text content">
+          <h1 className="font-bold text-xl md:text-2xl relative z-10">
+            Author Card
+          </h1>
+          <p className="font-normal text-sm  relative z-10 my-4">
+            Card with Author avatar, complete name and time to read - most
+            suitable for blogs.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function BlogSection() {
   return (
     <section
@@ -69,7 +113,7 @@ export function BlogSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className=" card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow "
             >
               <img
                 className="w-full h-48 object-cover"
