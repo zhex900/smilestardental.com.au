@@ -79,7 +79,7 @@ const Carousel: React.FC<CarouselProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0, scale: 1.1 }}

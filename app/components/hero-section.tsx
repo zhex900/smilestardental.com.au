@@ -35,7 +35,7 @@ const heroCarouselSlides = [
 
 const heroCarouselConfig = {
   autoplay: true,
-  autoplayInterval: 6000,
+  autoplayInterval: 3000,
 };
 
 export function HeroSection() {
