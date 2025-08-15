@@ -52,36 +52,6 @@ export function HeroSection() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Defer rendering of some heavy UI until after page load/idle
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    if (document.readyState === "complete") {
-      setRenderAfterLoad(true);
-      return;
-    }
-
-    const onLoad = () => setRenderAfterLoad(true);
-    window.addEventListener("load", onLoad);
-
-    // Also schedule via requestIdleCallback as a fallback to not block TTI
-    const idleId = (window as any).requestIdleCallback
-      ? (window as any).requestIdleCallback(() => setRenderAfterLoad(true), {
-          timeout: 2000,
-        })
-      : setTimeout(() => setRenderAfterLoad(true), 2000);
-
-    return () => {
-      window.removeEventListener("load", onLoad);
-      if ((window as any).cancelIdleCallback && idleId) {
-        try {
-          (window as any).cancelIdleCallback(idleId);
-        } catch {}
-      }
-      if (typeof idleId === "number") clearTimeout(idleId);
-    };
-  }, []);
-
   // const HEADER_HEIGHT = 92;
 
   return (
@@ -154,7 +124,7 @@ export function HeroSection() {
         {/* RIGHT COLUMN (Carousel, appears below text on mobile) */}
         {showCarousel && (
           <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
-            {renderAfterLoad && carouselXPosition && (
+            {/* {renderAfterLoad && carouselXPosition && (
               <ServicesWheel
                 radius={isMobile ? 140 : 230}
                 visibleIcons={isMobile ? 7 : undefined}
@@ -167,7 +137,7 @@ export function HeroSection() {
                   transform: "translateX(-50%)",
                 }}
               />
-            )}
+            )} */}
             <Carousel
               slides={heroCarouselSlides}
               {...heroCarouselConfig}
