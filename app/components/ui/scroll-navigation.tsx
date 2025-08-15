@@ -165,7 +165,7 @@ export function ScrollNavigation({
               {shouldShowUpArrow ? (
                 <ArrowUpToLine className="w-5 h-5" />
               ) : (
-                <ArrowDown className="w-5 h-5" />
+                <ArrowDown className="w-5 h-5 animate-bounce" />
               )}
             </div>
           </ButtonGradient>
