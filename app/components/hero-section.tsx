@@ -43,13 +43,19 @@ export function HeroSection() {
   const router = useRouter();
   const [carouselXPosition, setCarouselXPosition] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [renderAfterLoad, setRenderAfterLoad] = useState(false);
+  const [showWheel, setShowWheel] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowWheel(true);
+    }, 500);
   }, []);
 
   // const HEADER_HEIGHT = 92;
@@ -124,7 +130,7 @@ export function HeroSection() {
         {/* RIGHT COLUMN (Carousel, appears below text on mobile) */}
         {showCarousel && (
           <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
-            {/* {renderAfterLoad && carouselXPosition && (
+            {showWheel && carouselXPosition && (
               <ServicesWheel
                 radius={isMobile ? 140 : 230}
                 visibleIcons={isMobile ? 7 : undefined}
@@ -137,7 +143,7 @@ export function HeroSection() {
                   transform: "translateX(-50%)",
                 }}
               />
-            )} */}
+            )}
             <Carousel
               slides={heroCarouselSlides}
               {...heroCarouselConfig}
