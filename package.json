@@ -37,10 +37,20 @@
     "postcss": "^8.5.6",
     "typescript": "^5.9.2"
   },
-  "browserslist": [
-    "defaults and supports es6-module",
-    "not IE 11",
-    "maintained node versions",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      "supports es6-module",
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions",
+      "safari >= 15.4",
+      "ios_saf >= 15.4",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

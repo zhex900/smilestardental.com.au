@@ -11,6 +11,9 @@ const nextConfig = {
     });
     return config;
   },
+  experimental: {
+    inlineCss: true,
+  },
 };
 
 module.exports = nextConfig;
