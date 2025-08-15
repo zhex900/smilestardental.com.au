@@ -15,6 +15,7 @@ import dynamic from "next/dynamic";
 const Carousel = dynamic(() => import("./ui/carousel"), { ssr: false });
 const ServicesWheel = dynamic(() => import("./services-wheel"), { ssr: false });
 
+const showCarousel = false;
 // Carousel slides
 const heroCarouselSlides = [
   {
@@ -120,26 +121,30 @@ export function HeroSection() {
         </div>
 
         {/* RIGHT COLUMN (Carousel, appears below text on mobile) */}
-        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
-          {carouselXPosition && (
-            <ServicesWheel
-              radius={isMobile ? 140 : 230}
-              visibleIcons={isMobile ? 7 : undefined}
-              className="absolute z-20"
-              style={{
-                left: `${carouselXPosition}px`,
-                bottom: isMobile ? "calc(100% - 100px)" : "calc(100% - 170px)",
-                transform: "translateX(-50%)",
-              }}
+        {showCarousel && (
+          <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
+            {carouselXPosition && (
+              <ServicesWheel
+                radius={isMobile ? 140 : 230}
+                visibleIcons={isMobile ? 7 : undefined}
+                className="absolute z-20"
+                style={{
+                  left: `${carouselXPosition}px`,
+                  bottom: isMobile
+                    ? "calc(100% - 100px)"
+                    : "calc(100% - 170px)",
+                  transform: "translateX(-50%)",
+                }}
+              />
+            )}
+            <Carousel
+              slides={heroCarouselSlides}
+              {...heroCarouselConfig}
+              onXPositionChange={setCarouselXPosition}
+              debug={false}
             />
-          )}
-          <Carousel
-            slides={heroCarouselSlides}
-            {...heroCarouselConfig}
-            onXPositionChange={setCarouselXPosition}
-            debug={false}
-          />
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
