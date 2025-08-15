@@ -141,6 +141,7 @@ export function HeroSection() {
                     ? "calc(100% - 100px)"
                     : "calc(100% - 170px)",
                   transform: "translateX(-50%)",
+                  transition: "left 0.3s ease-out 0.9s", // <- smooth animation
                 }}
               />
             )}

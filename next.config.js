@@ -22,8 +22,7 @@ const nextConfig = {
   },
   experimental: {
     inlineCss: true,
-    modern: true, // enable modern JS bundles for browsers that support ES modules
-    polyfillsOptimization: true, // automatically removes unnecessary polyfills
+    optimizePackageImports: ["framer-motion", "lucide-react"],
   },
 };
 
