@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overscroll-none">
       <head>
         <link rel="icon" href="/favicon.svg" />
         <link
@@ -77,9 +77,9 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body className={`${quicksand.className}`}>
+      <body className={`${quicksand.className} overscroll-none`}>
         <Header />
-        <main className="">{children}</main>
+        <main className="overflow-x-hidden overscroll-none">{children}</main>
         <Footer />
       </body>
     </html>
