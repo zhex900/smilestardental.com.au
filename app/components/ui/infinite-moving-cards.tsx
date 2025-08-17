@@ -258,7 +258,7 @@ export const InfiniteMovingCards = ({
       const end = () => {
         endDragCommon();
         if (docTouchMoveRef.current)
-c          document.removeEventListener("touchmove", docTouchMoveRef.current);
+          document.removeEventListener("touchmove", docTouchMoveRef.current);
         if (docTouchEndRef.current)
           document.removeEventListener("touchend", docTouchEndRef.current);
         if (docTouchEndRef.current)
