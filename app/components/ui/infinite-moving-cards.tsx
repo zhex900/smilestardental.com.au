@@ -433,38 +433,16 @@ export const InfiniteMovingCards = ({
     activeInputRef.current = null;
   };
 
-  // iOS Safari: attach non-passive native touch listeners so preventDefault works
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+  const handlePointerLeaveSafe = (
+    event: React.PointerEvent<HTMLDivElement>
+  ) => {
+    // Ignore pointerleave fired from touch interactions on iOS
+    if (activeInputRef.current === "touch") return;
+    handleMouseLeave();
+  };
 
-    const onTS = (e: TouchEvent) => {
-      const t = e.touches[0];
-      if (!t) return;
-      beginDragAt(t.clientX);
-    };
-    const onTM = (e: TouchEvent) => {
-      const t = e.touches[0];
-      if (!t) return;
-      e.preventDefault();
-      moveDragAt(t.clientX);
-    };
-    const onTE = () => {
-      endDragCommon();
-    };
-
-    el.addEventListener("touchstart", onTS, { passive: false });
-    el.addEventListener("touchmove", onTM, { passive: false });
-    el.addEventListener("touchend", onTE, { passive: false });
-    el.addEventListener("touchcancel", onTE, { passive: false });
-
-    return () => {
-      el.removeEventListener("touchstart", onTS as EventListener);
-      el.removeEventListener("touchmove", onTM as EventListener);
-      el.removeEventListener("touchend", onTE as EventListener);
-      el.removeEventListener("touchcancel", onTE as EventListener);
-    };
-  }, []);
+  // Removed container-level native touch listeners to avoid conflicts on iOS;
+  // we rely on React touch handlers plus document-level listeners during drag
 
   useEffect(() => {
     return () => {
@@ -479,7 +457,7 @@ export const InfiniteMovingCards = ({
       onPointerMove={handlePointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
-      onPointerLeave={handleMouseLeave}
+      onPointerLeave={handlePointerLeaveSafe}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
