@@ -258,23 +258,11 @@ export const InfiniteMovingCards = ({
       const end = () => {
         endDragCommon();
         if (docTouchMoveRef.current)
-          document.removeEventListener(
-            "touchmove",
-            docTouchMoveRef.current as EventListener,
-            { capture: false } as any
-          );
+c          document.removeEventListener("touchmove", docTouchMoveRef.current);
         if (docTouchEndRef.current)
-          document.removeEventListener(
-            "touchend",
-            docTouchEndRef.current as EventListener,
-            { capture: false } as any
-          );
+          document.removeEventListener("touchend", docTouchEndRef.current);
         if (docTouchEndRef.current)
-          document.removeEventListener(
-            "touchcancel",
-            docTouchEndRef.current as EventListener,
-            { capture: false } as any
-          );
+          document.removeEventListener("touchcancel", docTouchEndRef.current);
         docTouchMoveRef.current = null;
         docTouchEndRef.current = null;
         touchListenersActiveRef.current = false;
@@ -344,23 +332,11 @@ export const InfiniteMovingCards = ({
     // Clean up doc-level touch listeners if present
     if (touchListenersActiveRef.current) {
       if (docTouchMoveRef.current)
-        document.removeEventListener(
-          "touchmove",
-          docTouchMoveRef.current as EventListener,
-          { capture: false } as any
-        );
+        document.removeEventListener("touchmove", docTouchMoveRef.current);
       if (docTouchEndRef.current)
-        document.removeEventListener(
-          "touchend",
-          docTouchEndRef.current as EventListener,
-          { capture: false } as any
-        );
+        document.removeEventListener("touchend", docTouchEndRef.current);
       if (docTouchEndRef.current)
-        document.removeEventListener(
-          "touchcancel",
-          docTouchEndRef.current as EventListener,
-          { capture: false } as any
-        );
+        document.removeEventListener("touchcancel", docTouchEndRef.current);
       docTouchMoveRef.current = null;
       docTouchEndRef.current = null;
       touchListenersActiveRef.current = false;
@@ -491,7 +467,7 @@ export const InfiniteMovingCards = ({
         "grid scroller relative z-20 overflow-hidden select-none ",
         !isDragging &&
           !isMomentum &&
-          "[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+          "[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
       style={{ touchAction: "none" }}
