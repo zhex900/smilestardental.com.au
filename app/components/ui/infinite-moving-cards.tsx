@@ -16,6 +16,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover?: boolean;
   className?: string;
 }) => {
+  const MAX_REPEATS = 10;
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const dragWrapperRef = React.useRef<HTMLDivElement>(null);
@@ -85,6 +86,7 @@ export const InfiniteMovingCards = ({
   const isDraggingRef = React.useRef(false);
   const isMomentumRef = React.useRef(false);
   const isHoveringRef = React.useRef(false);
+  const isInViewRef = React.useRef(true);
   const cycleWidthRef = React.useRef<number | null>(null);
   const speedRef = React.useRef<typeof speed>(speed);
   const directionRef = React.useRef<typeof direction>(direction);
@@ -120,6 +122,12 @@ export const InfiniteMovingCards = ({
     let lastTs: number | null = null;
 
     const step = (ts: number) => {
+      if (!isInViewRef.current) {
+        // keep clock in sync while offscreen without moving
+        lastTs = ts;
+        autoRaf = requestAnimationFrame(step);
+        return;
+      }
       const cw = cycleWidthRef.current;
       if (!cw || cw <= 0) {
         lastTs = ts;
@@ -193,7 +201,7 @@ export const InfiniteMovingCards = ({
           2,
           2 + Math.ceil(containerWidth / measuredCycleWidth)
         );
-        setRepeatCount(minRepeats);
+        setRepeatCount(Math.min(minRepeats, MAX_REPEATS));
       }
     };
 
@@ -208,6 +216,21 @@ export const InfiniteMovingCards = ({
       window.removeEventListener("resize", computeMetrics);
     };
   }, [originalsCount]);
+
+  // Pause auto-scroll when offscreen
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        isInViewRef.current = !!entry?.isIntersecting;
+      },
+      { root: null, threshold: 0.01 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   // Current index is updated inside the rAF loop to avoid per-frame React state churn
 
