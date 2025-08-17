@@ -421,6 +421,18 @@ export const InfiniteMovingCards = ({
     activeInputRef.current = null;
   };
 
+  const handleMouseLeave = () => {
+    // Force resume of auto-scroll by resetting hover and ending drag/momentum
+    setIsHovering(false);
+    if (pointerDownRef.current || dragStartedRef.current) {
+      endDragCommon();
+    } else {
+      // ensure momentum is off so rAF loop resumes smooth auto
+      cancelMomentum();
+    }
+    activeInputRef.current = null;
+  };
+
   // iOS Safari: attach non-passive native touch listeners so preventDefault works
   useEffect(() => {
     const el = containerRef.current;
@@ -467,13 +479,13 @@ export const InfiniteMovingCards = ({
       onPointerMove={handlePointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
-      onPointerLeave={endDrag}
+      onPointerLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchEnd}
       onMouseEnter={() => pauseOnHover && setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseLeave={handleMouseLeave}
       className={cn(
         "grid scroller relative z-20 overflow-hidden select-none ",
         !isDragging &&
