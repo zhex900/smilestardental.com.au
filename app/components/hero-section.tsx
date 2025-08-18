@@ -127,9 +127,10 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN (Carousel, appears below text on mobile) */}
-        {showCarousel && (
-          <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
+        {/* RIGHT COLUMN (Carousel with reserved space, appears below text on mobile) */}
+        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
+          {/* Reserve space to avoid layout shift before dynamic components render */}
+          <div className="relative w-full h-[320px] md:h-[520px]">
             {showWheel && carouselXPosition && (
               <ServicesWheel
                 radius={isMobile ? 140 : 230}
@@ -141,18 +142,22 @@ export function HeroSection() {
                     ? "calc(100% - 100px)"
                     : "calc(100% - 170px)",
                   transform: "translateX(-50%)",
-                  transition: "left 0.3s ease-out 0.9s", // <- smooth animation
+                  transition: "left 0.3s ease-out 0.9s",
                 }}
               />
             )}
-            <Carousel
-              slides={heroCarouselSlides}
-              {...heroCarouselConfig}
-              onXPositionChange={setCarouselXPosition}
-              debug={false}
-            />
+            {showCarousel && (
+              <div className="absolute inset-0">
+                <Carousel
+                  slides={heroCarouselSlides}
+                  {...heroCarouselConfig}
+                  onXPositionChange={setCarouselXPosition}
+                  debug={false}
+                />
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

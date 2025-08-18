@@ -56,6 +56,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="overscroll-none">
       <head>
+        {/* iOS Safari status bar / safe area colors */}
+
+        <meta name="theme-color" content="#fff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <link rel="icon" href="/favicon.svg" />
         <link
           rel="icon"
