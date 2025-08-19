@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
@@ -17,7 +18,6 @@ interface TestimonialCardProps {
   className?: string;
   index?: number;
 }
-//<div className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl" />
 
 export function TestimonialCard({
   testimonial,

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
 import { useState, useEffect } from "react";
-import { LogoIcon } from "./logo-icon";
+import { LogoIcon } from "./ui/logo-icon";
 import { backgroundColor, phoneNumber } from "@/constants";
 
 const menuItemClassName =
@@ -19,7 +19,7 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
     <Link href="/about" className={menuItemClassName} onClick={onClick}>
       About Us
     </Link>
-    <Link href="/blog" className={menuItemClassName} onClick={onClick}>
+    <Link href="/blogs" className={menuItemClassName} onClick={onClick}>
       Blog
     </Link>
   </>

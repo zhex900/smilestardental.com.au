@@ -1,25 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Search,
-  ChevronLeft,
-  ChevronRight,
-  Mail,
-  Heart,
-  Baby,
-  Smile,
-  Users,
-  Clock,
-  Phone,
-  MapPin,
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { BlogCard } from "@/components/ui/blog-card";
+import { BlogCard } from "@/components/ui/card";
 
 const categories = [
   "All Topics",
@@ -155,20 +139,12 @@ export default function Blog() {
     email: "",
     question: "",
   });
-  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const handleAskDentistSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log("Ask dentist form submitted:", askDentistForm);
     setAskDentistForm({ name: "", email: "", question: "" });
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    console.log("Newsletter subscription:", newsletterEmail);
-    setNewsletterEmail("");
   };
 
   const filteredArticles = recentArticles.filter((article) => {

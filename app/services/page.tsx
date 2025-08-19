@@ -8,13 +8,12 @@ import {
   Heart,
   Zap,
   Award,
-  Smile,
   Baby,
   Braces,
-  Scissors,
   Star,
-  ArrowRight,
 } from "lucide-react";
+import { ServiceCard } from "@/components/ui/card";
+import { TestimonialsSection } from "@/components/testimonials-section";
 
 const serviceCategories = [
   { id: "all", name: "All Services" },
@@ -49,7 +48,7 @@ const services = [
     category: "cosmetic",
     icon: Sparkles,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/7f51b6f3c5-f3ca5b0e32e43b8ca2f4.png",
+      "https://images.unsplash.com/photo-1611166819595-ac34987dfa57?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Professional teeth whitening treatments to brighten your smile and boost your confidence.",
     features: [
@@ -65,7 +64,7 @@ const services = [
     category: "restorative",
     icon: Shield,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6f4b5cadc-d7df1a2b2cd0e2ab5fc3.png",
+      "https://images.unsplash.com/photo-1593022356769-11f762e25ed9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
     features: [
@@ -81,7 +80,7 @@ const services = [
     category: "orthodontics",
     icon: Braces,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/e5ccd67cae-65b6efbd85c37a04e8d0.png",
+      "https://images.unsplash.com/photo-1609840113929-b130355987e1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Modern orthodontic solutions including clear aligners and traditional braces for a perfect smile.",
     features: [
@@ -97,7 +96,7 @@ const services = [
     category: "restorative",
     icon: Award,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/f8c95d3baa-1d0d2a5f2e8dfd20b5b3.png",
+      "https://plus.unsplash.com/premium_photo-1663011739118-413a35a33c6f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Restore damaged or missing teeth with custom-made crowns and bridges for natural function.",
     features: [
@@ -113,7 +112,7 @@ const services = [
     category: "pediatric",
     icon: Baby,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a7b4c2c15-0aee1b6c3ede6f75af0d.png",
+      "https://plus.unsplash.com/premium_photo-1681997120629-4d260166640c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Specialized dental care for children in a fun, comfortable environment designed for young patients.",
     features: [
@@ -129,7 +128,7 @@ const services = [
     category: "restorative",
     icon: Search,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/d5c32a7428-2dce5c5e0a72c2cce1f4.png",
+      "https://plus.unsplash.com/premium_photo-1722873143643-ea42854f97d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Advanced endodontic treatment to save severely damaged teeth and relieve pain.",
     features: [
@@ -145,7 +144,7 @@ const services = [
     category: "preventive",
     icon: Zap,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/7f51b6f3c5-f3ca5b0e32e43b8ca2f4.png",
+      "https://images.unsplash.com/photo-1635247187021-ad5ab658bc5e?q=80&w=2225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Immediate dental care for urgent situations including pain, broken teeth, and injuries.",
     features: [
@@ -161,7 +160,7 @@ const services = [
     category: "preventive",
     icon: Heart,
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6f4b5cadc-d7df1a2b2cd0e2ab5fc3.png",
+      "https://plus.unsplash.com/premium_photo-1664304894567-5329b85a2e6f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Comprehensive periodontal care to treat and prevent gum disease for optimal oral health.",
     features: [
@@ -229,7 +228,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 text-lg max-w-2xl mx-auto"
+              className="text-gray-900 text-lg max-w-2xl mx-auto"
             >
               Comprehensive dental care solutions tailored to meet your unique
               needs with the latest technology and experienced professionals.
@@ -259,45 +258,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={service.image}
-                    alt={service.title}
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-3">
-                    <service.icon className="text-blue-600 text-xl mr-3" />
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center text-sm text-gray-600"
-                      >
-                        <Star className="w-3 h-3 text-blue-600 mr-2 fill-current" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
-                </div>
-              </motion.div>
+              <ServiceCard key={service.id} service={service} index={index} />
             ))}
           </div>
         </div>
@@ -403,64 +364,7 @@ export default function Services() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              What Our Patients Say
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Hear from our patients about their experiences with our services.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-blue-50 p-8 rounded-xl"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-6">"{testimonial.text}"</p>
-                <div className="flex items-center">
-                  <img
-                    className="w-12 h-12 rounded-full mr-4"
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-blue-600 text-sm">
-                      {testimonial.service}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="py-16 bg-blue-600">
@@ -492,9 +396,6 @@ export default function Services() {
             >
               <button className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
                 Book Consultation
-              </button>
-              <button className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">
-                View All Services
               </button>
             </motion.div>
           </div>

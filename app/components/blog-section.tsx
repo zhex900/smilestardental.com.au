@@ -6,7 +6,7 @@ import { ButtonGradient } from "./ui/button-gradient";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
-import { BlogCard, BlogCardProps } from "./ui/blog-card";
+import { BlogCard, BlogCardProps } from "./ui/card";
 
 const blogPosts = [
   {

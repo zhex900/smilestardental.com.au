@@ -9,7 +9,7 @@ import {
   socialMedia,
   yearEstablished,
 } from "@/constants";
-import { LogoIcon } from "./logo-icon";
+import { LogoIcon } from "./ui/logo-icon";
 import { GoogleReview } from "./ui/google-review";
 
 const companyLinks = [

@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { HoverEffect } from "./ui/card-hover-effect";
+import { HoverEffect } from "./ui/card";
 import { ButtonGradient } from "./ui/button-gradient";
 import { servicesData } from "./services-wheel";
 import { motion } from "framer-motion";
