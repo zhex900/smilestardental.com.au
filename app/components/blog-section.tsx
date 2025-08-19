@@ -3,9 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ButtonGradient } from "./ui/button-gradient";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
+import { BlogCard, BlogCardProps } from "./ui/blog-card";
 
 const blogPosts = [
   {
@@ -14,7 +15,7 @@ const blogPosts = [
     excerpt:
       "Discover the best practices for maintaining optimal oral health at home.",
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/e1399329a8-6a3d823a181092934ec7.png",
+      "https://images.unsplash.com/photo-1564420228450-d9a5bc8d6565?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "dental hygiene tips toothbrush and dental floss",
     slug: "essential-daily-dental-care-tips",
   },
@@ -24,7 +25,7 @@ const blogPosts = [
     excerpt:
       "Everything you need to know about professional teeth whitening options.",
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/c862e7ea9e-8faffac90cb0fbb1c933.png",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "teeth whitening before and after comparison",
     slug: "complete-guide-teeth-whitening",
   },
@@ -33,9 +34,39 @@ const blogPosts = [
     title: "Making Dental Visits Fun for Kids",
     excerpt: "Tips to help your children have positive dental experiences.",
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/8a22c2c0bd-56c3c66cbf8f81aaa921.png",
+      "https://images.unsplash.com/photo-1643660527098-559f89e45a92?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "child at dentist office smiling",
     slug: "making-dental-visits-fun-kids",
+  },
+  {
+    id: 4,
+    title: "The Complete Guide to Teeth Whitening",
+    excerpt:
+      "Everything you need to know about professional teeth whitening options.",
+    image:
+      "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21pbGV8ZW58MHx8MHx8fDA%3D",
+    alt: "teeth whitening before and after comparison",
+    slug: "complete-guide-teeth-whitening",
+  },
+  {
+    id: 5,
+    title: "The Complete Guide to Teeth Whitening",
+    excerpt:
+      "Everything you need to know about professional teeth whitening options.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1679750867594-6dbd6a8ad203?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9vdGhicnVzaHxlbnwwfHwwfHx8MA%3D%3D",
+    alt: "teeth whitening before and after comparison",
+    slug: "complete-guide-teeth-whitening",
+  },
+  {
+    id: 6,
+    title: "The Complete Guide to Teeth Whitening",
+    excerpt:
+      "Everything you need to know about professional teeth whitening options.",
+    image:
+      "https://images.unsplash.com/photo-1593022356769-11f762e25ed9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "teeth whitening before and after comparison",
+    slug: "complete-guide-teeth-whitening",
   },
 ];
 
@@ -82,6 +113,7 @@ export function CardDemo() {
 }
 
 export function BlogSection() {
+  const router = useRouter();
   return (
     <section
       id="blog"
@@ -108,31 +140,14 @@ export function BlogSection() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.article
+            <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className=" card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow "
             >
-              <img
-                className="w-full h-48 object-cover"
-                src={post.image}
-                alt={post.alt}
-              />
-              <div className="p-6">
-                <h3 className="text-xl text-black font-semibold mb-3">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="text-blue-600 hover:underline cursor-pointer font-medium"
-                >
-                  Read More
-                </Link>
-              </div>
-            </motion.article>
+              <BlogCard article={post as unknown as BlogCardProps} />
+            </motion.div>
           ))}
         </div>
         <motion.div

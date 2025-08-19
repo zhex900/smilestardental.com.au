@@ -80,7 +80,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 text-white bg-gray-800/100 z-10 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
+          <div className="absolute top-full left-0 right-0 text-white bg-red-900 z-99999 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
             <nav className="flex flex-col space-y-4 ">
               <MenuItems onClick={() => setIsMenuOpen(false)} />
             </nav>

@@ -29,7 +29,7 @@ const openingHours = [
 
 const areasServed = ["Newcastle", "Lake Macquarie", "Warners Bay"];
 
-const background = "bg-gradient-to-r from-black via-gray-700 to-gray-900";
+const background = "bg-gradient-to-tl from-black via-gray-700 to-gray-900";
 export function Footer() {
   return (
     <footer className={`px-6 md:px-12 ${background} text-white py-16 text-sm`}>

@@ -19,6 +19,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
+import { BlogCard } from "@/components/ui/blog-card";
 
 const categories = [
   "All Topics",
@@ -88,7 +89,7 @@ const recentArticles = [
     category: "Dental Procedures",
     date: "May 3, 2023",
     image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/b8be7b7c2e-cf140c84b160aa7a8cff.png",
+      "https://plus.unsplash.com/premium_photo-1681997203595-e45e06abe034?q=80&w=2024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: {
       name: "Dr. Robert Garcia",
       avatar:
@@ -96,37 +97,53 @@ const recentArticles = [
     },
     slug: "dental-implants-complete-guide",
   },
-];
-
-const popularTopics = [
   {
-    id: 1,
-    title: "Preventive Care",
-    description:
-      "Tips for maintaining optimal oral health between dental visits.",
-    icon: Heart,
-    articleCount: 12,
+    id: 5,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664203067979-47448934fd97?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
   },
   {
-    id: 2,
-    title: "Cosmetic Solutions",
-    description: "Treatments to enhance your smile and boost confidence.",
-    icon: Smile,
-    articleCount: 9,
+    id: 6,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1723187823945-bd116325da6a?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
   },
   {
-    id: 3,
-    title: "Kids' Dental Health",
-    description: "Guidance for parents on children's oral health development.",
-    icon: Baby,
-    articleCount: 7,
-  },
-  {
-    id: 4,
-    title: "Orthodontics",
-    description: "Information about braces, aligners, and teeth straightening.",
-    icon: Users,
-    articleCount: 8,
+    id: 7,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1699577272317-a64e1eaaa9c8?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
   },
 ];
 
@@ -166,7 +183,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-blue-50 h-[400px] flex items-center">
+      <section className="bg-[url(https://images.unsplash.com/photo-1585909085111-2c2f311643af?q=80&w=1570&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-blue-50 h-[400px] flex items-center">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl">
             <motion.h1
@@ -181,7 +198,7 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-gray-600 mb-6"
+              className="text-lg text-gray-900 mb-6"
             >
               Stay informed with the latest dental care tips, treatment
               innovations, and oral health advice from our expert team.
@@ -318,47 +335,14 @@ export default function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {filteredArticles.map((article, index) => (
-            <motion.article
+            <motion.div
               key={article.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src={article.image}
-                  alt={article.title}
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-blue-600 text-sm font-medium">
-                    {article.category}
-                  </span>
-                  <span className="text-gray-500 text-sm">{article.date}</span>
-                </div>
-                <h3 className="font-bold text-xl mb-2">{article.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{article.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <img
-                      src={article.author.avatar}
-                      alt={article.author.name}
-                      className="w-8 h-8 rounded-full mr-2"
-                    />
-                    <span className="text-sm">{article.author.name}</span>
-                  </div>
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="text-blue-600 text-sm font-medium hover:text-blue-700 transition-colors"
-                  >
-                    Read more →
-                  </Link>
-                </div>
-              </div>
-            </motion.article>
+              <BlogCard article={article} />
+            </motion.div>
           ))}
         </div>
 
@@ -369,43 +353,6 @@ export default function Blog() {
           >
             View All Articles
           </Link>
-        </div>
-      </section>
-
-      {/* Popular Topics */}
-      <section className="bg-gray-50 py-12 mt-12">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl font-bold mb-8 text-center"
-          >
-            Popular Topics
-          </motion.h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {popularTopics.map((topic, index) => (
-              <motion.div
-                key={topic.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 text-center hover:shadow-md transition-shadow cursor-pointer"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <topic.icon className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="font-bold mb-2">{topic.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {topic.description}
-                </p>
-                <span className="text-blue-600 text-sm font-medium">
-                  {topic.articleCount} Articles →
-                </span>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -494,50 +441,6 @@ export default function Blog() {
               />
             </div>
           </div>
-        </motion.div>
-      </section>
-
-      {/* Newsletter Subscription */}
-      <section className="container mx-auto px-4 py-12 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-white border rounded-lg p-8 text-center"
-        >
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="w-8 h-8 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold mb-2">
-            Subscribe to Our Newsletter
-          </h2>
-          <p className="text-gray-600 mb-6 max-w-lg mx-auto">
-            Stay updated with the latest dental health tips, clinic news, and
-            special offers delivered straight to your inbox.
-          </p>
-
-          <form
-            onSubmit={handleNewsletterSubmit}
-            className="flex flex-col sm:flex-row max-w-md mx-auto gap-3"
-          >
-            <input
-              type="email"
-              placeholder="Your email address"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              required
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
-          <p className="text-sm text-gray-500 mt-4">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
         </motion.div>
       </section>
     </div>
