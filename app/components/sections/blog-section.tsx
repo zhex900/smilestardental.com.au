@@ -2,11 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ButtonGradient } from "./ui/button-gradient";
+import { ButtonGradient } from "../ui/button-gradient";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { HoverBorderGradient } from "./ui/hover-border-gradient";
-import { BlogCard, BlogCardProps } from "./ui/card";
+import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import { BlogCard, BlogCardProps } from "../ui/card";
 
 const blogPosts = [
   {

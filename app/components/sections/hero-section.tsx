@@ -1,19 +1,21 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import AnimatedText from "./ui/animated-text";
-import { ReviewStack } from "./review-stack";
-import { ButtonGradient } from "./ui/button-gradient";
+import AnimatedText from "../ui/animated-text";
+import { ReviewStack } from "../review-stack";
+import { ButtonGradient } from "../ui/button-gradient";
 // import Carousel from "./ui/carousel";
 import { useEffect, useState } from "react";
 // import { ServicesWheel } from "./services-wheel";
-import { GoogleReview } from "./ui/google-review";
-import { Highlighter } from "./ui/highlighter";
+import { GoogleReview } from "../ui/google-review";
+import { Highlighter } from "../ui/highlighter";
 import { backgroundColor } from "@/constants";
 import dynamic from "next/dynamic";
 
-const Carousel = dynamic(() => import("./ui/carousel"), { ssr: false });
-const ServicesWheel = dynamic(() => import("./services-wheel"), { ssr: false });
+const Carousel = dynamic(() => import("../ui/carousel"), { ssr: false });
+const ServicesWheel = dynamic(() => import("../services-wheel"), {
+  ssr: false,
+});
 
 const showCarousel = true;
 // Carousel slides

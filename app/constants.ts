@@ -1,16 +1,13 @@
 export const address = {
-  street: "Suite 10B The Bay Arcade, 478 The Esplanade",
+  unit: "Suite 10B The Bay Arcade",
+  street: "478 The Esplanade",
   city: "Warners Bay, NSW 2282",
 };
 
 export const openingHours = [
-  // <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-  // <p>Saturday: 9:00 AM - 4:00 PM</p>
-  // <p>Sunday: Closed</p>
-
-  "Mon - Fri: 8:00 AM - 6:00 PM",
-  "Saturday: 9:00 AM - 4:00 PM",
-  "Sunday: Closed",
+  { day: "Monday - Friday:", time: "9AM - 5PM" },
+  { day: "Weekend:", time: "Closed" },
+  //   { day: "Sunday:", time: "Closed" },
 ];
 
 export const phoneNumber = "02 4948 8589";

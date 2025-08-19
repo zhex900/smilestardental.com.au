@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Compare } from "./ui/compare";
+import { Compare } from "../ui/compare";
 import { motion } from "framer-motion";
-import { Card, CardDescription, CardTitle } from "./ui/card";
-import OrthodonticsIcon from "./icons/orthodontics.svg";
+import { Card, CardDescription, CardTitle } from "../ui/card";
+import OrthodonticsIcon from "../icons/orthodontics.svg";
 
 export function BeforeAfterSection() {
   return (

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, ChevronDown, Mail, Send } from "lucide-react";
+import { address, openingHours, phoneNumber } from "@/constants";
 
 const faqs = [
   {
@@ -119,11 +120,11 @@ export default function Contact() {
                 Visit Our Office
               </h3>
               <p className="text-gray-600">
-                123 Dental Way
+                {address.unit}
                 <br />
-                Smile City, SC 12345
+                {address.street}
                 <br />
-                United States
+                {address.city}
               </p>
               <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
                 Get Directions
@@ -142,11 +143,7 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Call Us
               </h3>
-              <p className="text-gray-600">
-                Main: (123) 456-7890
-                <br />
-                Emergency: (123) 456-7899
-              </p>
+              <p className="text-gray-600">{phoneNumber}</p>
               <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
                 Call Now
               </button>
@@ -164,13 +161,15 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Opening Hours
               </h3>
-              <p className="text-gray-600">
-                Monday - Friday: 8AM - 6PM
-                <br />
-                Saturday: 9AM - 2PM
-                <br />
-                Sunday: Closed
-              </p>
+              <div className="text-gray-600">
+                <ul className="space-y-3">
+                  {openingHours.map((schedule) => (
+                    <li key={schedule.day} className="flex justify-between">
+                      <span>{schedule.day}</span> <span>{schedule.time}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <button className="inline-block text-blue-600 font-medium mt-4 hover:underline cursor-pointer">
                 Book Appointment
               </button>
@@ -312,13 +311,16 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-4 rounded-xl shadow-md overflow-hidden h-[600px]"
+              className="h-full bg-white p-4 rounded-xl shadow-md overflow-hidden"
             >
               <div className="h-full w-full rounded-lg overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f31e17ed28-3430310b2fae2456af10.png"
-                  alt="map of dental clinic location with pin marker, satellite view, city streets, professional mapping style"
+                <iframe
+                  title="Smile Star Dental Location Map"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.unit}, ${address.street}, ${address.city}`)}&output=embed`}
                 />
               </div>
             </motion.div>

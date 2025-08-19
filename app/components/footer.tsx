@@ -8,6 +8,7 @@ import {
   phoneNumber,
   socialMedia,
   yearEstablished,
+  openingHours,
 } from "@/constants";
 import { LogoIcon } from "./ui/logo-icon";
 import { GoogleReview } from "./ui/google-review";
@@ -19,12 +20,6 @@ const companyLinks = [
   { name: "Cosmetic Dentistry", href: "/services" },
   { name: "Results", href: "/testimonials" },
   { name: "Blog", href: "/blog" },
-];
-
-const openingHours = [
-  { day: "Monday - Friday:", time: "9AM - 5PM" },
-  { day: "Weekend:", time: "Closed" },
-  //   { day: "Sunday:", time: "Closed" },
 ];
 
 const areasServed = ["Newcastle", "Lake Macquarie", "Warners Bay"];
@@ -127,6 +122,8 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    {address.unit}
+                    <br />
                     {address.street}
                     <br />
                     {address.city}
@@ -144,26 +141,6 @@ export function Footer() {
           <div className="mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <p className="mb-4 md:mb-0">{copyright}</p>
-              <div className="flex items-center space-x-6 ">
-                <Link
-                  href="/"
-                  className="hover:text-gray-300 transition-colors cursor-pointer"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/"
-                  className="hover:text-gray-300 transition-colors cursor-pointer"
-                >
-                  Terms of Service
-                </Link>
-                <Link
-                  href="/"
-                  className="hover:text-gray-300 transition-colors cursor-pointer"
-                >
-                  Sitemap
-                </Link>
-              </div>
             </div>
           </div>
         </div>

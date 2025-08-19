@@ -13,7 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/card";
-import { TestimonialsSection } from "@/components/testimonials-section";
+import { TestimonialsSection } from "@/components/sections";
 
 const serviceCategories = [
   { id: "all", name: "All Services" },

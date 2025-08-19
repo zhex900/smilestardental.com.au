@@ -1,8 +1,10 @@
-import { HeroSection } from "./components/hero-section";
-import { ServicesSection } from "./components/services-section";
-import { BeforeAfterSection } from "./components/before-after-section";
-import { BlogSection } from "./components/blog-section";
-import { TestimonialsSection } from "./components/testimonials-section";
+import {
+  HeroSection,
+  ServicesSection,
+  BeforeAfterSection,
+  BlogSection,
+  TestimonialsSection,
+} from "./components/sections";
 import { ScrollNavigation } from "./components/ui/scroll-navigation";
 
 export default function HomePage() {

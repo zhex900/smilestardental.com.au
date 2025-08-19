@@ -3,11 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Link from "next/link";
-import { TestimonialCard } from "./ui/card";
-import { GoogleReview } from "./ui/google-review";
-import { InfiniteMovingCards } from "./ui/card";
-import { GoogleIcon } from "./icons/google-icon";
-import { ButtonGradient } from "./ui/button-gradient";
+import { TestimonialCard } from "../ui/card";
+import { GoogleReview } from "../ui/google-review";
+import { InfiniteMovingCards } from "../ui/card";
+import { GoogleIcon } from "../icons/google-icon";
+import { ButtonGradient } from "../ui/button-gradient";
 
 const testimonials = [
   {
