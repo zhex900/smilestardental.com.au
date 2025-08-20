@@ -8,8 +8,6 @@ import {
   Users,
   GraduationCap,
   Star,
-  MapPin,
-  Phone,
   Clock,
   Mail,
   Linkedin,
@@ -44,153 +42,20 @@ const teamMembers = [
     description:
       "Specialized in making dental visits fun and stress-free for children while ensuring optimal oral health.",
   },
-  {
-    id: 4,
-    name: "Dr. David Kim",
-    role: "Oral Surgeon",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
-    description:
-      "Expert in complex extractions, dental implants, and reconstructive procedures with a gentle approach.",
-  },
-  {
-    id: 5,
-    name: "Jessica Martinez",
-    role: "Dental Hygienist",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-    description:
-      "Experienced hygienist dedicated to preventive care and educating patients on maintaining optimal oral health.",
-  },
-  {
-    id: 6,
-    name: "Amanda Wilson",
-    role: "Office Manager",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg",
-    description:
-      "The heart of our practice, ensuring smooth operations and a welcoming experience for every patient.",
-  },
-];
-
-const values = [
-  {
-    icon: Heart,
-    title: "Patient-Centered Care",
-    description:
-      "We put our patients first, listening to their concerns and tailoring treatments to their unique needs and preferences.",
-  },
-  {
-    icon: Award,
-    title: "Excellence",
-    description:
-      "We strive for excellence in every aspect of our practice, from clinical procedures to patient communication and service.",
-  },
-  {
-    icon: Microscope,
-    title: "Innovation",
-    description:
-      "We continuously invest in advanced technology and techniques to provide the most effective and comfortable treatments.",
-  },
-  {
-    icon: Clock,
-    title: "Integrity",
-    description:
-      "We practice with honesty, transparency, and ethical standards that earn our patients' trust and confidence.",
-  },
-  {
-    icon: Users,
-    title: "Community",
-    description:
-      "We are committed to serving our community through education, outreach, and providing accessible dental care.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Continuous Learning",
-    description:
-      "We pursue ongoing education and professional development to remain at the forefront of dental medicine.",
-  },
-];
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Robert Johnson",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-9.jpg",
-    text: "I've always been anxious about dental visits, but Dr. Chen and her team made me feel completely at ease. The care I received was exceptional, and my smile has never looked better!",
-    since: "Patient since 2018",
-  },
-  {
-    id: 2,
-    name: "Jennifer Williams",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-    text: "My son used to be terrified of the dentist until we found Dr. Johnson. Her patience and gentle approach completely changed his perspective. Now he actually looks forward to his dental visits!",
-    since: "Patient since 2020",
-  },
-  {
-    id: 3,
-    name: "Michael Thompson",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
-    text: "After years of being self-conscious about my smile, Dr. Rodriguez transformed it with Invisalign. The whole team was supportive throughout the process, and I couldn't be happier with the results!",
-    since: "Patient since 2019",
-  },
-];
-
-const facilityImages = [
-  {
-    id: 1,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/d5c32a7428-2dce5c5e0a72c2cce1f4.png",
-    alt: "Modern dental treatment room with advanced equipment, comfortable chair, and bright lighting",
-  },
-  {
-    id: 2,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/7f51b6f3c5-f3ca5b0e32e43b8ca2f4.png",
-    alt: "Dental office reception area with modern design, comfortable seating, and blue accent wall",
-  },
-  {
-    id: 3,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6f4b5cadc-d7df1a2b2cd0e2ab5fc3.png",
-    alt: "Digital imaging equipment in dental office, panoramic x-ray machine and computer monitors",
-  },
-  {
-    id: 4,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e5ccd67cae-65b6efbd85c37a04e8d0.png",
-    alt: "Child-friendly pediatric dental treatment room with colorful decorations and toys",
-  },
-  {
-    id: 5,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f8c95d3baa-1d0d2a5f2e8dfd20b5b3.png",
-    alt: "Dental laboratory with technician working on prosthetics and dental models",
-  },
-  {
-    id: 6,
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a7b4c2c15-0aee1b6c3ede6f75af0d.png",
-    alt: "Sterilization area in dental clinic with modern equipment and organized instruments",
-  },
-];
-
-const awards = [
-  { id: 1, title: "Best Dental Practice 2022", icon: Award },
-  { id: 2, title: "Excellence in Patient Care", icon: Award },
-  { id: 3, title: "Top Cosmetic Dentistry", icon: Award },
-  { id: 4, title: "Community Service Award", icon: Award },
 ];
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-blue-50 h-[300px] flex items-center">
+      <section className="bg-primary h-[300px] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              className="text-heading text-gray-900 mb-4"
             >
               About Us
             </motion.h1>
@@ -198,7 +63,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 text-lg max-w-2xl mx-auto"
+              className="text-gray-600 text-normal max-w-2xl mx-auto"
             >
               Dedicated to providing exceptional dental care with compassion,
               expertise, and the latest technology.
@@ -258,7 +123,7 @@ export default function About() {
               >
                 <img
                   className="w-full h-full object-cover"
-                  src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1c4e7a0e70-1e5e3a0a0be9acea3462.png"
+                  src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Modern dental clinic reception area with blue accents, friendly staff at reception desk, comfortable waiting area with patients"
                 />
               </motion.div>
@@ -267,53 +132,46 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Values Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              Our Mission & Values
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Guided by our commitment to excellence and patient-centered care,
-              we strive to make every dental visit a positive experience.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md"
-              >
-                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4">
-                  <value.icon className="text-blue-600 text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
+      {/* Team Section */}
+      <section id="about" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img
+                className="rounded-2xl shadow-lg w-full"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/88d5056f1a-ae060504fb9eca0c99cb.png"
+                alt="professional female dentist in white coat smiling, medical portrait"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Meet Dr. Melody Healy
+              </h2>
+              <p className="text-gray-600 mb-6 text-justify">
+                Dr Melody is a passionate and experienced dentist. She graduated
+                from the University of Otago in New Zealand with a Bachelor of
+                Dental Surgery in 2005. Since then she has worked at Sydney’s
+                Westmead Hospital in the emergency and general dental department
+                and frequently travelled to rural areas of NSW providing much
+                needed services to rural Australians. She has also worked in one
+                of the largest dental corporations in Australia for many years
+                in a demanding and professional environment. Currently she is
+                the principal dentist at Bay Arcade Dental. Dr Melody is
+                passionate and has a great understanding about how crooked teeth
+                in children and adults and its effect on breathing and sleep and
+                general wellbeing of the individual. She finds satisfaction in
+                helping people to be healthier and feel better about their
+                smile. Because of this, she has treated many families across 3
+                generations. Dr Melody strives to achieve excellence and
+                continually researches and studies to apply leading edge
+                techniques. The experience and welfare of patients is of utmost
+                importance to the whole team at Bay Arcade Dental.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <motion.h2
@@ -369,150 +227,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Facility Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              Our Modern Facility
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Experience dental care in our state-of-the-art clinic designed for
-              your comfort and equipped with the latest technology.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilityImages.map((image, index) => (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="rounded-xl overflow-hidden shadow-md h-[250px]"
-              >
-                <img
-                  className="w-full h-full object-cover"
-                  src={image.src}
-                  alt={image.alt}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              What Our Patients Say
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Hear from our patients about their experiences at DentalCare.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-blue-50 p-8 rounded-xl"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-6">"{testimonial.text}"</p>
-                <div className="flex items-center">
-                  <img
-                    className="w-12 h-12 rounded-full mr-4"
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-gray-600 text-sm">{testimonial.since}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Awards Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              Awards & Recognitions
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Our commitment to excellence has been recognized by industry
-              leaders.
-            </motion.p>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {awards.map((award, index) => (
-              <motion.div
-                key={award.id}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 mx-auto mb-3 opacity-70">
-                  <award.icon className="text-blue-600 text-6xl" />
-                </div>
-                <p className="font-medium text-gray-900">{award.title}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-blue-600">

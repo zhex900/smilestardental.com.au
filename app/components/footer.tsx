@@ -16,10 +16,8 @@ import { GoogleReview } from "./ui/google-review";
 const companyLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "General Dentistry", href: "/services" },
-  { name: "Cosmetic Dentistry", href: "/services" },
-  { name: "Results", href: "/testimonials" },
-  { name: "Blog", href: "/blog" },
+  { name: "Services", href: "/services" },
+  { name: "Blog", href: "/blogs" },
 ];
 
 const areasServed = ["Newcastle", "Lake Macquarie", "Warners Bay"];
