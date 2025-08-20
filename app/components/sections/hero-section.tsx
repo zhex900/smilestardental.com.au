@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className={`relative flex justify-center section-padding bg-primary min-h-[calc(100vh-var(--header-height))]`}
+      className={`relative flex justify-center section-px bg-primary min-h-[calc(100vh-var(--header-height))]`}
     >
       <div
         className="max-w-6xl mx-auto  grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -29,7 +29,7 @@ export function HeroSection() {
           <div className="flex-1 flex items-center p-6 md:p-8">
             <div>
               <div className="text-center md:text-left">
-                <h1 className="text-heading mb-4 md:mb-8">
+                <h1 className="text-heading heading-mb">
                   Your Smile is Our
                   <AnimatedText
                     text={`Star Priority`}
@@ -48,7 +48,7 @@ export function HeroSection() {
                     }}
                   />
                 </h1>
-                <p className="text-justify text-normal mb-4 md:mb-8">
+                <p className="text-justify text-normal heading-mb">
                   Experience exceptional dental care, proudly serving the{" "}
                   <Highlighter action="underline" color="#FF9800">
                     Newcastle

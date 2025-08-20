@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ButtonGradient } from "../ui/button-gradient";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { BlogCard, BlogCardProps } from "../ui/card";
 
 const blogPosts = [
@@ -70,62 +68,17 @@ const blogPosts = [
   },
 ];
 
-const testImage =
-  "https://storage.googleapis.com/uxpilot-auth.appspot.com/e1399329a8-6a3d823a181092934ec7.png";
-export function CardDemo() {
-  return (
-    <div className="max-w-xs w-full group/card">
-      <div
-        className={cn(
-          " cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
-          ` bg-cover text-black group-hover/card:text-white `
-        )}
-        style={{
-          backgroundImage: `url(${testImage})`,
-        }}
-      >
-        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
-        <div className="flex flex-row items-center space-x-4 z-10">
-          <img
-            height="100"
-            width="100"
-            alt="Avatar"
-            src="/manu.png"
-            className="h-10 w-10 rounded-full border-2 object-cover"
-          />
-          <div className="flex flex-col">
-            <p className="font-normal text-base  relative z-10">Manu Arora</p>
-            <p className="text-sm ">2 min read</p>
-          </div>
-        </div>
-        <div className="text content">
-          <h1 className="font-bold text-xl md:text-2xl relative z-10">
-            Author Card
-          </h1>
-          <p className="font-normal text-sm  relative z-10 my-4">
-            Card with Author avatar, complete name and time to read - most
-            suitable for blogs.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function BlogSection() {
   const router = useRouter();
   return (
-    <section
-      id="blog"
-      className="py-20 bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20"
-    >
+    <section id="blog" className="section-px section-py bg-primary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-gray-800 mb-4"
+            className="text-heading mb-4"
           >
             Latest From Our Blog
           </motion.h2>
@@ -133,7 +86,7 @@ export function BlogSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600"
+            className="text-normal"
           >
             Stay informed about dental health and care tips
           </motion.p>

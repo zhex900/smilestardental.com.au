@@ -35,7 +35,7 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
           <span className="text-gray-500 text-sm">{article.date}</span>
         </div>
         <h3 className="font-bold text-xl mb-2">{article.title}</h3>
-        <p className="text-gray-600 text-sm mb-4">{article.excerpt}</p>
+        <p className="text-gray-600 mb-4 text-card">{article.excerpt}</p>
         <div className="flex items-center justify-between mt-auto">
           {article.author && (
             <div className="flex items-center">

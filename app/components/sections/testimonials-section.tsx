@@ -122,41 +122,44 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 scroll-mt-20 bg-white">
-      <div className="px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-2xl md:text-5xl font-bold text-slate-600 mb-6">
-            What Our Patients Say
-          </h2>
+    <section
+      id="testimonials"
+      className="section-px section-py bg-white scroll-mt-30 min-h-screen"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-heading heading-mb">What Our Patients Say</h2>
 
-          {/* Google Review Header */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="flex text-yellow-400">
-                <Star className="w-6 h-6 fill-current" />
-                <Star className="w-6 h-6 fill-current" />
-                <Star className="w-6 h-6 fill-current" />
-                <Star className="w-6 h-6 fill-current" />
-                <Star className="w-6 h-6 fill-current" />
-              </div>
-              <span className="text-xl font-semibold text-gray-900">4.9</span>
-              <span className="text-gray-600 ml-2">(127 reviews)</span>
+        {/* Google Review Header */}
+        <div className="flex items-center justify-center mb-8">
+          <div className="flex items-center space-x-4">
+            <div className="flex text-yellow-400">
+              <Star className="w-6 h-6 fill-current" />
+              <Star className="w-6 h-6 fill-current" />
+              <Star className="w-6 h-6 fill-current" />
+              <Star className="w-6 h-6 fill-current" />
+              <Star className="w-6 h-6 fill-current" />
             </div>
+            <span className="text-xl font-semibold text-gray-900 text-normal">
+              4.9
+            </span>
+            <span className="text-gray-600 ml-2 text-normal">
+              (127 reviews)
+            </span>
           </div>
+        </div>
 
-          <div className="flex items-center justify-center">
-            <div className="flex items-center text-gray-600">
-              <GoogleIcon className="w-6 h-6 mr-2" />
-              <span>Verified Google Reviews</span>
-            </div>
+        <div className="flex items-center justify-center">
+          <div className="flex items-center text-gray-600 text-normal">
+            <GoogleIcon className="w-6 h-6 mr-2" />
+            <span>Verified Google Reviews</span>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       {/* Full width testimonials container  w-[calc(25%-0.75rem)] */}
       <div className="w-full overflow-hidden">
@@ -172,7 +175,7 @@ export function TestimonialsSection() {
         </InfiniteMovingCards>
       </div>
       {/* Google Review CTA */}
-      <div className="px-6">
+      <div className="">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

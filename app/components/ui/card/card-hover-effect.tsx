@@ -35,7 +35,7 @@ export const HoverEffect = ({
           return (
             <div
               key={item.name}
-              className="relative group  block p-2 h-full w-full"
+              className="relative group block p-2 h-full w-full"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -57,7 +57,7 @@ export const HoverEffect = ({
                 )}
               </AnimatePresence>
 
-              <Card className="group">
+              <Card className="group flex justify-center items-center">
                 <a href={item?.link}>
                   <div className="flex items-center justify-center">
                     <IconComponent className="w-10 h-10" />
@@ -67,9 +67,6 @@ export const HoverEffect = ({
                     {item.name}
                   </CardTitle>
                 </a>
-                {/* <CardDescription className="text-sm md:text-base text-justify text-ellipsis line-clamp-5">
-                  {item.description}
-                </CardDescription> */}
               </Card>
             </div>
           );

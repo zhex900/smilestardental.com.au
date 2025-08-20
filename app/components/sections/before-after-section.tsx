@@ -11,50 +11,51 @@ export function BeforeAfterSection() {
     //bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20
     <section
       id="before-after"
-      className="px-6 py-16 scroll-mt-20 bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20"
+      className="section-px section-py scroll-mt-30 bg-primary"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-6 font-bold">
+        <div className="text-center heading-mb">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-5xl font-bold text-slate-800 mb-6"
+            className="text-heading heading-mb"
           >
-            Transforming <span className="text-yellow-600">Smiles</span> Every
-            Day
+            Transforming <span className="brand-yellow">Smiles</span> Every Day
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-600 text-sm md:text-lg max-w-3xl mx-auto"
+            className="text-normal max-w-3xl mx-auto"
           >
             See the incredible results our patients achieve with our advanced
             orthodontic treatments
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20  ">
+        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-20  ">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative group  block p-2 h-full w-full"
+            className="relative group block h-full w-full"
           >
             <div className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl" />
 
             <Card className="text-slate-300">
-              <div className="flex items-center justify-center md:justify-start mb-4">
-                <div className="w-16 h-16 md:w-20 md:h-20">
-                  <OrthodonticsIcon />
+              <CardTitle className="flex items-center heading-mb">
+                <div className="flex items-center justify-center md:justify-start">
+                  <div className="w-16 h-16 md:w-20 md:h-20">
+                    <OrthodonticsIcon />
+                  </div>
                 </div>
-              </div>
-              <CardTitle className=" mb-3">
-                Advanced <span className="text-yellow-600">Orthodontic</span>{" "}
-                Treatment...
+                <div className="text-xl md:text-2xl">
+                  Advanced <span className="brand-yellow">Orthodontic</span>{" "}
+                  Treatment...
+                </div>
               </CardTitle>
-              <CardDescription className="flex-1 text-sm md:text-base">
+              <CardDescription className="flex-1 text-normal md:text-base">
                 Our state-of-the-art braces and clear aligners can transform
                 even the most complex cases, giving you the confident smile
                 you've always wanted.
@@ -85,7 +86,7 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.8 }}
             className="flex justify-center relative group p-2 h-full w-full"
           >
-            <div className=" rounded-3xl p-4 bg-white/20 shadow-xl">
+            <div className=" rounded-3xl p-3 bg-white/20 shadow-xl">
               <Compare
                 firstImage="/images/after.png"
                 secondImage="/images/before.png"
@@ -96,7 +97,7 @@ export function BeforeAfterSection() {
                 autoplay={true}
                 autoplayDuration={5000}
               />
-              <div className="mt-4 text-center">
+              <div className=" text-center">
                 <div className="flex justify-between text-md text-slate-600">
                   <span className="font-medium">Before Treatment</span>
                   <span className="font-medium">After Treatment</span>
@@ -110,7 +111,7 @@ export function BeforeAfterSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className=" grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
             <div className="text-3xl font-bold text-slate-600 mb-2">
