@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        DEFAULT: "0.75rem", // rounded => rounded-xl
+      },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
@@ -37,11 +40,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-quicksand)", "Quicksand", "sans-serif"],
-      },
-      borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
-        sm: `calc(var(--radius) - 4px)`,
       },
     },
   },

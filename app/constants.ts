@@ -25,7 +25,7 @@ import {
 
 export const yearEstablished = 2012;
 
-export const backgroundColor = "bg-gradient-to-b from-sky-100 to-sky-20";
+export const backgroundColor = "bg-gradient-to-b from-sky-100 to-sky-200";
 
 export const socialMedia = [
   {

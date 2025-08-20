@@ -30,14 +30,14 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="text-gray-800 font-medium text-md px-6 py-4 md:px-12 top-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-sm shadow-sm">
+    <header className="font-medium text-md px-6 py-4 md:px-12 top-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex items-center justify-between ">
         <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
           <LogoIcon />
         </Link>
 
         <nav
-          className={`hidden md:flex items-center space-x-8 shadow-lg p-2 px-6 rounded-xl ${backgroundColor}`}
+          className={`hidden md:flex items-center space-x-8 shadow-lg p-2 px-6 rounded-xl bg-primary`}
         >
           <MenuItems />
         </nav>

@@ -4,68 +4,21 @@ import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
 import { ReviewStack } from "../review-stack";
 import { ButtonGradient } from "../ui/button-gradient";
-// import Carousel from "./ui/carousel";
-import { useEffect, useState } from "react";
-// import { ServicesWheel } from "./services-wheel";
 import { GoogleReview } from "../ui/google-review";
 import { Highlighter } from "../ui/highlighter";
-import { backgroundColor } from "@/constants";
 import dynamic from "next/dynamic";
 
-const Carousel = dynamic(() => import("../ui/carousel"), { ssr: false });
-const ServicesWheel = dynamic(() => import("../services-wheel"), {
+const HeroCarousel = dynamic(() => import("../hero-carousel"), {
   ssr: false,
 });
 
-const showCarousel = true;
-// Carousel slides
-const heroCarouselSlides = [
-  {
-    src: "/images/g-1.png",
-    xOffset: 16,
-    title: "",
-    button: ".",
-    description: "",
-  },
-  {
-    src: "/images/boy-2.png",
-    xOffset: -2,
-    title: "",
-    button: ".",
-    description: "",
-  },
-];
-
-const heroCarouselConfig = {
-  autoplay: true,
-  autoplayInterval: 3000,
-};
-
 export function HeroSection() {
   const router = useRouter();
-  const [carouselXPosition, setCarouselXPosition] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [showWheel, setShowWheel] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowWheel(true);
-    }, 500);
-  }, []);
-
-  // const HEADER_HEIGHT = 92;
 
   return (
     <section
       id="hero"
-      className={`relative flex justify-center text-gray-800 px-2 md:px-6 ${backgroundColor} min-h-[calc(100vh-92px)]`}
+      className={`relative flex justify-center section-padding bg-primary min-h-[calc(100vh-var(--header-height))]`}
     >
       <div
         className="max-w-6xl mx-auto  grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -76,11 +29,11 @@ export function HeroSection() {
           <div className="flex-1 flex items-center p-6 md:p-8">
             <div>
               <div className="text-center md:text-left">
-                <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-8 leading-tight">
+                <h1 className="text-heading mb-4 md:mb-8">
                   Your Smile is Our
                   <AnimatedText
                     text={`Star Priority`}
-                    className="font-bold"
+                    className="text-inherit"
                     animationType="letters"
                     staggerDelay={0.08}
                     duration={0.6}
@@ -90,12 +43,12 @@ export function HeroSection() {
                     animateOpacity={1}
                     multiline={true}
                     wordStyles={{
-                      Star: "text-yellow-600 animate-pulse",
+                      Star: "brand-yellow animate-pulse",
                       Priority: "",
                     }}
                   />
                 </h1>
-                <p className="text-justify text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">
+                <p className="text-justify text-normal mb-4 md:mb-8">
                   Experience exceptional dental care, proudly serving the{" "}
                   <Highlighter action="underline" color="#FF9800">
                     Newcastle
@@ -120,45 +73,18 @@ export function HeroSection() {
           </div>
 
           <div className="hidden md:flex flex-wrap items-center pl-7 justify-center md:justify-start">
-            <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 pr-10">
+            <div className="*:data-[slot=avatar]:ring-background flex *:data-[slot=avatar]:ring-2 pr-10">
               <ReviewStack />
             </div>
-            <span className="hidden text-black md:block mb-[41px] whitespace-nowrap">
+            <span className="hidden md:block mb-[41px] whitespace-nowrap">
               More than 1000+ happy patients
             </span>
           </div>
         </div>
 
         {/* RIGHT COLUMN (Carousel with reserved space, appears below text on mobile) */}
-        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1">
-          {/* Reserve space to avoid layout shift before dynamic components render */}
-          <div className="relative w-full h-[320px] md:h-[520px]">
-            {showWheel && carouselXPosition && (
-              <ServicesWheel
-                radius={isMobile ? 140 : 230}
-                visibleIcons={isMobile ? 7 : undefined}
-                className="absolute z-20"
-                style={{
-                  left: `${carouselXPosition}px`,
-                  bottom: isMobile
-                    ? "calc(100% - 100px)"
-                    : "calc(100% - 170px)",
-                  transform: "translateX(-50%)",
-                  transition: "left 0.3s ease-out 0.9s",
-                }}
-              />
-            )}
-            {showCarousel && (
-              <div className="absolute inset-0">
-                <Carousel
-                  slides={heroCarouselSlides}
-                  {...heroCarouselConfig}
-                  onXPositionChange={setCarouselXPosition}
-                  debug={false}
-                />
-              </div>
-            )}
-          </div>
+        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1 w-full h-[320px] md:h-[520px]">
+          <HeroCarousel />
         </div>
       </div>
     </section>

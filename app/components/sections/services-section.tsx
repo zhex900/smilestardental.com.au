@@ -9,7 +9,7 @@ export function ServicesSection() {
   const router = useRouter();
 
   return (
-    <section id="services" className="px-6 py-16 bg-white scroll-mt-20">
+    <section id="services" className="section-padding  bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
