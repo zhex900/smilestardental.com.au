@@ -2,18 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Calendar,
-  Clock,
-  ArrowLeft,
-  Share2,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Mail,
-  Tag,
-} from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, Mail, Tag } from "lucide-react";
 import Link from "next/link";
+import {
+  SocialFacebook,
+  SocialLinkedin,
+  SocialX,
+} from "@/components/social-brand-icons";
 import type { BlogFrontmatter, RelatedPostCard } from "@/lib/blog-types";
 
 type BlogPostShellProps = {
@@ -122,21 +117,21 @@ export function BlogPostShell({
                       className="rounded-full bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700"
                       aria-label="Share on Facebook"
                     >
-                      <Facebook className="h-5 w-5" />
+                      <SocialFacebook className="h-5 w-5" />
                     </button>
                     <button
                       type="button"
                       className="rounded-full bg-blue-400 p-2 text-white transition-colors hover:bg-blue-500"
-                      aria-label="Share on Twitter"
+                      aria-label="Share on X"
                     >
-                      <Twitter className="h-5 w-5" />
+                      <SocialX className="h-5 w-5" />
                     </button>
                     <button
                       type="button"
                       className="rounded-full bg-blue-700 p-2 text-white transition-colors hover:bg-blue-800"
                       aria-label="Share on LinkedIn"
                     >
-                      <Linkedin className="h-5 w-5" />
+                      <SocialLinkedin className="h-5 w-5" />
                     </button>
                     <button
                       type="button"

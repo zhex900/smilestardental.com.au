@@ -89,7 +89,7 @@ export default function RootLayout({
         <Header />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
-        <BreakpointDebug />
+        {/* <BreakpointDebug /> */}
       </body>
     </html>
   );

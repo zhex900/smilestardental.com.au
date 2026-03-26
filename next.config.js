@@ -1,3 +1,5 @@
+const path = require("path");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -13,6 +15,18 @@ const nextConfig = {
     ],
   },
   trailingSlash: false,
+
+  // Pin workspace root when multiple lockfiles exist (e.g. ~/package-lock.json).
+  turbopack: {
+    root: path.join(__dirname),
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -20,6 +34,7 @@ const nextConfig = {
     });
     return config;
   },
+
   experimental: {
     inlineCss: true,
     optimizePackageImports: ["framer-motion", "lucide-react"],
