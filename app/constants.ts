@@ -16,12 +16,12 @@ export const email = "info@smilestardental.com.au";
 export const copyright = `© ${new Date().getFullYear()} Smile Star Dental. All rights reserved.`;
 
 import {
-  FacebookIcon,
-  Instagram,
-  Linkedin,
-  Youtube,
-  Twitter,
-} from "lucide-react";
+  SocialFacebook,
+  SocialInstagram,
+  SocialLinkedin,
+  SocialYoutube,
+  SocialX,
+} from "./components/social-brand-icons";
 
 export const yearEstablished = 2012;
 
@@ -31,31 +31,31 @@ export const socialMedia = [
   {
     name: "Facebook",
     url: "https://www.facebook.com/smilestardental",
-    icon: FacebookIcon,
+    icon: SocialFacebook,
     hoverColor: "hover:bg-blue-600",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/smilestardental",
-    icon: Instagram,
+    icon: SocialInstagram,
     hoverColor: "hover:bg-pink-600",
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/smilestardental",
-    icon: Linkedin,
+    icon: SocialLinkedin,
     hoverColor: "hover:bg-blue-700",
   },
   {
     name: "YouTube",
     url: "https://www.youtube.com/smilestardental",
-    icon: Youtube,
+    icon: SocialYoutube,
     hoverColor: "hover:bg-red-600",
   },
   {
-    name: "Twitter",
+    name: "X",
     url: "https://twitter.com/smilestardental",
-    icon: Twitter,
+    icon: SocialX,
     hoverColor: "hover:bg-blue-400",
   },
 ];

@@ -9,9 +9,6 @@ import {
   GraduationCap,
   Star,
   Clock,
-  Mail,
-  Linkedin,
-  Twitter,
 } from "lucide-react";
 
 const teamMembers = [
