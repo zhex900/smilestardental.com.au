@@ -124,7 +124,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="section-px section-py bg-white scroll-mt-30 min-h-screen"
+      className="section-px section-py bg-white scroll-mt-30 "
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

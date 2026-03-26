@@ -10,7 +10,6 @@ import {
   Award,
   Baby,
   Braces,
-  Star,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/card";
 import { TestimonialsSection } from "@/components/sections";
@@ -169,36 +168,6 @@ const services = [
       "Maintenance plans",
       "Health education",
     ],
-  },
-];
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-    text: "The Invisalign treatment completely transformed my smile. The process was comfortable and the results exceeded my expectations!",
-    rating: 5,
-    service: "Invisalign & Orthodontics",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
-    text: "I was nervous about getting dental implants, but the team made the entire process smooth and painless. My new teeth look and feel amazing!",
-    rating: 5,
-    service: "Dental Implants",
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
-    text: "The teeth whitening treatment gave me the confidence boost I needed. Professional, quick, and the results are incredible!",
-    rating: 5,
-    service: "Teeth Whitening",
   },
 ];
 

@@ -252,7 +252,6 @@ export const InfiniteMovingCards = ({
       const move = (e: TouchEvent) => {
         const t = e.touches[0];
         if (!t) return;
-        e.preventDefault();
         moveDragAt(t.clientX);
       };
       const end = () => {
@@ -269,9 +268,9 @@ export const InfiniteMovingCards = ({
       };
       docTouchMoveRef.current = move;
       docTouchEndRef.current = end;
-      document.addEventListener("touchmove", move, { passive: false });
-      document.addEventListener("touchend", end, { passive: false });
-      document.addEventListener("touchcancel", end, { passive: false });
+      document.addEventListener("touchmove", move, { passive: true });
+      document.addEventListener("touchend", end);
+      document.addEventListener("touchcancel", end);
       touchListenersActiveRef.current = true;
     }
   };
@@ -400,7 +399,6 @@ export const InfiniteMovingCards = ({
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const t = e.touches[0];
     if (!t) return;
-    e.preventDefault();
     activeInputRef.current = "touch";
     const x = getTouchX(t);
     beginDragAt(x);
@@ -411,7 +409,6 @@ export const InfiniteMovingCards = ({
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     const t = e.touches[0];
     if (!t) return;
-    e.preventDefault();
     const x = getTouchX(t);
     moveDragAt(x);
   };
@@ -470,7 +467,7 @@ export const InfiniteMovingCards = ({
           "[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
-      style={{ touchAction: "none" }}
+          style={{ touchAction: "pan-y" }}
     >
       <div ref={dragWrapperRef} className="will-change-transform">
         <ul

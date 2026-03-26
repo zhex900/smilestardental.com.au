@@ -50,12 +50,6 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
             </li>
           ))}
         </ul>
-        <div className="mt-auto">
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
-            Learn More
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </button>
-        </div>
       </div>
     </motion.div>
   );

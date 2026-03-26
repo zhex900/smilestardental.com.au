@@ -129,6 +129,22 @@ const recentArticles = [
     },
     slug: "dental-implants-complete-guide",
   },
+  {
+    id: 8,
+    title: "Dental ImplantsA: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1699577272317-a64e1eaaa9c8?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
 ];
 
 export default function Blog() {
