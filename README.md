@@ -138,3 +138,138 @@ This project was migrated from Vite + React Router to Next.js:
 ## 📄 License
 
 This project is licensed under the MIT License.
+
+
+
+const featuredArticle = {
+  id: 1,
+  title: "The Future of Dentistry: How Technology is Transforming Dental Care",
+  excerpt:
+    "Discover how AI-powered diagnostics, 3D printing, and virtual reality are revolutionizing dental treatments and improving patient experiences.",
+  category: "Dental Technology",
+  date: "June 15, 2023",
+  image:
+    "https://storage.googleapis.com/uxpilot-auth.appspot.com/6037874afb-0612d86f55a7f589a58f.png",
+  author: {
+    name: "Dr. Michael Chen",
+    title: "Chief Technology Officer",
+    avatar:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
+  },
+  slug: "future-of-dentistry-technology",
+};
+
+const recentArticles = [
+  {
+    id: 2,
+    title: "5 Benefits of Professional Teeth Whitening",
+    excerpt:
+      "Learn why professional whitening treatments provide better, safer results than over-the-counter alternatives.",
+    category: "Cosmetic Dentistry",
+    date: "May 28, 2023",
+    image:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/c6f158e696-81dc99f9eb544526971b.png",
+    author: {
+      name: "Dr. Sarah Johnson",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
+    },
+    slug: "benefits-professional-teeth-whitening",
+  },
+  {
+    id: 3,
+    title: "Your Child's First Dental Visit: What to Expect",
+    excerpt:
+      "Prepare your child for a positive dental experience with these helpful tips and insights from our pediatric specialists.",
+    category: "Children's Dental Care",
+    date: "May 15, 2023",
+    image:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/af1b3dcf26-dd3d146288250c133b86.png",
+    author: {
+      name: "Dr. Lisa Park",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
+    },
+    slug: "child-first-dental-visit",
+  },
+  {
+    id: 4,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1681997203595-e45e06abe034?q=80&w=2024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
+  {
+    id: 5,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664203067979-47448934fd97?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
+  {
+    id: 6,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1723187823945-bd116325da6a?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
+  {
+    id: 7,
+    title: "Dental Implants: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1699577272317-a64e1eaaa9c8?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
+  {
+    id: 8,
+    title: "Dental ImplantsA: The Complete Guide",
+    excerpt:
+      "Everything you need to know about dental implants, from the procedure to recovery and long-term care.",
+    category: "Dental Procedures",
+    date: "May 3, 2023",
+    image:
+      "https://plus.unsplash.com/premium_photo-1699577272317-a64e1eaaa9c8?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: {
+      name: "Dr. Robert Garcia",
+      avatar:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    },
+    slug: "dental-implants-complete-guide",
+  },
+];

@@ -7,7 +7,6 @@ export interface BlogPageCardAuthor {
 }
 
 export interface BlogCardProps {
-  id: number;
   title: string;
   excerpt: string;
   category: string;
@@ -48,7 +47,7 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
             </div>
           )}
           <Link
-            href={`/blog/${article.slug}`}
+            href={`/blogs/${article.slug}`}
             className="text-blue-600 text-sm font-medium hover:text-blue-700 transition-colors"
           >
             Read more →
