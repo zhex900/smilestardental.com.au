@@ -10,7 +10,6 @@ import {
   Award,
   Baby,
   Braces,
-  Star,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/card";
 import { TestimonialsSection } from "@/components/sections";
@@ -172,36 +171,6 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-    text: "The Invisalign treatment completely transformed my smile. The process was comfortable and the results exceeded my expectations!",
-    rating: 5,
-    service: "Invisalign & Orthodontics",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
-    text: "I was nervous about getting dental implants, but the team made the entire process smooth and painless. My new teeth look and feel amazing!",
-    rating: 5,
-    service: "Dental Implants",
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
-    text: "The teeth whitening treatment gave me the confidence boost I needed. Professional, quick, and the results are incredible!",
-    rating: 5,
-    service: "Teeth Whitening",
-  },
-];
-
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -242,9 +211,9 @@ export default function Services() {
         <div className="container mx-auto px-4">
           <div className="flex overflow-x-auto py-4 no-scrollbar space-x-4 mb-8">
             {serviceCategories.map((category) => (
-              <button
+              <div
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+               
                 className={`px-6 py-3 rounded-full font-medium whitespace-nowrap transition-colors ${
                   activeCategory === category.id
                     ? "bg-blue-600 text-white"
@@ -252,7 +221,7 @@ export default function Services() {
                 }`}
               >
                 {category.name}
-              </button>
+              </div>
             ))}
           </div>
 

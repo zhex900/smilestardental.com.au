@@ -2,12 +2,12 @@ import {
   HeroSection,
   ServicesSection,
   BeforeAfterSection,
-  BlogSection,
   TestimonialsSection,
 } from "./components/sections";
+import { BlogSection } from "./components/sections/blog-section";
 import { ScrollNavigation } from "./components/ui/scroll-navigation";
 
-export default function HomePage() {
+export default async function HomePage() {
   const sections = ["hero", "services", "before-after", "testimonials", "blog"];
 
   return (

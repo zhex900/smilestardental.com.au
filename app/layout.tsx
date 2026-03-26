@@ -3,7 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { backgroundColor } from "./constants";
+import { BreakpointDebug } from "./components/breakpoint-debug";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overscroll-none">
+    <html lang="en">
       <head>
         {/* iOS Safari status bar / safe area colors */}
 
@@ -85,10 +85,11 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body className={`${quicksand.className} overscroll-none`}>
+      <body className={`${quicksand.className}`}>
         <Header />
-        <main className="overflow-x-hidden overscroll-none">{children}</main>
+        <main className="overflow-x-hidden">{children}</main>
         <Footer />
+        <BreakpointDebug />
       </body>
     </html>
   );

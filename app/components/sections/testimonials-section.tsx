@@ -124,7 +124,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="section-px section-py bg-white scroll-mt-30 min-h-screen"
+      className="section-px section-py bg-white scroll-mt-30 "
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -173,22 +173,6 @@ export function TestimonialsSection() {
             />
           ))}
         </InfiniteMovingCards>
-      </div>
-      {/* Google Review CTA */}
-      <div className="">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <div className="flex justify-center mt-6">
-            <ButtonGradient onClick={() => {}}>
-              <GoogleIcon className="w-5 h-5 mr-2" />
-              Read More Reviews
-            </ButtonGradient>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

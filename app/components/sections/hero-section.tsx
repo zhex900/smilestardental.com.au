@@ -71,19 +71,10 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-
-          <div className="hidden md:flex flex-wrap items-center pl-7 justify-center md:justify-start">
-            <div className="*:data-[slot=avatar]:ring-background flex *:data-[slot=avatar]:ring-2 pr-10">
-              <ReviewStack />
-            </div>
-            <span className="hidden md:block mb-[41px] whitespace-nowrap">
-              More than 1000+ happy patients
-            </span>
-          </div>
         </div>
 
         {/* RIGHT COLUMN (Carousel with reserved space, appears below text on mobile) */}
-        <div className="relative flex mt-10 md:-mt-0 items-end justify-center md:justify-end order-2 md:order-1 w-full h-[320px] md:h-[520px]">
+        <div className="relative order-2 flex w-full items-center justify-center self-auto [@media(min-height:1000px)]:self-center md:order-1">
           <HeroCarousel />
         </div>
       </div>

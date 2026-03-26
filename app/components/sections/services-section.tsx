@@ -35,12 +35,6 @@ export function ServicesSection() {
         <div className="mx-auto">
           <HoverEffect items={servicesData} />
         </div>
-
-        <div className="flex justify-center mt-6">
-          <ButtonGradient onClick={() => router.push("/services")}>
-            <span className=""> View All Services</span>
-          </ButtonGradient>
-        </div>
       </div>
     </section>
   );
