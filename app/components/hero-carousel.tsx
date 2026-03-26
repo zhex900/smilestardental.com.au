@@ -43,7 +43,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative mx-auto min-h-[300px] w-full max-w-[min(100%,520px)] md:min-h-[min(52vh,540px)] md:max-w-none">
       {showWheel && carouselXPosition && (
         <ServicesWheel
           radius={isMobile ? 140 : 230}
@@ -56,17 +56,15 @@ const HeroCarousel = () => {
           }}
         />
       )}
-      {
-        <div className="absolute inset-0 md:inset-x-0 md:bottom-0 md:top-auto">
-          <Carousel
-            slides={heroCarouselSlides}
-            {...heroCarouselConfig}
-            onXPositionChange={setCarouselXPosition}
-            debug={false}
-          />
-        </div>
-      }
-    </>
+      <div className="absolute inset-0 md:inset-x-0 md:bottom-0 md:top-auto">
+        <Carousel
+          slides={heroCarouselSlides}
+          {...heroCarouselConfig}
+          onXPositionChange={setCarouselXPosition}
+          debug={false}
+        />
+      </div>
+    </div>
   );
 };
 

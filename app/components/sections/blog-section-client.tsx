@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { ButtonGradient } from "../ui/button-gradient";
 import { BlogCard } from "../ui/card";
-import type { BlogListCard } from "@/lib/blogs";
+import type { BlogListCard } from "@/lib/blog-types";
 
 type BlogSectionClientProps = {
   posts: BlogListCard[];

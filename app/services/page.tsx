@@ -211,9 +211,9 @@ export default function Services() {
         <div className="container mx-auto px-4">
           <div className="flex overflow-x-auto py-4 no-scrollbar space-x-4 mb-8">
             {serviceCategories.map((category) => (
-              <button
+              <div
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+               
                 className={`px-6 py-3 rounded-full font-medium whitespace-nowrap transition-colors ${
                   activeCategory === category.id
                     ? "bg-blue-600 text-white"
@@ -221,7 +221,7 @@ export default function Services() {
                 }`}
               >
                 {category.name}
-              </button>
+              </div>
             ))}
           </div>
 

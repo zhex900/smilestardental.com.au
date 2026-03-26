@@ -2,9 +2,9 @@ import {
   HeroSection,
   ServicesSection,
   BeforeAfterSection,
-  BlogSection,
   TestimonialsSection,
 } from "./components/sections";
+import { BlogSection } from "./components/sections/blog-section";
 import { ScrollNavigation } from "./components/ui/scroll-navigation";
 
 export default async function HomePage() {

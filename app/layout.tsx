@@ -3,7 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { backgroundColor } from "./constants";
+import { BreakpointDebug } from "./components/breakpoint-debug";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -89,6 +89,7 @@ export default function RootLayout({
         <Header />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
+        <BreakpointDebug />
       </body>
     </html>
   );

@@ -7,9 +7,10 @@ import { ButtonGradient } from "./ui/button-gradient";
 import { useState, useEffect } from "react";
 import { LogoIcon } from "./ui/logo-icon";
 import { backgroundColor, phoneNumber } from "@/constants";
+import { BackgroundGradient } from "./ui/background-gradient";
 
 const menuItemClassName =
-  "hover:text-gray-500 transition-all hover:border-b-2 hover:border-cyan-500";
+  "hover:text-cyan-500 transition-all hover:border-b-2 hover:border-cyan-500";
 
 const MenuItems = ({ onClick }: { onClick?: () => void }) => (
   <>
@@ -30,7 +31,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="font-medium text-md px-6 py-4 md:px-12 top-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-[200] font-medium text-md bg-white/70 px-6 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 md:px-12">
       <div className="container mx-auto flex items-center justify-between ">
         <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
           <LogoIcon />
@@ -80,10 +81,15 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 text-white bg-red-900 z-99999 shadow-lg rounded-lg mx-6 mt-2 p-4 md:hidden">
-            <nav className="flex flex-col space-y-4 ">
-              <MenuItems onClick={() => setIsMenuOpen(false)} />
-            </nav>
+          <div
+            className="fixed left-0 right-0 z-[250] mx-6 rounded-lg text-white shadow-lg md:hidden"
+            style={{ top: "var(--header-height)" }}
+          >
+            <BackgroundGradient>
+              <nav className="flex flex-col space-y-4  p-4">
+                <MenuItems onClick={() => setIsMenuOpen(false)} />
+              </nav>{" "}
+            </BackgroundGradient>
           </div>
         )}
       </div>

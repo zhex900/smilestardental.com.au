@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { BlogCard } from "@/components/ui/card";
-import type { BlogListCard } from "@/lib/blogs";
+import type { BlogListCard } from "@/lib/blog-types";
 
 const ARTICLES_PER_PAGE = 6;
 

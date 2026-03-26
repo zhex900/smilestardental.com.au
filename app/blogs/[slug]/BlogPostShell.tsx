@@ -14,7 +14,7 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import type { BlogFrontmatter, RelatedPostCard } from "@/lib/blogs";
+import type { BlogFrontmatter, RelatedPostCard } from "@/lib/blog-types";
 
 type BlogPostShellProps = {
   post: BlogFrontmatter;

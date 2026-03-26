@@ -1,44 +1,17 @@
+import "server-only";
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import type {
+  BlogFrontmatter,
+  BlogListCard,
+  RelatedPostCard,
+} from "./blog-types";
+
+export type { BlogFrontmatter, BlogListCard, RelatedPostCard } from "./blog-types";
 
 const BLOGS_DIR = path.join(process.cwd(), "app/contents/blogs");
-
-export type BlogFrontmatter = {
-  title: string;
-  excerpt?: string;
-  author: string;
-  authorImage: string;
-  /** Shown on listing featured block, e.g. job title */
-  authorTitle?: string;
-  date: string;
-  readTime: string;
-  category: string;
-  image?: string;
-  tags?: string[];
-  authorBio?: string;
-  relatedSlugs?: string[];
-};
-
-export type RelatedPostCard = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  date: string;
-};
-
-/** Shape expected by `BlogCard` on the listing page */
-export type BlogListCard = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  image: string;
-  authorTitle?: string;
-  author: { name: string; avatar: string };
-};
 
 function parsePostDate(dateStr: string): number {
   const t = Date.parse(dateStr);
