@@ -8,7 +8,7 @@ import { Card } from "./card";
 
 interface TestimonialCardProps {
   testimonial: {
-    id: number;
+    id: number | string;
     name: string;
     avatar: string;
     rating: number;
