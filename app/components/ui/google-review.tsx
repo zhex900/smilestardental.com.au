@@ -26,7 +26,6 @@ export function GoogleReview({
   showReviewCount = true,
 }: GoogleReviewProps) {
   const { data, loading } = useGoogleReviews();
-  console.log("review", loading, data);
   const preferFetched =
     data != null && ratingProp === undefined && reviewCountProp === undefined;
   const rating = preferFetched

@@ -4,9 +4,8 @@ import type {
   GoogleReviewsPayload,
 } from "@/lib/google-reviews-types";
 
-/** ISR + Data Cache: refresh at most once per day */
-const ONE_DAY_SEC = 86_400;
-export const revalidate = ONE_DAY_SEC;
+/** ISR + Data Cache: refresh at most once per day (literal required for Next segment config). */
+export const revalidate = 86400;
 
 type PlacesReview = {
   rating?: number;
@@ -68,7 +67,7 @@ export async function GET() {
         "X-Goog-Api-Key": key,
         "X-Goog-FieldMask": "rating,userRatingCount,reviews,displayName",
       },
-      next: { revalidate: ONE_DAY_SEC },
+      next: { revalidate },
     });
 
     if (!res.ok) {
@@ -99,7 +98,7 @@ export async function GET() {
 
     return NextResponse.json(payload satisfies GoogleReviewsPayload, {
       headers: {
-        "Cache-Control": `public, s-maxage=${ONE_DAY_SEC}, stale-while-revalidate=${ONE_DAY_SEC}`,
+        "Cache-Control": `public, s-maxage=${revalidate}, stale-while-revalidate=${revalidate}`,
       },
     });
   } catch (e) {
