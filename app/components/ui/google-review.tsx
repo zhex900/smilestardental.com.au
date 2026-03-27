@@ -1,7 +1,10 @@
 "use client";
+
 import { Star } from "lucide-react";
+import { useGoogleReviews } from "@/hooks/use-google-reviews";
 
 interface GoogleReviewProps {
+  /** When set, skips live fetch and shows these values */
   rating?: number;
   reviewCount?: number;
   variant?: "compact" | "detailed" | "header";
@@ -13,8 +16,8 @@ interface GoogleReviewProps {
 }
 
 export function GoogleReview({
-  rating = 4.9,
-  reviewCount = 152,
+  rating: ratingProp,
+  reviewCount: reviewCountProp,
   variant = "compact",
   className = "",
   showLogo = true,
@@ -22,12 +25,23 @@ export function GoogleReview({
   showRating = true,
   showReviewCount = true,
 }: GoogleReviewProps) {
-  const renderStars = (rating: number) => {
+  const { data, loading } = useGoogleReviews();
+  console.log("review", loading, data);
+  const preferFetched =
+    data != null && ratingProp === undefined && reviewCountProp === undefined;
+  const rating = preferFetched
+    ? data!.rating
+    : (ratingProp ?? data?.rating ?? 4.9);
+  const reviewCount = preferFetched
+    ? data!.userRatingCount
+    : (reviewCountProp ?? data?.userRatingCount ?? 152);
+
+  const renderStars = (r: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
         className={`w-4 h-4 ${
-          i < Math.floor(rating)
+          i < Math.floor(r)
             ? "fill-yellow-400 text-yellow-400"
             : "text-gray-300"
         }`}
@@ -76,12 +90,18 @@ export function GoogleReview({
           <div className="flex items-center">
             <span className="text-yellow-400 text-lg">★★★★★</span>
             {showRating && (
-              <span className="ml-2 text-lg font-semibold">{rating}</span>
+              <span className="ml-2 text-lg font-semibold">
+                {loading && preferFetched ? "…" : rating.toFixed(1)}
+              </span>
             )}
           </div>
         )}
         {showReviewCount && (
-          <span className="hidden md:block">{reviewCount} Google reviews</span>
+          <span className="hidden md:block">
+            {loading && preferFetched
+              ? "Loading reviews…"
+              : `${reviewCount} Google reviews`}
+          </span>
         )}
       </div>
     </div>
@@ -93,9 +113,15 @@ export function GoogleReview({
         {showStars && (
           <div className="flex text-yellow-400">{renderStars(rating)}</div>
         )}
-        {showRating && <span className="text-xl font-semibold ">{rating}</span>}
+        {showRating && (
+          <span className="text-xl font-semibold ">
+            {loading && preferFetched ? "…" : rating.toFixed(1)}
+          </span>
+        )}
         {showReviewCount && (
-          <span className=" ml-2">({reviewCount} reviews)</span>
+          <span className=" ml-2">
+            ({loading && preferFetched ? "…" : `${reviewCount} reviews`})
+          </span>
         )}
       </div>
     </div>
