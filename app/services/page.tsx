@@ -11,7 +11,7 @@ import {
   Baby,
   Braces,
 } from "lucide-react";
-import { ServiceCard } from "@/components/ui/card";
+import { ServiceDetailCard } from "@/components/ui/card";
 import { TestimonialsSection } from "@/components/sections";
 
 const serviceCategories = [
@@ -227,7 +227,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
+              <ServiceDetailCard key={service.id} service={service} index={index} />
             ))}
           </div>
         </div>

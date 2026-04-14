@@ -10,8 +10,8 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "text-black hover:text-white rounded-2xl h-full w-full p-4 overflow-hidden bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20 border border-transparent group-hover:border-slate-100 relative z-20",
-        className
+        "text-black hover:text-white rounded-2xl h-full w-full p-4 overflow-hidden bg-primary border border-transparent group-hover:border-gold-100 relative z-20",
+        className,
       )}
     >
       <div className="relative z-50">
@@ -46,7 +46,7 @@ export const CardDescription = ({
     <div
       className={cn(
         "tracking-wide leading-relaxed text-md md:text-sm",
-        className
+        className,
       )}
     >
       {children}

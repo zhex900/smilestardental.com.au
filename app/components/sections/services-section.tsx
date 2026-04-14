@@ -1,13 +1,41 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { HoverEffect } from "../ui/card/card-hover-effect";
-import { ButtonGradient } from "../ui/button-gradient";
-import { servicesData } from "../services-wheel";
+import ImplantsIcon from "../icons/implants.svg";
+import OrthodonticsIcon from "../icons/orthodontics.svg";
+import MouthguardsIcon from "../icons/mouthguards.svg";
+import VeneersIcon from "../icons/veneers.svg";
+import { ServiceCard } from "../ui/card/service-card";
+
 import { motion } from "framer-motion";
+import { InfiniteMovingCards } from "../ui/card/infinite-moving-cards";
+
+export const servicesData = [
+  {
+    name: "Implants",
+    tooltip: "Implants",
+    icon: ImplantsIcon,
+    image: "/images/implants.jpg",
+  },
+  {
+    name: "Orthodontics",
+    tooltip: "Orthodontics",
+    icon: OrthodonticsIcon,
+    image: "/images/braces.jpg",
+  },
+  {
+    name: "Aligners",
+    tooltip: "Aligners",
+    icon: MouthguardsIcon,
+    image: "/images/aligners.jpg",
+  },
+  {
+    name: "Veneers",
+    tooltip: "Veneers",
+    icon: VeneersIcon,
+    image: "/images/veneers.jpg",
+  },
+];
 
 export function ServicesSection() {
-  const router = useRouter();
-
   return (
     <section
       id="services"
@@ -33,7 +61,11 @@ export function ServicesSection() {
         </motion.h2>
 
         <div className="mx-auto">
-          <HoverEffect items={servicesData} />
+          <InfiniteMovingCards speed="normal" className="">
+            {servicesData.map((service) => (
+              <ServiceCard key={service.name} service={service} />
+            ))}
+          </InfiniteMovingCards>
         </div>
       </div>
     </section>

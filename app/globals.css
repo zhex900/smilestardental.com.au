@@ -26,15 +26,15 @@
   }
 
   .brand-yellow {
-    @apply text-yellow-600;
+    @apply text-gold-600;
   }
 
   .bg-primary {
-    @apply bg-gradient-to-b from-sky-100/50 to-sky-200/50;
+    @apply bg-gradient-to-b from-beige-50/50 to-gold-100/50;
   }
 
   .text-heading {
-    @apply text-3xl md:text-5xl font-bold leading-tight ;
+    @apply text-3xl md:text-5xl font-bold leading-tight;
   }
 
   .text-normal {
@@ -46,7 +46,7 @@
   }
 
   .section-px {
-    @apply px-2 md:px-6 ;
+    @apply px-2 md:px-6;
   }
 
   .section-py {
@@ -58,9 +58,9 @@
   * {
     @apply border-gray-200 dark:border-gray-800;
   }
- 
+
   body {
-    @apply font-sans antialiased text-black ;
+    @apply font-sans antialiased text-black;
     overflow-x: hidden;
   }
   #__next {
@@ -69,16 +69,22 @@
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Hide scrollbar for carousel */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
