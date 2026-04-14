@@ -30,7 +30,11 @@
   }
 
   .bg-primary {
-    @apply bg-gradient-to-b from-beige-50/50 to-gold-100/50;
+    @apply bg-gradient-to-b from-white to-beige-100;
+  }
+
+  .bg-primary-dark {
+    @apply bg-gradient-to-b from-beige-100 to-gold-700;
   }
 
   .text-heading {

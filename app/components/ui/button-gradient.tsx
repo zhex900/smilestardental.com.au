@@ -25,7 +25,7 @@ const ButtonGradient = React.forwardRef<HTMLButtonElement, ButtonGradientProps>(
       animate = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     const defaultClassName = "text-black hover:text-white rounded-xl";
     const defaultBoxClassName = "opacity-50 rounded-xl";
@@ -45,7 +45,7 @@ const ButtonGradient = React.forwardRef<HTMLButtonElement, ButtonGradientProps>(
         />
       </BackgroundGradient>
     );
-  }
+  },
 );
 ButtonGradient.displayName = "ButtonGradient";
 

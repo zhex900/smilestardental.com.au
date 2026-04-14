@@ -65,7 +65,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           aria-hidden
         />
         <div
-          className="absolute inset-0 group-hover:bg-gradient-to-t from-gold-700/90  to-gold-100/25"
+          className="absolute inset-0 bg-gradient-to-t from-gold-500/80 to-gold-500/20 transition-opacity duration-300 ease-out group-hover:opacity-40"
           aria-hidden
         />
 
@@ -75,7 +75,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           className="relative z-10 flex h-full flex-col items-center justify-center gap-3 p-6 text-center"
         >
           <IconComponent className="h-10 w-10 text-white drop-shadow-md" />
-          <CardTitle className="border-b-2 border-transparent group-hover:text-3xl text-lg text-white drop-shadow-sm group-hover:border-gold-400">
+          <CardTitle className="border-b-2 border-transparent group-hover:text-3xl text-lg text-white drop-shadow-sm group-hover:border-white">
             {service.name}
           </CardTitle>
         </a>

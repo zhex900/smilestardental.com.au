@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Compare } from "../ui/compare";
 import { motion } from "framer-motion";
 import { Card, CardDescription, CardTitle } from "../ui/card";
@@ -8,7 +7,6 @@ import OrthodonticsIcon from "../icons/orthodontics.svg";
 
 export function BeforeAfterSection() {
   return (
-    //bg-gradient-to-r to-sky-300/20 via-sky-400/20 from-blue-700/20
     <section
       id="before-after"
       className="section-px section-py scroll-mt-30 bg-primary"
@@ -34,16 +32,16 @@ export function BeforeAfterSection() {
           </motion.p>
         </div>
 
-        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-20  ">
+        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-20 ">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="relative group block h-full w-full"
           >
-            <div className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl" />
+            <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-700/[0.8] block rounded-3xl" />
 
-            <Card className="text-slate-300">
+            <Card className="text-white bg-gradient-to-b from-gold-400/60 to-gold-600/50">
               <CardTitle className="flex items-center heading-mb">
                 <div className="flex items-center justify-center md:justify-start">
                   <div className="w-16 h-16 md:w-20 md:h-20">

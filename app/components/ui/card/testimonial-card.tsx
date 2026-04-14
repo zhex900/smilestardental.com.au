@@ -35,8 +35,14 @@ export function TestimonialCard({
       )}
     >
       <div className="relative w-full h-full">
-        <div className="hidden group-hover:block text-slate-500 group-hover:text-white absolute inset-0 h-full w-full dark:bg-gold-700/[0.8] rounded-3xl" />
-        <Card>
+        <Card
+          className={cn(
+            "transition-[background] duration-300",
+            "group-hover:!bg-gradient-to-b group-hover:!from-beige-300 group-hover:!to-gold-600",
+            "group-hover:text-white",
+            "[&_h4]:group-hover:text-white [&_p]:group-hover:text-white/95 [&_span]:group-hover:text-white/70",
+          )}
+        >
           <div className="flex items-center mb-4">
             <img
               src={testimonial.avatar}
@@ -55,7 +61,7 @@ export function TestimonialCard({
               </span>
             </div>
             <svg
-              className="w-5 h-5 text-blue-500"
+              className="w-5 h-5 shrink-0 text-blue-500 transition-colors group-hover:text-gold-200"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
