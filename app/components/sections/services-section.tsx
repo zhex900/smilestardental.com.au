@@ -46,7 +46,6 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          // className="text-4xl font-bold text-slate-800 mb-6"
         >
           <div className="text-center heading-mb">
             <h2 className="text-heading heading-mb">

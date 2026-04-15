@@ -25,12 +25,12 @@ const config: Config = {
       },
       colors: {
         beige: {
-          50: "#FDFBF8",
-          100: "#F5F0E6",
-          200: "#E6DDCF",
-          300: "#D6C7B0",
-          400: "#C4AE8D",
-          500: "#B3956E",
+          50: "#F3F3F3",
+          100: "#E2E2E2",
+          200: "#D1D1D1",
+          300: "#B6B6B6",
+          400: "#949494",
+          500: "#767676",
         },
         gold: {
           50: "#FBF7E6",
@@ -61,7 +61,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-quicksand)", "Quicksand", "sans-serif"],
+        sans: ["var(--font-poppins)", "Poppins", "system-ui", "sans-serif"],
       },
     },
   },

@@ -55,7 +55,7 @@ export function HeroSection() {
                   </Highlighter>{" "}
                   community where every patient receives star treatment for a
                   brighter,{" "}
-                  <Highlighter action="highlight" color="#87CEFA">
+                  <Highlighter action="highlight" color="#DCC67A">
                     healthier
                   </Highlighter>{" "}
                   smile.
