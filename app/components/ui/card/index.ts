@@ -5,5 +5,8 @@ export type { ServiceCardItem } from "./service-card";
 export { ServiceDetailCard } from "./service-detail-card";
 export type { Service } from "./service-detail-card";
 export { TestimonialCard } from "./testimonial-card";
-export { InfiniteMovingCards } from "./infinite-moving-cards";
+export {
+  InfiniteMovingCards,
+  type InfiniteMovingCardsProps,
+} from "./infinite-moving-cards";
 export { Card, CardTitle, CardDescription } from "./card";

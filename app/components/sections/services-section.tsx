@@ -39,9 +39,9 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="section-px section-py bg-white scroll-mt-30 min-h-screen"
+      className="section-py bg-white scroll-mt-30 min-h-screen"
     >
-      <div className="max-w-6xl mx-auto ">
+      <div className="section-px max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,15 +58,20 @@ export function ServicesSection() {
             </p>
           </div>
         </motion.h2>
-
-        <div className="mx-auto">
-          <InfiniteMovingCards speed="normal" className="">
-            {servicesData.map((service) => (
-              <ServiceCard key={service.name} service={service} />
-            ))}
-          </InfiniteMovingCards>
-        </div>
       </div>
+
+      <InfiniteMovingCards
+        leftFadeWidthPercent={1}
+        rightFadeWidthPercent={1}
+        mdLeftFadeWidthPercent={10}
+        mdRightFadeWidthPercent={10}
+        speed="normal"
+        className="w-full"
+      >
+        {servicesData.map((service) => (
+          <ServiceCard key={service.name} service={service} />
+        ))}
+      </InfiniteMovingCards>
     </section>
   );
 }

@@ -1,7 +1,23 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+
+export type InfiniteMovingCardsProps = {
+  children: React.ReactNode;
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+  /** Left edge fade width as a percentage of the container (0–50). Default 10. */
+  leftFadeWidthPercent?: number;
+  /** Right edge fade width as a percentage of the container (0–50). Default 10. */
+  rightFadeWidthPercent?: number;
+  /** Left fade from the `md` breakpoint up. Defaults to twice `leftFadeWidthPercent` (max 49). */
+  mdLeftFadeWidthPercent?: number;
+  /** Right fade from the `md` breakpoint up. Defaults to twice `rightFadeWidthPercent` (max 49). */
+  mdRightFadeWidthPercent?: number;
+};
 
 export const InfiniteMovingCards = ({
   direction = "left",
@@ -9,13 +25,11 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
   children,
-}: {
-  children: React.ReactNode;
-  direction?: "left" | "right";
-  speed?: "fast" | "normal" | "slow";
-  pauseOnHover?: boolean;
-  className?: string;
-}) => {
+  leftFadeWidthPercent = 10,
+  rightFadeWidthPercent = 10,
+  mdLeftFadeWidthPercent,
+  mdRightFadeWidthPercent,
+}: InfiniteMovingCardsProps) => {
   const MAX_REPEATS = 10;
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -24,6 +38,15 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const sync = () => setIsMdViewport(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  const [isMdViewport, setIsMdViewport] = useState(false);
   const [start, setStart] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [isMomentum, setIsMomentum] = useState(false);
@@ -446,6 +469,24 @@ export const InfiniteMovingCards = ({
       if (momentumRafRef.current) cancelAnimationFrame(momentumRafRef.current);
     };
   }, []);
+
+  const baseLeft = Math.min(50, Math.max(0, leftFadeWidthPercent));
+  const baseRight = Math.min(50, Math.max(0, rightFadeWidthPercent));
+  const mdLeftResolved =
+    mdLeftFadeWidthPercent !== undefined
+      ? Math.min(50, Math.max(0, mdLeftFadeWidthPercent))
+      : Math.min(49, baseLeft * 2);
+  const mdRightResolved =
+    mdRightFadeWidthPercent !== undefined
+      ? Math.min(50, Math.max(0, mdRightFadeWidthPercent))
+      : Math.min(49, baseRight * 2);
+  const leftFade = isMdViewport ? mdLeftResolved : baseLeft;
+  const rightFade = isMdViewport ? mdRightResolved : baseRight;
+  const fadeMask =
+    leftFade + rightFade < 100
+      ? `linear-gradient(to right, transparent, white ${leftFade}%, white ${100 - rightFade}%, transparent)`
+      : undefined;
+
   return (
     <div
       ref={containerRef}
@@ -462,12 +503,17 @@ export const InfiniteMovingCards = ({
       onMouseLeave={handleMouseLeave}
       className={cn(
         "grid scroller relative z-20 overflow-hidden select-none ",
-        !isDragging &&
-          !isMomentum &&
-          "[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
-          style={{ touchAction: "pan-y" }}
+      style={{
+        touchAction: "pan-y",
+        ...(!isDragging && !isMomentum && fadeMask
+          ? {
+              WebkitMaskImage: fadeMask,
+              maskImage: fadeMask,
+            }
+          : {}),
+      }}
     >
       <div ref={dragWrapperRef} className="will-change-transform">
         <ul
