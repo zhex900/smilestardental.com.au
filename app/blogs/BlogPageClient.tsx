@@ -107,7 +107,7 @@ export default function BlogPageClient({
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-gold-600"
                 />
                 <Search className="absolute right-4 top-3.5 h-5 w-5 text-gray-400" />
               </div>
@@ -129,7 +129,7 @@ export default function BlogPageClient({
                 onClick={() => setActiveCategory(category)}
                 className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   activeCategory === category
-                    ? "bg-blue-600 text-white"
+                    ? "bg-gold-600 text-white"
                     : "bg-gray-100 text-gray-800 hover:bg-blue-50"
                 }`}
               >
@@ -190,7 +190,7 @@ export default function BlogPageClient({
               </div>
               <div className="w-full p-8 md:w-1/2">
                 <div className="mb-4">
-                  <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600">
+                  <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-gold-600">
                     {featured.category}
                   </span>
                   <span className="ml-3 text-sm text-gray-500">
@@ -216,7 +216,7 @@ export default function BlogPageClient({
                 </div>
                 <Link
                   href={`/blogs/${featured.slug}`}
-                  className="inline-block rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+                  className="inline-block rounded-full bg-gold-600 px-6 py-3 font-medium text-white transition-colors hover:bg-gold-700"
                 >
                   Read Full Article
                 </Link>
@@ -321,7 +321,7 @@ export default function BlogPageClient({
                         name: e.target.value,
                       })
                     }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-600"
                     required
                   />
                 </div>
@@ -338,7 +338,7 @@ export default function BlogPageClient({
                         email: e.target.value,
                       })
                     }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-600"
                     required
                   />
                 </div>
@@ -355,13 +355,13 @@ export default function BlogPageClient({
                         question: e.target.value,
                       })
                     }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-600"
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+                  className="rounded-full bg-gold-600 px-6 py-3 font-medium text-white transition-colors hover:bg-gold-700"
                 >
                   Submit Question
                 </button>

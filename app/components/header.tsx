@@ -10,7 +10,7 @@ import { phoneNumber } from "@/constants";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 const menuItemClassName =
-  "hover:text-cyan-500 transition-all hover:border-b-2 hover:border-cyan-500";
+  "hover:text-gold-600 transition-all hover:border-b-2 hover:border-gold-600";
 
 const MenuItems = ({ onClick }: { onClick?: () => void }) => (
   <>

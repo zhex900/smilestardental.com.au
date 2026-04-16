@@ -210,14 +210,14 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-3">
+                  <p className="text-gold-600 font-medium mb-3">
                     {member.role}
                   </p>
                   <p className="text-gray-600 mb-4">{member.description}</p>
                   <div className="flex justify-center space-x-4">
-                    <Linkedin className="text-gray-400 hover:text-blue-600 cursor-pointer w-5 h-5" />
-                    <Twitter className="text-gray-400 hover:text-blue-600 cursor-pointer w-5 h-5" />
-                    <Mail className="text-gray-400 hover:text-blue-600 cursor-pointer w-5 h-5" />
+                    <Linkedin className="text-gray-400 hover:text-gold-600 cursor-pointer w-5 h-5" />
+                    <Twitter className="text-gray-400 hover:text-gold-600 cursor-pointer w-5 h-5" />
+                    <Mail className="text-gray-400 hover:text-gold-600 cursor-pointer w-5 h-5" />
                   </div>
                 </div>
               </motion.div>
@@ -227,7 +227,7 @@ export default function About() {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-gold-600">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-8 md:mb-0 md:w-2/3">
@@ -254,7 +254,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <button className="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+              <button className="inline-block bg-white text-gold-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
                 Book Your Appointment
               </button>
             </motion.div>

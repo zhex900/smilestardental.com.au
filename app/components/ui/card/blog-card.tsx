@@ -28,7 +28,7 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
       </div>
       <div className="p-6 flex flex-col flex-1">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-blue-600 text-sm font-medium">
+          <span className="text-gold-600 text-sm font-medium">
             {article.category}
           </span>
           <span className="text-gray-500 text-sm">{article.date}</span>
@@ -48,7 +48,7 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
           )}
           <Link
             href={`/blogs/${article.slug}`}
-            className="text-blue-600 text-sm font-medium hover:text-blue-700 transition-colors"
+            className="text-gold-600 text-sm font-medium hover:text-gold-700 transition-colors"
           >
             Read more →
           </Link>

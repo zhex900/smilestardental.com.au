@@ -19,37 +19,60 @@ type ServiceDetailCardProps = {
   index?: number;
 };
 
-export function ServiceDetailCard({ service, index = 0 }: ServiceDetailCardProps) {
+export function ServiceDetailCard({
+  service,
+  index = 0,
+}: ServiceDetailCardProps) {
+  const Icon = service.icon;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col"
+      className="group/card relative min-h-[440px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
     >
-      <div className="h-48 overflow-hidden">
-        <img
-          className="w-full h-full object-cover"
-          src={service.image}
-          alt={service.title}
-        />
-      </div>
-      <div className="p-6 flex-1 flex flex-col">
-        <div className="flex items-center mb-3">
-          <service.icon className="text-blue-600 text-xl mr-3" />
-          <h3 className="text-xl font-semibold text-gray-900">
-            {service.title}
-          </h3>
+      <img
+        src={service.image}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+      />
+
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"
+        aria-hidden
+      />
+
+      <div className="pointer-events-none absolute  bottom-0 z-10 ">
+        <div className="pointer-events-auto w-full rounded-2xl border border-white/15 bg-black/25 px-4 pb-5 pt-5 shadow-lg backdrop-blur-lg backdrop-saturate-150 md:px-5 md:pb-6 md:pt-6">
+          <div className="flex items-start gap-3">
+            <Icon className="mt-0.5 h-7 w-7 shrink-0 text-gold-400" />
+            <h3 className="text-xl font-semibold leading-snug text-white">
+              {service.title}
+            </h3>
+          </div>
+          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover/card:grid-rows-[1fr]">
+            <div className="min-h-0 overflow-hidden">
+              <div className="translate-y-2 opacity-0 transition duration-300 ease-out group-hover/card:translate-y-0 group-hover/card:opacity-100">
+                <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">
+                  {service.description}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center text-sm text-white/95"
+                    >
+                      <Star className="mr-2 h-3.5 w-3.5 shrink-0 fill-gold-400 text-gold-400" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="text-gray-600 mb-4">{service.description}</p>
-        <ul className="space-y-2 mb-6">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-center text-sm text-gray-600">
-              <Star className="w-3 h-3 text-blue-600 mr-2 fill-current" />
-              {feature}
-            </li>
-          ))}
-        </ul>
       </div>
     </motion.div>
   );
