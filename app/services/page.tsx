@@ -223,7 +223,7 @@ export default function Services() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`shrink-0 px-6 py-3 rounded-full font-medium whitespace-nowrap transition-colors cursor-pointer ${
                   activeCategory === category.id
-                    ? "bg-gold-600 text-white"
+                    ? "bg-gold-400 text-white"
                     : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50"
                 }`}
               >
@@ -280,7 +280,7 @@ export default function Services() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-gold-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -298,7 +298,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-gold-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -316,7 +316,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-gold-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -334,7 +334,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-gold-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -353,7 +353,7 @@ export default function Services() {
       <TestimonialsSection />
 
       {/* CTA Section */}
-      <section className="py-16 bg-gold-600">
+      <section className="py-16 bg-gold-400">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2
@@ -380,7 +380,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="bg-white text-gold-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+              <button className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
                 Book Consultation
               </button>
             </motion.div>

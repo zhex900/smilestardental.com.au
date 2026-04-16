@@ -40,7 +40,7 @@ export function FeatureCard({ article }: FeatureCardProps) {
         </div>
         <div className="w-full md:w-1/2 p-8">
           <div className="mb-4">
-            <span className="bg-blue-100 text-gold-600 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="bg-blue-100 text-gold-400 px-3 py-1 rounded-full text-sm font-medium">
               {article.category}
             </span>
             <span className="text-gray-500 text-sm ml-3">{article.date}</span>
@@ -62,7 +62,7 @@ export function FeatureCard({ article }: FeatureCardProps) {
           </div>
           <Link
             href={`/blogs/${article.slug}`}
-            className="inline-block px-6 py-3 bg-gold-600 text-white rounded-full font-medium hover:bg-gold-700 transition-colors"
+            className="inline-block px-6 py-3 bg-gold-400 text-white rounded-full font-medium hover:bg-gold-400 transition-colors"
           >
             Read Full Article
           </Link>

@@ -38,7 +38,7 @@ export function TestimonialCard({
         <Card
           className={cn(
             "transition-[background] duration-300",
-            "group-hover:!bg-gradient-to-b group-hover:!from-beige-300 group-hover:!to-gold-600",
+            "group-hover:!bg-gradient-to-b group-hover:!from-beige-300 group-hover:!to-gold-400",
             "group-hover:text-white",
             "[&_h4]:group-hover:text-white [&_p]:group-hover:text-white/95 [&_span]:group-hover:text-white/70",
           )}

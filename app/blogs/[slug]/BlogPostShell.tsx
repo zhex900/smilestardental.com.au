@@ -36,7 +36,7 @@ export function BlogPostShell({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-gold-600">
+              <span className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-gold-400">
                 {post.category}
               </span>
               <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
@@ -113,7 +113,7 @@ export function BlogPostShell({
                   <div className="flex space-x-4">
                     <button
                       type="button"
-                      className="rounded-full bg-blue-600 p-2 text-white transition-colors hover:bg-gold-700"
+                      className="rounded-full bg-blue-600 p-2 text-white transition-colors hover:bg-gold-400"
                       aria-label="Share on Facebook"
                     >
                       <SocialFacebook className="h-5 w-5" />
@@ -191,7 +191,7 @@ export function BlogPostShell({
                                 />
                               ) : null}
                               <div>
-                                <h4 className="line-clamp-2 font-medium text-gray-900 transition-colors group-hover:text-gold-600">
+                                <h4 className="line-clamp-2 font-medium text-gray-900 transition-colors group-hover:text-gold-400">
                                   {item.title}
                                 </h4>
                                 <p className="text-sm text-gray-500">
@@ -211,7 +211,7 @@ export function BlogPostShell({
         </div>
       </section>
 
-      <section className="bg-gold-600 py-16">
+      <section className="bg-gold-400 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h2
@@ -243,13 +243,13 @@ export function BlogPostShell({
             >
               <button
                 type="button"
-                className="rounded-full bg-white px-8 py-4 font-semibold text-gold-600 transition duration-300 hover:bg-gray-100"
+                className="rounded-full bg-white px-8 py-4 font-semibold text-gold-400 transition duration-300 hover:bg-gray-100"
               >
                 Book Appointment
               </button>
               <Link
                 href="/blogs"
-                className="flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-gold-600"
+                className="flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-gold-400"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Blog

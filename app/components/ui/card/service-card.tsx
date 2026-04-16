@@ -37,7 +37,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
       <AnimatePresence>
         {hovered && (
           <motion.span
-            className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-gold-700/[0.8] block rounded-3xl"
+            className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-gold-400/[0.8] block rounded-3xl"
             layoutId={`service-card-hover-${service.name}`}
             initial={{ opacity: 0 }}
             animate={{
