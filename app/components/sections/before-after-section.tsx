@@ -41,7 +41,7 @@ export function BeforeAfterSection() {
           >
             <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-400/[0.8] block rounded-3xl" />
 
-            <Card className="text-white bg-gradient-to-b from-gold-400/60 to-gold-400/50">
+            <Card className="text-white bg-gradient-to-b from-gold-600 to-gold-400">
               <CardTitle className="flex items-center heading-mb">
                 <div className="flex items-center justify-center md:justify-start">
                   <div className="w-16 h-16 md:w-20 md:h-20">
