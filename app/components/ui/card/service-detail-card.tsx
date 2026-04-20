@@ -45,7 +45,7 @@ export function ServiceDetailCard({
       />
 
       <div className="pointer-events-none absolute  bottom-0 z-10 ">
-        <div className="pointer-events-auto w-full rounded-2xl border border-white/15 bg-black/25 px-4 pb-5 pt-5 shadow-lg backdrop-blur-lg backdrop-saturate-150 md:px-5 md:pb-6 md:pt-6">
+        <div className="pointer-events-auto w-full rounded-xl border border-white/15 bg-black/25 px-4 pb-5 pt-5 shadow-lg backdrop-blur-lg backdrop-saturate-150 md:px-5 md:pb-6 md:pt-6">
           <div className="flex items-start gap-3">
             <Icon className="mt-0.5 h-7 w-7 shrink-0 text-gold-400" />
             <h3 className="text-xl font-semibold leading-snug text-white">

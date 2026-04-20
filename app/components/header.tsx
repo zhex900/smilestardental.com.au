@@ -82,7 +82,7 @@ export function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
-            className="fixed left-0 right-0 z-[250] mx-6 rounded-lg text-white shadow-lg md:hidden"
+            className="fixed left-0 right-0 z-[250] mx-6 rounded-xl text-white shadow-lg md:hidden"
             style={{ top: "var(--header-height)" }}
           >
             <BackgroundGradient>

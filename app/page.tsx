@@ -8,7 +8,7 @@ import { BlogSection } from "./components/sections/blog-section";
 import { ScrollNavigation } from "./components/ui/scroll-navigation";
 
 export default async function HomePage() {
-  const sections = ["hero", "services", "before-after", "testimonials", "blog"];
+  const sections = ["hero", "testimonials", "services", "before-after", "blog"];
 
   return (
     <>

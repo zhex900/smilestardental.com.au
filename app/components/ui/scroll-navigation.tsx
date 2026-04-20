@@ -8,11 +8,18 @@ import { ButtonGradient } from "./button-gradient";
 interface ScrollNavigationProps {
   sections: string[];
   className?: string;
+  /**
+   * Extra breathing room (in px) above the section once it's scrolled into
+   * view, in addition to the sticky header height read from
+   * `--header-height`.
+   */
+  topGap?: number;
 }
 
 export function ScrollNavigation({
   sections,
   className = "",
+  topGap = 0,
 }: ScrollNavigationProps) {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -63,24 +70,31 @@ export function ScrollNavigation({
     setShouldShowUpArrow(isAtLastSection);
   }, [currentSectionIndex, isAtTop, sections.length]);
 
+  const getHeaderOffset = () => {
+    if (typeof window === "undefined") return 0;
+    const raw = getComputedStyle(document.documentElement).getPropertyValue(
+      "--header-height",
+    );
+    const parsed = parseInt(raw, 10);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+
   const scrollToSection = (index: number) => {
     const targetId = sections[index];
-    const href = `#${targetId}`;
+    const element = document.getElementById(targetId);
+    if (!element) return;
 
-    // Create a temporary link element and click it
-    const link = document.createElement("a");
-    link.href = href;
-    link.style.display = "none";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const top =
+      element.getBoundingClientRect().top +
+      window.scrollY -
+      getHeaderOffset() -
+      topGap;
 
-    // Remove the hash from URL after scrolling
-    setTimeout(() => {
-      if (window.location.hash) {
-        window.history.replaceState(null, "", window.location.pathname);
-      }
-    }, 100);
+    window.scrollTo({ top, behavior: "smooth" });
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
   };
 
   const handleClick = () => {

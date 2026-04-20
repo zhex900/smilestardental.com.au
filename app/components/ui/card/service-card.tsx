@@ -36,7 +36,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
       <AnimatePresence>
         {hovered && (
           <motion.span
-            className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-gold-400/[0.8] block rounded-3xl"
+            className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-gold-400/[0.8] block rounded-xl"
             layoutId={`service-card-hover-${service.name}`}
             initial={{ opacity: 0 }}
             animate={{
@@ -53,7 +53,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
 
       <div
         className={cn(
-          "group relative flex h-[300px] w-[300px] flex-col justify-center overflow-hidden rounded-2xl",
+          "group relative flex h-[300px] w-[300px] flex-col justify-center overflow-hidden rounded-xl",
           "border border-transparent text-white transition-colors",
           "group-hover:border-gold-100",
         )}

@@ -65,7 +65,7 @@ export const CardCarousel = ({
           return next;
         });
       },
-      Math.max(1000, autoplayInterval)
+      Math.max(1000, autoplayInterval),
     );
     return () => clearInterval(id);
   }, [
@@ -104,7 +104,7 @@ export const CardCarousel = ({
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
-                    className="absolute inset-0 h-full w-full bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] block rounded-3xl"
+                    className="absolute inset-0 h-full w-full bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] block rounded-xl"
                     layoutId="hoverBackground"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.15 } }}
@@ -122,8 +122,8 @@ export const CardCarousel = ({
                 {/* Icon Container */}
                 <div
                   className={cn(
-                    "flex items-center justify-center w-16 h-16 rounded-2xl mb-6 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:animate-spin",
-                    item.iconBg || "bg-white/20 backdrop-blur-sm"
+                    "flex items-center justify-center w-16 h-16 rounded-xl mb-6 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:animate-spin",
+                    item.iconBg || "bg-white/20 backdrop-blur-sm",
                   )}
                 >
                   {item.icon}
@@ -220,7 +220,7 @@ export const CardCarousel = ({
                 "h-2 w-2 rounded-full transition-all",
                 current === idx
                   ? "bg-slate-800 dark:bg-slate-200 w-6"
-                  : "bg-slate-300 dark:bg-slate-700"
+                  : "bg-slate-300 dark:bg-slate-700",
               )}
               onClick={() => setCurrent(idx)}
             />
@@ -242,7 +242,7 @@ export const Card = ({
     <div
       className={cn(
         "rounded-xl h-full w-full p-6 overflow-hidden border border-transparent relative z-20 text-center shadow-lg hover:shadow-xl hover:shadow-black/20 group-hover:scale-105 group-hover:-rotate-1 group-hover:ring-2 group-hover:ring-white/30 transition-all duration-300",
-        className
+        className,
       )}
     >
       <div className="relative z-50">
@@ -263,7 +263,7 @@ export const CardTitle = ({
     <h4
       className={cn(
         "text-white font-bold tracking-wide text-2xl mb-4 transition-colors duration-200 leading-tight",
-        className
+        className,
       )}
     >
       {children}
@@ -282,7 +282,7 @@ export const CardDescription = ({
     <p
       className={cn(
         "text-white/95 tracking-wide leading-relaxed text-base transition-colors duration-200 font-medium",
-        className
+        className,
       )}
     >
       {children}

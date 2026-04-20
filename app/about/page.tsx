@@ -135,7 +135,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                className="rounded-2xl shadow-lg w-full"
+                className="rounded-xl shadow-lg w-full"
                 src="https://storage.googleapis.com/uxpilot-auth.appspot.com/88d5056f1a-ae060504fb9eca0c99cb.png"
                 alt="professional female dentist in white coat smiling, medical portrait"
               />

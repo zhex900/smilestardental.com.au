@@ -9,7 +9,7 @@ export function BeforeAfterSection() {
   return (
     <section
       id="before-after"
-      className="section-px section-py scroll-mt-30 bg-primary"
+      className="section-px section-py scroll-mt-28 bg-primary"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center heading-mb">
@@ -39,7 +39,7 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.8 }}
             className="relative group block h-full w-full"
           >
-            <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-400/[0.8] block rounded-3xl" />
+            <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-400/[0.8] block rounded-xl" />
 
             <Card className="text-white bg-gradient-to-b from-gold-600 to-gold-400">
               <CardTitle className="flex items-center heading-mb">
@@ -82,9 +82,9 @@ export function BeforeAfterSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative group p-2 h-full w-full"
+            className="relative group h-full w-full"
           >
-            <div className="w-full rounded-3xl p-3 bg-white/20 shadow-xl">
+            <div className="w-full rounded-xl p-3 bg-gold-600/[0.2] shadow-xl">
               <Compare
                 firstImage="/images/braces-before.png"
                 secondImage="/images/braces-after.jpg"
@@ -96,7 +96,7 @@ export function BeforeAfterSection() {
                 autoplayDuration={5000}
               />
               <div className=" text-center">
-                <div className="flex justify-between text-md text-slate-600">
+                <div className="pt-2 flex justify-between text-md text-slate-600">
                   <span className="font-medium">Before Treatment</span>
                   <span className="font-medium">After Treatment</span>
                 </div>
@@ -111,19 +111,19 @@ export function BeforeAfterSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className=" grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
             <div className="text-3xl font-bold text-slate-600 mb-2">
               3D Digital
             </div>
             <div className="text-slate-600">Scanning</div>
           </div>
-          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
             <div className="text-3xl font-bold text-yellow-600 mb-2">
               Invisible
             </div>
             <div className="text-slate-600">Aligners</div>
           </div>
-          <div className="text-center p-6 bg-white/20 rounded-3xl shadow-lg">
+          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
             <div className="text-3xl font-bold text-slate-600 mb-2">
               Advanced
             </div>

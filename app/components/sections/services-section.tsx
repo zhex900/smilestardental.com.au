@@ -39,7 +39,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="section-py bg-white scroll-mt-30 min-h-screen"
+      className="section-py bg-white scroll-mt-28 min-h-screen"
     >
       <div className="section-px max-w-6xl mx-auto">
         <motion.h2

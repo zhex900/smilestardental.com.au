@@ -75,7 +75,7 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
     <div
       ref={carouselRef}
-      className={cn("relative w-full h-full rounded-2xl", className)}
+      className={cn("relative w-full h-full rounded-xl", className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

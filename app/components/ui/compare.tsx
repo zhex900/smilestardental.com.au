@@ -10,7 +10,6 @@ interface CompareProps {
   firstImageClassName?: string;
   secondImageClassname?: string;
   initialSliderPercentage?: number;
-  slideMode?: "hover" | "click" | "drag";
   showHandlebar?: boolean;
   autoplay?: boolean;
   autoplayDuration?: number;
@@ -23,26 +22,21 @@ export const Compare: React.FC<CompareProps> = ({
   firstImageClassName,
   secondImageClassname,
   initialSliderPercentage = 0,
-  slideMode = "hover",
   showHandlebar = true,
   autoplay = false,
   autoplayDuration = 5000,
 }) => {
   const [sliderXPercent, setSliderXPercent] = useState<number>(
-    initialSliderPercentage
+    initialSliderPercentage,
   );
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [ignoreMouseMove, setIgnoreMouseMove] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
-
-  const [isMouseOver, setIsMouseOver] = useState(false);
 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAutoplay = useCallback(() => {
     if (!autoplay) return;
 
-    // Clear any existing interval
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
     }
@@ -69,13 +63,10 @@ export const Compare: React.FC<CompareProps> = ({
     return () => stopAutoplay();
   }, [autoplay, startAutoplay, stopAutoplay]);
 
-  const handleStart = useCallback(
-    (clientX: number) => {
-      setIsDragging(true);
-      stopAutoplay();
-    },
-    [stopAutoplay]
-  );
+  const handleStart = useCallback(() => {
+    setIsDragging(true);
+    stopAutoplay();
+  }, [stopAutoplay]);
 
   const handleEnd = useCallback(() => {
     setIsDragging(false);
@@ -84,7 +75,7 @@ export const Compare: React.FC<CompareProps> = ({
 
   const handleMove = useCallback(
     (clientX: number) => {
-      if (!sliderRef.current || ignoreMouseMove) return;
+      if (!sliderRef.current) return;
       if (isDragging) {
         const rect = sliderRef.current.getBoundingClientRect();
         const x = clientX - rect.left;
@@ -92,15 +83,12 @@ export const Compare: React.FC<CompareProps> = ({
         setSliderXPercent(Math.max(0, Math.min(100, percent)));
       }
     },
-    [isDragging, ignoreMouseMove]
+    [isDragging],
   );
 
-  const handleMouseDown = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      handleStart(e.clientX);
-    },
-    [handleStart]
-  );
+  const handleMouseDown = useCallback(() => {
+    handleStart();
+  }, [handleStart]);
 
   const handleMouseUp = useCallback(() => {
     handleEnd();
@@ -110,27 +98,18 @@ export const Compare: React.FC<CompareProps> = ({
     (e: React.MouseEvent<HTMLDivElement>) => {
       handleMove(e.clientX);
     },
-    [handleMove]
+    [handleMove],
   );
 
-  // Global mouse event handlers to handle mouse escape
+  // Global mouse handlers so drags that leave the element still resolve.
   useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      if (isDragging) {
-        handleEnd();
-      }
-    };
+    if (!isDragging) return;
 
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      if (isDragging) {
-        handleMove(e.clientX);
-      }
-    };
+    const handleGlobalMouseUp = () => handleEnd();
+    const handleGlobalMouseMove = (e: MouseEvent) => handleMove(e.clientX);
 
-    if (isDragging) {
-      document.addEventListener("mouseup", handleGlobalMouseUp);
-      document.addEventListener("mousemove", handleGlobalMouseMove);
-    }
+    document.addEventListener("mouseup", handleGlobalMouseUp);
+    document.addEventListener("mousemove", handleGlobalMouseMove);
 
     return () => {
       document.removeEventListener("mouseup", handleGlobalMouseUp);
@@ -138,18 +117,7 @@ export const Compare: React.FC<CompareProps> = ({
     };
   }, [isDragging, handleEnd, handleMove]);
 
-  const handleMouseEnter = useCallback(() => {
-    setIsMouseOver(true);
-    // Don't stop autoplay on mouse enter anymore
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsMouseOver(false);
-    // Don't start autoplay on mouse leave anymore
-  }, []);
-
   const handleClick = useCallback(() => {
-    // Stop autoplay when clicked
     stopAutoplay();
   }, [stopAutoplay]);
 
@@ -158,12 +126,10 @@ export const Compare: React.FC<CompareProps> = ({
       ref={sliderRef}
       className={cn(
         "relative w-[400px] h-[400px] overflow-hidden cursor-pointer",
-        className
+        className,
       )}
       style={{ aspectRatio: "1" }}
       onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onClick={handleClick}
@@ -197,7 +163,7 @@ export const Compare: React.FC<CompareProps> = ({
             src={firstImage}
             className={cn(
               "absolute inset-0 z-20 w-full h-full select-none",
-              firstImageClassName
+              firstImageClassName,
             )}
             draggable={false}
           />
@@ -215,7 +181,7 @@ export const Compare: React.FC<CompareProps> = ({
             src={secondImage}
             className={cn(
               "absolute inset-0 z-20 w-full h-full",
-              secondImageClassname
+              secondImageClassname,
             )}
             draggable={false}
           />

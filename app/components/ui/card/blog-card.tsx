@@ -18,7 +18,7 @@ export interface BlogCardProps {
 
 export function BlogCard({ article }: { article: BlogCardProps }) {
   return (
-    <article className="h-full rounded-lg bg-white overflow-hidden shadow-lg transition-shadow flex flex-col">
+    <article className="h-full rounded-xl bg-white overflow-hidden shadow-lg transition-shadow flex flex-col">
       <div className="h-48 overflow-hidden">
         <img
           className="w-full h-full object-cover"

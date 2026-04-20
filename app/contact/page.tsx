@@ -206,7 +206,7 @@ export default function Contact() {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                       required
                     />
                   </div>
@@ -223,7 +223,7 @@ export default function Contact() {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                       required
                     />
                   </div>
@@ -239,7 +239,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                       required
                     />
                   </div>
@@ -253,7 +253,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                       required
                     />
                   </div>
@@ -267,7 +267,7 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                   >
                     <option value="" disabled>
                       Select a service
@@ -293,13 +293,13 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="bg-gold-400 hover:bg-gold-400 text-white font-medium py-3 px-6 rounded-lg transition duration-300 w-full flex items-center justify-center"
+                  className="bg-gold-400 hover:bg-gold-400 text-white font-medium py-3 px-6 rounded-xl transition duration-300 w-full flex items-center justify-center"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Send Message
@@ -313,7 +313,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="h-full bg-white p-4 rounded-xl shadow-md overflow-hidden"
             >
-              <div className="h-full w-full rounded-lg overflow-hidden">
+              <div className="h-full w-full rounded-xl overflow-hidden">
                 <iframe
                   title="Smile Star Dental Location Map"
                   className="w-full h-full border-0"
@@ -358,7 +358,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="mb-4 border border-gray-200 rounded-lg overflow-hidden"
+                className="mb-4 border border-gray-200 rounded-xl overflow-hidden"
               >
                 <div
                   className="flex justify-between items-center p-5 bg-blue-50 cursor-pointer"
