@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
-import { Highlighter } from "../ui/highlighter";
 import dynamic from "next/dynamic";
 
 const HeroCarousel = dynamic(() => import("../hero-carousel"), {
@@ -49,15 +48,8 @@ export function HeroSection() {
                 </h1>
                 <p className="text-justify text-normal heading-mb">
                   Experience exceptional dental care, proudly serving the{" "}
-                  <Highlighter action="underline" color="#FF9800">
-                    Newcastle
-                  </Highlighter>{" "}
-                  community where every patient receives star treatment for a
-                  brighter,{" "}
-                  <Highlighter action="highlight" color="#DCC67A">
-                    healthier
-                  </Highlighter>{" "}
-                  smile.
+                  Newcastle community where every patient receives star
+                  treatment for a brighter, healthier smile.
                 </p>
               </div>
               <div className="flex justify-between items-center pt-2 md:pt-6">
