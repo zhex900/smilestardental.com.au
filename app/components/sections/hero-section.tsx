@@ -2,7 +2,6 @@
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
-import { ReviewStack } from "../review-stack";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
 import { Highlighter } from "../ui/highlighter";

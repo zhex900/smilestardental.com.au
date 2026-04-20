@@ -25,7 +25,6 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, className }: ServiceCardProps) {
   const [hovered, setHovered] = useState(false);
-  const IconComponent = service.icon;
   const href = service.link ?? "#";
 
   return (
@@ -60,12 +59,8 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
         )}
       >
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-105"
+          className="absolute inset-0 bg-cover bg-center grayscale transition-[filter,transform] duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
           style={{ backgroundImage: `url(${service.image})` }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-gold-500/80 to-gold-500/20 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
           aria-hidden
         />
 

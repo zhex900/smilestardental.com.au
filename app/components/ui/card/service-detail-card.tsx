@@ -36,7 +36,7 @@ export function ServiceDetailCard({
         src={service.image}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+        className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover/card:scale-110 group-hover/card:grayscale-0"
       />
 
       <div
