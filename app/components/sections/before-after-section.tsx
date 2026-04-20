@@ -32,7 +32,7 @@ export function BeforeAfterSection() {
           </motion.p>
         </div>
 
-        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-20 ">
+        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -82,15 +82,15 @@ export function BeforeAfterSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center relative group p-2 h-full w-full"
+            className="relative group p-2 h-full w-full"
           >
-            <div className=" rounded-3xl p-3 bg-white/20 shadow-xl">
+            <div className="w-full rounded-3xl p-3 bg-white/20 shadow-xl">
               <Compare
-                firstImage="/images/after.png"
-                secondImage="/images/before.png"
+                firstImage="/images/braces-before.png"
+                secondImage="/images/braces-after.jpg"
                 firstImageClassName="object-cover object-center"
                 secondImageClassname="object-cover object-center"
-                className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
+                className="w-full h-[300px] md:h-[400px]"
                 showHandlebar={true}
                 autoplay={true}
                 autoplayDuration={5000}
