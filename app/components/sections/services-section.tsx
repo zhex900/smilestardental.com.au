@@ -37,10 +37,7 @@ export const servicesData = [
 
 export function ServicesSection() {
   return (
-    <section
-      id="services"
-      className="section-py bg-white scroll-mt-28 min-h-screen"
-    >
+    <section id="services" className="section-py bg-white scroll-mt-28">
       <div className="section-px max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

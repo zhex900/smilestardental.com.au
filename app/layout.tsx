@@ -10,6 +10,7 @@ const poppins = Poppins({
 });
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import { AnnouncementBar } from "./components/announcement-bar";
 import { BreakpointDebug } from "./components/breakpoint-debug";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL!;
@@ -88,6 +89,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
+        <AnnouncementBar />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
         {/* <BreakpointDebug /> */}
