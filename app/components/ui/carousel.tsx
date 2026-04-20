@@ -90,6 +90,7 @@ const Carousel: React.FC<CarouselProps> = ({
         >
           <div className="relative w-full h-full overflow-hidden">
             <Image
+              loading="eager"
               src={slides[currentIndex].src}
               alt={slides[currentIndex].title}
               width={1000}

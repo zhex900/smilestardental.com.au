@@ -31,12 +31,18 @@ export function TestimonialCard({
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={cn(
         "rounded-3xl border-l-4 border-yellow-600 group",
-        className
+        className,
       )}
     >
       <div className="relative w-full h-full">
-        <div className="hidden group-hover:block text-slate-500 group-hover:text-white absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] rounded-3xl" />
-        <Card>
+        <Card
+          className={cn(
+            "transition-[background] duration-300",
+            "group-hover:!bg-gradient-to-b group-hover:!from-beige-300 group-hover:!to-gold-400",
+            "group-hover:text-white",
+            "[&_h4]:group-hover:text-white [&_p]:group-hover:text-white/95 [&_span]:group-hover:text-white/70",
+          )}
+        >
           <div className="flex items-center mb-4">
             <img
               src={testimonial.avatar}
@@ -55,7 +61,7 @@ export function TestimonialCard({
               </span>
             </div>
             <svg
-              className="w-5 h-5 text-blue-500"
+              className="w-5 h-5 shrink-0 text-blue-500 transition-colors group-hover:text-gold-200"
               viewBox="0 0 24 24"
               fill="currentColor"
             >

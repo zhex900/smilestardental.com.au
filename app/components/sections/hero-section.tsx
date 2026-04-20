@@ -2,7 +2,6 @@
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
-import { ReviewStack } from "../review-stack";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
 import { Highlighter } from "../ui/highlighter";
@@ -55,7 +54,7 @@ export function HeroSection() {
                   </Highlighter>{" "}
                   community where every patient receives star treatment for a
                   brighter,{" "}
-                  <Highlighter action="highlight" color="#87CEFA">
+                  <Highlighter action="highlight" color="#DCC67A">
                     healthier
                   </Highlighter>{" "}
                   smile.

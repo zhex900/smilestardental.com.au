@@ -1,5 +1,4 @@
 import Carousel from "./ui/carousel";
-import ServicesWheel from "./services-wheel";
 import { useEffect, useState } from "react";
 
 const heroCarouselSlides = [
@@ -25,42 +24,12 @@ const heroCarouselConfig = {
 };
 
 const HeroCarousel = () => {
-  const [carouselXPosition, setCarouselXPosition] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [showWheel, setShowWheel] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowWheel(true);
-    }, 500);
-  }, []);
-
   return (
     <div className="relative mx-auto min-h-[300px] w-full max-w-[min(100%,520px)] md:min-h-[min(52vh,540px)] md:max-w-none">
-      {showWheel && carouselXPosition && (
-        <ServicesWheel
-          radius={isMobile ? 140 : 230}
-          visibleIcons={isMobile ? 7 : undefined}
-          className="absolute z-20 -top-10 md:bottom-auto"
-          style={{
-            left: `${carouselXPosition}px`,
-            transform: "translateX(-50%)",
-            transition: "left 0.3s ease-out 0.9s",
-          }}
-        />
-      )}
       <div className="absolute inset-0 md:inset-x-0 md:bottom-0 md:top-auto">
         <Carousel
           slides={heroCarouselSlides}
           {...heroCarouselConfig}
-          onXPositionChange={setCarouselXPosition}
           debug={false}
         />
       </div>

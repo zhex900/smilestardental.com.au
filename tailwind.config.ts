@@ -24,6 +24,34 @@ const config: Config = {
         },
       },
       colors: {
+        beige: {
+          50: "#F3F3F3",
+          100: "#E2E2E2",
+          200: "#D1D1D1",
+          300: "#B6B6B6",
+          400: "#949494",
+          500: "#767676",
+          600: "#5E5E5E",
+          700: "#474747",
+          800: "#333333",
+          900: "#1F1F1F",
+        },
+        gold: {
+          50: "#FBF7E6",
+          100: "#F5E7B8",
+          200: "#E8D9A8",
+          300: "#DCC67A",
+          400: "#C9A646",
+          500: "#B8963D",
+          600: "#9E7F2F",
+          700: "#7C6325",
+          800: "#5F4A1C",
+          900: "#3F3214",
+        },
+        neutral: {
+          900: "#2B2B2B",
+          700: "#6B645C",
+        },
         primary: {
           50: "#f0f9ff",
           100: "#e0f2fe",
@@ -39,7 +67,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-quicksand)", "Quicksand", "sans-serif"],
+        sans: ["var(--font-poppins)", "Poppins", "system-ui", "sans-serif"],
       },
     },
   },

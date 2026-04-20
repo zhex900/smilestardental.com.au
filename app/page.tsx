@@ -16,11 +16,11 @@ export default async function HomePage() {
 
       <HeroSection />
 
+      <TestimonialsSection />
+
       <ServicesSection />
 
       <BeforeAfterSection />
-
-      <TestimonialsSection />
 
       <BlogSection />
     </>

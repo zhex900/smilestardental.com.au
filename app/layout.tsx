@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { BreakpointDebug } from "./components/breakpoint-debug";
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-quicksand",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL!;
 
@@ -54,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.variable}>
       <head>
         {/* iOS Safari status bar / safe area colors */}
 
@@ -85,7 +86,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={siteUrl} />
       </head>
-      <body className={`${quicksand.className}`}>
+      <body>
         <Header />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
