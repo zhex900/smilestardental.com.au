@@ -123,7 +123,7 @@ export function TestimonialsSection() {
               key={String(testimonial.id)}
               testimonial={testimonial}
               index={index}
-              className="md:max-w-[350px] max-w-[250px] md:h-[350px] h-[250px]"
+              className="w-[85vw] max-w-[320px] h-[360px] sm:w-[320px] sm:max-w-[320px] sm:h-[340px] md:w-[350px] md:max-w-[350px] md:h-[350px]"
             />
           ))}
         </InfiniteMovingCards>

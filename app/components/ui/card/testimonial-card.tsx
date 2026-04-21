@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -40,17 +39,22 @@ export function TestimonialCard({
             "[&_h4]:group-hover:text-white [&_p]:group-hover:text-white/95 [&_span]:group-hover:text-white/70",
           )}
         >
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-3 sm:mb-4">
             <img
               src={testimonial.avatar}
               alt={testimonial.name}
               className="w-12 h-12 rounded-full mr-4"
             />
-            <div className="flex-1">
-              <h4 className="font-semibold">{testimonial.name}</h4>
+            <div className="flex-1 min-w-0">
+              <h4 className="font-semibold text-sm sm:text-base truncate">
+                {testimonial.name}
+              </h4>
               <div className="flex text-yellow-400 text-sm mb-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star
+                    key={i}
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current"
+                  />
                 ))}
               </div>
               <span className="text-xs text-gray-500">
@@ -68,8 +72,8 @@ export function TestimonialCard({
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
             </svg>
           </div>
-          <p className="text-md max-h-[12rem] overflow-y-auto overscroll-contain pr-2">
-            "{testimonial.text}"
+          <p className="text-sm sm:text-md leading-relaxed max-h-[15rem] sm:max-h-[12rem] overflow-y-auto overscroll-contain pr-2">
+            &quot;{testimonial.text}&quot;
           </p>
         </Card>
       </div>
