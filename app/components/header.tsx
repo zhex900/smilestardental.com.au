@@ -23,6 +23,13 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
     <Link href="/blogs" className={menuItemClassName} onClick={onClick}>
       Blog
     </Link>
+    <Link
+      href="/about#contact-us"
+      className={menuItemClassName}
+      onClick={onClick}
+    >
+      Contact
+    </Link>
   </>
 );
 

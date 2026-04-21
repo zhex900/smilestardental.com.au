@@ -6,6 +6,7 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogCard } from "@/components/ui/card";
+import { ContactUs } from "@/components/sections/contact-us";
 import type { BlogListCard } from "@/lib/blog-types";
 
 const ARTICLES_PER_PAGE = 6;
@@ -25,18 +26,6 @@ export default function BlogPageClient({
   const [searchTerm, setSearchTerm] = useState("");
   const [articlePage, setArticlePage] = useState(1);
   const categoryScrollRef = useRef<HTMLDivElement>(null);
-  const [askDentistForm, setAskDentistForm] = useState({
-    name: "",
-    email: "",
-    question: "",
-  });
-
-  const handleAskDentistSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Ask dentist form submitted:", askDentistForm);
-    setAskDentistForm({ name: "", email: "", question: "" });
-  };
-
   const filteredArticles = recentArticles.filter((article) => {
     const matchesCategory =
       activeCategory === "All Topics" || article.category === activeCategory;
@@ -297,94 +286,9 @@ export default function BlogPageClient({
         ) : null}
       </section>
 
-      <section className="container mx-auto px-4 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="overflow-hidden rounded-xl bg-blue-50"
-        >
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full p-8 md:w-1/2">
-              <h2 className="mb-4 text-3xl font-bold">Ask Our Dentists</h2>
-              <p className="mb-6 text-gray-600">
-                Have a dental question? Our team of experts is here to help.
-                Submit your question and we&apos;ll feature the answer in our
-                upcoming blog posts.
-              </p>
-
-              <form onSubmit={handleAskDentistSubmit} className="space-y-4">
-                <div>
-                  <label className="mb-1 block text-sm font-medium">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    value={askDentistForm.name}
-                    onChange={(e) =>
-                      setAskDentistForm({
-                        ...askDentistForm,
-                        name: e.target.value,
-                      })
-                    }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-400"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm font-medium">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    value={askDentistForm.email}
-                    onChange={(e) =>
-                      setAskDentistForm({
-                        ...askDentistForm,
-                        email: e.target.value,
-                      })
-                    }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-400"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm font-medium">
-                    Your Question
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={askDentistForm.question}
-                    onChange={(e) =>
-                      setAskDentistForm({
-                        ...askDentistForm,
-                        question: e.target.value,
-                      })
-                    }
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-400"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="rounded-full bg-gold-400 px-6 py-3 font-medium text-white transition-colors hover:bg-gold-400"
-                >
-                  Submit Question
-                </button>
-              </form>
-            </div>
-            <div className="relative min-h-[320px] w-full md:w-1/2">
-              <Image
-                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/239826ec6c-b0e309cb07bff0003063.png"
-                alt="friendly dentist team in discussion, professional dental office environment, smiling dental professionals"
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </motion.div>
-      </section>
+      <ContactUs
+        description="Have a dental question? Our team of experts is here to help. Submit your question and we'll feature the answer in our upcoming blog posts."
+      />
     </div>
   );
 }

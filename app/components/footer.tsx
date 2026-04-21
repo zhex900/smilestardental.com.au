@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import {
   address,
   copyright,
-  email,
   phoneNumber,
   socialMedia,
   yearEstablished,
@@ -104,12 +103,6 @@ export function Footer() {
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
                 <p className="hover:text-gray-300 transition-colors cursor-pointer">
                   <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
-                </p>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
-                <p className="hover:text-gray-300 transition-colors cursor-pointer">
-                  <a href={`mailto:${email}`}>{email}</a>
                 </p>
               </li>
               <li className="flex items-start space-x-3">

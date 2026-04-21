@@ -10,6 +10,7 @@ import {
   Star,
   Clock,
 } from "lucide-react";
+import { ContactUs } from "@/components/sections/contact-us";
 
 const teamMembers = [
   {
@@ -225,6 +226,11 @@ export default function About() {
           </div>
         </div>
       </section> */}
+
+      <ContactUs
+        heading="Contact Us"
+        description="Have a question or ready to book? Send us a message and our team will be in touch shortly."
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-gold-400">
