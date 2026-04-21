@@ -184,7 +184,7 @@ export default function BlogPageClient({
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     priority
-                    className="object-cover"
+                    className="object-cover rounded-xl"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-gray-200 text-gray-500">

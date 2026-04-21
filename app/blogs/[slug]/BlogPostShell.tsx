@@ -27,7 +27,7 @@ export function BlogPostShell({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="relative flex h-[300px] items-center overflow-hidden bg-gray-900">
+      <section className="relative flex h-[400px] items-center overflow-hidden bg-gray-900">
         {post.image ? (
           <Image
             src={post.image}
