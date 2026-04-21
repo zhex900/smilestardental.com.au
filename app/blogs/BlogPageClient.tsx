@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { BlogCard } from "@/components/ui/card";
 import type { BlogListCard } from "@/lib/blog-types";
 
@@ -175,20 +176,23 @@ export default function BlogPageClient({
             className="mb-12 overflow-hidden rounded-xl bg-gray-50"
           >
             <div className="flex flex-col md:flex-row">
-              <div className="w-full md:w-1/2">
+              <div className="relative h-[400px] w-full md:w-1/2">
                 {featured.image ? (
-                  <img
-                    className="h-[400px] w-full object-cover"
+                  <Image
                     src={featured.image}
                     alt=""
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    priority
+                    className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-[400px] w-full items-center justify-center bg-gray-200 text-gray-500">
+                  <div className="flex h-full w-full items-center justify-center bg-gray-200 text-gray-500">
                     No image
                   </div>
                 )}
               </div>
-              <div className="w-full p-8 md:w-1/2">
+              <div className="w-full pt-8 pl-8 md:w-1/2">
                 <div className="mb-4">
                   <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-gold-400">
                     {featured.category}
@@ -200,10 +204,12 @@ export default function BlogPageClient({
                 <h3 className="mb-4 text-3xl font-bold">{featured.title}</h3>
                 <p className="mb-6 text-gray-600">{featured.excerpt}</p>
                 <div className="mb-6 flex items-center">
-                  <img
+                  <Image
                     src={featured.author.avatar}
                     alt={featured.author.name}
-                    className="mr-3 h-12 w-12 rounded-full"
+                    width={48}
+                    height={48}
+                    className="mr-3 h-12 w-12 rounded-full object-cover"
                   />
                   <div>
                     <p className="font-medium">{featured.author.name}</p>
@@ -367,11 +373,13 @@ export default function BlogPageClient({
                 </button>
               </form>
             </div>
-            <div className="relative w-full md:w-1/2">
-              <img
-                className="h-full w-full object-cover"
+            <div className="relative min-h-[320px] w-full md:w-1/2">
+              <Image
                 src="https://storage.googleapis.com/uxpilot-auth.appspot.com/239826ec6c-b0e309cb07bff0003063.png"
                 alt="friendly dentist team in discussion, professional dental office environment, smiling dental professionals"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
           </div>

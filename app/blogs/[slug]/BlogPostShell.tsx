@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft, Share2, Mail, Tag } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   SocialFacebook,
   SocialLinkedin,
@@ -23,34 +24,46 @@ export function BlogPostShell({
   children,
 }: BlogPostShellProps) {
   const tags = post.tags ?? [];
-  const authorBio =
-    post.authorBio ?? `${post.author} is part of our clinical team.`;
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="flex h-[300px] items-center bg-blue-50">
-        <div className="container mx-auto px-4">
+      <section className="relative flex h-[300px] items-center overflow-hidden bg-gray-900">
+        {post.image ? (
+          <Image
+            src={post.image}
+            alt=""
+            aria-hidden
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        ) : null}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"
+        />
+        <div className="container relative z-10 mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-gold-400">
-                {post.category}
-              </span>
-              <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
+              <h1 className="mb-4 text-3xl font-bold text-white drop-shadow md:text-4xl lg:text-5xl">
                 {post.title}
               </h1>
-              <div className="flex flex-col items-center justify-center gap-3 text-gray-600 sm:flex-row sm:gap-6">
+              <div className="flex flex-col items-center justify-center gap-3 text-white/85 sm:flex-row sm:gap-6">
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={post.authorImage}
                     alt={post.author}
-                    className="mr-3 h-10 w-10 rounded-full"
+                    width={40}
+                    height={40}
+                    className="mr-3 h-10 w-10 rounded-full object-cover ring-2 ring-white/60"
                   />
                   <div className="text-left">
-                    <p className="font-medium text-gray-900">{post.author}</p>
+                    <p className="font-medium text-white">{post.author}</p>
                     <div className="flex flex-wrap items-center text-sm">
                       <span className="flex items-center">
                         <Calendar className="mr-1 h-4 w-4" />
@@ -150,26 +163,6 @@ export function BlogPostShell({
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="sticky top-8"
                 >
-                  <div className="mb-8 rounded-xl bg-gray-50 p-6">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-900">
-                      About the Author
-                    </h3>
-                    <div className="mb-4 flex items-center">
-                      <img
-                        src={post.authorImage}
-                        alt={post.author}
-                        className="mr-4 h-16 w-16 rounded-full"
-                      />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">
-                          {post.author}
-                        </h4>
-                        <p className="text-sm text-gray-600">Dental Expert</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-600">{authorBio}</p>
-                  </div>
-
                   {relatedPosts.length > 0 && (
                     <div className="rounded-xl bg-gray-50 p-6">
                       <h3 className="mb-4 text-lg font-semibold text-gray-900">
@@ -184,10 +177,12 @@ export function BlogPostShell({
                           >
                             <div className="flex items-start space-x-3">
                               {item.image ? (
-                                <img
+                                <Image
                                   src={item.image}
                                   alt=""
-                                  className="h-16 w-16 rounded object-cover"
+                                  width={64}
+                                  height={64}
+                                  className="h-16 w-16 shrink-0 rounded object-cover"
                                 />
                               ) : null}
                               <div>
