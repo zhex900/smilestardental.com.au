@@ -46,7 +46,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-primary h-[300px] flex items-center">
+      <section className="bg-primary h-[400px] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h1

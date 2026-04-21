@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gold-50 h-[300px] flex items-center">
+      <section className="bg-gold-50 h-[400px] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <motion.h1
