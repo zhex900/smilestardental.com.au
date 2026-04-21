@@ -1,18 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Shield,
-  Sparkles,
-  Search,
-  Heart,
-  Zap,
-  Award,
-  Baby,
-  Braces,
-} from "lucide-react";
+import { Award, Heart, Shield, Zap } from "lucide-react";
 import { ServiceDetailCard } from "@/components/ui/card";
 import { TestimonialsSection } from "@/components/sections";
+import { services } from "./services";
 
 const serviceCategories = [
   { id: "all", name: "All Services" },
@@ -22,145 +14,6 @@ const serviceCategories = [
   { id: "pediatric", name: "Pediatric Dentistry" },
   { id: "orthodontics", name: "Orthodontics" },
   { id: "surgery", name: "Oral Surgery" },
-];
-
-const services = [
-  {
-    id: 1,
-    title: "Dental Cleaning & Checkups",
-    category: "preventive",
-    icon: Shield,
-    image: "/images/checkups-1.jpg",
-    description:
-      "Regular cleanings and comprehensive checkups to maintain optimal oral health and catch issues early.",
-    features: [
-      "Professional cleaning",
-      "Cavity detection",
-      "Gum health assessment",
-      "Oral cancer screening",
-    ],
-  },
-  {
-    id: 2,
-    title: "Teeth Whitening",
-    category: "cosmetic",
-    icon: Sparkles,
-    image: "/images/smile-1.jpg",
-    description:
-      "Professional teeth whitening treatments to brighten your smile and boost your confidence.",
-    features: [
-      "In-office treatment",
-      "Take-home kits",
-      "Long-lasting results",
-      "Safe for enamel",
-    ],
-  },
-  {
-    id: 3,
-    title: "Dental Implants",
-    category: "restorative",
-    icon: Shield,
-    image: "/images/implants-1.jpg",
-    description:
-      "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
-    features: [
-      "Titanium posts",
-      "Natural appearance",
-      "Permanent solution",
-      "Improved chewing",
-    ],
-  },
-  {
-    id: 4,
-    title: "Invisalign & Orthodontics",
-    category: "orthodontics",
-    icon: Braces,
-    image: "/images/orthodontics.jpg",
-    description:
-      "Modern orthodontic solutions including clear aligners and traditional braces for a perfect smile.",
-    features: [
-      "Clear aligners",
-      "Traditional braces",
-      "Digital planning",
-      "Comfortable treatment",
-    ],
-  },
-  {
-    id: 5,
-    title: "Crowns & Bridges",
-    category: "restorative",
-    icon: Award,
-    image: "/images/bridge.jpg",
-    description:
-      "Restore damaged or missing teeth with custom-made crowns and bridges for natural function.",
-    features: [
-      "Custom fabrication",
-      "Natural appearance",
-      "Durable materials",
-      "Improved function",
-    ],
-  },
-  {
-    id: 6,
-    title: "Pediatric Dentistry",
-    category: "pediatric",
-    icon: Baby,
-    image: "/images/kids-1.jpg",
-    description:
-      "Specialized dental care for children in a fun, comfortable environment designed for young patients.",
-    features: [
-      "Child-friendly environment",
-      "Gentle approach",
-      "Education focus",
-      "Preventive care",
-    ],
-  },
-  {
-    id: 7,
-    title: "Root Canal Therapy",
-    category: "restorative",
-    icon: Search,
-    image: "/images/root-1.jpg",
-    description:
-      "Advanced endodontic treatment to save severely damaged teeth and relieve pain.",
-    features: [
-      "Pain relief",
-      "Tooth preservation",
-      "Advanced technology",
-      "Comfortable procedure",
-    ],
-  },
-  {
-    id: 8,
-    title: "Emergency Dental Care",
-    category: "preventive",
-    icon: Zap,
-    image:
-      "https://images.unsplash.com/photo-1635247187021-ad5ab658bc5e?q=80&w=2225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description:
-      "Immediate dental care for urgent situations including pain, broken teeth, and injuries.",
-    features: [
-      "24/7 availability",
-      "Quick response",
-      "Pain management",
-      "Temporary solutions",
-    ],
-  },
-  {
-    id: 9,
-    title: "Gum Disease Treatment",
-    category: "preventive",
-    icon: Heart,
-    image: "/images/gum-1.jpg",
-    description:
-      "Comprehensive periodontal care to treat and prevent gum disease for optimal oral health.",
-    features: [
-      "Deep cleaning",
-      "Gum surgery",
-      "Maintenance plans",
-      "Health education",
-    ],
-  },
 ];
 
 export default function Services() {
