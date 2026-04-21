@@ -30,8 +30,7 @@ const services = [
     title: "Dental Cleaning & Checkups",
     category: "preventive",
     icon: Shield,
-    image:
-      "https://storage.googleapis.com/uxpilot-auth.appspot.com/ac9674656b-2956843eb45f265c872f.png",
+    image: "/images/checkups-1.jpg",
     description:
       "Regular cleanings and comprehensive checkups to maintain optimal oral health and catch issues early.",
     features: [
@@ -46,8 +45,7 @@ const services = [
     title: "Teeth Whitening",
     category: "cosmetic",
     icon: Sparkles,
-    image:
-      "https://images.unsplash.com/photo-1611166819595-ac34987dfa57?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/smile-1.jpg",
     description:
       "Professional teeth whitening treatments to brighten your smile and boost your confidence.",
     features: [
@@ -62,8 +60,7 @@ const services = [
     title: "Dental Implants",
     category: "restorative",
     icon: Shield,
-    image:
-      "https://images.unsplash.com/photo-1593022356769-11f762e25ed9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/implants-1.jpg",
     description:
       "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
     features: [
@@ -78,8 +75,7 @@ const services = [
     title: "Invisalign & Orthodontics",
     category: "orthodontics",
     icon: Braces,
-    image:
-      "https://images.unsplash.com/photo-1609840113929-b130355987e1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/orthodontics.jpg",
     description:
       "Modern orthodontic solutions including clear aligners and traditional braces for a perfect smile.",
     features: [
@@ -94,8 +90,7 @@ const services = [
     title: "Crowns & Bridges",
     category: "restorative",
     icon: Award,
-    image:
-      "https://plus.unsplash.com/premium_photo-1663011739118-413a35a33c6f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/bridge.jpg",
     description:
       "Restore damaged or missing teeth with custom-made crowns and bridges for natural function.",
     features: [
@@ -110,8 +105,7 @@ const services = [
     title: "Pediatric Dentistry",
     category: "pediatric",
     icon: Baby,
-    image:
-      "https://plus.unsplash.com/premium_photo-1681997120629-4d260166640c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/kids-1.jpg",
     description:
       "Specialized dental care for children in a fun, comfortable environment designed for young patients.",
     features: [
@@ -126,8 +120,7 @@ const services = [
     title: "Root Canal Therapy",
     category: "restorative",
     icon: Search,
-    image:
-      "https://plus.unsplash.com/premium_photo-1722873143643-ea42854f97d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/root-1.jpg",
     description:
       "Advanced endodontic treatment to save severely damaged teeth and relieve pain.",
     features: [
@@ -158,8 +151,7 @@ const services = [
     title: "Gum Disease Treatment",
     category: "preventive",
     icon: Heart,
-    image:
-      "https://plus.unsplash.com/premium_photo-1664304894567-5329b85a2e6f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/gum-1.jpg",
     description:
       "Comprehensive periodontal care to treat and prevent gum disease for optimal oral health.",
     features: [
