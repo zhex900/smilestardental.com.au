@@ -32,7 +32,7 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
               alt={article.title}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              className="object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
             />
           ) : null}
         </div>

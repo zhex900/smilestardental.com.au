@@ -64,15 +64,11 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           aria-hidden
         />
 
-        <a
-          href={href}
-          title={service.tooltip ?? service.name}
-          className="relative z-10 flex h-full flex-col items-center justify-end gap-3 p-6 text-center"
-        >
+        <div className="relative z-10 flex h-full flex-col items-center justify-end gap-3 p-6 text-center">
           <CardTitle className="border-b-2 border-transparent group-hover:text-3xl text-lg text-white drop-shadow-sm group-hover:border-white">
             {service.name}
           </CardTitle>
-        </a>
+        </div>
       </div>
     </div>
   );
