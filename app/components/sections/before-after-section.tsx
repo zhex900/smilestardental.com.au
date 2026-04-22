@@ -19,7 +19,7 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.6 }}
             className="text-heading heading-mb"
           >
-            Transforming <span className="brand-yellow">Smiles</span> Every Day
+            Orthodontic <span className="brand-yellow">care</span> &amp; examples
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -27,8 +27,8 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-normal max-w-3xl mx-auto"
           >
-            See the incredible results our patients achieve with our advanced
-            orthodontic treatments
+            Examples of orthodontic treatment outcomes — individual results
+            vary; your dentist will discuss what is achievable in your case.
           </motion.p>
         </div>
 
@@ -49,25 +49,25 @@ export function BeforeAfterSection() {
                 <div className="text-xl md:text-2xl">Orthodontic</div>
               </CardTitle>
               <CardDescription className="flex-1 text-normal md:text-base">
-                Our state-of-the-art braces and clear aligners can transform
-                even the most complex cases, giving you the confident smile
-                you've always wanted.
+                Braces and clear aligners are options for many alignment and
+                bite concerns. Your dentist will advise what is appropriate for
+                you, including risks, duration and costs.
                 <div className="space-y-2 mt-2">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Faster treatment times</span>
+                    <span className="">Digital planning and discussion</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">More comfortable experience</span>
+                    <span className="">Comfort-focused approach</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Predictable results</span>
+                    <span className="">Clear aligners or fixed braces</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Improved oral health</span>
+                    <span className="">Ongoing oral health support</span>
                   </div>
                 </div>
               </CardDescription>

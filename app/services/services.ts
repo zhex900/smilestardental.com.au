@@ -54,11 +54,11 @@ export const services: Service[] = [
     icon: Shield,
     image: "/images/implants-1.jpg",
     description:
-      "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
+      "Long-term tooth replacement options designed to look, feel, and function like natural teeth when clinically suitable.",
     features: [
       "Titanium posts",
       "Natural appearance",
-      "Permanent solution",
+      "Durable when maintained",
       "Improved chewing",
     ],
   },
@@ -69,7 +69,7 @@ export const services: Service[] = [
     icon: Braces,
     image: "/images/orthodontics.jpg",
     description:
-      "Modern orthodontic solutions including clear aligners and traditional braces for a perfect smile.",
+      "Modern orthodontic solutions including clear aligners and traditional braces to improve alignment and bite, tailored to your goals.",
     features: [
       "Clear aligners",
       "Traditional braces",
@@ -94,12 +94,12 @@ export const services: Service[] = [
   },
   {
     id: 6,
-    title: "Pediatric Dentistry",
+    title: "Children's dentistry",
     category: "pediatric",
     icon: Baby,
     image: "/images/kids-1.jpg",
     description:
-      "Specialized dental care for children in a fun, comfortable environment designed for young patients.",
+      "Gentle dental care for children in a welcoming environment, with emphasis on prevention and comfort.",
     features: [
       "Child-friendly environment",
       "Gentle approach",
@@ -132,10 +132,10 @@ export const services: Service[] = [
     description:
       "Immediate dental care for urgent situations including pain, broken teeth, and injuries.",
     features: [
-      "24/7 availability",
-      "Quick response",
+      "Phone us for urgent care",
+      "Same-day appointments when available",
       "Pain management",
-      "Temporary solutions",
+      "Stabilisation where appropriate",
     ],
   },
   {
@@ -162,10 +162,10 @@ export const services: Service[] = [
     description:
       "Targeted Botox injections to relax overactive jaw muscles, easing bruxism, clenching and the headaches they cause.",
     features: [
-      "Reduced jaw tension",
-      "Fewer grinding headaches",
-      "Protects teeth from wear",
-      "Quick in-chair treatment",
+      "May ease jaw tension",
+      "May reduce grinding-related symptoms",
+      "Discussed as part of a broader bruxism plan",
+      "Quick in-chair appointment",
     ],
   },
   {

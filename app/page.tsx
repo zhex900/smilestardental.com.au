@@ -15,7 +15,7 @@ import { FAQS } from "./components/faq";
 export const metadata: Metadata = buildMetadata({
   title: "Smile Star Dental | Warners Bay & Newcastle Family Dentists",
   description:
-    "Welcome to Smile Star Dental (formerly Bay Arcade Dental) in Warners Bay. Gentle family, cosmetic and restorative dentistry — implants, Invisalign, whitening, crowns, pediatric care and more.",
+    "Welcome to Smile Star Dental (formerly Bay Arcade Dental) in Warners Bay. Gentle family, cosmetic and restorative dentistry — implants, Invisalign, whitening, crowns, children's dentistry and more.",
   path: "/",
   keywords: [
     "Smile Star Dental",
@@ -27,7 +27,7 @@ export const metadata: Metadata = buildMetadata({
     "Invisalign Warners Bay",
     "dental implants Newcastle",
     "teeth whitening Warners Bay",
-    "pediatric dentist Warners Bay",
+    "children's dentist Warners Bay",
     "emergency dentist Warners Bay",
   ],
 });

@@ -12,7 +12,7 @@ const serviceCategories = [
   { id: "preventive", name: "Preventive Care" },
   { id: "restorative", name: "Restorative Dentistry" },
   { id: "cosmetic", name: "Cosmetic Dentistry" },
-  { id: "pediatric", name: "Pediatric Dentistry" },
+  { id: "pediatric", name: "Children's dentistry" },
   { id: "orthodontics", name: "Orthodontics" },
   { id: "surgery", name: "Oral Surgery" },
 ];
@@ -130,7 +130,7 @@ export default function Services() {
                 <Award className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Expert Team
+                Experienced team
               </h3>
               <p className="text-gray-600">
                 Highly qualified and experienced dental professionals dedicated
@@ -208,7 +208,7 @@ export default function Services() {
               transition={{ duration: 0.6 }}
               className="text-3xl font-bold text-white mb-4"
             >
-              Ready to Transform Your Smile?
+              Ready to plan your next visit?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -216,9 +216,8 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto"
             >
-              Schedule your consultation today and discover how our
-              comprehensive dental services can improve your oral health and
-              confidence.
+              Book a consultation to discuss your goals and the treatment
+              options that may suit you.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import {
-  getAllBlogListCards,
-  getBlogCategoriesFromPosts,
-} from "@/lib/blogs";
+import { getAllBlogListCards, getBlogCategoriesFromPosts } from "@/lib/blogs";
 import BlogPageClient from "./BlogPageClient";
 import { JsonLd } from "../components/json-ld";
 import { breadcrumbJsonLd, buildMetadata } from "../lib/seo";
@@ -10,7 +7,7 @@ import { breadcrumbJsonLd, buildMetadata } from "../lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Dental Health Blog — Tips from Warners Bay Dentists",
   description:
-    "Expert dental advice, oral health tips and the latest cosmetic and restorative dentistry insights from the team at Smile Star Dental in Warners Bay.",
+    "Dental health articles, oral health tips and insights on cosmetic and restorative care from the team at Smile Star Dental in Warners Bay.",
   path: "/blogs",
   keywords: [
     "dental blog",

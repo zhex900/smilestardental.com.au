@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Dental Services in Warners Bay — Cosmetic, Implants, Invisalign & More",
   description:
-    "Explore our full range of dental services in Warners Bay: general checkups, dental implants, Invisalign, cosmetic dentistry, whitening, crowns, pediatric care, airway development, Botox for bruxism and full-mouth rehabilitation.",
+    "Explore our full range of dental services in Warners Bay: general checkups, dental implants, Invisalign, cosmetic dentistry, whitening, crowns, children's dentistry, airway development, Botox for bruxism and full-mouth rehabilitation.",
   path: "/services",
   keywords: [
     "dental services Warners Bay",
@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
     "Invisalign Warners Bay",
     "teeth whitening Warners Bay",
     "cosmetic dentistry Newcastle",
-    "pediatric dentist Warners Bay",
+    "children's dentist Warners Bay",
     "airway development children",
     "Botox teeth grinding",
     "ceramic crowns Warners Bay",

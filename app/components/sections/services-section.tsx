@@ -46,12 +46,12 @@ export function ServicesSection() {
         >
           <div className="text-center heading-mb">
             <h2 className="text-heading heading-mb">
-              <span className="brand-yellow">Newcastle's</span> Top Rated Dental
-              Services
+              <span className="brand-yellow">Newcastle &amp; Lake Macquarie</span>{" "}
+              dental services
             </h2>
             <p className="text-normal max-w-2xl mx-auto">
-              Professional dental services designed to keep your smile healthy
-              and beautiful with state-of-the-art technology and expert care
+              Professional dental services designed to keep your smile healthy,
+              using current technology and an experienced clinical team
             </p>
           </div>
         </motion.h2>

@@ -23,7 +23,7 @@ type SubmitStatus =
 
 const DEFAULT_HEADING = "Ask Our Dentists";
 const DEFAULT_DESCRIPTION =
-  "Have a dental question? Our team of experts is here to help. Submit your question and we'll get back to you shortly.";
+  "Have a dental question? Our team is here to help. Submit your question and we'll get back to you shortly.";
 const DEFAULT_IMAGE =
   "https://storage.googleapis.com/uxpilot-auth.appspot.com/239826ec6c-b0e309cb07bff0003063.png";
 const DEFAULT_IMAGE_ALT =
@@ -55,7 +55,11 @@ export function ContactUs({
   const turnstileRef = useRef<HTMLDivElement>(null);
 
   const resetTurnstile = useCallback(() => {
-    if (typeof window !== "undefined" && window.turnstile && turnstileRef.current) {
+    if (
+      typeof window !== "undefined" &&
+      window.turnstile &&
+      turnstileRef.current
+    ) {
       try {
         window.turnstile.reset(turnstileRef.current);
       } catch {
@@ -237,10 +241,7 @@ export function ContactUs({
               </button>
 
               {status.state === "success" ? (
-                <p
-                  role="status"
-                  className="text-sm font-medium text-green-700"
-                >
+                <p role="status" className="text-sm font-medium text-green-700">
                   {status.message}
                 </p>
               ) : null}

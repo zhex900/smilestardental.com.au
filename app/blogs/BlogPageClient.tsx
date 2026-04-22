@@ -75,10 +75,7 @@ export default function BlogPageClient({
           sizes="100vw"
           className="object-cover"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-white/60"
-        />
+        <div aria-hidden className="absolute inset-0 bg-white/60" />
         <div className="container relative z-10 mx-auto px-4">
           <div className="max-w-2xl">
             <motion.h1
@@ -96,7 +93,7 @@ export default function BlogPageClient({
               className="mb-6 text-lg text-gray-900"
             >
               Stay informed with the latest dental care tips, treatment
-              innovations, and oral health advice from our expert team.
+              innovations, and oral health advice from our clinical team.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -281,7 +278,7 @@ export default function BlogPageClient({
         ) : null}
       </section>
 
-      <ContactUs description="Have a dental question? Our team of experts is here to help. Submit your question and we'll feature the answer in our upcoming blog posts." />
+      <ContactUs description="Have a dental question? Our team is here to help. Submit your question and we'll feature the answer in our upcoming blog posts." />
     </div>
   );
 }

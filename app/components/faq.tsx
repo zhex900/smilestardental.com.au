@@ -19,7 +19,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Do you offer Invisalign and orthodontic treatment?",
     answer:
-      "Yes. We provide Invisalign clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, so you know exactly what to expect before starting.",
+      "Yes. We provide Invisalign clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, including discussion of aims, timelines, costs and risks, before you decide to start.",
   },
   {
     question: "How much do dental implants cost?",
@@ -27,14 +27,14 @@ export const FAQS: FaqItem[] = [
       "Dental implant pricing varies based on the number of teeth replaced, whether bone grafting is needed, and the type of crown used. We provide a detailed written quote after your consultation and help you understand any health-fund rebates that may apply.",
   },
   {
-    question: "Do you see children and offer paediatric dentistry?",
+    question: "Do you see children for dental care?",
     answer:
-      "Absolutely. We offer gentle paediatric dentistry including checkups, fluoride, fissure sealants, and airway development assessments for children. We take time to build trust with young patients so appointments are a positive experience.",
+      "Yes. We provide gentle dentistry for children, including checkups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
   },
   {
     question: "Do you offer Botox for teeth grinding (bruxism)?",
     answer:
-      "Yes. Targeted Botox injections into the jaw (masseter) muscles can significantly reduce clenching, grinding and related headaches. The treatment takes about 15 minutes in the chair and lasts around 3–4 months.",
+      "Yes, in suitable cases. Targeted injections into the jaw (masseter) muscles may help reduce clenching, grinding and related symptoms for some patients. Suitability, risks and expected duration are discussed at consultation; individual results vary. A typical in-chair appointment is short; effects often last around 3–4 months but are not guaranteed.",
   },
   {
     question: "Do you accept private health insurance?",
@@ -49,6 +49,6 @@ export const FAQS: FaqItem[] = [
   {
     question: "Is the practice wheelchair accessible and is parking available?",
     answer:
-      "Yes. The practice has step-free access and our practice is wheelchair accessible. Free on-site parking is available.",
+      "Yes. The practice has step-free access and is wheelchair accessible. Free on-site parking is available.",
   },
 ];

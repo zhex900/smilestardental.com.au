@@ -43,7 +43,6 @@ export const SITE_KEYWORDS: string[] = [
   "Lake Macquarie dentist",
   "family dentist",
   "children's dentist",
-  "pediatric dentist",
   "cosmetic dentistry",
   "dental implants",
   "teeth whitening",
@@ -113,7 +112,7 @@ export function absUrl(path = "/"): string {
 export const baseMetadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: `${SITE_NAME} | Trusted Warners Bay & Newcastle Dentists`,
+    default: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
@@ -155,7 +154,7 @@ export const baseMetadata: Metadata = {
     locale: SITE_LOCALE,
     url: siteUrl.toString(),
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Trusted Warners Bay & Newcastle Dentists`,
+    title: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
     description:
       "Family, cosmetic and restorative dentistry in Warners Bay — implants, Invisalign, whitening, crowns and more.",
     images: [
@@ -169,7 +168,7 @@ export const baseMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Trusted Warners Bay & Newcastle Dentists`,
+    title: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
     description:
       "Family, cosmetic and restorative dentistry in Warners Bay — implants, Invisalign, whitening, crowns and more.",
     images: [SITE_DEFAULT_OG_IMAGE],
@@ -324,7 +323,7 @@ export function dentistJsonLd(opts?: {
         "Invisalign & orthodontics",
         "Crowns & bridges",
         "Ceramic onlays & crowns",
-        "Pediatric dentistry",
+        "Children's dentistry",
         "Airway development for children",
         "Root canal therapy",
         "Emergency dental care",
