@@ -90,25 +90,39 @@ export default function About() {
                 className="space-y-4 text-gray-600"
               >
                 <p>
-                  Founded in 2005, DentalCare began with a simple mission: to
-                  provide the highest quality dental care in a comfortable,
-                  patient-centered environment. Dr. Emily Chen started with a
-                  small practice and a big dream - to transform how people
-                  experience dental care.
+                  Dr Melody is a passionate and experienced dentist dedicated to
+                  providing high-quality, patient-centred care. She graduated
+                  from the University of Otago in New Zealand with a Bachelor of
+                  Dental Surgery in 2005. Following her graduation, she gained
+                  valuable experience at Sydney’s Westmead Hospital in the
+                  Emergency and General Dental Department, and regularly
+                  travelled to rural areas across NSW to deliver essential
+                  dental services to underserved communities. She has also spent
+                  many years working within one of Australia’s largest dental
+                  corporations, developing her skills in a fast-paced and highly
+                  professional environment. In 2012, she became the owner of
+                  Smile Star Dental, formerly known as Bay Arcade Dental.
                 </p>
                 <p>
-                  Over the years, we've grown from a single-dentist practice to
-                  a comprehensive dental care center with a team of specialists,
-                  but our core values remain unchanged. We believe in treating
-                  each patient as an individual, creating personalized treatment
-                  plans, and using the latest technology to ensure optimal
-                  outcomes.
+                  Dr Melody has further advanced her expertise by obtaining a
+                  Graduate Diploma of Clinical Dentistry from the University of
+                  Bolton, UK. She has a strong interest in the relationship
+                  between dental alignment, breathing, sleep, and overall
+                  wellbeing. In addition, she enjoys all aspects of dentistry,
+                  with a particular focus on cosmetic treatments such as
+                  veneers, helping patients feel more confident in their smiles.
                 </p>
                 <p>
-                  Today, DentalCare is proud to be a trusted name in dental
-                  health, serving thousands of patients and families across the
-                  community. Our commitment to excellence, compassion, and
-                  continuous improvement drives everything we do.
+                  Known for her gentle approach and commitment to excellence, Dr
+                  Melody takes great pride in helping her patients achieve and
+                  maintain healthy, beautiful smiles. She has cared for many
+                  families across multiple generations, building long-lasting
+                  relationships based on trust and personalised care. She is
+                  committed to ongoing professional development and continually
+                  integrates the latest techniques and advancements into her
+                  practice. The comfort, wellbeing, and experience of every
+                  patient remain at the heart of everything she and her team at
+                  Smile Star Dental do.
                 </p>
               </motion.div>
             </div>

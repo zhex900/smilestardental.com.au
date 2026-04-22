@@ -14,7 +14,7 @@ import { GoogleReview } from "./ui/google-review";
 
 const companyLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Blog", href: "/blogs" },
 ];

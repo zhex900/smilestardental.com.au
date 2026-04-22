@@ -18,7 +18,7 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
       Services
     </Link>
     <Link href="/about" className={menuItemClassName} onClick={onClick}>
-      About Us
+      About
     </Link>
     <Link href="/blogs" className={menuItemClassName} onClick={onClick}>
       Blog

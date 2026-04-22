@@ -115,45 +115,6 @@ export function BlogPostShell({
                     </div>
                   </div>
                 )}
-
-                <div className="mt-8 border-t border-gray-200 pt-8">
-                  <div className="mb-4 flex items-center">
-                    <Share2 className="mr-2 h-5 w-5 text-gray-600" />
-                    <span className="font-medium text-gray-900">
-                      Share this article:
-                    </span>
-                  </div>
-                  <div className="flex space-x-4">
-                    <button
-                      type="button"
-                      className="rounded-full bg-blue-600 p-2 text-white transition-colors hover:bg-gold-400"
-                      aria-label="Share on Facebook"
-                    >
-                      <SocialFacebook className="h-5 w-5" />
-                    </button>
-                    <button
-                      type="button"
-                      className="rounded-full bg-blue-400 p-2 text-white transition-colors hover:bg-blue-500"
-                      aria-label="Share on X"
-                    >
-                      <SocialX className="h-5 w-5" />
-                    </button>
-                    <button
-                      type="button"
-                      className="rounded-full bg-blue-700 p-2 text-white transition-colors hover:bg-blue-800"
-                      aria-label="Share on LinkedIn"
-                    >
-                      <SocialLinkedin className="h-5 w-5" />
-                    </button>
-                    <button
-                      type="button"
-                      className="rounded-full bg-gray-600 p-2 text-white transition-colors hover:bg-gray-700"
-                      aria-label="Share by email"
-                    >
-                      <Mail className="h-5 w-5" />
-                    </button>
-                  </div>
-                </div>
               </div>
 
               <div className="lg:col-span-1">

@@ -16,11 +16,9 @@ export const email = "info@smilestardental.com.au";
 export const copyright = `© ${new Date().getFullYear()} Smile Star Dental. All rights reserved.`;
 
 import {
-  SocialFacebook,
   SocialInstagram,
   SocialLinkedin,
   SocialYoutube,
-  SocialX,
 } from "./components/social-brand-icons";
 
 export const yearEstablished = 2012;
@@ -29,33 +27,21 @@ export const backgroundColor = "bg-gradient-to-b from-sky-100 to-sky-200";
 
 export const socialMedia = [
   {
-    name: "Facebook",
-    url: "https://www.facebook.com/smilestardental",
-    icon: SocialFacebook,
-    hoverColor: "hover:bg-blue-600",
-  },
-  {
     name: "Instagram",
-    url: "https://www.instagram.com/smilestardental",
+    url: "https://www.instagram.com/dr.melodyhealy",
     icon: SocialInstagram,
     hoverColor: "hover:bg-pink-600",
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/company/smilestardental",
+    url: "https://www.linkedin.com/in/melody-healy-9a85595b/",
     icon: SocialLinkedin,
     hoverColor: "hover:bg-blue-700",
   },
   {
     name: "YouTube",
-    url: "https://www.youtube.com/smilestardental",
+    url: "https://www.youtube.com/@BayArcadeDentalatWarnersBay",
     icon: SocialYoutube,
     hoverColor: "hover:bg-red-600",
-  },
-  {
-    name: "X",
-    url: "https://twitter.com/smilestardental",
-    icon: SocialX,
-    hoverColor: "hover:bg-blue-400",
   },
 ];
