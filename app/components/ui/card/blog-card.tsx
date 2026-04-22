@@ -47,20 +47,6 @@ export function BlogCard({ article }: { article: BlogCardProps }) {
             {article.title}
           </h3>
           <p className="text-gray-600 mb-4 text-card">{article.excerpt}</p>
-          <div className="flex items-center justify-between mt-auto">
-            {article.author && (
-              <div className="flex items-center">
-                <Image
-                  src={article.author.avatar}
-                  alt={article.author.name}
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 rounded-full mr-2 object-cover"
-                />
-                <span className="text-sm">{article.author.name}</span>
-              </div>
-            )}
-          </div>
         </div>
       </article>
     </Link>

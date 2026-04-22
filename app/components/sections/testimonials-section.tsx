@@ -10,47 +10,47 @@ import { useGoogleReviews } from "@/hooks/use-google-reviews";
 const fallbackTestimonials = [
   {
     id: 1,
-    name: "Emily Chen",
+    name: "Emily C.",
     avatar:
       "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
     rating: 5,
-    text: "Dr. Johnson made my dental anxiety disappear. Professional, gentle, and amazing results! The office is spotless and the staff is incredibly welcoming. Highly recommend!",
+    text: "The team made my dental anxiety disappear — professional, gentle and the results speak for themselves. The clinic is spotless and the staff are incredibly welcoming.",
     timeAgo: "2 weeks ago",
   },
   {
     id: 2,
-    name: "Michael Torres",
+    name: "Michael T.",
     avatar:
       "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
     rating: 5,
-    text: "Best dental experience I've ever had. The office is modern and Dr. Johnson is incredibly skilled. Got my teeth whitened and the results exceeded my expectations!",
+    text: "Best dental experience I have had in years. Modern clinic, skilled and thorough. I had my teeth whitened and the results exceeded my expectations.",
     timeAgo: "1 month ago",
   },
   {
     id: 3,
-    name: "Sarah Williams",
+    name: "Sarah W.",
     avatar:
       "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
     rating: 5,
-    text: "My whole family loves coming here. Dr. Johnson is wonderful with kids and adults alike. Easy online booking and always on time for appointments.",
+    text: "My whole family loves coming here. The team is wonderful with kids and adults alike, booking online was simple and they are always on time for appointments.",
     timeAgo: "3 weeks ago",
   },
   {
     id: 4,
-    name: "David Thompson",
+    name: "David T.",
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     rating: 5,
-    text: "Outstanding service from start to finish. The 3D scanning technology was incredible and the treatment plan was explained perfectly. My smile has never looked better!",
+    text: "Outstanding service from start to finish. The digital 3D scanning was impressive and the treatment plan was explained clearly. My smile has never looked better.",
     timeAgo: "1 month ago",
   },
   {
     id: 5,
-    name: "Lisa Wang",
+    name: "Lisa W.",
     avatar:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
     rating: 5,
-    text: "Professional, caring, and excellent results. The invisible aligners worked perfectly and the staff was always available to answer my questions. Highly recommend!",
+    text: "Professional, caring and excellent results. The Invisalign treatment went exactly as planned and the team was always available to answer my questions. Highly recommend.",
     timeAgo: "2 months ago",
   },
 ];

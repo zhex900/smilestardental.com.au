@@ -55,15 +55,7 @@ export function BlogPostShell({
               </h1>
               <div className="flex flex-col items-center justify-center gap-3 text-white/85 sm:flex-row sm:gap-6">
                 <div className="flex items-center">
-                  <Image
-                    src={post.authorImage}
-                    alt={post.author}
-                    width={40}
-                    height={40}
-                    className="mr-3 h-10 w-10 rounded-full object-cover ring-2 ring-white/60"
-                  />
                   <div className="text-left">
-                    <p className="font-medium text-white">{post.author}</p>
                     <div className="flex flex-wrap items-center text-sm">
                       <span className="flex items-center">
                         <Calendar className="mr-1 h-4 w-4" />

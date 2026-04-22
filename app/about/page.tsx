@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Heart,
@@ -111,12 +112,14 @@ export default function About() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="rounded-xl overflow-hidden shadow-lg h-[450px]"
+                className="relative rounded-xl overflow-hidden shadow-lg h-[450px]"
               >
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Modern dental clinic reception area with blue accents, friendly staff at reception desk, comfortable waiting area with patients"
+                <Image
+                  src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600&auto=format&fit=crop"
+                  alt="Modern dental clinic reception area with friendly staff and comfortable waiting space"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                 />
               </motion.div>
             </div>
@@ -129,10 +132,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img
-                className="rounded-xl shadow-lg w-full"
+              <Image
                 src="https://storage.googleapis.com/uxpilot-auth.appspot.com/88d5056f1a-ae060504fb9eca0c99cb.png"
-                alt="professional female dentist in white coat smiling, medical portrait"
+                alt="Dr. Melody Healy, principal dentist at Smile Star Dental"
+                width={800}
+                height={800}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="rounded-xl shadow-lg w-full h-auto"
               />
             </div>
             <div>
@@ -211,11 +217,13 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-xl shadow-md overflow-hidden"
               >
-                <div className="h-80 overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
+                <div className="relative h-80 overflow-hidden">
+                  <Image
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name} — ${member.role} at Smile Star Dental`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -262,8 +270,8 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-white opacity-90 text-lg"
               >
-                Schedule your first visit today and see why our patients choose
-                DentalCare.
+                Schedule your first visit today and see why Newcastle families
+                choose Smile Star Dental.
               </motion.p>
             </div>
             <motion.div

@@ -192,23 +192,6 @@ export default function BlogPageClient({
                 </div>
                 <h3 className="mb-4 text-3xl font-bold">{featured.title}</h3>
                 <p className="mb-6 text-gray-600">{featured.excerpt}</p>
-                <div className="mb-6 flex items-center">
-                  <Image
-                    src={featured.author.avatar}
-                    alt={featured.author.name}
-                    width={48}
-                    height={48}
-                    className="mr-3 h-12 w-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="font-medium">{featured.author.name}</p>
-                    {featured.authorTitle ? (
-                      <p className="text-sm text-gray-500">
-                        {featured.authorTitle}
-                      </p>
-                    ) : null}
-                  </div>
-                </div>
                 <Link
                   href={`/blogs/${featured.slug}`}
                   className="inline-block rounded-full bg-gold-400 px-6 py-3 font-medium text-white transition-colors hover:bg-gold-400"
@@ -286,9 +269,7 @@ export default function BlogPageClient({
         ) : null}
       </section>
 
-      <ContactUs
-        description="Have a dental question? Our team of experts is here to help. Submit your question and we'll feature the answer in our upcoming blog posts."
-      />
+      <ContactUs description="Have a dental question? Our team of experts is here to help. Submit your question and we'll feature the answer in our upcoming blog posts." />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -47,19 +46,6 @@ export function FeatureCard({ article }: FeatureCardProps) {
           </div>
           <h3 className="text-3xl font-bold mb-4">{article.title}</h3>
           <p className="text-gray-600 mb-6">{article.excerpt}</p>
-          <div className="flex items-center mb-6">
-            <img
-              src={article.author.avatar}
-              alt={article.author.name}
-              className="w-12 h-12 rounded-full mr-3"
-            />
-            <div>
-              <p className="font-medium">{article.author.name}</p>
-              {article.author.title ? (
-                <p className="text-sm text-gray-500">{article.author.title}</p>
-              ) : null}
-            </div>
-          </div>
           <Link
             href={`/blogs/${article.slug}`}
             className="inline-block px-6 py-3 bg-gold-400 text-white rounded-full font-medium hover:bg-gold-400 transition-colors"

@@ -4,11 +4,7 @@ import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
-import dynamic from "next/dynamic";
-
-const HeroCarousel = dynamic(() => import("../hero-carousel"), {
-  ssr: false,
-});
+import HeroCarousel from "../hero-carousel";
 
 export function HeroSection() {
   const router = useRouter();

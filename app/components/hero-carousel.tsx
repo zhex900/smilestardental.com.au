@@ -1,18 +1,17 @@
 import Carousel from "./ui/carousel";
-import { useEffect, useState } from "react";
 
 const heroCarouselSlides = [
   {
-    src: "/images/g-1.png",
+    src: "/images/g-1.webp",
     xOffset: 16,
-    title: "",
+    title: "Smile Star Dental — patient smiling in Warners Bay clinic",
     button: ".",
     description: "",
   },
   {
-    src: "/images/boy-2.png",
+    src: "/images/boy-2.webp",
     xOffset: -2,
-    title: "",
+    title: "Young patient receiving gentle dental care at Smile Star Dental",
     button: ".",
     description: "",
   },
