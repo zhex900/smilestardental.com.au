@@ -17,7 +17,7 @@ import type { Service } from "@/components/ui/card";
 export const services: Service[] = [
   {
     id: 1,
-    title: "Dental Cleaning & Checkups",
+    title: "Dental Cleaning & Check Ups",
     category: "preventive",
     icon: Shield,
     image: "/images/checkups-1.jpg",

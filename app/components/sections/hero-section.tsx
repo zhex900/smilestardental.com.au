@@ -48,8 +48,8 @@ export function HeroSection() {
                 </h1>
                 <p className="text-justify text-normal heading-mb">
                   Experience exceptional dental care, proudly serving the{" "}
-                  Newcastle community where every patient receives star
-                  treatment for a brighter, healthier smile.
+                  Newcastle and Lake Macquarie community where every patient
+                  receives star treatment for a brighter, healthier smile.
                 </p>
               </div>
               <div className="flex justify-between items-center pt-2 md:pt-6">
