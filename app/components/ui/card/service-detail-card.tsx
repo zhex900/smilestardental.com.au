@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -32,18 +33,18 @@ export function ServiceDetailCard({
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group/card relative min-h-[440px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
     >
-      <img
+      <Image
         src={service.image}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover/card:scale-110 group-hover/card:grayscale-0"
+        fill
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+        className="pointer-events-none scale-105 object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover/card:scale-110 group-hover/card:grayscale-0"
       />
-
       <div
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"
         aria-hidden
       />
-
       <div className="pointer-events-none absolute  bottom-0 z-10 ">
         <div className="pointer-events-auto w-full rounded-xl border border-white/15 bg-black/25 px-4 pb-5 pt-5 shadow-lg backdrop-blur-lg backdrop-saturate-150 md:px-5 md:pb-6 md:pt-6">
           <div className="flex items-start gap-3">
@@ -52,24 +53,22 @@ export function ServiceDetailCard({
               {service.title}
             </h3>
           </div>
-          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover/card:grid-rows-[1fr]">
-            <div className="min-h-0 overflow-hidden">
-              <div className="translate-y-2 opacity-0 transition duration-300 ease-out group-hover/card:translate-y-0 group-hover/card:opacity-100">
-                <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">
-                  {service.description}
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-sm text-white/95"
-                    >
-                      <Star className="mr-2 h-3.5 w-3.5 shrink-0 fill-gold-400 text-gold-400" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="max-h-0 overflow-y-auto overscroll-contain pr-1 transition-[max-height] duration-300 ease-out group-hover/card:max-h-[150px]">
+            <div className="translate-y-2 opacity-0 transition duration-300 ease-out group-hover/card:translate-y-0 group-hover/card:opacity-100">
+              <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">
+                {service.description}
+              </p>
+              <ul className="mt-4 space-y-2">
+                {service.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-center text-sm text-white/95"
+                  >
+                    <Star className="mr-2 h-3.5 w-3.5 shrink-0 fill-gold-400 text-gold-400" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

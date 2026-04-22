@@ -183,7 +183,7 @@ export const services: Service[] = [
   },
   {
     id: 12,
-    title: "Airway Development for Children",
+    title: "Child Airway Development",
     category: "pediatric",
     icon: Baby,
     image: "/images/child-sleeping.jpg",

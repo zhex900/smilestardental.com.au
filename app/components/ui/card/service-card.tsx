@@ -25,7 +25,6 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, className }: ServiceCardProps) {
   const [hovered, setHovered] = useState(false);
-  const href = service.link ?? "#";
 
   return (
     <div
