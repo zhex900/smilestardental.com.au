@@ -1,6 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
+import { AnnouncementBar } from "./components/announcement-bar";
+import { JsonLd } from "./components/json-ld";
+import {
+  baseMetadata,
+  dentistJsonLd,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "./lib/seo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,46 +18,14 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
-import { AnnouncementBar } from "./components/announcement-bar";
-import { BreakpointDebug } from "./components/breakpoint-debug";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL!;
+export const metadata: Metadata = baseMetadata;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Smile Star Dental",
-  description:
-    "Your trusted partner for comprehensive dental care and beautiful smiles. We provide exceptional dental services with the latest technology and a caring approach.",
-  keywords:
-    "dental, orthodontics, braces, clear aligners, dental implants, cosmetic dentistry, Warners Bay, Newcastle",
-  authors: [{ name: "Bay Arcade Dental" }],
-  robots: "index, follow",
-  openGraph: {
-    title: "Smile Star Dental",
-    description:
-      "Your trusted partner for comprehensive dental care and beautiful smiles.",
-    url: siteUrl,
-    siteName: "Smile Star Dental",
-    images: [
-      {
-        url: "/favicon.svg",
-        width: 1200,
-        height: 630,
-        alt: "Smile Star Dental",
-      },
-    ],
-    locale: "en_AU",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Smile Star Dental",
-    description:
-      "Your trusted partner for comprehensive dental care and beautiful smiles.",
-    images: ["/favicon.svg"],
-  },
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -56,43 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en-AU" className={poppins.variable}>
       <head>
-        {/* iOS Safari status bar / safe area colors */}
-
-        <meta name="theme-color" content="#fff" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-        <link rel="icon" href="/favicon.svg" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="canonical" href={siteUrl} />
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={dentistJsonLd()} />
       </head>
       <body>
         <Header />
         <AnnouncementBar />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
-        {/* <BreakpointDebug /> */}
       </body>
     </html>
   );

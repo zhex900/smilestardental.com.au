@@ -113,8 +113,6 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {address.unit}
-                    <br />
                     {address.street}
                     <br />
                     {address.city}

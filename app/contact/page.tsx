@@ -120,8 +120,6 @@ export default function Contact() {
                 Visit Our Office
               </h3>
               <p className="text-gray-600">
-                {address.unit}
-                <br />
                 {address.street}
                 <br />
                 {address.city}
@@ -320,7 +318,7 @@ export default function Contact() {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.unit}, ${address.street}, ${address.city}`)}&output=embed`}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`}
                 />
               </div>
             </motion.div>
