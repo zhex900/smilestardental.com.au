@@ -5,6 +5,8 @@ import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { AnnouncementBar } from "./components/announcement-bar";
 import { JsonLd } from "./components/json-ld";
+import Script from "next/script";
+
 import {
   baseMetadata,
   dentistJsonLd,
@@ -36,6 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={poppins.variable}>
       <head>
+        {process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN ? (
+          <Script
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}"}`}
+            strategy="afterInteractive"
+            defer
+          />
+        ) : null}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={dentistJsonLd()} />
