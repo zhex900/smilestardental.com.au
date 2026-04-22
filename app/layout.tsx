@@ -53,7 +53,7 @@ export default function RootLayout({
       <body>
         <Header />
         <AnnouncementBar />
-        <main className="overflow-x-hidden">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

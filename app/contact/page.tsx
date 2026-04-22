@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, ChevronDown, Mail, Send } from "lucide-react";
-import { address, openingHours, phoneNumber } from "@/constants";
+import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
 
 const faqs = [
   {
@@ -168,9 +168,14 @@ export default function Contact() {
                   ))}
                 </ul>
               </div>
-              <button className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer">
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
+              >
                 Book Appointment
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -415,12 +420,20 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 text-center"
+              >
                 Book Appointment
-              </button>
-              <button className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-gold-400 transition duration-300">
+              </a>
+              <a
+                href={`tel:${phoneNumber}`}
+                className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-gold-400 transition duration-300 text-center"
+              >
                 Call Now
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

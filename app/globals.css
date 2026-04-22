@@ -63,12 +63,17 @@
     @apply border-gray-200 dark:border-gray-800;
   }
 
+  html,
   body {
     @apply font-sans antialiased text-black;
-    overflow-x: hidden;
-  }
-  #__next {
-    overflow-x: hidden;
+    /*
+     * `overflow-x: clip` prevents horizontal scroll caused by intentional
+     * off-screen animations (e.g. framer-motion slide-ins with x: ±50) and
+     * decorative transforms, without creating a scroll container the way
+     * `overflow-x: hidden` does. Unlike hidden, clip keeps `position: sticky`
+     * descendants working.
+     */
+    overflow-x: clip;
   }
 }
 

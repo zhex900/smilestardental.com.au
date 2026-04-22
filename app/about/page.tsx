@@ -12,6 +12,7 @@ import {
   Clock,
 } from "lucide-react";
 import { ContactUs } from "@/components/sections/contact-us";
+import { bookingUrl } from "@/constants";
 
 const teamMembers = [
   {
@@ -279,9 +280,14 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <button className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300"
+              >
                 Book Your Appointment
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

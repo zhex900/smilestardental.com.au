@@ -1,12 +1,11 @@
 "use client";
 import { Calendar, Menu, Phone } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
 import { useState } from "react";
 import { LogoIcon } from "./ui/logo-icon";
-import { phoneNumber } from "@/constants";
+import { bookingUrl, phoneNumber } from "@/constants";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 const menuItemClassName =
@@ -23,18 +22,13 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
     <Link href="/blogs" className={menuItemClassName} onClick={onClick}>
       Blog
     </Link>
-    <Link
-      href="/about#contact-us"
-      className={menuItemClassName}
-      onClick={onClick}
-    >
+    <Link href="/contact" className={menuItemClassName} onClick={onClick}>
       Contact
     </Link>
   </>
 );
 
 export function Header() {
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -68,7 +62,10 @@ export function Header() {
           <div className="sm:flex items-center space-x-2 hidden">
             <ButtonGradient
               className="w-10 h-10 md:w-auto md:h-auto"
-              onClick={() => router.push("/contact")}
+              onClick={() =>
+                window.open(bookingUrl, "_blank", "noopener,noreferrer")
+              }
+              aria-label="Book an appointment online (opens in a new tab)"
             >
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />

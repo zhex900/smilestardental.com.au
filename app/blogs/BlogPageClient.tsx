@@ -65,8 +65,21 @@ export default function BlogPageClient({
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="flex h-[400px] items-center bg-blue-50 bg-[url(https://images.unsplash.com/photo-1585909085111-2c2f311643af?q=80&w=1570&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]">
-        <div className="container mx-auto px-4">
+      <section className="relative flex h-[400px] items-center bg-blue-50 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1585909085111-2c2f311643af?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-white/60"
+        />
+        <div className="container relative z-10 mx-auto px-4">
           <div className="max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -172,7 +185,6 @@ export default function BlogPageClient({
                     alt=""
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    priority
                     className="object-cover rounded-xl"
                   />
                 ) : (

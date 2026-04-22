@@ -44,3 +44,6 @@ export const socialMedia = [
     hoverColor: "hover:bg-red-600",
   },
 ];
+
+export const bookingUrl =
+  "https://bookings.zavy360.com/booking/bayarcadedental/locations/e0474822-7736-4eb0-b112-9d1b22b17156/practitioner/1328627/patient-type";

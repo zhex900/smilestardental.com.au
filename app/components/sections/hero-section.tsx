@@ -1,14 +1,12 @@
 "use client";
 import { ArrowRight } from "lucide-react";
-import { useRouter } from "next/navigation";
 import AnimatedText from "../ui/animated-text";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
 import HeroCarousel from "../hero-carousel";
+import { bookingUrl } from "@/constants";
 
 export function HeroSection() {
-  const router = useRouter();
-
   return (
     <section
       id="hero"
@@ -49,7 +47,12 @@ export function HeroSection() {
                 </p>
               </div>
               <div className="flex justify-between items-center pt-2 md:pt-6">
-                <ButtonGradient onClick={() => router.push("/contact")}>
+                <ButtonGradient
+                  onClick={() =>
+                    window.open(bookingUrl, "_blank", "noopener,noreferrer")
+                  }
+                  aria-label="Book an appointment online (opens in a new tab)"
+                >
                   <span className="hidden md:block"> Make a booking</span>
                   <span className="block md:hidden">Book now</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />

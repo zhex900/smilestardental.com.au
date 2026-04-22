@@ -24,6 +24,61 @@ const nextConfig = {
   },
   trailingSlash: false,
 
+  async headers() {
+    const securityHeaders = [
+      // Block MIME sniffing so browsers respect declared Content-Type.
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      // Limit the amount of referrer info leaked to third parties.
+      {
+        key: "Referrer-Policy",
+        value: "strict-origin-when-cross-origin",
+      },
+      // Prevent clickjacking via iframes on other origins.
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      // Disable powerful browser features we don't need (dental site).
+      {
+        key: "Permissions-Policy",
+        value:
+          "camera=(), microphone=(), geolocation=(), browsing-topics=(), interest-cohort=()",
+      },
+      // Tell Chrome this site opts out of FLoC/Topics entirely.
+      { key: "X-DNS-Prefetch-Control", value: "on" },
+      // Long-lived HSTS (HTTPS already enforced by Vercel; this adds the
+      // preload-ready policy on top).
+      {
+        key: "Strict-Transport-Security",
+        value: "max-age=63072000; includeSubDomains; preload",
+      },
+    ];
+
+    return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+      // Aggressive long-term caching for hashed Next static assets.
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Cache local images, fonts and icons for a year at the edge.
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
+
   // Pin workspace root when multiple lockfiles exist (e.g. ~/package-lock.json).
   turbopack: {
     root: path.join(__dirname),
