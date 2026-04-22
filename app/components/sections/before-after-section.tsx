@@ -32,26 +32,21 @@ export function BeforeAfterSection() {
           </motion.p>
         </div>
 
-        <div className="heading-mb grid grid-cols-1 lg:grid-cols-2 items-center gap-5 md:gap-10">
+        <div className="heading-mb grid grid-cols-1 lg:grid-cols-3 items-stretch gap-5 md:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative group block h-full w-full"
+            className="relative group block h-full w-full lg:col-span-1"
           >
             <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-400/[0.8] block rounded-xl" />
 
             <Card className="text-white bg-gradient-to-b from-gold-600 to-gold-400">
-              <CardTitle className="flex items-center heading-mb">
-                <div className="flex items-center justify-center md:justify-start">
-                  <div className="w-16 h-16 md:w-20 md:h-20">
-                    <OrthodonticsIcon />
-                  </div>
+              <CardTitle className="flex items-center">
+                <div className="w-16 h-16 md:w-18 md:h-18">
+                  <OrthodonticsIcon />
                 </div>
-                <div className="text-xl md:text-2xl">
-                  Advanced <span className="brand-yellow">Orthodontic</span>{" "}
-                  Treatment...
-                </div>
+                <div className="text-xl md:text-2xl">Orthodontic</div>
               </CardTitle>
               <CardDescription className="flex-1 text-normal md:text-base">
                 Our state-of-the-art braces and clear aligners can transform
@@ -82,25 +77,19 @@ export function BeforeAfterSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative group h-full w-full"
+            className="relative group h-full w-full lg:col-span-2"
           >
-            <div className="w-full rounded-xl p-3 bg-gold-600/[0.2] shadow-xl">
+            <div className="flex h-full w-full flex-col justify-center rounded-xl p-3 bg-gold-600/[0.2] shadow-xl">
               <Compare
-                firstImage="/images/braces-before.png"
-                secondImage="/images/braces-after.jpg"
+                firstImage="/images/braces-after.png"
+                secondImage="/images/braces-before.png"
                 firstImageClassName="object-cover object-center"
                 secondImageClassname="object-cover object-center"
-                className="w-full h-[300px] md:h-[400px]"
+                className="w-full h-[300px]"
                 showHandlebar={true}
-                autoplay={true}
+                autoplay
                 autoplayDuration={5000}
               />
-              <div className=" text-center">
-                <div className="pt-2 flex justify-between text-md text-slate-600">
-                  <span className="font-medium">Before Treatment</span>
-                  <span className="font-medium">After Treatment</span>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>

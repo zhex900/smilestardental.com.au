@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -158,14 +159,14 @@ export const Compare: React.FC<CompareProps> = ({
             clipPath: `polygon(0 0, ${sliderXPercent}% 0, ${sliderXPercent}% 100%, 0 100%)`,
           }}
         >
-          <img
-            alt="first image"
+          <Image
+            alt="Before treatment"
             src={firstImage}
-            className={cn(
-              "absolute inset-0 z-20 w-full h-full select-none",
-              firstImageClassName,
-            )}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority
             draggable={false}
+            className={cn("absolute inset-0 z-20 w-full h-full")}
           />
         </motion.div>
       </div>
@@ -176,14 +177,16 @@ export const Compare: React.FC<CompareProps> = ({
             clipPath: `polygon(${sliderXPercent}% 0, 100% 0, 100% 100%, ${sliderXPercent}% 100%)`,
           }}
         >
-          <img
-            alt="second image"
+          <Image
+            alt="After treatment"
             src={secondImage}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            draggable={false}
             className={cn(
               "absolute inset-0 z-20 w-full h-full",
               secondImageClassname,
             )}
-            draggable={false}
           />
         </motion.div>
       </div>

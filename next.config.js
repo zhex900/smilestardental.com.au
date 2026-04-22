@@ -56,16 +56,6 @@ const nextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-      // Cache local images, fonts and icons for a year at the edge.
-      {
-        source: "/images/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
     ];
   },
 
