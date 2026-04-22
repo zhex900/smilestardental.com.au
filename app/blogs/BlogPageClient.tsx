@@ -182,7 +182,7 @@ export default function BlogPageClient({
                 {featured.image ? (
                   <Image
                     src={featured.image}
-                    alt=""
+                    alt={featured.title}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover rounded-xl"

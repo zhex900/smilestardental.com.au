@@ -118,7 +118,6 @@ export default function AnimatedText({
   const renderSingleLineWords = (lineText: string) => {
     return lineText.split(" ").map((word, index) => {
       const customStyle = wordStyles[word] || "";
-      console.log(word);
       return (
         <motion.span
           key={`word-${index}`}

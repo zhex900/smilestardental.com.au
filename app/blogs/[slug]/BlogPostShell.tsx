@@ -133,7 +133,7 @@ export function BlogPostShell({
                               {item.image ? (
                                 <Image
                                   src={item.image}
-                                  alt=""
+                                  alt={item.title}
                                   width={64}
                                   height={64}
                                   className="h-16 w-16 shrink-0 rounded object-cover"

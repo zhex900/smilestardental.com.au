@@ -48,7 +48,7 @@ export function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`bg-white rounded-full p-2 text-black hover:opacity-100 transition-opacity cursor-pointer ${social.hoverColor}  `}
+                    className={`bg-white rounded-full p-2 text-black hover:opacity-100 transition-opacity ${social.hoverColor}  `}
                     aria-label={`Follow us on ${social.name}`}
                   >
                     <IconComponent className="w-4 h-4" />
@@ -66,7 +66,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="hover:text-gray-300 transition-colors cursor-pointer"
+                    className="hover:text-gray-300 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -101,23 +101,26 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
-                <p className="hover:text-gray-300 transition-colors cursor-pointer">
-                  <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
-                </p>
+                <a
+                  href={`tel:${phoneNumber}`}
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  {phoneNumber}
+                </a>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <p className="hover:text-gray-300 transition-colors cursor-pointer">
-                  <a
-                    href={`https://maps.google.com/maps?saddr=home&daddr=${encodeURIComponent(`${address.street}, ${address.city}`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {address.street}
-                    <br />
-                    {address.city}
-                  </a>
-                </p>
+                <a
+                  href={`https://maps.google.com/maps?saddr=home&daddr=${encodeURIComponent(`${address.street}, ${address.city}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors"
+                  aria-label={`Get directions to Smile Star Dental at ${address.street}, ${address.city} (opens in a new tab)`}
+                >
+                  {address.street}
+                  <br />
+                  {address.city}
+                </a>
               </li>
             </ul>
 

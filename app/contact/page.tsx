@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
@@ -7,52 +6,7 @@ import { ContactUs } from "@/components/sections/contact-us";
 import { FaqSection } from "@/components/sections";
 import { FAQS } from "@/components/faq";
 
-const faqs = [
-  {
-    id: 1,
-    question: "Do you accept dental insurance?",
-    answer:
-      "Yes, we accept most major dental insurance plans. Please contact our office to verify your specific coverage before your appointment. We also offer flexible payment options for patients without insurance.",
-  },
-  {
-    id: 2,
-    question: "How often should I visit the dentist?",
-    answer:
-      "For most patients, we recommend scheduling regular dental checkups and cleanings every six months. However, depending on your specific oral health needs, we may suggest more frequent visits.",
-  },
-  {
-    id: 3,
-    question: "What should I do in a dental emergency?",
-    answer:
-      "If you're experiencing a dental emergency, call our emergency line immediately at (123) 456-7899. For severe bleeding or injuries, please go to the nearest emergency room. We reserve time in our daily schedule for emergency patients.",
-  },
-  {
-    id: 4,
-    question: "Do you offer payment plans?",
-    answer:
-      "Yes, we offer flexible payment plans to help make dental care more affordable. We work with several financing options and can discuss payment arrangements that fit your budget.",
-  },
-  {
-    id: 5,
-    question: "What are your office hours?",
-    answer:
-      "We are open Monday through Friday from 8AM to 6PM, and Saturdays from 9AM to 2PM. We are closed on Sundays and major holidays.",
-  },
-  {
-    id: 6,
-    question: "How do I schedule an appointment?",
-    answer:
-      "You can schedule an appointment by calling our office at (123) 456-7890, using our online booking system, or by filling out the contact form on this page. We'll get back to you within 24 hours.",
-  },
-];
-
 export default function Contact() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (id: number) => {
-    setOpenFaq(openFaq === id ? null : id);
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -101,18 +55,14 @@ export default function Contact() {
                 <br />
                 {address.city}
               </p>
-              <button
-                onClick={() =>
-                  window.open(
-                    `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`,
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
+              <a
+                href={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-gold-400 font-medium mt-4 hover:underline"
               >
                 Get Directions
-              </button>
+              </a>
             </motion.div>
 
             <motion.div
@@ -128,18 +78,12 @@ export default function Contact() {
                 Call Us
               </h3>
               <p className="text-gray-600">{phoneNumber}</p>
-              <button
-                onClick={() =>
-                  window.open(
-                    `tel:${phoneNumber}`,
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
+              <a
+                href={`tel:${phoneNumber}`}
+                className="inline-block text-gold-400 font-medium mt-4 hover:underline"
               >
                 Call Now
-              </button>
+              </a>
             </motion.div>
 
             <motion.div

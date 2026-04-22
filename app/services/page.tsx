@@ -5,6 +5,7 @@ import { Award, Heart, Shield, Zap } from "lucide-react";
 import { ServiceDetailCard } from "@/components/ui/card";
 import { TestimonialsSection } from "@/components/sections";
 import { services } from "./services";
+import { bookingUrl } from "@/constants";
 
 const serviceCategories = [
   { id: "all", name: "All Services" },
@@ -225,9 +226,14 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300"
+              >
                 Book Consultation
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
