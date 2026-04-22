@@ -19,7 +19,7 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.6 }}
             className="text-heading heading-mb"
           >
-            Orthodontic <span className="brand-yellow">care</span> &amp; examples
+            Orthodontic <span className="brand-yellow">Care</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
