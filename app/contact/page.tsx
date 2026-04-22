@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, ChevronDown, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
+import { ContactUs } from "@/components/sections/contact-us";
+import { FaqSection } from "@/components/sections";
+import { FAQS } from "@/components/faq";
 
 const faqs = [
   {
@@ -45,32 +48,6 @@ const faqs = [
 
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
 
   const toggleFaq = (id: number) => {
     setOpenFaq(openFaq === id ? null : id);
@@ -124,7 +101,16 @@ export default function Contact() {
                 <br />
                 {address.city}
               </p>
-              <button className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer">
+              <button
+                onClick={() =>
+                  window.open(
+                    `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`,
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
+              >
                 Get Directions
               </button>
             </motion.div>
@@ -142,7 +128,16 @@ export default function Contact() {
                 Call Us
               </h3>
               <p className="text-gray-600">{phoneNumber}</p>
-              <button className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer">
+              <button
+                onClick={() =>
+                  window.open(
+                    `tel:${phoneNumber}`,
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
+              >
                 Call Now
               </button>
             </motion.div>
@@ -181,217 +176,41 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form & Map Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl shadow-md"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Send Us a Message
-              </h2>
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label
-                      htmlFor="firstName"
-                      className="block text-gray-700 mb-2"
-                    >
-                      First Name*
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lastName"
-                      className="block text-gray-700 mb-2"
-                    >
-                      Last Name*
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">
-                      Email Address*
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 mb-2">
-                      Phone Number*
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="service" className="block text-gray-700 mb-2">
-                    Service of Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                  >
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    <option value="cleaning">Dental Cleaning & Checkups</option>
-                    <option value="whitening">Teeth Whitening</option>
-                    <option value="implants">Dental Implants</option>
-                    <option value="orthodontics">
-                      Invisalign & Orthodontics
-                    </option>
-                    <option value="crowns">Crowns & Bridges</option>
-                    <option value="pediatric">Pediatric Dentistry</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2">
-                    Your Message*
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="bg-gold-400 hover:bg-gold-400 text-white font-medium py-3 px-6 rounded-xl transition duration-300 w-full flex items-center justify-center"
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
-                </button>
-              </form>
-            </motion.div>
+      {/* Contact Form */}
+      <ContactUs
+        heading="Send Us a Message"
+        description="Have a question or ready to book? Send us a message and our team will be in touch shortly."
+        className="bg-gray-50"
+      />
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="h-full bg-white p-4 rounded-xl shadow-md overflow-hidden"
-            >
-              <div className="h-full w-full rounded-xl overflow-hidden">
-                <iframe
-                  title="Smile Star Dental Location Map"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`}
-                />
-              </div>
-            </motion.div>
-          </div>
+      {/* Map Section */}
+      <section className="bg-gray-50 pb-12">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-xl bg-white p-4 shadow-md"
+          >
+            <div className="h-[400px] w-full overflow-hidden rounded-xl">
+              <iframe
+                title="Smile Star Dental Location Map"
+                className="h-full w-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`}
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-gray-900 mb-4"
-            >
-              Frequently Asked Questions
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 max-w-3xl mx-auto"
-            >
-              Find answers to our most commonly asked questions. If you don't
-              see what you're looking for, please contact us directly.
-            </motion.p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={faq.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="mb-4 border border-gray-200 rounded-xl overflow-hidden"
-              >
-                <div
-                  className="flex justify-between items-center p-5 bg-blue-50 cursor-pointer"
-                  onClick={() => toggleFaq(faq.id)}
-                >
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {faq.question}
-                  </h3>
-                  <ChevronDown
-                    className={`text-gold-400 transition-transform duration-300 ${
-                      openFaq === faq.id ? "rotate-180" : ""
-                    }`}
-                  />
-                </div>
-                {openFaq === faq.id && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="p-5 bg-white"
-                  >
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        items={FAQS}
+        intro="Answers to common questions about our practice, treatments, bookings and costs."
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-gold-400">

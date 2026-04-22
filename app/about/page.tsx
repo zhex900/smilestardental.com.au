@@ -1,16 +1,7 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Heart,
-  Award,
-  Microscope,
-  Users,
-  GraduationCap,
-  Star,
-  Clock,
-} from "lucide-react";
+
 import { ContactUs } from "@/components/sections/contact-us";
 import { bookingUrl } from "@/constants";
 
