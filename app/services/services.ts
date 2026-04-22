@@ -3,7 +3,9 @@ import {
   Baby,
   Braces,
   Crown,
+  Headphones,
   Heart,
+  Scan,
   Search,
   Shield,
   Smile,
@@ -254,6 +256,36 @@ export const services: Service[] = [
       "Precision digital fit",
       "Preserves tooth structure",
       "Natural translucency",
+    ],
+  },
+  {
+    id: 17,
+    title: "Digital Intraoral Scanning",
+    category: "preventive",
+    icon: Scan,
+    image: "/images/scanning.jpg",
+    description:
+      "Fast, radiation-free 3D digital impressions replace messy moulds — giving you a clearer view of your teeth and enabling precise planning for Invisalign, crowns, implants and more.",
+    features: [
+      "No gooey impression trays",
+      "3D same-day visualisation",
+      "Precise records for treatment planning",
+      "Compatible with Invisalign & crown labs",
+    ],
+  },
+  {
+    id: 18,
+    title: "In-Chair TV & Noise-Cancelling Headphones",
+    category: "preventive",
+    icon: Headphones,
+    image: "/images/headphones.jpg",
+    description:
+      "Watch your favourite shows and block out clinical sounds with ceiling-mounted TVs and premium noise-cancelling headphones — helping you relax throughout every appointment.",
+    features: [
+      "Ceiling-mounted TV screens",
+      "Premium noise-cancelling headphones",
+      "Streaming platforms available",
+      "Ideal for anxious patients",
     ],
   },
 ];

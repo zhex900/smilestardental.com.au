@@ -90,39 +90,19 @@ export default function About() {
                 className="space-y-4 text-gray-600"
               >
                 <p>
-                  Dr Melody is a passionate and experienced dentist dedicated to
-                  providing high-quality, patient-centred care. She graduated
-                  from the University of Otago in New Zealand with a Bachelor of
-                  Dental Surgery in 2005. Following her graduation, she gained
-                  valuable experience at Sydney’s Westmead Hospital in the
-                  Emergency and General Dental Department, and regularly
-                  travelled to rural areas across NSW to deliver essential
-                  dental services to underserved communities. She has also spent
-                  many years working within one of Australia’s largest dental
-                  corporations, developing her skills in a fast-paced and highly
-                  professional environment. In 2012, she became the owner of
-                  Smile Star Dental, formerly known as Bay Arcade Dental.
-                </p>
-                <p>
-                  Dr Melody has further advanced her expertise by obtaining a
-                  Graduate Diploma of Clinical Dentistry from the University of
-                  Bolton, UK. She has a strong interest in the relationship
-                  between dental alignment, breathing, sleep, and overall
-                  wellbeing. In addition, she enjoys all aspects of dentistry,
-                  with a particular focus on cosmetic treatments such as
-                  veneers, helping patients feel more confident in their smiles.
-                </p>
-                <p>
-                  Known for her gentle approach and commitment to excellence, Dr
-                  Melody takes great pride in helping her patients achieve and
-                  maintain healthy, beautiful smiles. She has cared for many
-                  families across multiple generations, building long-lasting
-                  relationships based on trust and personalised care. She is
-                  committed to ongoing professional development and continually
-                  integrates the latest techniques and advancements into her
-                  practice. The comfort, wellbeing, and experience of every
-                  patient remain at the heart of everything she and her team at
-                  Smile Star Dental do.
+                  Smile Star Dental was built on a simple mission: to provide
+                  high-quality, patient-centred care in a comfortable and
+                  welcoming environment. Dr Melody Healy began with a small
+                  practice and a clear vision—to transform the way people
+                  experience dentistry, especially for those who may feel
+                  nervous or anxious. Today, we’ve grown into a modern dental
+                  practice while staying true to our core values. We focus on
+                  personalised care, gentle treatment approaches, and clear
+                  communication to help every patient feel at ease, along with
+                  tailored treatment plans and the latest technology to achieve
+                  the best outcomes. Smile Star Dental is proud to be a trusted
+                  choice for families in the community, with a strong commitment
+                  to excellence, compassion, and continuous improvement.
                 </p>
               </motion.div>
             </div>
@@ -159,25 +139,42 @@ export default function About() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Meet Dr. Melody Healy
               </h2>
-              <p className="text-gray-600 mb-6 text-justify">
-                Dr Melody is a passionate and experienced dentist. She graduated
-                from the University of Otago in New Zealand with a Bachelor of
-                Dental Surgery in 2005. Since then she has worked at Sydney’s
-                Westmead Hospital in the emergency and general dental department
-                and frequently travelled to rural areas of NSW providing much
-                needed services to rural Australians. She has also worked in one
-                of the largest dental corporations in Australia for many years
-                in a demanding and professional environment. Currently she is
-                the principal dentist at Bay Arcade Dental. Dr Melody is
-                passionate and has a great understanding about how crooked teeth
-                in children and adults and its effect on breathing and sleep and
-                general wellbeing of the individual. She finds satisfaction in
-                helping people to be healthier and feel better about their
-                smile. Because of this, she has treated many families across 3
-                generations. Dr Melody strives to achieve excellence and
-                continually researches and studies to apply leading edge
-                techniques. The experience and welfare of patients is of utmost
-                importance to the whole team at Bay Arcade Dental.
+              <p>
+                Dr Melody is a passionate and experienced dentist dedicated to
+                providing high-quality, patient-centred care. She graduated from
+                the University of Otago in New Zealand with a Bachelor of Dental
+                Surgery in 2005. Following her graduation, she gained valuable
+                experience at Sydney’s Westmead Hospital in the Emergency and
+                General Dental Department, and regularly travelled to rural
+                areas across NSW to deliver essential dental services to
+                underserved communities. She has also spent many years working
+                within one of Australia’s largest dental corporations,
+                developing her skills in a fast-paced and highly professional
+                environment. In 2012, she became the owner of Smile Star Dental,
+                formerly known as Bay Arcade Dental.
+              </p>
+              <br />
+              <p>
+                Dr Melody has further advanced her expertise by obtaining a
+                Graduate Diploma of Clinical Dentistry from the University of
+                Bolton, UK. She has a strong interest in the relationship
+                between dental alignment, breathing, sleep, and overall
+                wellbeing. In addition, she enjoys all aspects of dentistry,
+                with a particular focus on cosmetic treatments such as veneers,
+                helping patients feel more confident in their smiles.
+              </p>{" "}
+              <br />
+              <p>
+                Known for her gentle approach and commitment to excellence, Dr
+                Melody takes great pride in helping her patients achieve and
+                maintain healthy, beautiful smiles. She has cared for many
+                families across multiple generations, building long-lasting
+                relationships based on trust and personalised care. She is
+                committed to ongoing professional development and continually
+                integrates the latest techniques and advancements into her
+                practice. The comfort, wellbeing, and experience of every
+                patient remain at the heart of everything she and her team at
+                Smile Star Dental do.
               </p>
             </div>
           </div>
