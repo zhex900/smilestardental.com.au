@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import {
   getBlogBySlug,
   getBlogSlugs,
@@ -112,7 +113,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         ])}
       />
       <BlogPostShell post={frontmatter} relatedPosts={relatedPosts}>
-        <MDXRemote source={content} />
+        <MDXRemote
+          source={content}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+            },
+          }}
+        />
       </BlogPostShell>
     </>
   );
