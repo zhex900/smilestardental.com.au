@@ -13,7 +13,8 @@ import { breadcrumbJsonLd, buildMetadata, faqPageJsonLd } from "./lib/seo";
 import { FAQS } from "./components/faq";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Smile Star Dental | Warners Bay — preventative, general & family dentistry",
+  title:
+    "Smile Star Dental | Newcastle, Lake Macquarie & Warners Bay — preventative, general & family dentistry",
   description:
     "We're in Warners Bay on Lake Macquarie (formerly Bay Arcade Dental). Family and general dentistry with digital technology — checkups, cosmetic care, implants, Invisalign, children's dentistry and more.",
   path: "/",
