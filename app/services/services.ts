@@ -24,7 +24,7 @@ export const services: Service[] = [
     icon: Shield,
     image: "/images/checkups-1.jpg",
     description:
-      "Regular cleanings and comprehensive checkups to maintain optimal oral health and catch issues early.",
+      "Regular cleanings and comprehensive check ups to maintain optimal oral health and catch issues early.",
     features: [
       "Professional cleaning",
       "Cavity detection",
@@ -64,7 +64,7 @@ export const services: Service[] = [
   },
   {
     id: 4,
-    title: "Invisalign & Orthodontics",
+    title: "Clear Aligners & Orthodontics",
     category: "orthodontics",
     icon: Braces,
     image: "/images/orthodontics.jpg",
@@ -265,12 +265,12 @@ export const services: Service[] = [
     icon: Scan,
     image: "/images/scanning.jpg",
     description:
-      "Fast, radiation-free 3D digital impressions replace messy moulds — giving you a clearer view of your teeth and enabling precise planning for Invisalign, crowns, implants and more.",
+      "Fast, radiation-free 3D digital impressions replace messy moulds — giving you a clearer view of your teeth and enabling precise planning for clear aligners, crowns, implants and more.",
     features: [
       "No gooey impression trays",
       "3D same-day visualisation",
       "Precise records for treatment planning",
-      "Compatible with Invisalign & crown labs",
+      "Compatible with clear aligners & crown labs",
     ],
   },
   {

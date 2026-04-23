@@ -17,9 +17,9 @@ export const FAQS: FaqItem[] = [
       "Yes, we welcome new patients of all ages — from children to seniors. New patients can book an initial consultation online through our contact form or by calling 02 4948 8589.",
   },
   {
-    question: "Do you offer Invisalign and orthodontic treatment?",
+    question: "Do you offer clear aligners and orthodontic treatment?",
     answer:
-      "Yes. We provide Invisalign clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, including discussion of aims, timelines, costs and risks, before you decide to start.",
+      "Yes. We provide clear aligners clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, including discussion of aims, timelines, costs and risks, before you decide to start.",
   },
   {
     question: "How much do dental implants cost?",
@@ -29,7 +29,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Do you see children for dental care?",
     answer:
-      "Yes. We provide gentle dentistry for children, including checkups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
+      "Yes. We provide gentle dentistry for children, including check ups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
   },
   {
     question: "Do you offer Botox for teeth grinding (bruxism)?",

@@ -126,10 +126,9 @@ export const Compare: React.FC<CompareProps> = ({
     <div
       ref={sliderRef}
       className={cn(
-        "relative w-[400px] h-[400px] overflow-hidden cursor-pointer",
+        "relative w-full cursor-pointer overflow-hidden select-none",
         className,
       )}
-      style={{ aspectRatio: "1" }}
       onMouseMove={handleMouseMove}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -163,11 +162,15 @@ export const Compare: React.FC<CompareProps> = ({
             alt="Before treatment"
             src={firstImage}
             fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 90vw, 820px"
+            quality={100}
             priority
             loading="eager"
             draggable={false}
-            className={cn("absolute inset-0 z-20 w-full h-full")}
+            className={cn(
+              "rounded-lg absolute inset-0 z-20 h-full w-full object-cover object-center",
+              firstImageClassName,
+            )}
           />
         </motion.div>
       </div>
@@ -182,11 +185,13 @@ export const Compare: React.FC<CompareProps> = ({
             alt="After treatment"
             src={secondImage}
             fill
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 90vw, 820px"
+            quality={100}
+            priority
             loading="eager"
-            sizes="(min-width: 1024px) 50vw, 100vw"
             draggable={false}
             className={cn(
-              "absolute inset-0 z-20 w-full h-full",
+              "absolute rounded-lg inset-0 z-20 h-full w-full object-cover object-center",
               secondImageClassname,
             )}
           />

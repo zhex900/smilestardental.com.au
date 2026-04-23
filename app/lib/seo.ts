@@ -46,7 +46,6 @@ export const SITE_KEYWORDS: string[] = [
   "cosmetic dentistry",
   "dental implants",
   "teeth whitening",
-  "Invisalign",
   "clear aligners",
   "braces",
   "crowns and bridges",
@@ -111,7 +110,7 @@ export function absUrl(path = "/"): string {
  */
 /** Homepage & sitewide fallback snippet — location-led, like local practice SERP style. */
 export const SITE_TAGLINE_SNIPPET =
-  "We're in Warners Bay on Lake Macquarie. Family and general dentistry with digital technology — checkups, cosmetic care, implants, Invisalign, children's dentistry and more.";
+  "We're in Warners Bay on Lake Macquarie. Family and general dentistry with digital technology — check ups, cosmetic care, implants, clear aligners, children's dentistry and more.";
 
 export const baseMetadata: Metadata = {
   metadataBase: siteUrl,
@@ -353,10 +352,10 @@ export function dentistJsonLd(opts?: {
       "@type": "OfferCatalog",
       name: "Dental Services",
       itemListElement: [
-        "Dental cleaning & checkups",
+        "Dental cleaning & check ups",
         "Teeth whitening",
         "Dental implants",
-        "Invisalign & orthodontics",
+        "Clear aligners & orthodontics",
         "Crowns & bridges",
         "Ceramic onlays & crowns",
         "Children's dentistry",

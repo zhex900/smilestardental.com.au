@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Smile Star Dental | Newcastle, Lake Macquarie & Warners Bay — preventative, general & family dentistry",
   description:
-    "We're in Warners Bay on Lake Macquarie (formerly Bay Arcade Dental). Family and general dentistry with digital technology — checkups, cosmetic care, implants, Invisalign, children's dentistry and more.",
+    "We're in Warners Bay on Lake Macquarie (formerly Bay Arcade Dental). Family and general dentistry with digital technology — check ups, cosmetic care, implants, clear aligners, children's dentistry and more.",
   path: "/",
   keywords: [
     "Smile Star Dental",
@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
     "dentist Newcastle",
     "family dentist Lake Macquarie",
     "cosmetic dentist Newcastle",
-    "Invisalign Warners Bay",
+    "clear aligners Warners Bay",
     "dental implants Newcastle",
     "teeth whitening Warners Bay",
     "children's dentist Warners Bay",

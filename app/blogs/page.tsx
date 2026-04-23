@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
     "dental advice Warners Bay",
     "Newcastle dental health",
     "cosmetic dentistry blog",
-    "Invisalign advice",
+    "clear aligners advice",
     "teeth whitening tips",
     "children dental care blog",
   ],

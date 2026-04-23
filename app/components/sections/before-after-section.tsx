@@ -32,92 +32,95 @@ export function BeforeAfterSection() {
           </motion.p>
         </div>
 
-        <div className="heading-mb grid grid-cols-1 lg:grid-cols-3 items-stretch gap-5 md:gap-10">
+        <div className="heading-mb grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
+          {/* Mobile: slider first; lg: copy on the left */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative group block h-full w-full lg:col-span-1"
+            transition={{ duration: 0.6 }}
+            className="order-2 flex h-full min-h-0 w-full flex-col lg:order-1"
           >
-            <div className="absolute inset-0 h-full w-full bg-neutral-200 bg-gold-400/[0.8] block rounded-xl" />
-
-            <Card className="text-white bg-gradient-to-b from-gold-600 to-gold-400">
-              <CardTitle className="flex items-center">
-                <div className="w-16 h-16 md:w-18 md:h-18">
+            <Card className="h-full min-h-0 border-gold-200/25 bg-gradient-to-b from-gold-600 to-gold-400 text-white shadow-lg !shadow-black/10">
+              <CardTitle className="flex items-center gap-3 text-left !text-lg md:!text-xl">
+                <div className="h-12 w-12 shrink-0 md:h-14 md:w-14">
                   <OrthodonticsIcon />
                 </div>
-                <div className="text-xl md:text-2xl">Orthodontic</div>
+                <span>Orthodontic care</span>
               </CardTitle>
-              <CardDescription className="flex-1 text-normal md:text-base">
-                Braces and clear aligners are options for many alignment and
-                bite concerns. Your dentist will advise what is appropriate for
-                you, including risks, duration and costs.
-                <div className="space-y-2 mt-2">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Digital planning and discussion</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Comfort-focused approach</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Clear aligners or fixed braces</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span className="">Ongoing oral health support</span>
-                  </div>
-                </div>
+              <CardDescription className="!text-sm md:!text-[0.9375rem]">
+                Braces and clear aligners can suit many alignment and bite
+                concerns. Your dentist will advise what is appropriate for you,
+                including risks, duration and costs.
+                <ul className="mt-3 space-y-1.5">
+                  {[
+                    "Digital planning and discussion",
+                    "Comfort-focused approach",
+                    "Clear aligners or fixed braces",
+                    "Ongoing oral health support",
+                  ].map((line) => (
+                    <li key={line} className="flex gap-2">
+                      <span
+                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-yellow-300"
+                        aria-hidden
+                      />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
               </CardDescription>
             </Card>
           </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative group h-full w-full lg:col-span-2"
+            transition={{ duration: 0.6 }}
+            className="order-1 flex h-full min-h-0 w-full flex-col lg:order-2"
           >
-            <div className="flex h-full w-full flex-col justify-center rounded-xl p-3 bg-gold-600/[0.2] shadow-xl">
-              <Compare
-                firstImage="/images/braces-after.png"
-                secondImage="/images/braces-before.png"
-                firstImageClassName="object-cover object-center"
-                secondImageClassname="object-cover object-center"
-                className="w-full h-[300px]"
-                showHandlebar={true}
-                autoplay
-                autoplayDuration={5000}
-              />
+            <div className="flex h-full min-h-0 flex-col rounded-xl border border-gold-400/25 bg-gold-600/15 p-4 shadow-md">
+              {/* PNGs 451×166 — max-w avoids upscaling blur; ~900×332+ for larger retina-safe display */}
+              <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
+                <Compare
+                  firstImage="/images/braces-after.png"
+                  secondImage="/images/braces-before.png"
+                  firstImageClassName="object-cover object-center"
+                  secondImageClassname="object-cover object-center"
+                  className="mx-auto aspect-[451/166] w-full max-w-[451px]"
+                  showHandlebar={true}
+                  autoplay
+                  autoplayDuration={5000}
+                />
+              </div>
+              <p className="shrink-0 pt-3 text-center text-xs text-slate-600">
+                *Results may vary between individuals.
+              </p>
             </div>
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className=" grid grid-cols-1 md:grid-cols-3 gap-8"
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5"
         >
-          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
-            <div className="text-3xl font-bold text-slate-600 mb-2">
-              3D Digital
+          {[
+            { title: "3D Digital", subtitle: "Scanning", accent: "text-slate-600" },
+            { title: "Invisible", subtitle: "Aligners", accent: "text-yellow-600" },
+            { title: "Advanced", subtitle: "Technology", accent: "text-slate-600" },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-xl bg-white/20 px-4 py-4 text-center shadow-md sm:py-5"
+            >
+              <div
+                className={`text-xl font-bold sm:text-2xl ${item.accent} mb-1`}
+              >
+                {item.title}
+              </div>
+              <div className="text-sm text-slate-600">{item.subtitle}</div>
             </div>
-            <div className="text-slate-600">Scanning</div>
-          </div>
-          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
-            <div className="text-3xl font-bold text-yellow-600 mb-2">
-              Invisible
-            </div>
-            <div className="text-slate-600">Aligners</div>
-          </div>
-          <div className="text-center p-6 bg-white/20 rounded-xl shadow-lg">
-            <div className="text-3xl font-bold text-slate-600 mb-2">
-              Advanced
-            </div>
-            <div className="text-slate-600">Technology</div>
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>

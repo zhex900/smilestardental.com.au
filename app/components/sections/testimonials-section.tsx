@@ -21,7 +21,7 @@ export function TestimonialsSection() {
         transition={{ duration: 0.6 }}
         className="mx-auto max-w-2xl text-center"
       >
-        <h2 className="text-heading heading-mb">See what others say</h2>
+        <h2 className="text-heading heading-mb">See What Others Say</h2>
         <p className="text-normal mb-6 text-gray-700">
           Our Google listing is where people often leave comments about their
           visit. You will also find opening hours, the phone number, and
