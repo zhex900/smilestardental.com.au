@@ -109,14 +109,17 @@ export function absUrl(path = "/"): string {
  * Site-wide default metadata. Individual pages override title/description/
  * openGraph/etc as needed. Title uses a template so brand is appended.
  */
+/** Homepage & sitewide fallback snippet — location-led, like local practice SERP style. */
+export const SITE_TAGLINE_SNIPPET =
+  "We're in Warners Bay on Lake Macquarie. Family and general dentistry with digital technology — checkups, cosmetic care, implants, Invisalign, children's dentistry and more.";
+
 export const baseMetadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
+    default: `${SITE_NAME} | Warners Bay — family & general dentistry`,
     template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Smile Star Dental (formerly Bay Arcade Dental) in Warners Bay provides family, cosmetic and restorative dentistry — implants, Invisalign, whitening, crowns, children's care and more.",
+  description: SITE_TAGLINE_SNIPPET,
   keywords: SITE_KEYWORDS,
   applicationName: SITE_NAME,
   generator: "Next.js",
@@ -154,9 +157,8 @@ export const baseMetadata: Metadata = {
     locale: SITE_LOCALE,
     url: siteUrl.toString(),
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
-    description:
-      "Family, cosmetic and restorative dentistry in Warners Bay — implants, Invisalign, whitening, crowns and more.",
+    title: `${SITE_NAME} | Warners Bay — family & general dentistry`,
+    description: SITE_TAGLINE_SNIPPET,
     images: [
       {
         url: SITE_DEFAULT_OG_IMAGE,
@@ -168,9 +170,8 @@ export const baseMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Warners Bay & Newcastle family dentists`,
-    description:
-      "Family, cosmetic and restorative dentistry in Warners Bay — implants, Invisalign, whitening, crowns and more.",
+    title: `${SITE_NAME} | Warners Bay — family & general dentistry`,
+    description: SITE_TAGLINE_SNIPPET,
     images: [SITE_DEFAULT_OG_IMAGE],
   },
   formatDetection: {
@@ -272,14 +273,49 @@ export function organizationJsonLd() {
 }
 
 export function websiteJsonLd() {
+  const site = siteUrl.toString();
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${siteUrl.toString()}#website`,
-    url: siteUrl.toString(),
+    "@id": `${site}#website`,
+    url: site,
     name: SITE_NAME,
+    description: SITE_TAGLINE_SNIPPET,
     inLanguage: "en-AU",
-    publisher: { "@id": `${siteUrl.toString()}#organization` },
+    publisher: { "@id": `${site}#organization` },
+    /** Helps Google understand important destinations (sitelinks are still algorithmic). */
+    hasPart: [
+      {
+        "@type": "WebPage",
+        name: "Schedule an appointment",
+        url: absUrl("/contact"),
+        isPartOf: { "@id": `${site}#website` },
+      },
+      {
+        "@type": "WebPage",
+        name: "Dental services",
+        url: absUrl("/services"),
+        isPartOf: { "@id": `${site}#website` },
+      },
+      {
+        "@type": "WebPage",
+        name: "About us",
+        url: absUrl("/about"),
+        isPartOf: { "@id": `${site}#website` },
+      },
+      {
+        "@type": "WebPage",
+        name: "Contact & location",
+        url: absUrl("/contact"),
+        isPartOf: { "@id": `${site}#website` },
+      },
+      {
+        "@type": "WebPage",
+        name: "Dental health blog",
+        url: absUrl("/blogs"),
+        isPartOf: { "@id": `${site}#website` },
+      },
+    ],
   };
 }
 

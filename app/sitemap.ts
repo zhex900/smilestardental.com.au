@@ -25,10 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: absUrl("/about#contact-us"),
+      url: absUrl("/contact"),
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: absUrl("/blogs"),

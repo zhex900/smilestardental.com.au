@@ -5,10 +5,9 @@ import { services as serviceList } from "./services";
 import { absUrl } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    "Dental Services in Warners Bay — Cosmetic, Implants, Invisalign & More",
+  title: "Dental services — general, cosmetic & restorative care | Warners Bay",
   description:
-    "Explore our full range of dental services in Warners Bay: general checkups, dental implants, Invisalign, cosmetic dentistry, whitening, crowns, children's dentistry, airway development, Botox for bruxism and full-mouth rehabilitation.",
+    "General and family dentistry in Warners Bay with digital workflows: checkups, hygiene, fillings, implants, Invisalign, whitening, crowns, children's dentistry, airway-focused care and emergency visits.",
   path: "/services",
   keywords: [
     "dental services Warners Bay",

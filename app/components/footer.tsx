@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, MapPin } from "lucide-react";
 import {
   address,
+  bookingUrl,
   copyright,
   phoneNumber,
   socialMedia,
@@ -14,10 +15,16 @@ import { GoogleReview } from "./ui/google-review";
 
 const companyLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
+  { name: "About us", href: "/about" },
+  { name: "Dental services", href: "/services" },
   { name: "Blog", href: "/blogs" },
-];
+  { name: "Contact & location", href: "/contact" },
+  {
+    name: "Schedule an appointment",
+    href: bookingUrl,
+    external: true,
+  },
+] as const;
 
 const areasServed = ["Newcastle", "Lake Macquarie", "Warners Bay"];
 
@@ -64,12 +71,23 @@ export function Footer() {
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="hover:text-gray-300 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gray-300 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="hover:text-gray-300 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
