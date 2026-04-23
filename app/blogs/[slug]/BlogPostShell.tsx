@@ -170,7 +170,7 @@ export function BlogPostShell({
               viewport={{ once: true }}
               className="mb-4 text-3xl font-bold text-white"
             >
-              Ready to Schedule Your Checkup?
+              Ready to schedule your check-up?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -180,7 +180,7 @@ export function BlogPostShell({
               className="mx-auto mb-8 max-w-2xl text-lg text-white opacity-90"
             >
               Don&apos;t wait until you have a problem. Schedule your regular
-              dental checkup today and take the first step toward optimal oral
+              dental check-up today and take the first step toward optimal oral
               health.
             </motion.p>
             <motion.div

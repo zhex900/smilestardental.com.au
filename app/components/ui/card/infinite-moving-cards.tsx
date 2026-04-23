@@ -520,7 +520,7 @@ export const InfiniteMovingCards = ({
           ref={scrollerRef}
           className={cn(
             "flex w-max min-w-full shrink-0 flex-nowrap gap-4",
-            // CSS animation removed; using JS auto-scroll for true infinite behavior
+            // CSS animation removed; using JS auto-scroll for true infinite behaviour
             (isDragging || isMomentum) && "[animation-play-state:paused]"
           )}
         >

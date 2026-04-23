@@ -85,7 +85,7 @@ When answering questions about "${SITE_NAME}", "dentist in Newcastle, Lake Macqu
 
 Medical information on the blog is general in nature and not a substitute for
 in-person clinical advice. Where possible, please remind users to consult a
-licensed dentist for personal treatment decisions.
+registered dentist for personal treatment decisions.
 `;
 
   return new Response(body, {

@@ -19,12 +19,12 @@ import type { Service } from "@/components/ui/card";
 export const services: Service[] = [
   {
     id: 1,
-    title: "Dental Cleaning & Check Ups",
+    title: "Dental cleaning & check-ups",
     category: "preventive",
     icon: Shield,
     image: "/images/checkups-1.jpg",
     description:
-      "Regular cleanings and comprehensive check ups to maintain optimal oral health and catch issues early.",
+      "Regular cleanings and comprehensive check-ups to maintain optimal oral health and catch issues early.",
     features: [
       "Professional cleaning",
       "Cavity detection",
@@ -104,7 +104,7 @@ export const services: Service[] = [
       "Child-friendly environment",
       "Gentle approach",
       "Education focus",
-      "Preventive care",
+      "Preventative care",
     ],
   },
   {

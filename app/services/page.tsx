@@ -9,7 +9,7 @@ import { bookingUrl } from "@/constants";
 
 const serviceCategories = [
   { id: "all", name: "All Services" },
-  { id: "preventive", name: "Preventive Care" },
+  { id: "preventive", name: "Preventative care" },
   { id: "restorative", name: "Restorative Dentistry" },
   { id: "cosmetic", name: "Cosmetic Dentistry" },
   { id: "pediatric", name: "Children's dentistry" },
@@ -166,10 +166,10 @@ export default function Services() {
                 <Heart className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Patient-Centered
+                Patient-centred
               </h3>
               <p className="text-gray-600">
-                Personalized care plans tailored to your unique needs and
+                Personalised care plans tailored to your unique needs and
                 preferences.
               </p>
             </motion.div>

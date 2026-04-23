@@ -19,7 +19,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Do you offer clear aligners and orthodontic treatment?",
     answer:
-      "Yes. We provide clear aligners clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, including discussion of aims, timelines, costs and risks, before you decide to start.",
+      "Yes. We provide clear aligners as well as traditional orthodontic options for teens and adults. Treatment begins with a digital scan and a personalised plan, including discussion of aims, timelines, costs and risks, before you decide to start.",
   },
   {
     question: "How much do dental implants cost?",
@@ -29,7 +29,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Do you see children for dental care?",
     answer:
-      "Yes. We provide gentle dentistry for children, including check ups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
+      "Yes. We provide gentle dentistry for children, including check-ups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
   },
   {
     question: "Do you offer Botox for teeth grinding (bruxism)?",
