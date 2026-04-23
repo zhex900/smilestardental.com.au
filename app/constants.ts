@@ -47,3 +47,7 @@ export const socialMedia = [
 
 export const bookingUrl =
   "https://bookings.zavy360.com/booking/bayarcadedental/locations/e0474822-7736-4eb0-b112-9d1b22b17156/practitioner/1328627/patient-type";
+
+/** Smile Star Dental on Google Maps — community reviews (external; not embedded on this site). */
+export const googleBusinessProfileUrl =
+  "https://www.google.com/maps/place/Smile+Star+Dental/@-32.9754992,151.6458866,17z/data=!3m1!4b1!4m6!3m5!1s0x6b733d906774f515:0x2d91b3b97fe89d09!8m2!3d-32.9754992!4d151.6458866!16s%2Fg%2F11z67289hv";
