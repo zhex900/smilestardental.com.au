@@ -168,7 +168,7 @@ export const Compare: React.FC<CompareProps> = ({
             loading="eager"
             draggable={false}
             className={cn(
-              "rounded-lg absolute inset-0 z-20 h-full w-full object-cover object-center",
+              "rounded-xl absolute inset-0 z-20 h-full w-full object-cover object-center",
               firstImageClassName,
             )}
           />
@@ -191,7 +191,7 @@ export const Compare: React.FC<CompareProps> = ({
             loading="eager"
             draggable={false}
             className={cn(
-              "absolute rounded-lg inset-0 z-20 h-full w-full object-cover object-center",
+              "absolute rounded-xl inset-0 z-20 h-full w-full object-cover object-center",
               secondImageClassname,
             )}
           />

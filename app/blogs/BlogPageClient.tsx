@@ -6,6 +6,7 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogCard } from "@/components/ui/card";
+import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import type { BlogListCard } from "@/lib/blog-types";
 
@@ -65,56 +66,24 @@ export default function BlogPageClient({
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative flex h-[400px] items-center bg-blue-50 overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1585909085111-2c2f311643af?q=80&w=1600&auto=format&fit=crop"
-          alt=""
-          aria-hidden
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div aria-hidden className="absolute inset-0 bg-white/60" />
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl"
-            >
-              Dental Health Blog
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6 text-lg text-gray-900"
-            >
-              Stay informed with the latest dental care tips, treatment
-              innovations, and oral health advice from our clinical team.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex items-center"
-            >
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-gold-400"
-                />
-                <Search className="absolute right-4 top-3.5 h-5 w-5 text-gray-400" />
-              </div>
-            </motion.div>
+      <PageHero
+        title="Dental Health Blog"
+        align="left"
+        description="Stay informed with the latest dental care tips, treatment innovations, and oral health advice from our clinical team."
+      >
+        <div className="flex items-center">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search articles..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-gold-400"
+            />
+            <Search className="absolute right-4 top-3.5 h-5 w-5 text-gray-400" />
           </div>
         </div>
-      </section>
+      </PageHero>
 
       <section className="container mx-auto px-4 py-6">
         <div className="flex items-center gap-2">

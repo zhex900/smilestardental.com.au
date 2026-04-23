@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Award, Heart, Shield, Zap } from "lucide-react";
 import { ServiceDetailCard } from "@/components/ui/card";
+import { PageHero } from "@/components/page-hero";
 import { TestimonialsSection } from "@/components/sections";
 import { services } from "./services";
 import { bookingUrl } from "@/constants";
@@ -27,30 +28,11 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gold-50 h-[400px] flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            >
-              Our Services
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-900 text-lg max-w-2xl mx-auto"
-            >
-              Comprehensive dental care solutions tailored to meet your unique
-              needs with the latest technology and experienced professionals.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Services"
+        imageSrc="/images/dental-tools.jpg"
+        description="Comprehensive dental care solutions tailored to meet your unique needs with the latest technology and experienced professionals."
+      />
 
       {/* Service Categories */}
       <section className="py-12 bg-white">

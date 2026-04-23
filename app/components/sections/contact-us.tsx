@@ -148,11 +148,11 @@ export function ContactUs({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="overflow-hidden rounded-xl bg-blue-50"
+        className="overflow-hidden rounded-xl bg-gold-200"
       >
         <div className="flex flex-col md:flex-row">
           <div className="w-full p-8 md:w-1/2">
-            <h2 className="mb-4 text-3xl font-bold">{heading}</h2>
+            <p className="mb-4 text-3xl font-bold ">{heading}</p>
             <p className="mb-6 text-gray-600">{description}</p>
 
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
@@ -258,7 +258,7 @@ export function ContactUs({
               alt={imageAlt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover rounded-xl"
             />
           </div>
         </div>

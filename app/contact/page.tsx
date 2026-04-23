@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
+import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import { FaqSection } from "@/components/sections";
 import { FAQS } from "@/components/faq";
@@ -9,30 +10,11 @@ import { FAQS } from "@/components/faq";
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-blue-50 h-[300px] flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            >
-              Contact Us
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 text-lg max-w-2xl mx-auto"
-            >
-              Have questions or ready to schedule your appointment? Reach out to
-              our friendly team today.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Contact Us"
+        imageSrc="/images/open-teeths.jpg"
+        description="Have questions or ready to schedule your appointment? Reach out to our friendly team today."
+      />
 
       {/* Contact Info Section */}
       <section className="py-16 bg-white">
@@ -42,7 +24,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-blue-50 rounded-xl p-8 text-center"
+              className="bg-primary rounded-xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="text-white text-2xl" />
@@ -69,7 +51,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-blue-50 rounded-xl p-8 text-center"
+              className="bg-primary rounded-xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="text-white text-2xl" />
@@ -90,7 +72,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-blue-50 rounded-xl p-8 text-center"
+              className="bg-primary rounded-xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="text-white text-2xl" />

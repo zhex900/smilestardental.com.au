@@ -2,36 +2,18 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import { bookingUrl } from "@/constants";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-primary h-[400px] flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-heading text-gray-900 mb-4"
-            >
-              About Us
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-600 text-normal max-w-2xl mx-auto"
-            >
-              Dedicated to providing high-quality dental care with compassion,
-              professional skill, and current technology.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="About Us"
+        imageSrc="/images/location1.jpg"
+        description="Dedicated to providing high-quality dental care with compassion, professional skill, and current technology."
+      />
 
       {/* Our Story Section */}
       <section className="py-16 bg-white">
@@ -65,7 +47,8 @@ export default function About() {
                   tailored treatment plans and the latest technology to support
                   appropriate treatment outcomes. Smile Star Dental serves
                   families in the community with a strong commitment to
-                  professional standards, compassion, and continuous improvement.
+                  professional standards, compassion, and continuous
+                  improvement.
                 </p>
               </motion.div>
             </div>
@@ -123,13 +106,14 @@ export default function About() {
               </p>
               <br />
               <p>
-                Dr Melody has further advanced her clinical training by obtaining
-                a Graduate Diploma of Clinical Dentistry from the University of
-                Bolton, UK. She has a strong interest in the relationship
-                between dental alignment, breathing, sleep, and overall
-                wellbeing. In addition, she enjoys all aspects of dentistry,
-                with a particular focus on cosmetic treatments such as veneers,
-                helping patients feel more confident in their smiles.
+                Dr Melody has further advanced her clinical training by
+                obtaining a Graduate Diploma of Clinical Dentistry from the
+                University of Bolton, UK. She has a strong interest in the
+                relationship between dental alignment, breathing, sleep, and
+                overall wellbeing. In addition, she enjoys all aspects of
+                dentistry, with a particular focus on cosmetic treatments such
+                as veneers, helping patients feel more confident in their
+                smiles.
               </p>{" "}
               <br />
               <p>
