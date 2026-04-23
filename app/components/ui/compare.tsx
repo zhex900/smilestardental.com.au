@@ -165,6 +165,7 @@ export const Compare: React.FC<CompareProps> = ({
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             priority
+            loading="eager"
             draggable={false}
             className={cn("absolute inset-0 z-20 w-full h-full")}
           />
@@ -181,6 +182,7 @@ export const Compare: React.FC<CompareProps> = ({
             alt="After treatment"
             src={secondImage}
             fill
+            loading="eager"
             sizes="(min-width: 1024px) 50vw, 100vw"
             draggable={false}
             className={cn(
