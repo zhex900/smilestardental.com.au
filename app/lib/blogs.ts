@@ -32,6 +32,7 @@ export function getAllBlogListCards(): BlogListCard[] {
       excerpt: fm.excerpt ?? "",
       category: fm.category,
       date: fm.date,
+      dateModified: fm.dateModified,
       image: fm.image ?? "",
       authorTitle: fm.authorTitle,
       author: { name: fm.author, avatar: fm.authorImage },

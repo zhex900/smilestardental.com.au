@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { address, phoneNumber, email, socialMedia } from "@/constants";
+import {
+  address,
+  phoneNumber,
+  email,
+  socialMedia,
+  googleBusinessProfileUrl,
+} from "@/constants";
 
 /**
  * Tolerate a malformed NEXT_PUBLIC_SITE_URL (e.g. "https://http://..." with
@@ -29,8 +35,23 @@ export const SITE_LEGAL_NAME = "Smile Star Dental";
 export const SITE_ALTERNATE_NAME = "Bay Arcade Dental";
 export const SITE_LOCALE = "en_AU";
 export const SITE_COUNTRY = "AU";
-//1200×630
+/**
+ * Default Open Graph / Twitter share image. MUST be 1200×630 for social
+ * crawlers — the current `/images/logo.png` is a square brand mark and is
+ * acting as a placeholder. Replace with a real 1200×630 hero card and update
+ * this path. Tracked: SEO Phase 0 deferred-asset task.
+ */
+// TODO(seo): swap to /images/og-default.jpg once 1200×630 asset exists.
 export const SITE_DEFAULT_OG_IMAGE = "/images/logo.png";
+
+/**
+ * Geographic coordinates of the practice (extracted from the Google Business
+ * Profile URL). Used in `Dentist` JSON-LD `geo`. Update if the practice moves.
+ */
+export const GEO = {
+  latitude: -32.9754992,
+  longitude: 151.6458866,
+} as const;
 
 /**
  * Baseline keywords — per-page metadata extends these.
@@ -103,6 +124,16 @@ export function absUrl(path = "/"): string {
   if (/^https?:\/\//i.test(path)) return path;
   return new URL(path, siteUrl).toString();
 }
+
+/**
+ * Canonical `sameAs` list for the Organization / Dentist entities.
+ * Includes social profiles plus the Google Business Profile (critical for
+ * local entity disambiguation in Google Search & Maps).
+ */
+export const SAME_AS_LINKS: string[] = [
+  ...socialMedia.map((s) => s.url),
+  googleBusinessProfileUrl,
+];
 
 /**
  * Site-wide default metadata. Individual pages override title/description/
@@ -276,7 +307,7 @@ export function organizationJsonLd() {
     image: absUrl(SITE_DEFAULT_OG_IMAGE),
     email,
     telephone: PHONE_URI,
-    sameAs: socialMedia.map((s) => s.url),
+    sameAs: SAME_AS_LINKS,
     address: POSTAL_ADDRESS,
   };
 }
@@ -343,7 +374,7 @@ export function dentistJsonLd(opts?: {
     name: SITE_NAME,
     alternateName: SITE_ALTERNATE_NAME,
     url: siteUrl.toString(),
-    image: absUrl(SITE_DEFAULT_OG_IMAGE),
+    image: [absUrl(SITE_DEFAULT_OG_IMAGE), absUrl("/images/location1.jpg")],
     logo: absUrl("/images/logo.png"),
     telephone: PHONE_URI,
     email,
@@ -351,8 +382,15 @@ export function dentistJsonLd(opts?: {
     currenciesAccepted: "AUD",
     paymentAccepted: "Cash, Credit Card, EFTPOS, HICAPS",
     address: POSTAL_ADDRESS,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: GEO.latitude,
+      longitude: GEO.longitude,
+    },
+    hasMap: googleBusinessProfileUrl,
     openingHoursSpecification: OPENING_HOURS_SPEC,
-    sameAs: socialMedia.map((s) => s.url),
+    sameAs: SAME_AS_LINKS,
+    medicalSpecialty: ["Dentistry", "CosmeticDentistry", "Orthodontics"],
     areaServed: [
       { "@type": "City", name: "Warners Bay" },
       { "@type": "City", name: "Newcastle" },

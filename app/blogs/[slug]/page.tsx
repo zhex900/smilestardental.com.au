@@ -42,6 +42,7 @@ export async function generateMetadata({
     frontmatter.excerpt ??
     `${frontmatter.title} — dental insights from the Smile Star Dental team.`;
   const published = toIsoDate(frontmatter.date);
+  const modified = toIsoDate(frontmatter.dateModified) ?? published;
   const keywords = [
     ...(frontmatter.tags ?? []),
     frontmatter.category,
@@ -73,7 +74,7 @@ export async function generateMetadata({
       ...base.openGraph,
       type: "article",
       publishedTime: published,
-      modifiedTime: published,
+      modifiedTime: modified,
       authors: [frontmatter.author],
       section: frontmatter.category,
       tags: frontmatter.tags,
@@ -90,6 +91,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const relatedPosts = getRelatedPosts(frontmatter.relatedSlugs, slug);
   const url = absUrl(`/blogs/${slug}`);
   const published = toIsoDate(frontmatter.date);
+  const modified = toIsoDate(frontmatter.dateModified) ?? published;
 
   return (
     <>
@@ -100,6 +102,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           url,
           image: frontmatter.image,
           datePublished: published,
+          dateModified: modified,
           author: frontmatter.author,
           keywords: frontmatter.tags,
           category: frontmatter.category,

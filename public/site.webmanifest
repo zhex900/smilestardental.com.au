@@ -1,7 +1,17 @@
 {
   "name": "Smile Star Dental",
   "short_name": "Smile Star",
-  "description": "Your Smile is Our Star Priority",
+  "description": "Family and general dentistry in Warners Bay on Lake Macquarie. Book check-ups, cosmetic care, implants, clear aligners and more.",
+  "lang": "en-AU",
+  "dir": "ltr",
+  "scope": "/",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "categories": ["health", "medical", "lifestyle"],
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -12,10 +22,32 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "start_url": "/"
+  "shortcuts": [
+    {
+      "name": "Book an appointment",
+      "short_name": "Book",
+      "description": "Open the online booking page",
+      "url": "/contact"
+    },
+    {
+      "name": "Call the practice",
+      "short_name": "Call",
+      "description": "Tap to call Smile Star Dental",
+      "url": "/contact#call"
+    },
+    {
+      "name": "Find us",
+      "short_name": "Directions",
+      "description": "Address, opening hours and map",
+      "url": "/contact"
+    }
+  ]
 }

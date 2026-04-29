@@ -5,11 +5,11 @@ import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { AnnouncementBar } from "./components/announcement-bar";
 import { JsonLd } from "./components/json-ld";
+import { DentistSchema } from "./components/dentist-schema";
 import Script from "next/script";
 
 import {
   baseMetadata,
-  dentistJsonLd,
   organizationJsonLd,
   websiteJsonLd,
 } from "./lib/seo";
@@ -48,7 +48,7 @@ export default function RootLayout({
         ) : null}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
-        <JsonLd data={dentistJsonLd()} />
+        <DentistSchema />
       </head>
       <body>
         <Header />
