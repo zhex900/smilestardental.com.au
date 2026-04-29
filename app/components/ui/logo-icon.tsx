@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 export function LogoIcon() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center -mt-[15px]">
       <motion.img
         src="/images/logo.png"
         alt="Logo"
