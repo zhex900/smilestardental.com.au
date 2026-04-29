@@ -21,6 +21,7 @@ export const services: Service[] = [
     id: 1,
     title: "Dental cleaning & check-ups",
     category: "preventive",
+    slug: "dental-checkup-clean",
     icon: Shield,
     image: "/images/checkups-1.jpg",
     description:
@@ -36,6 +37,7 @@ export const services: Service[] = [
     id: 2,
     title: "Teeth Whitening",
     category: "cosmetic",
+    slug: "teeth-whitening",
     icon: Sparkles,
     image: "/images/smile-1.jpg",
     description:
@@ -51,6 +53,7 @@ export const services: Service[] = [
     id: 3,
     title: "Dental Implants",
     category: "restorative",
+    slug: "dental-implants",
     icon: Shield,
     image: "/images/implants-1.jpg",
     description:
@@ -66,6 +69,7 @@ export const services: Service[] = [
     id: 4,
     title: "Clear Aligners & Orthodontics",
     category: "orthodontics",
+    slug: "clear-aligners",
     icon: Braces,
     image: "/images/orthodontics.jpg",
     description:
@@ -81,6 +85,7 @@ export const services: Service[] = [
     id: 5,
     title: "Crowns & Bridges",
     category: "restorative",
+    slug: "crowns-bridges",
     icon: Award,
     image: "/images/bridge.jpg",
     description:
@@ -96,6 +101,7 @@ export const services: Service[] = [
     id: 6,
     title: "Children's dentistry",
     category: "pediatric",
+    slug: "childrens-dentistry",
     icon: Baby,
     image: "/images/kids-1.jpg",
     description:
@@ -111,6 +117,7 @@ export const services: Service[] = [
     id: 7,
     title: "Root Canal Therapy",
     category: "restorative",
+    slug: "root-canal-therapy",
     icon: Search,
     image: "/images/root-1.jpg",
     description:
@@ -126,9 +133,9 @@ export const services: Service[] = [
     id: 8,
     title: "Emergency Dental Care",
     category: "preventive",
+    slug: "emergency-dentist",
     icon: Zap,
-    image:
-      "https://images.unsplash.com/photo-1635247187021-ad5ab658bc5e?q=80&w=2225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/toothache.jpg",
     description:
       "Immediate dental care for urgent situations including pain, broken teeth, and injuries.",
     features: [
@@ -142,6 +149,7 @@ export const services: Service[] = [
     id: 9,
     title: "Gum Disease Treatment",
     category: "preventive",
+    slug: "gum-disease-treatment",
     icon: Heart,
     image: "/images/gum-1.jpg",
     description:
@@ -157,6 +165,7 @@ export const services: Service[] = [
     id: 10,
     title: "Botox for Teeth Grinding",
     category: "preventive",
+    slug: "botox-teeth-grinding",
     icon: Syringe,
     image: "/images/botox.webp",
     description:
@@ -172,6 +181,7 @@ export const services: Service[] = [
     id: 11,
     title: "Green Whistle (Penthrox)",
     category: "preventive",
+    slug: "penthrox-pain-relief",
     icon: Wind,
     image: "/images/penthrox.webp",
     description:
@@ -187,6 +197,7 @@ export const services: Service[] = [
     id: 12,
     title: "Child Airway Development",
     category: "pediatric",
+    slug: "child-airway-development",
     icon: Baby,
     image: "/images/child-sleeping.jpg",
     description:
@@ -202,6 +213,7 @@ export const services: Service[] = [
     id: 13,
     title: "Full Mouth Rehabilitation",
     category: "restorative",
+    slug: "full-mouth-rehabilitation",
     icon: Smile,
     image: "/images/restore-teeth.jpg",
     description:
@@ -217,6 +229,7 @@ export const services: Service[] = [
     id: 14,
     title: "Fillings",
     category: "restorative",
+    slug: "tooth-fillings",
     icon: Shield,
     image: "/images/broken-tooth.jpg",
     description:
@@ -232,6 +245,7 @@ export const services: Service[] = [
     id: 15,
     title: "Gum Health Maintenance",
     category: "preventive",
+    slug: "gum-health-maintenance",
     icon: Heart,
     image: "/images/working-hand.jpg",
     description:
@@ -247,6 +261,7 @@ export const services: Service[] = [
     id: 16,
     title: "Ceramic Onlays & Crowns",
     category: "restorative",
+    slug: "ceramic-onlays-crowns",
     icon: Crown,
     image: "/images/onlays.jpg",
     description:
@@ -262,6 +277,7 @@ export const services: Service[] = [
     id: 17,
     title: "Digital Intraoral Scanning",
     category: "preventive",
+    slug: "digital-intraoral-scanning",
     icon: Scan,
     image: "/images/scanning.jpg",
     description:
@@ -277,6 +293,7 @@ export const services: Service[] = [
     id: 18,
     title: "In-Chair TV & Noise-Cancelling Headphones",
     category: "preventive",
+    slug: "comfort-amenities",
     icon: Headphones,
     image: "/images/headphones.jpg",
     description:

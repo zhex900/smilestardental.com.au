@@ -39,7 +39,9 @@ function servicesItemListJsonLd() {
         "@type": "Service",
         name: service.title,
         description: service.description,
-        url: absUrl("/services"),
+        url: service.slug
+          ? absUrl(`/services/${service.slug}`)
+          : absUrl("/services"),
         serviceType: service.category,
         provider: { "@id": `${absUrl("/")}#dentist` },
         areaServed: [

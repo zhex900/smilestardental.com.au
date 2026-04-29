@@ -2,8 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 export type Service = {
   id: number;
@@ -13,6 +14,11 @@ export type Service = {
   image: string;
   description: string;
   features: string[];
+  /**
+   * Optional URL slug for a corresponding `/services/{slug}` detail page.
+   * When set, the card becomes a link and exposes a "Read more" CTA.
+   */
+  slug?: string;
 };
 
 type ServiceDetailCardProps = {
@@ -26,13 +32,8 @@ export function ServiceDetailCard({
 }: ServiceDetailCardProps) {
   const Icon = service.icon;
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group/card relative min-h-[440px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
-    >
+  const innerCard = (
+    <>
       <Image
         src={service.image}
         alt=""
@@ -45,7 +46,7 @@ export function ServiceDetailCard({
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"
         aria-hidden
       />
-      <div className="pointer-events-none absolute  bottom-0 z-10 ">
+      <div className="pointer-events-none absolute bottom-0 z-10">
         <div className="pointer-events-auto w-full rounded-xl border border-white/15 bg-black/25 px-4 pb-5 pt-5 shadow-lg backdrop-blur-lg backdrop-saturate-150 md:px-5 md:pb-6 md:pt-6">
           <div className="flex items-start gap-3">
             <Icon className="mt-0.5 h-7 w-7 shrink-0 text-gold-400" />
@@ -53,7 +54,7 @@ export function ServiceDetailCard({
               {service.title}
             </h3>
           </div>
-          <div className="max-h-0 overflow-y-auto overscroll-contain pr-1 transition-[max-height] duration-300 ease-out group-hover/card:max-h-[150px]">
+          <div className="max-h-0 overflow-y-auto overscroll-contain pr-1 transition-[max-height] duration-300 ease-out group-hover/card:max-h-[180px]">
             <div className="translate-y-2 opacity-0 transition duration-300 ease-out group-hover/card:translate-y-0 group-hover/card:opacity-100">
               <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">
                 {service.description}
@@ -69,10 +70,40 @@ export function ServiceDetailCard({
                   </li>
                 ))}
               </ul>
+              {service.slug ? (
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-gold-300">
+                  Read more
+                  <ArrowRight
+                    className="ml-1 h-4 w-4 transition-transform group-hover/card:translate-x-0.5"
+                    aria-hidden
+                  />
+                </span>
+              ) : null}
             </div>
           </div>
         </div>
       </div>
+    </>
+  );
+
+  const className =
+    "group/card relative block min-h-[440px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className={className}
+    >
+      {service.slug ? (
+        <Link
+          href={`/services/${service.slug}`}
+          className="absolute inset-0 z-20 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+          aria-label={`Read more about ${service.title}`}
+        />
+      ) : null}
+      {innerCard}
     </motion.div>
   );
 }

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { getAllBlogListCards } from "@/lib/blogs";
+import { getAllServiceListCards, getServiceBySlug } from "@/lib/services-content";
 import { absUrl } from "./lib/seo";
 
 /**
@@ -71,5 +72,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticPages, ...blogPages];
+  const servicePages: MetadataRoute.Sitemap = getAllServiceListCards().map(
+    (card) => {
+      const detail = getServiceBySlug(card.slug);
+      const lastModified = detail?.mtime ?? buildTime;
+      return {
+        url: absUrl(`/services/${card.slug}`),
+        lastModified,
+        changeFrequency: "monthly",
+        priority: 0.85,
+      };
+    },
+  );
+
+  return [...staticPages, ...servicePages, ...blogPages];
 }

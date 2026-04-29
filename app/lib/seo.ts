@@ -447,6 +447,48 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
+/**
+ * Schema for an individual service detail page. Picks `Service` by default
+ * (broadest interpretation by Google for non-clinical entries) but supports
+ * `MedicalProcedure` for procedure-style pages (e.g. dental implants, root
+ * canal). Both inherit from `MedicalEntity`-compatible types so the same
+ * provider link works.
+ */
+export function serviceJsonLd(opts: {
+  type?: "Service" | "MedicalProcedure";
+  url: string;
+  name: string;
+  description: string;
+  image?: string;
+  serviceType?: string;
+  procedureType?: string;
+  priceRange?: string;
+}) {
+  const base = {
+    "@context": "https://schema.org",
+    "@type": opts.type ?? "Service",
+    "@id": `${opts.url}#service`,
+    url: opts.url,
+    name: opts.name,
+    description: opts.description,
+    image: opts.image ? absUrl(opts.image) : undefined,
+    provider: { "@id": `${siteUrl.toString()}#dentist` },
+    areaServed: [
+      { "@type": "City", name: "Warners Bay" },
+      { "@type": "City", name: "Newcastle" },
+      { "@type": "AdministrativeArea", name: "Lake Macquarie" },
+    ],
+    serviceType: opts.serviceType,
+  };
+  if (opts.type === "MedicalProcedure") {
+    return {
+      ...base,
+      procedureType: opts.procedureType,
+    };
+  }
+  return base;
+}
+
 export function blogPostingJsonLd(opts: {
   title: string;
   description?: string;
