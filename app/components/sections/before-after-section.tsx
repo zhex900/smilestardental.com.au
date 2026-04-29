@@ -175,7 +175,7 @@ export function BeforeAfterSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 backdrop-blur-sm sm:items-center"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-3 backdrop-blur-sm sm:items-center sm:p-4"
             onClick={() => setDisclaimerOpen(false)}
             aria-hidden={false}
           >
@@ -188,7 +188,7 @@ export function BeforeAfterSection() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="relative w-full max-w-lg rounded-2xl bg-white p-6 text-slate-700 shadow-2xl sm:p-7"
+              className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-lg flex-col rounded-2xl bg-white p-5 text-slate-700 shadow-2xl sm:max-h-[calc(100dvh-2rem)] sm:p-7"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -203,12 +203,12 @@ export function BeforeAfterSection() {
 
               <h3
                 id="before-after-disclaimer-title"
-                className="pr-8 text-lg font-semibold text-slate-900 sm:text-xl"
+                className="shrink-0 pr-8 text-base font-semibold text-slate-900 sm:text-xl"
               >
                 Before &amp; after — important information
               </h3>
 
-              <div className="mt-4 space-y-3 text-sm leading-relaxed sm:text-[0.9375rem]">
+              <div className="-mr-2 mt-4 flex-1 space-y-3 overflow-y-auto overscroll-contain pr-2 text-sm leading-relaxed sm:text-[0.9375rem]">
                 <p>
                   The image shown is of an actual patient who has provided
                   written consent for its use. The image has not been digitally
@@ -249,7 +249,7 @@ export function BeforeAfterSection() {
                 </p>
               </div>
 
-              <div className="mt-6 flex justify-end">
+              <div className="mt-5 flex shrink-0 justify-end">
                 <ButtonGradient onClick={() => setDisclaimerOpen(false)}>
                   Got it
                 </ButtonGradient>
