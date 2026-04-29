@@ -1,13 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { googleBusinessProfileUrl } from "@/constants";
+import { Reveal } from "../ui/reveal";
 
 /**
- * AHPRA / National Law: patient testimonials and testimonial-based ratings must
- * not be used in advertising regulated health services on this site. Community
- * feedback is linked on Google only.
+ * AHPRA / National Law: patient testimonials and testimonial-based ratings
+ * must not be used in advertising regulated health services on this site.
+ * Community feedback is linked on Google only.
  */
 export function TestimonialsSection() {
   return (
@@ -15,12 +13,7 @@ export function TestimonialsSection() {
       id="testimonials"
       className="section-px section-py scroll-mt-28 bg-white"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mx-auto max-w-2xl text-center"
-      >
+      <Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="text-heading heading-mb">See What Others Say</h2>
         <p className="text-normal mb-6 text-gray-700">
           Our Google listing is where people often leave comments about their
@@ -38,7 +31,7 @@ export function TestimonialsSection() {
           Read reviews on Google
           <ExternalLink className="h-4 w-4 shrink-0" aria-hidden />
         </a>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-/** Shared Unsplash asset for interior marketing heroes (Next remotePatterns already allow unsplash). */
+/** Shared fallback hero asset (Next.js remotePatterns already allow unsplash). */
 export const PAGE_HERO_DEFAULT_IMAGE = "/images/eating-fruit.avif";
 
 /** Default scrim: cools the photo slightly; keeps light hero text readable. */
@@ -13,7 +10,6 @@ export const PAGE_HERO_DEFAULT_OVERLAY = "bg-gray-900/30";
 type PageHeroProps = {
   title: string;
   description?: React.ReactNode;
-  /** Background photo */
   imageSrc?: string;
   imageAlt?: string;
   /** `left` matches blog-style copy; `center` for standard inner pages */
@@ -27,6 +23,13 @@ type PageHeroProps = {
   overlayClassName?: string;
 };
 
+/**
+ * Server-renderable hero for inner pages. The H1 is plain SSR HTML (no
+ * `framer-motion` wrapping) so it's available immediately for LCP and for
+ * non-JS crawlers (Perplexity, ClaudeBot, etc.). The entrance "lift" is
+ * achieved with CSS animations from `tailwindcss-animate`, which run
+ * client-side without blocking the initial paint.
+ */
 export function PageHero({
   title,
   description,
@@ -72,40 +75,36 @@ export function PageHero({
             isCenter && "mx-auto max-w-2xl",
           )}
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <h1
             className={cn(
               "mb-4 text-4xl font-bold text-inherit md:text-5xl",
+              "animate-in fade-in slide-in-from-bottom-3 duration-700",
               titleClassName,
             )}
           >
             {title}
-          </motion.h1>
+          </h1>
           {description ? (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <div
               className={cn(
                 "text-normal text-inherit",
                 children ? "mb-6" : "mb-0",
+                "animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:150ms]",
                 descriptionClassName,
               )}
             >
               {description}
-            </motion.div>
+            </div>
           ) : null}
           {children ? (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className={cn(isCenter && "flex justify-center")}
+            <div
+              className={cn(
+                "animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:300ms]",
+                isCenter && "flex justify-center",
+              )}
             >
               {children}
-            </motion.div>
+            </div>
           ) : null}
         </div>
       </div>

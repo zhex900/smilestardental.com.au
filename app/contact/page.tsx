@@ -1,11 +1,13 @@
-"use client";
-import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
 import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import { FaqSection } from "@/components/sections";
 import { FAQS } from "@/components/faq";
+import { Reveal } from "@/components/ui/reveal";
+
+const directionsUrl = `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`;
+const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`;
 
 export default function Contact() {
   return (
@@ -20,12 +22,7 @@ export default function Contact() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-primary rounded-xl p-8 text-center"
-            >
+            <Reveal className="bg-primary rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="text-white text-2xl" />
               </div>
@@ -38,19 +35,17 @@ export default function Contact() {
                 {address.city}
               </p>
               <a
-                href={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`}
+                href={directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block text-gold-400 font-medium mt-4 hover:underline"
               >
                 Get Directions
               </a>
-            </motion.div>
+            </Reveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            <Reveal
+              delay={0.1}
               className="bg-primary rounded-xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -66,12 +61,10 @@ export default function Contact() {
               >
                 Call Now
               </a>
-            </motion.div>
+            </Reveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <Reveal
+              delay={0.2}
               className="bg-primary rounded-xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -84,7 +77,8 @@ export default function Contact() {
                 <ul className="space-y-3">
                   {openingHours.map((schedule) => (
                     <li key={schedule.day} className="flex justify-between">
-                      <span>{schedule.day}</span> <span>{schedule.time}</span>
+                      <span>{schedule.day}</span>{" "}
+                      <span>{schedule.time}</span>
                     </li>
                   ))}
                 </ul>
@@ -97,7 +91,7 @@ export default function Contact() {
               >
                 Book Appointment
               </a>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -112,13 +106,7 @@ export default function Contact() {
       {/* Map Section */}
       <section className="bg-gray-50 pb-12">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="overflow-hidden rounded-xl bg-white p-4 shadow-md"
-          >
+          <Reveal className="overflow-hidden rounded-xl bg-white p-4 shadow-md">
             <div className="h-[400px] w-full overflow-hidden rounded-xl">
               <iframe
                 title="Smile Star Dental Location Map"
@@ -126,10 +114,10 @@ export default function Contact() {
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`}
+                src={mapEmbedUrl}
               />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
@@ -142,27 +130,19 @@ export default function Contact() {
       <section className="py-16 bg-gold-400">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-white mb-4"
-            >
-              Ready to Get Started?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto"
-            >
-              Don't wait to achieve the smile you've always wanted. Contact us
-              today to schedule your consultation.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+            <Reveal>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Ready to Get Started?
+              </h2>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto">
+                Don&apos;t wait to achieve the smile you&apos;ve always
+                wanted. Contact us today to schedule your consultation.
+              </p>
+            </Reveal>
+            <Reveal
+              delay={0.4}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <a
@@ -179,7 +159,7 @@ export default function Contact() {
               >
                 Call Now
               </a>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
