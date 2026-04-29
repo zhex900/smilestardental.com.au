@@ -1,5 +1,3 @@
-const path = require("path");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -61,13 +59,34 @@ const nextConfig = {
 
   // Pin workspace root when multiple lockfiles exist (e.g. ~/package-lock.json).
   turbopack: {
-    root: path.join(__dirname),
+    root: __dirname,
     rules: {
       "*.svg": {
         loaders: ["@svgr/webpack"],
         as: "*.js",
       },
     },
+  },
+
+  /**
+   * Explicitly tell Node File Trace which extra files belong to which routes.
+   * Our content collections (`app/contents/blogs` and `app/contents/services`)
+   * are read at request / build time via `fs.readdirSync` + `fs.readFileSync`
+   * with a dynamic basename — NFT can statically scope the prefix but can't
+   * see the individual `.mdx` files without this hint. Without this list,
+   * NFT tends to either over-include the entire project (the warning we saw)
+   * or under-include the content folder and break MDX rendering at runtime.
+   */
+  outputFileTracingIncludes: {
+    "/sitemap.xml": [
+      "./app/contents/**/*",
+      "./app/**/page.tsx",
+      "./app/**/layout.tsx",
+    ],
+    "/blogs": ["./app/contents/blogs/**/*"],
+    "/blogs/[slug]": ["./app/contents/blogs/**/*"],
+    "/services": ["./app/contents/services/**/*"],
+    "/services/[slug]": ["./app/contents/services/**/*"],
   },
 
   webpack(config) {

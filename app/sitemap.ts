@@ -7,13 +7,18 @@ import { absUrl } from "./lib/seo";
 
 /**
  * Best-effort `lastModified` for a page, derived from the source file's mtime
- * relative to the project root. Falls back to the build time so we never emit
- * an invalid sitemap entry.
+ * relative to the project's `app/` directory. Falls back to the build time so
+ * we never emit an invalid sitemap entry.
+ *
+ * The argument is intentionally a single string (not a rest spread) so that
+ * Turbopack / Node File Trace can statically scope this to `app/` instead of
+ * pessimistically tracing the entire project.
  */
-function fileMTime(...relativePathSegments: string[]): Date {
+function fileMTime(appRelativePath: string): Date {
   try {
-    const filePath = path.join(process.cwd(), ...relativePathSegments);
-    return fs.statSync(filePath).mtime;
+    return fs.statSync(
+      path.join(process.cwd(), "app", appRelativePath),
+    ).mtime;
   } catch {
     return new Date();
   }
@@ -31,31 +36,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: absUrl("/"),
-      lastModified: fileMTime("app", "page.tsx"),
+      lastModified: fileMTime("page.tsx"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: absUrl("/services"),
-      lastModified: fileMTime("app", "services", "page.tsx"),
+      lastModified: fileMTime("services/page.tsx"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: absUrl("/about"),
-      lastModified: fileMTime("app", "about", "page.tsx"),
+      lastModified: fileMTime("about/page.tsx"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: absUrl("/contact"),
-      lastModified: fileMTime("app", "contact", "page.tsx"),
+      lastModified: fileMTime("contact/page.tsx"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: absUrl("/blogs"),
-      lastModified: fileMTime("app", "blogs", "page.tsx"),
+      lastModified: fileMTime("blogs/page.tsx"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
