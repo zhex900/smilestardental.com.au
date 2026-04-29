@@ -1,11 +1,30 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Compare } from "../ui/compare";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 import { Card, CardDescription, CardTitle } from "../ui/card";
 import OrthodonticsIcon from "../icons/orthodontics.svg";
+import { ButtonGradient } from "../ui/button-gradient";
 
 export function BeforeAfterSection() {
+  const [disclaimerOpen, setDisclaimerOpen] = useState(false);
+
+  useEffect(() => {
+    if (!disclaimerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDisclaimerOpen(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [disclaimerOpen]);
+
   return (
     <section
       id="before-after"
@@ -27,8 +46,10 @@ export function BeforeAfterSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-normal max-w-3xl mx-auto"
           >
-            Examples of orthodontic treatment outcomes — individual results
-            vary; your dentist will discuss what is achievable in your case.
+            An example of an orthodontic treatment outcome from an actual
+            patient. Individual results vary, and all dental procedures carry
+            risks. Your dentist will discuss what is suitable, achievable and
+            appropriate in your case.
           </motion.p>
         </div>
 
@@ -92,7 +113,17 @@ export function BeforeAfterSection() {
                 />
               </div>
               <p className="shrink-0 pt-3 text-center text-xs text-slate-600">
-                *Results may vary between individuals.
+                *Individual results vary.{" "}
+                <button
+                  type="button"
+                  onClick={() => setDisclaimerOpen(true)}
+                  className="underline underline-offset-2 hover:text-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded"
+                  aria-haspopup="dialog"
+                  aria-expanded={disclaimerOpen}
+                  aria-controls="before-after-disclaimer"
+                >
+                  Read full disclaimer
+                </button>
               </p>
             </div>
           </motion.div>
@@ -105,9 +136,21 @@ export function BeforeAfterSection() {
           className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5"
         >
           {[
-            { title: "3D Digital", subtitle: "Scanning", accent: "text-slate-600" },
-            { title: "Invisible", subtitle: "Aligners", accent: "text-yellow-600" },
-            { title: "Advanced", subtitle: "Technology", accent: "text-slate-600" },
+            {
+              title: "3D Digital",
+              subtitle: "Scanning",
+              accent: "text-slate-600",
+            },
+            {
+              title: "Invisible",
+              subtitle: "Aligners",
+              accent: "text-yellow-600",
+            },
+            {
+              title: "Advanced",
+              subtitle: "Technology",
+              accent: "text-slate-600",
+            },
           ].map((item) => (
             <div
               key={item.title}
@@ -123,6 +166,98 @@ export function BeforeAfterSection() {
           ))}
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {disclaimerOpen && (
+          <motion.div
+            key="disclaimer-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 backdrop-blur-sm sm:items-center"
+            onClick={() => setDisclaimerOpen(false)}
+            aria-hidden={false}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="before-after-disclaimer-title"
+              id="before-after-disclaimer"
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 24, scale: 0.98 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="relative w-full max-w-lg rounded-2xl bg-white p-6 text-slate-700 shadow-2xl sm:p-7"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setDisclaimerOpen(false)}
+                aria-label="Close disclaimer"
+                autoFocus
+                className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+
+              <h3
+                id="before-after-disclaimer-title"
+                className="pr-8 text-lg font-semibold text-slate-900 sm:text-xl"
+              >
+                Before &amp; after — important information
+              </h3>
+
+              <div className="mt-4 space-y-3 text-sm leading-relaxed sm:text-[0.9375rem]">
+                <p>
+                  The image shown is of an actual patient who has provided
+                  written consent for its use. The image has not been digitally
+                  enhanced or altered, and the before and after photos are taken
+                  with similar lighting, angle, framing and exposure.
+                </p>
+                <ul className="list-disc space-y-2 pl-5">
+                  <li>
+                    <span className="font-medium text-slate-900">
+                      Individual results vary.
+                    </span>{" "}
+                    The outcome shown is specific to this patient and is not a
+                    guarantee or prediction of the result you may achieve.
+                  </li>
+                  <li>
+                    All dental and orthodontic procedures, including braces and
+                    clear aligners, carry risks. Suitability, treatment options,
+                    duration, costs, side effects and potential complications
+                    should be discussed with a registered dental practitioner
+                    before proceeding.
+                  </li>
+                  <li>
+                    Before making any decisions, we encourage you to seek a
+                    second opinion from an appropriately qualified health
+                    practitioner.
+                  </li>
+                  <li>
+                    This information is general in nature and is not a
+                    substitute for personalised clinical advice based on your
+                    individual circumstances.
+                  </li>
+                </ul>
+                <p className="text-xs text-slate-500">
+                  Provided in accordance with the Australian Health Practitioner
+                  Regulation Agency (AHPRA) Guidelines for advertising a
+                  regulated health service and section 133 of the Health
+                  Practitioner Regulation National Law.
+                </p>
+              </div>
+
+              <div className="mt-6 flex justify-end">
+                <ButtonGradient onClick={() => setDisclaimerOpen(false)}>
+                  Got it
+                </ButtonGradient>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

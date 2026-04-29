@@ -78,7 +78,7 @@ export default function BlogPageClient({
               placeholder="Search articles..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-gold-400"
+              className="text-gray-400 w-64 rounded-full border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-gold-400"
             />
             <Search className="absolute right-4 top-3.5 h-5 w-5 text-gray-400" />
           </div>
