@@ -83,6 +83,15 @@ export const InfiniteMovingCards = ({
   const dragStartedRef = React.useRef(false);
   const DRAG_THRESHOLD = 2; // px, lower for better touch responsiveness
 
+  const isInteractiveTarget = (target: EventTarget | null): boolean => {
+    if (!(target instanceof Element)) return false;
+    return Boolean(
+      target.closest(
+        "a,button,input,textarea,select,summary,[role='button'],[data-no-drag='true']"
+      )
+    );
+  };
+
   function cancelMomentum() {
     if (momentumRafRef.current) cancelAnimationFrame(momentumRafRef.current);
     momentumRafRef.current = null;
@@ -366,6 +375,7 @@ export const InfiniteMovingCards = ({
   };
 
   const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (isInteractiveTarget(event.target)) return;
     // Ignore pointer events while a touch gesture is active
     if (activeInputRef.current === "touch") return;
     activeInputRef.current = "pointer";
@@ -420,6 +430,7 @@ export const InfiniteMovingCards = ({
   const getTouchX = (t: { clientX: number; pageX: number }) =>
     typeof t.clientX === "number" ? t.clientX : t.pageX;
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (isInteractiveTarget(e.target)) return;
     const t = e.touches[0];
     if (!t) return;
     activeInputRef.current = "touch";

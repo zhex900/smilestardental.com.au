@@ -4,13 +4,6 @@ import { GoogleReview } from "../ui/google-review";
 import HeroCarousel from "../hero-carousel";
 import { bookingUrl } from "@/constants";
 
-/**
- * Server-renderable hero. The H1 is plain SSR HTML — its text appears as a
- * single readable node (rather than per-letter `motion.span`s) so Google,
- * Perplexity, ClaudeBot, etc. all see the canonical phrase. The entrance
- * lift uses `tailwindcss-animate` CSS keyframes (no JS) which keeps LCP
- * paintable on first frame.
- */
 export function HeroSection() {
   return (
     <section

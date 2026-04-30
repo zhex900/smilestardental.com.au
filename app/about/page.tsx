@@ -33,26 +33,26 @@ export default function About() {
                     experience dentistry, especially for those who may feel
                     nervous or anxious. Today, we&apos;ve grown into a modern
                     dental practice while staying true to our core values. We
-                    focus on personalised care, gentle treatment approaches,
-                    and clear communication to help every patient feel at
-                    ease, along with tailored treatment plans and the latest
-                    technology to support appropriate treatment outcomes.
-                    Smile Star Dental serves families in the community with a
-                    strong commitment to professional standards, compassion,
-                    and continuous improvement.
+                    focus on personalised care, gentle treatment approaches, and
+                    clear communication to help every patient feel at ease,
+                    along with tailored treatment plans and the latest
+                    technology to support appropriate treatment outcomes. Smile
+                    Star Dental serves families in the community with a strong
+                    commitment to professional standards, compassion, and
+                    continuous improvement.
                   </p>
                 </div>
               </Reveal>
             </div>
             <div className="lg:w-1/2">
               <Reveal direction="left">
-                <div className="relative rounded-xl overflow-hidden shadow-lg h-[450px]">
+                <div className="group relative h-[450px] overflow-hidden rounded-xl shadow-lg">
                   <Image
-                    src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600&auto=format&fit=crop"
-                    alt="Modern dental clinic reception area with friendly staff and comfortable waiting space"
+                    src="/images/dental-clinic-reception.webp"
+                    alt="Modern dental clinic reception area at Smile Star Dental, Warners Bay"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:scale-100"
                   />
                 </div>
               </Reveal>
@@ -65,15 +65,14 @@ export default function About() {
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              {/* TODO(seo): replace with locally hosted /images/team/dr-melody-healy.jpg once asset is supplied. */}
+            <div className="group overflow-hidden rounded-xl shadow-lg">
               <Image
-                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/88d5056f1a-ae060504fb9eca0c99cb.png"
-                alt="Dr. Melody Healy, principal dentist at Smile Star Dental"
-                width={800}
-                height={800}
+                src="/images/dr-melody-healy-profile1.webp"
+                alt="Dr Melody Healy, principal dentist at Smile Star Dental, Warners Bay"
+                width={1600}
+                height={1068}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="rounded-xl shadow-lg w-full h-auto"
+                className="h-auto w-full grayscale transition-[filter,transform] duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:scale-100"
               />
             </div>
             <div>
@@ -82,18 +81,17 @@ export default function About() {
               </h2>
               <p>
                 Dr Melody is a passionate and experienced dentist dedicated to
-                providing high-quality, patient-centred care. She graduated
-                from the University of Otago in New Zealand with a Bachelor of
-                Dental Surgery in 2005. Following her graduation, she gained
-                valuable experience at Sydney&rsquo;s Westmead Hospital in the
-                Emergency and General Dental Department, and regularly
-                travelled to rural areas across NSW to deliver essential
-                dental services to underserved communities. She has also
-                spent many years working within one of Australia&rsquo;s
-                largest dental corporations, developing her skills in a
-                fast-paced and highly professional environment. In 2012, she
-                became the owner of Smile Star Dental, formerly known as Bay
-                Arcade Dental.
+                providing high-quality, patient-centred care. She graduated from
+                the University of Otago in New Zealand with a Bachelor of Dental
+                Surgery in 2005. Following her graduation, she gained valuable
+                experience at Sydney&rsquo;s Westmead Hospital in the Emergency
+                and General Dental Department, and regularly travelled to rural
+                areas across NSW to deliver essential dental services to
+                underserved communities. She has also spent many years working
+                within one of Australia&rsquo;s largest dental corporations,
+                developing her skills in a fast-paced and highly professional
+                environment. In 2012, she became the owner of Smile Star Dental,
+                formerly known as Bay Arcade Dental.
               </p>
               <br />
               <p>
@@ -102,22 +100,22 @@ export default function About() {
                 University of Bolton, UK. She has a strong interest in the
                 relationship between dental alignment, breathing, sleep, and
                 overall wellbeing. In addition, she enjoys all aspects of
-                dentistry, with a particular focus on cosmetic treatments
-                such as veneers, helping patients feel more confident in
-                their smiles.
+                dentistry, with a particular focus on cosmetic treatments such
+                as veneers, helping patients feel more confident in their
+                smiles.
               </p>
               <br />
               <p>
                 Known for her gentle approach and commitment to professional
-                standards, Dr Melody takes great pride in helping her
-                patients achieve and maintain healthy smiles. She has cared
-                for many families across multiple generations, building
-                long-lasting relationships based on trust and personalised
-                care. She is committed to ongoing professional development
-                and continually integrates current evidence and techniques
-                into her practice. The comfort, wellbeing, and experience of
-                every patient remain at the heart of everything she and her
-                team at Smile Star Dental do.
+                standards, Dr Melody takes great pride in helping her patients
+                achieve and maintain healthy smiles. She has cared for many
+                families across multiple generations, building long-lasting
+                relationships based on trust and personalised care. She is
+                committed to ongoing professional development and continually
+                integrates current evidence and techniques into her practice.
+                The comfort, wellbeing, and experience of every patient remain
+                at the heart of everything she and her team at Smile Star Dental
+                do.
               </p>
             </div>
           </div>
@@ -141,8 +139,8 @@ export default function About() {
               </Reveal>
               <Reveal direction="right" delay={0.2}>
                 <p className="text-white opacity-90 text-lg">
-                  Schedule your first visit today. New patients from
-                  Newcastle and Lake Macquarie are welcome.
+                  Schedule your first visit today. New patients from Newcastle
+                  and Lake Macquarie are welcome.
                 </p>
               </Reveal>
             </div>

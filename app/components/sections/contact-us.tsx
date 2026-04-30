@@ -24,10 +24,9 @@ type SubmitStatus =
 const DEFAULT_HEADING = "Ask Our Dentists";
 const DEFAULT_DESCRIPTION =
   "Have a dental question? Our team is here to help. Submit your question and we'll get back to you shortly.";
-const DEFAULT_IMAGE =
-  "https://storage.googleapis.com/uxpilot-auth.appspot.com/239826ec6c-b0e309cb07bff0003063.png";
+const DEFAULT_IMAGE = "/images/dr-melody-patient-xray.webp";
 const DEFAULT_IMAGE_ALT =
-  "Friendly dentist team in discussion, professional dental office environment";
+  "Dr Melody Healy reviewing a dental X-ray with a patient at Smile Star Dental, Warners Bay.";
 
 declare global {
   interface Window {
@@ -150,7 +149,7 @@ export function ContactUs({
         viewport={{ once: true }}
         className="overflow-hidden rounded-xl bg-gold-200"
       >
-        <div className="flex flex-col md:flex-row">
+        <div className="group flex flex-col md:flex-row">
           <div className="w-full p-8 md:w-1/2">
             <p className="mb-4 text-3xl font-bold ">{heading}</p>
             <p className="mb-6 text-gray-600">{description}</p>
@@ -252,13 +251,13 @@ export function ContactUs({
               ) : null}
             </form>
           </div>
-          <div className="relative min-h-[320px] w-full md:w-1/2">
+          <div className="relative min-h-[320px] w-full overflow-hidden rounded-xl md:w-1/2">
             <Image
               src={image}
               alt={imageAlt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover rounded-xl"
+              className="rounded-xl object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:scale-100"
             />
           </div>
         </div>

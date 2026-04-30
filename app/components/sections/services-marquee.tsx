@@ -18,24 +18,28 @@ const servicesData = [
     tooltip: "Implants",
     icon: ImplantsIcon,
     image: "/images/implants.jpg",
+    href: "/services/dental-implants",
   },
   {
     name: "Orthodontics",
     tooltip: "Orthodontics",
     icon: OrthodonticsIcon,
     image: "/images/braces.jpg",
+    href: "/services/clear-aligners",
   },
   {
     name: "Aligners",
     tooltip: "Aligners",
     icon: MouthguardsIcon,
     image: "/images/aligners.jpg",
+    href: "/services/clear-aligners",
   },
   {
     name: "Veneers",
     tooltip: "Veneers",
     icon: VeneersIcon,
     image: "/images/veneers.jpg",
+    href: "/services/crowns-bridges",
   },
 ];
 
@@ -50,7 +54,10 @@ export function ServicesMarquee() {
       className="w-full"
     >
       {servicesData.map((service) => (
-        <ServiceCard key={service.name} service={service} />
+        <ServiceCard
+          key={service.href ? `${service.name}-${service.href}` : service.name}
+          service={service}
+        />
       ))}
     </InfiniteMovingCards>
   );
