@@ -53,7 +53,9 @@ export function GoogleReview({
 
   const renderCompact = () => (
     <div className={`flex flex-col items-center justify-start ${className}`}>
-      {showLogo ? <div className="flex flex-col">{renderGoogleLogo()}</div> : null}
+      {showLogo ? (
+        <div className="flex flex-col">{renderGoogleLogo()}</div>
+      ) : null}
       <a
         href={googleBusinessProfileUrl}
         target="_blank"
@@ -61,7 +63,7 @@ export function GoogleReview({
         className={linkClass}
         aria-label="Read reviews on Google — opens Google Maps in a new tab"
       >
-        Reviews on Google
+        Reviews
         <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden />
       </a>
     </div>

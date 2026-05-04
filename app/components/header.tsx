@@ -3,7 +3,7 @@ import { Calendar, Menu, Phone } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LogoIcon } from "./ui/logo-icon";
 import { bookingUrl, phoneNumber } from "@/constants";
 import { BackgroundGradient } from "./ui/background-gradient";
@@ -30,6 +30,26 @@ const MenuItems = ({ onClick }: { onClick?: () => void }) => (
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handlePointerDown = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (
+        menuRef.current?.contains(target) ||
+        menuButtonRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setIsMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isMenuOpen]);
 
   return (
     <header className="sticky top-0 z-[200] font-normal text-md bg-white/70 px-6 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 md:px-12">
@@ -74,6 +94,7 @@ export function Header() {
             </ButtonGradient>
           </div>
           <Button
+            ref={menuButtonRef}
             variant="ghost"
             size="icon"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -86,6 +107,7 @@ export function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
+            ref={menuRef}
             className="fixed left-0 right-0 z-[250] mx-6 rounded-xl text-white shadow-lg md:hidden"
             style={{ top: "var(--header-height)" }}
           >
