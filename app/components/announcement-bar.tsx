@@ -29,7 +29,7 @@ const DEFAULT_MESSAGE =
   "Bay Arcade Dental is moving to a new location — scheduled to open July 2026.";
 
 const SPEED_DURATIONS: Record<MarqueeSpeed, string> = {
-  slow: "80s",
+  slow: "150s",
   normal: "40s",
   fast: "20s",
 };
@@ -50,7 +50,7 @@ export function AnnouncementBar({
       className={`relative z-[150] overflow-hidden bg-gold-400  text-white shadow-sm ${className}`}
     >
       <div
-        className="flex w-max gap-8 whitespace-nowrap py-2 text-sm font-medium tracking-wide animate-scroll hover:[animation-play-state:paused]"
+        className="flex w-max items-center gap-8 whitespace-nowrap py-4 text-base font-medium leading-snug tracking-wide animate-scroll hover:[animation-play-state:paused] md:py-2 md:text-sm md:leading-normal"
         style={{ "--animation-duration": resolvedDuration } as CSSProperties}
       >
         {[...halfItems, ...halfItems].map((_, i) => (

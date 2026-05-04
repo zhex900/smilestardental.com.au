@@ -31,7 +31,7 @@ export function ServicePageShell({
   return (
     <article className="min-h-screen bg-white text-slate-800">
       {/* Hero */}
-      <section className="relative isolate flex h-[460px] items-center overflow-hidden bg-slate-900 text-white">
+      <section className="relative isolate flex min-h-[460px] items-center overflow-hidden bg-slate-900 py-8 text-white sm:py-10">
         <Image
           src={service.heroImage}
           alt={service.heroImageAlt}
@@ -44,8 +44,8 @@ export function ServicePageShell({
           aria-hidden
           className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/70 to-slate-900/40"
         />
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="max-w-3xl">
+        <div className="container relative z-10 mx-auto w-full min-w-0 px-4">
+          <div className="max-w-3xl min-w-0">
             <nav
               aria-label="Breadcrumb"
               className="mb-3 text-xs uppercase tracking-widest text-gold-200/90 animate-in fade-in duration-700"
@@ -63,13 +63,13 @@ export function ServicePageShell({
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li className="text-white">{service.title}</li>
+                <li className="break-words text-white">{service.title}</li>
               </ol>
             </nav>
-            <h1 className="text-3xl font-bold leading-tight md:text-5xl animate-in fade-in slide-in-from-bottom-3 duration-700">
+            <h1 className="break-words text-3xl font-bold leading-tight md:text-5xl animate-in fade-in slide-in-from-bottom-3 duration-700">
               {service.h1}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-white/90 animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:150ms]">
+            <p className="mt-4 max-w-2xl break-words text-lg text-white/90 animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:150ms]">
               {service.intro}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:300ms]">
