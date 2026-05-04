@@ -50,4 +50,5 @@ export const bookingUrl =
 
 /** Smile Star Dental on Google Maps — community reviews (external; not embedded on this site). */
 export const googleBusinessProfileUrl =
-  "https://www.google.com/maps/place/Smile+Star+Dental/@-32.9754992,151.6458866,17z/data=!3m1!4b1!4m6!3m5!1s0x6b733d906774f515:0x2d91b3b97fe89d09!8m2!3d-32.9754992!4d151.6458866!16s%2Fg%2F11z67289hv";
+  "https://www.google.com/maps/place/Bay+Arcade+Dental/@-32.9750075,151.6422381,1089m/data=!3m3!1e3!4b1!5s0x6b733cfa2951d739:0x9e746c0f214d9e9c!4m6!3m5!1s0x6b733cfa2cc930a1:0x201a0c2ba378bb9!8m2!3d-32.9750075!4d151.644813!16s%2Fg%2F1tlw974k?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D";
+// "https://www.google.com/maps/place/Smile+Star+Dental/@-32.9754992,151.6458866,17z/data=!3m1!4b1!4m6!3m5!1s0x6b733d906774f515:0x2d91b3b97fe89d09!8m2!3d-32.9754992!4d151.6458866!16s%2Fg%2F11z67289hv";
