@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --header-height: 92px;
+  --header-height: 82px;
   /* --primary-color: 29 77 216;
   --secondary-color: 255 255 255;
   --accent-color: 255 255 255;

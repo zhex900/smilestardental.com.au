@@ -8,11 +8,7 @@ import { JsonLd } from "./components/json-ld";
 import { DentistSchema } from "./components/dentist-schema";
 import Script from "next/script";
 
-import {
-  baseMetadata,
-  organizationJsonLd,
-  websiteJsonLd,
-} from "./lib/seo";
+import { baseMetadata, organizationJsonLd, websiteJsonLd } from "./lib/seo";
 
 const poppins = Poppins({
   subsets: ["latin"],
