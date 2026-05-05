@@ -8,7 +8,7 @@ type MarqueeSpeed = "slow" | "normal" | "fast";
 
 type AnnouncementBarProps = {
   /** Marquee message. */
-  message?: string;
+  message?: string | React.ReactNode;
   /**
    * Scroll speed preset. Ignored when `duration` is provided.
    * @default "normal"
@@ -33,15 +33,29 @@ type AnnouncementBarProps = {
   /**
    * When true, always use fixed layout (wrapped, 33vh min height).
    * When false, never use fixed layout.
-   * When omitted, fixed layout is used only on the home page below the `md`
-   * breakpoint (Tailwind: narrower than 768px).
+   * When omitted, fixed layout is used on the home page when `marquee` is true
+   * (all viewport sizes). Other routes use the marquee.
    */
   fixed?: boolean;
   className?: string;
 };
 
-const DEFAULT_MESSAGE =
-  "Bay Arcade Dental is moving to a new location — scheduled to open June 2026.";
+const DEFAULT_MESSAGE = (
+  <div className="flex items-center gap-2">
+    <span>
+      Formerly known as{" "}
+      <a
+        href="https://bayarcadedental.com.au"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="no-underline hover:underline"
+      >
+        Bay Arcade Dental
+      </a>
+      , scheduled to open in June 2026
+    </span>
+  </div>
+);
 
 const SPEED_DURATIONS: Record<MarqueeSpeed, string> = {
   slow: "150s",
@@ -74,9 +88,9 @@ export function AnnouncementBar({
         className,
       )}
     >
-      <p className="max-w-4xl text-pretty break-words whitespace-normal">
+      <div className="max-w-4xl text-pretty break-words whitespace-normal text-xl md:text-3xl">
         {message}
-      </p>
+      </div>
     </div>
   );
 
@@ -104,17 +118,12 @@ export function AnnouncementBar({
     </div>
   );
 
-  if (fixed === true) {
+  if (fixed) {
     return fixedSection;
   }
 
   if (fixed === undefined && isHomePath(pathname) && marquee) {
-    return (
-      <>
-        <div className="md:hidden">{fixedSection}</div>
-        <div className="hidden md:block">{marqueeSection}</div>
-      </>
-    );
+    return fixedSection;
   }
 
   if (!marquee) {
