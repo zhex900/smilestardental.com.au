@@ -67,7 +67,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="group overflow-hidden rounded-xl shadow-lg">
               <Image
-                src="/images/dr-melody-healy-profile1.webp"
+                src="/images/profile.7.1.webp"
                 alt="Dr Melody Healy, principal dentist at Smile Star Dental, Warners Bay"
                 width={1600}
                 height={1068}
