@@ -1,7 +1,6 @@
 "use client";
 
 import { CSSProperties } from "react";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 type MarqueeSpeed = "slow" | "normal" | "fast";
@@ -52,7 +51,7 @@ const DEFAULT_MESSAGE = (
       >
         Bay Arcade Dental
       </a>
-      , scheduled to open in June 2026
+      , newly opened in June 2026
     </span>
   </div>
 );
@@ -63,36 +62,31 @@ const SPEED_DURATIONS: Record<MarqueeSpeed, string> = {
   fast: "20s",
 };
 
-function isHomePath(pathname: string) {
-  return pathname === "/" || pathname === "";
-}
-
 export function AnnouncementBar({
   message = DEFAULT_MESSAGE,
   speed = "slow",
   duration,
   repeatPerHalf = 4,
   marquee = true,
-  fixed,
+  // fixed,
   className = "",
 }: AnnouncementBarProps) {
-  const pathname = usePathname();
   const halfItems = Array.from({ length: repeatPerHalf });
   const resolvedDuration = duration ?? SPEED_DURATIONS[speed];
 
-  const fixedSection = (
-    <div
-      aria-label="Announcements"
-      className={cn(
-        "relative z-[150] flex w-full min-h-[33vh] items-center justify-center overflow-hidden bg-gold-400 px-4 py-4 text-center text-xl font-medium leading-normal tracking-wide text-white shadow-sm",
-        className,
-      )}
-    >
-      <div className="max-w-4xl text-pretty break-words whitespace-normal text-xl md:text-3xl">
-        {message}
-      </div>
-    </div>
-  );
+  // const fixedSection = (
+  //   <div
+  //     aria-label="Announcements"
+  //     className={cn(
+  //       "relative z-[150] flex w-full min-h-[33vh] items-center justify-center overflow-hidden bg-gold-400 px-4 py-4 text-center text-xl font-medium leading-normal tracking-wide text-white shadow-sm",
+  //       className,
+  //     )}
+  //   >
+  //     <div className="max-w-4xl text-pretty break-words whitespace-normal text-xl md:text-3xl">
+  //       {message}
+  //     </div>
+  //   </div>
+  // );
 
   const marqueeSection = (
     <div
@@ -118,13 +112,13 @@ export function AnnouncementBar({
     </div>
   );
 
-  if (fixed) {
-    return fixedSection;
-  }
+  // if (fixed) {
+  //   return fixedSection;
+  // }
 
-  if (fixed === undefined && isHomePath(pathname) && marquee) {
-    return fixedSection;
-  }
+  // if (fixed === undefined && isHomePath(pathname) && marquee) {
+  //   return fixedSection;
+  // }
 
   if (!marquee) {
     return (

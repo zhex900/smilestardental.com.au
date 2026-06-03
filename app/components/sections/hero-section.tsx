@@ -5,11 +5,11 @@ import HeroCarousel from "../hero-carousel";
 import { bookingUrl } from "@/constants";
 
 export function HeroSection() {
-  //min-h-[calc(100vh-var(--header-height))]
+  //
   return (
     <section
       id="hero"
-      className="relative flex justify-center section-px bg-primary "
+      className="relative flex justify-center section-px bg-primary min-h-[calc(100vh-var(--header-height))]"
     >
       <div
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4"
