@@ -1,7 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildMetadata } from "./lib/seo";
-import { phoneNumber, bookingUrl } from "./constants";
+import { phoneNumber } from "./constants";
+import { CallLink } from "./components/ui/call-link";
+import { BookLink } from "./components/ui/book-link";
 
 export const metadata: Metadata = buildMetadata({
   title: "Page not found",
@@ -48,20 +50,12 @@ export default function NotFound() {
         </ul>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-gold-600"
-          >
+          <BookLink className="inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-gold-600">
             Book an appointment
-          </a>
-          <a
-            href={`tel:${phoneNumber}`}
-            className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-gold-400 hover:text-gold-600"
-          >
+          </BookLink>
+          <CallLink className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-gold-400 hover:text-gold-600">
             Call {phoneNumber}
-          </a>
+          </CallLink>
         </div>
       </div>
     </section>

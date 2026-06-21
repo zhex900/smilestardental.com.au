@@ -12,6 +12,8 @@ import {
 } from "@/constants";
 import { LogoIcon } from "./ui/logo-icon";
 import { GoogleReview } from "./ui/google-review";
+import { CallLink } from "./ui/call-link";
+import { BookLink } from "./ui/book-link";
 
 const companyLinks = [
   { name: "Home", href: "/" },
@@ -23,6 +25,7 @@ const companyLinks = [
     name: "Schedule an appointment",
     href: bookingUrl,
     external: true,
+    booking: true,
   },
 ] as const;
 
@@ -71,7 +74,11 @@ export function Footer() {
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  {"external" in link && link.external ? (
+                  {"booking" in link && link.booking ? (
+                    <BookLink className="hover:text-gray-300 transition-colors">
+                      {link.name}
+                    </BookLink>
+                  ) : "external" in link && link.external ? (
                     <a
                       href={link.href}
                       target="_blank"
@@ -119,12 +126,9 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
-                <a
-                  href={`tel:${phoneNumber}`}
-                  className="hover:text-gray-300 transition-colors"
-                >
+                <CallLink className="hover:text-gray-300 transition-colors">
                   {phoneNumber}
-                </a>
+                </CallLink>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />

@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { ButtonGradient } from "../ui/button-gradient";
 import { GoogleReview } from "../ui/google-review";
 import HeroCarousel from "../hero-carousel";
-import { bookingUrl } from "@/constants";
+import { BookLink } from "../ui/book-link";
 
 export function HeroSection() {
   //
@@ -33,16 +33,11 @@ export function HeroSection() {
               </div>
               <div className="flex justify-between items-center pt-2 md:pt-6 animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:300ms]">
                 <ButtonGradient asChild>
-                  <a
-                    href={bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Book an appointment online (opens in a new tab)"
-                  >
+                  <BookLink aria-label="Book an appointment online (opens in a new tab)">
                     <span className="hidden md:block">Make a booking</span>
                     <span className="block md:hidden">Book now</span>
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                  </BookLink>
                 </ButtonGradient>
                 <GoogleReview variant="compact" />
               </div>

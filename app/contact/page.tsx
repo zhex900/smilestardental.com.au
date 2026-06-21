@@ -1,10 +1,12 @@
 import { MapPin, Phone, Clock } from "lucide-react";
-import { address, bookingUrl, openingHours, phoneNumber } from "@/constants";
+import { address, openingHours, phoneNumber } from "@/constants";
 import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import { FaqSection } from "@/components/sections";
 import { FAQS } from "@/components/faq";
 import { Reveal } from "@/components/ui/reveal";
+import { CallLink } from "@/components/ui/call-link";
+import { BookLink } from "@/components/ui/book-link";
 
 const directionsUrl = `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}`;
 const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(`${address.street}, ${address.city}`)}&output=embed`;
@@ -55,12 +57,9 @@ export default function Contact() {
                 Call Us
               </h3>
               <p className="text-gray-600">{phoneNumber}</p>
-              <a
-                href={`tel:${phoneNumber}`}
-                className="inline-block text-gold-400 font-medium mt-4 hover:underline"
-              >
+              <CallLink className="inline-block text-gold-400 font-medium mt-4 hover:underline">
                 Call Now
-              </a>
+              </CallLink>
             </Reveal>
 
             <Reveal
@@ -83,14 +82,9 @@ export default function Contact() {
                   ))}
                 </ul>
               </div>
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer"
-              >
+              <BookLink className="inline-block text-gold-400 font-medium mt-4 hover:underline cursor-pointer">
                 Book Appointment
-              </a>
+              </BookLink>
             </Reveal>
           </div>
         </div>
@@ -145,20 +139,12 @@ export default function Contact() {
               delay={0.4}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 text-center"
-              >
+              <BookLink className="bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 text-center">
                 Book Appointment
-              </a>
-              <a
-                href={`tel:${phoneNumber}`}
-                className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-gold-400 transition duration-300 text-center"
-              >
+              </BookLink>
+              <CallLink className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-gold-400 transition duration-300 text-center">
                 Call Now
-              </a>
+              </CallLink>
             </Reveal>
           </div>
         </div>

@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { CallLink } from "@/components/ui/call-link";
 import { FaqList } from "@/components/sections/faq-list";
-import { bookingUrl, phoneNumber } from "@/constants";
+import { phoneNumber } from "@/constants";
+import { BookLink } from "@/components/ui/book-link";
 import type {
   ServiceFrontmatter,
   ServiceFaqItem,
@@ -73,22 +75,14 @@ export function ServicePageShell({
               {service.intro}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:300ms]">
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
-              >
+              <BookLink className="inline-flex items-center justify-center rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300">
                 Book a consultation
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-              </a>
-              <a
-                href={`tel:${phoneNumber}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
-              >
+              </BookLink>
+              <CallLink className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20">
                 <Phone className="mr-2 h-4 w-4" aria-hidden />
                 {phoneNumber}
-              </a>
+              </CallLink>
             </div>
           </div>
         </div>
@@ -236,20 +230,12 @@ export function ServicePageShell({
                     with any questions on costs, risks and timing.
                   </p>
                   <div className="mt-4 flex flex-col gap-2">
-                    <a
-                      href={bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-500"
-                    >
+                    <BookLink className="inline-flex items-center justify-center rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-500">
                       Book online
-                    </a>
-                    <a
-                      href={`tel:${phoneNumber}`}
-                      className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"
-                    >
+                    </BookLink>
+                    <CallLink className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20">
                       Call {phoneNumber}
-                    </a>
+                    </CallLink>
                   </div>
                 </div>
 
@@ -360,14 +346,9 @@ export function ServicePageShell({
             decide.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-gold-600 transition-colors hover:bg-gold-50"
-            >
+            <BookLink className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-gold-600 transition-colors hover:bg-gold-50">
               Book consultation
-            </a>
+            </BookLink>
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-transparent px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
 import { ContactUs } from "@/components/sections/contact-us";
 import { Reveal } from "@/components/ui/reveal";
-import { bookingUrl } from "@/constants";
+import { BookLink } from "@/components/ui/book-link";
 
 export default function About() {
   return (
@@ -145,14 +145,9 @@ export default function About() {
               </Reveal>
             </div>
             <Reveal direction="left">
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300"
-              >
+              <BookLink className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
                 Book Your Appointment
-              </a>
+              </BookLink>
             </Reveal>
           </div>
         </div>

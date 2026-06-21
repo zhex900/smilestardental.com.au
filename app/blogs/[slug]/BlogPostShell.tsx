@@ -11,7 +11,7 @@ import {
   SocialX,
 } from "@/components/social-brand-icons";
 import type { BlogFrontmatter, RelatedPostCard } from "@/lib/blog-types";
-import { bookingUrl } from "@/constants";
+import { BookLink } from "@/components/ui/book-link";
 
 type BlogPostShellProps = {
   post: BlogFrontmatter;
@@ -190,14 +190,9 @@ export function BlogPostShell({
               viewport={{ once: true }}
               className="flex flex-col justify-center gap-4 sm:flex-row"
             >
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-white px-8 py-4 text-center font-semibold text-gold-400 transition duration-300 hover:bg-gray-100"
-              >
+              <BookLink className="rounded-full bg-white px-8 py-4 text-center font-semibold text-gold-400 transition duration-300 hover:bg-gray-100">
                 Book Appointment
-              </a>
+              </BookLink>
               <Link
                 href="/blogs"
                 className="flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-gold-400"

@@ -5,7 +5,8 @@ import { Button } from "./ui/button";
 import { ButtonGradient } from "./ui/button-gradient";
 import { useEffect, useRef, useState } from "react";
 import { LogoIcon } from "./ui/logo-icon";
-import { bookingUrl, phoneNumber } from "@/constants";
+import { phoneNumber } from "@/constants";
+import { reportBookingConversion, reportCallConversion } from "@/lib/gtag";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 const menuItemClassName =
@@ -68,23 +69,19 @@ export function Header() {
           <div className="sm:flex items-center space-x-2">
             <ButtonGradient
               className="w-10 h-10 md:w-auto md:h-auto"
-              onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+              onClick={() => reportCallConversion()}
               aria-label={`Call ${phoneNumber}`}
             >
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <a href={`tel:${phoneNumber}`} className="hidden md:block">
-                  {phoneNumber}
-                </a>
+                <span className="hidden md:block">{phoneNumber}</span>
               </div>
             </ButtonGradient>
           </div>
           <div className="sm:flex items-center space-x-2 hidden">
             <ButtonGradient
               className="w-10 h-10 md:w-auto md:h-auto"
-              onClick={() =>
-                window.open(bookingUrl, "_blank", "noopener,noreferrer")
-              }
+              onClick={() => reportBookingConversion()}
               aria-label="Book an appointment online (opens in a new tab)"
             >
               <div className="flex items-center space-x-2">

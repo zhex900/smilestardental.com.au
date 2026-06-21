@@ -2,7 +2,7 @@ import { Award, Heart, Shield, Zap } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { TestimonialsSection } from "@/components/sections";
 import { Reveal } from "@/components/ui/reveal";
-import { bookingUrl } from "@/constants";
+import { BookLink } from "@/components/ui/book-link";
 import { ServicesGrid } from "./services-grid";
 
 const serviceCategories = [
@@ -120,14 +120,9 @@ export default function Services() {
               delay={0.4}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300"
-              >
+              <BookLink className="inline-block bg-white text-gold-400 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
                 Book Consultation
-              </a>
+              </BookLink>
             </Reveal>
           </div>
         </div>
