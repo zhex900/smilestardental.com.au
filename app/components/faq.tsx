@@ -32,19 +32,9 @@ export const FAQS: FaqItem[] = [
       "Yes. We provide gentle dentistry for children, including check-ups, fluoride, fissure sealants, and airway development assessments where appropriate. We take time to build trust with young patients so appointments are a positive experience. (We are a general dental practice; specialist paediatric services are referred when needed.)",
   },
   {
-    question: "Do you offer Botox for teeth grinding (bruxism)?",
-    answer:
-      "Yes, in suitable cases. Targeted injections into the jaw (masseter) muscles may help reduce clenching, grinding and related symptoms for some patients. Suitability, risks and expected duration are discussed at consultation; individual results vary. A typical in-chair appointment is short; effects often last around 3–4 months but are not guaranteed.",
-  },
-  {
     question: "Do you accept private health insurance?",
     answer:
       "Yes. We accept all major private health funds and have HICAPS on-site for instant rebates at the time of treatment. We also accept the Child Dental Benefits Schedule (CDBS) for eligible children.",
-  },
-  {
-    question: "Do you see nervous or anxious patients?",
-    answer:
-      "We treat many patients who feel anxious about dental visits. Options include detailed pre-treatment conversations, stop signals during procedures, Penthrox (the 'green whistle') inhaled pain relief and longer appointments so nothing feels rushed.",
   },
   {
     question: "Is the practice wheelchair accessible and is parking available?",

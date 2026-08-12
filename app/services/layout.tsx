@@ -17,7 +17,6 @@ export const metadata: Metadata = buildMetadata({
     "cosmetic dentistry Newcastle",
     "children's dentist Warners Bay",
     "airway development children",
-    "Botox teeth grinding",
     "ceramic crowns Warners Bay",
     "full mouth rehabilitation Newcastle",
     "root canal treatment Warners Bay",

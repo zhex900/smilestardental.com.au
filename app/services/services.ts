@@ -162,38 +162,6 @@ export const services: Service[] = [
     ],
   },
   {
-    id: 10,
-    title: "Botox for Teeth Grinding",
-    category: "preventive",
-    slug: "botox-teeth-grinding",
-    icon: Syringe,
-    image: "/images/botox.webp",
-    description:
-      "Targeted Botox injections to relax overactive jaw muscles, easing bruxism, clenching and the headaches they cause.",
-    features: [
-      "May ease jaw tension",
-      "May reduce grinding-related symptoms",
-      "Discussed as part of a broader bruxism plan",
-      "Quick in-chair appointment",
-    ],
-  },
-  {
-    id: 11,
-    title: "Green Whistle (Penthrox)",
-    category: "preventive",
-    slug: "penthrox-pain-relief",
-    icon: Wind,
-    image: "/images/penthrox.webp",
-    description:
-      "Patient-controlled inhaled pain relief using Penthrox for fast, short-acting comfort during dental procedures.",
-    features: [
-      "Rapid pain relief",
-      "Patient-controlled",
-      "Short recovery time",
-      "Great for anxious patients",
-    ],
-  },
-  {
     id: 12,
     title: "Child Airway Development",
     category: "pediatric",

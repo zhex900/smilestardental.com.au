@@ -34,7 +34,7 @@ export async function GET() {
 
   const body = `# ${SITE_NAME}
 
-> ${SITE_NAME} (formerly ${SITE_ALTERNATE_NAME}) is a family-owned dental practice in Warners Bay, NSW, serving Lake Macquarie and Newcastle. We provide modern, gentle dentistry for adults and children — including cosmetic dentistry, dental implants, clear aligners, crowns, teeth whitening, children's dentistry, airway development for kids, Botox for bruxism and full-mouth rehabilitation.
+> ${SITE_NAME} (formerly ${SITE_ALTERNATE_NAME}) is a family-owned dental practice in Warners Bay, NSW, serving Lake Macquarie and Newcastle. We provide modern, gentle dentistry for adults and children — including cosmetic dentistry, dental implants, clear aligners, crowns, teeth whitening, children's dentistry, airway development for kids, and full-mouth rehabilitation.
 
 ## Practice information
 

@@ -78,7 +78,6 @@ export const SITE_KEYWORDS: string[] = [
   "gum disease treatment",
   "periodontal care",
   "emergency dentist",
-  "Botox teeth grinding",
   "bruxism treatment",
   "airway development children",
   "sleep apnea dentist",
@@ -412,7 +411,6 @@ export function dentistJsonLd(opts?: {
         "Emergency dental care",
         "Gum disease treatment",
         "Gum health maintenance",
-        "Botox for teeth grinding",
         "Full mouth rehabilitation",
         "Fillings",
       ].map((name) => ({
