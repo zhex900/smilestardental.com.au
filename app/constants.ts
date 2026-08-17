@@ -4,7 +4,7 @@ export const address = {
 };
 
 export const openingHours = [
-  { day: "Monday - Friday:", time: "9AM - 5PM" },
+  { day: "Monday - Friday:", time: "8:30AM - 5PM" },
   { day: "Weekend:", time: "Closed" },
   //   { day: "Sunday:", time: "Closed" },
 ];
