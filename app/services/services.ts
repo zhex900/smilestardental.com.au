@@ -1,4 +1,5 @@
 import {
+  Activity,
   Award,
   Baby,
   Braces,
@@ -10,7 +11,6 @@ import {
   Shield,
   Smile,
   Sparkles,
-  Syringe,
   Wind,
   Zap,
 } from "lucide-react";
@@ -271,6 +271,38 @@ export const services: Service[] = [
       "Premium noise-cancelling headphones",
       "Streaming platforms available",
       "Ideal for anxious patients",
+    ],
+  },
+  {
+    id: 19,
+    title: "Sleep Apnoea & Snoring",
+    category: "preventive",
+    slug: "sleep-apnoea",
+    icon: Wind,
+    image: "/images/sleep-apnoea.jpg",
+    description:
+      "Screening for snoring and sleep-disordered breathing, with custom oral appliances when a sleep physician supports one.",
+    features: [
+      "Check-up sleep screening",
+      "Sleep physician coordination",
+      "Custom oral appliances",
+      "Fit, titration & review",
+    ],
+  },
+  {
+    id: 20,
+    title: "Myofunctional Therapy",
+    category: "preventive",
+    slug: "myofunctional-therapy",
+    icon: Activity,
+    image: "/images/myofunctional-therapy.jpg",
+    description:
+      "Exercise-based retraining of tongue posture, nasal breathing, lip seal and swallow — for children and adults.",
+    features: [
+      "Orofacial muscle assessment",
+      "Personalised exercise program",
+      "Home practice coaching",
+      "Works with orthodontics & airway care",
     ],
   },
 ];

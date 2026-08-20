@@ -81,6 +81,9 @@ export const SITE_KEYWORDS: string[] = [
   "bruxism treatment",
   "airway development children",
   "sleep apnea dentist",
+  "sleep apnoea dentist",
+  "snoring appliance",
+  "myofunctional therapy",
   "full mouth rehabilitation",
 ];
 
@@ -407,6 +410,8 @@ export function dentistJsonLd(opts?: {
         "Ceramic onlays & crowns",
         "Children's dentistry",
         "Airway development for children",
+        "Sleep apnoea & snoring appliances",
+        "Myofunctional therapy",
         "Root canal therapy",
         "Emergency dental care",
         "Gum disease treatment",
