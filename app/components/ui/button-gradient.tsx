@@ -5,7 +5,8 @@ import { BackgroundGradient } from "./background-gradient";
 import { Button, buttonVariants } from "./button";
 
 export interface ButtonGradientProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   gradientClassName?: string;

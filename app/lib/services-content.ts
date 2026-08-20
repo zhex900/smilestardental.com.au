@@ -3,10 +3,7 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type {
-  ServiceFrontmatter,
-  ServiceListCard,
-} from "./service-types";
+import type { ServiceFrontmatter, ServiceListCard } from "./service-types";
 
 export type {
   ServiceFrontmatter,
@@ -27,9 +24,7 @@ export function getServiceSlugs(): string[] {
 
 export function getServiceBySlug(
   slug: string,
-):
-  | { frontmatter: ServiceFrontmatter; content: string; mtime: Date }
-  | null {
+): { frontmatter: ServiceFrontmatter; content: string; mtime: Date } | null {
   const filePath = path.join(SERVICES_DIR, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf8");

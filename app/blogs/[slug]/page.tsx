@@ -2,11 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import {
-  getBlogBySlug,
-  getBlogSlugs,
-  getRelatedPosts,
-} from "@/lib/blogs";
+import { getBlogBySlug, getBlogSlugs, getRelatedPosts } from "@/lib/blogs";
 import { BlogPostShell } from "./BlogPostShell";
 import { JsonLd } from "@/components/json-ld";
 import {

@@ -32,9 +32,9 @@ export function BeforeAfterSection() {
           <Reveal delay={0.2}>
             <p className="text-normal max-w-3xl mx-auto">
               An example of an orthodontic treatment outcome from an actual
-              patient. Individual results vary, and all dental procedures
-              carry risks. Your dentist will discuss what is suitable,
-              achievable and appropriate in your case.
+              patient. Individual results vary, and all dental procedures carry
+              risks. Your dentist will discuss what is suitable, achievable and
+              appropriate in your case.
             </p>
           </Reveal>
         </div>
@@ -54,8 +54,8 @@ export function BeforeAfterSection() {
               </CardTitle>
               <CardDescription className="!text-sm md:!text-[0.9375rem]">
                 Braces and clear aligners can suit many alignment and bite
-                concerns. Your dentist will advise what is appropriate for
-                you, including risks, duration and costs.
+                concerns. Your dentist will advise what is appropriate for you,
+                including risks, duration and costs.
                 <ul className="mt-3 space-y-1.5">
                   {ORTHODONTIC_BENEFITS.map((line) => (
                     <li key={line} className="flex gap-2">

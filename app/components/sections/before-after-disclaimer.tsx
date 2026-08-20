@@ -133,25 +133,24 @@ export function BeforeAfterDisclaimer() {
               <div className="-mr-2 mt-4 flex-1 space-y-3 overflow-y-auto overscroll-contain pr-2 text-sm leading-relaxed sm:text-[0.9375rem]">
                 <p>
                   The image shown is of an actual patient who has provided
-                  written consent for its use. The image has not been
-                  digitally enhanced or altered, and the before and after
-                  photos are taken with similar lighting, angle, framing and
-                  exposure.
+                  written consent for its use. The image has not been digitally
+                  enhanced or altered, and the before and after photos are taken
+                  with similar lighting, angle, framing and exposure.
                 </p>
                 <ul className="list-disc space-y-2 pl-5">
                   <li>
                     <span className="font-medium text-slate-900">
                       Individual results vary.
                     </span>{" "}
-                    The outcome shown is specific to this patient and is not
-                    a guarantee or prediction of the result you may achieve.
+                    The outcome shown is specific to this patient and is not a
+                    guarantee or prediction of the result you may achieve.
                   </li>
                   <li>
-                    All dental and orthodontic procedures, including braces
-                    and clear aligners, carry risks. Suitability, treatment
-                    options, duration, costs, side effects and potential
-                    complications should be discussed with a registered
-                    dental practitioner before proceeding.
+                    All dental and orthodontic procedures, including braces and
+                    clear aligners, carry risks. Suitability, treatment options,
+                    duration, costs, side effects and potential complications
+                    should be discussed with a registered dental practitioner
+                    before proceeding.
                   </li>
                   <li>
                     Before making any decisions, we encourage you to seek a
@@ -160,15 +159,15 @@ export function BeforeAfterDisclaimer() {
                   </li>
                   <li>
                     This information is general in nature and is not a
-                    substitute for personalised clinical advice based on
-                    your individual circumstances.
+                    substitute for personalised clinical advice based on your
+                    individual circumstances.
                   </li>
                 </ul>
                 <p className="text-xs text-slate-500">
-                  Provided in accordance with the Australian Health
-                  Practitioner Regulation Agency (AHPRA) Guidelines for
-                  advertising a regulated health service and section 133 of
-                  the Health Practitioner Regulation National Law.
+                  Provided in accordance with the Australian Health Practitioner
+                  Regulation Agency (AHPRA) Guidelines for advertising a
+                  regulated health service and section 133 of the Health
+                  Practitioner Regulation National Law.
                 </p>
               </div>
 

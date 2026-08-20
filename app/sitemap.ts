@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { getAllBlogListCards } from "@/lib/blogs";
-import { getAllServiceListCards, getServiceBySlug } from "@/lib/services-content";
+import {
+  getAllServiceListCards,
+  getServiceBySlug,
+} from "@/lib/services-content";
 import { absUrl } from "./lib/seo";
 
 /**
@@ -16,9 +19,7 @@ import { absUrl } from "./lib/seo";
  */
 function fileMTime(appRelativePath: string): Date {
   try {
-    return fs.statSync(
-      path.join(process.cwd(), "app", appRelativePath),
-    ).mtime;
+    return fs.statSync(path.join(process.cwd(), "app", appRelativePath)).mtime;
   } catch {
     return new Date();
   }

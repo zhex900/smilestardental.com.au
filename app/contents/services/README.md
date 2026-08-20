@@ -31,15 +31,15 @@ Each `.mdx` file in this directory becomes a fully SEO-ready page at `/services/
 
 ## How content lands in the page
 
-| Frontmatter        | Renders as                                 |
-| ------------------ | ------------------------------------------ |
-| `intro`            | Hero subtitle                              |
-| `signs[]`          | Sidebar-adjacent "Signs you may benefit"   |
-| `process[]`        | "What to expect" numbered steps            |
-| `considerations[]` | Amber risk panel                           |
-| `features[]`       | Sidebar "What we offer" bullets            |
-| `priceFrom`        | Sidebar pricing card                       |
-| `faq[]`            | FAQ accordion + JSON-LD                    |
-| MDX body           | Long-form content between intro and FAQ    |
-| `relatedServiceSlugs[]` | Bottom "Related services" grid        |
-| `relatedBlogSlugs[]`    | Bottom "From our blog" grid           |
+| Frontmatter             | Renders as                               |
+| ----------------------- | ---------------------------------------- |
+| `intro`                 | Hero subtitle                            |
+| `signs[]`               | Sidebar-adjacent "Signs you may benefit" |
+| `process[]`             | "What to expect" numbered steps          |
+| `considerations[]`      | Amber risk panel                         |
+| `features[]`            | Sidebar "What we offer" bullets          |
+| `priceFrom`             | Sidebar pricing card                     |
+| `faq[]`                 | FAQ accordion + JSON-LD                  |
+| MDX body                | Long-form content between intro and FAQ  |
+| `relatedServiceSlugs[]` | Bottom "Related services" grid           |
+| `relatedBlogSlugs[]`    | Bottom "From our blog" grid              |

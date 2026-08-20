@@ -62,7 +62,7 @@ export const InfiniteMovingCards = ({
   // Count original (unique) children; used for measuring one logical cycle
   const originalsCount = React.useMemo(
     () => React.Children.toArray(children).length,
-    [children]
+    [children],
   );
 
   // noop; originalsCount used for measuring a single logical cycle
@@ -87,8 +87,8 @@ export const InfiniteMovingCards = ({
     if (!(target instanceof Element)) return false;
     return Boolean(
       target.closest(
-        "a,button,input,textarea,select,summary,[role='button'],[data-no-drag='true']"
-      )
+        "a,button,input,textarea,select,summary,[role='button'],[data-no-drag='true']",
+      ),
     );
   };
 
@@ -206,7 +206,7 @@ export const InfiniteMovingCards = ({
     const computeMetrics = () => {
       const firstCycle = Array.from(scroller.children).slice(
         0,
-        originalsCount
+        originalsCount,
       ) as HTMLElement[];
       if (firstCycle.length === 0) return;
       const last = firstCycle[firstCycle.length - 1];
@@ -218,7 +218,7 @@ export const InfiniteMovingCards = ({
         const second = firstCycle[1];
         gapWidth = Math.max(
           0,
-          second.offsetLeft - (first.offsetLeft + first.offsetWidth)
+          second.offsetLeft - (first.offsetLeft + first.offsetWidth),
         );
       }
 
@@ -231,7 +231,7 @@ export const InfiniteMovingCards = ({
         const containerWidth = container.getBoundingClientRect().width;
         const minRepeats = Math.max(
           2,
-          2 + Math.ceil(containerWidth / measuredCycleWidth)
+          2 + Math.ceil(containerWidth / measuredCycleWidth),
         );
         setRepeatCount(Math.min(minRepeats, MAX_REPEATS));
       }
@@ -258,7 +258,7 @@ export const InfiniteMovingCards = ({
         const entry = entries[0];
         isInViewRef.current = !!entry?.isIntersecting;
       },
-      { root: null, threshold: 0.01 }
+      { root: null, threshold: 0.01 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -464,7 +464,7 @@ export const InfiniteMovingCards = ({
   };
 
   const handlePointerLeaveSafe = (
-    event: React.PointerEvent<HTMLDivElement>
+    event: React.PointerEvent<HTMLDivElement>,
   ) => {
     // Ignore pointerleave fired from touch interactions on iOS
     if (activeInputRef.current === "touch") return;
@@ -514,7 +514,7 @@ export const InfiniteMovingCards = ({
       onMouseLeave={handleMouseLeave}
       className={cn(
         "grid scroller relative z-20 overflow-hidden select-none ",
-        className
+        className,
       )}
       style={{
         touchAction: "pan-y",
@@ -532,7 +532,7 @@ export const InfiniteMovingCards = ({
           className={cn(
             "flex w-max min-w-full shrink-0 flex-nowrap gap-4",
             // CSS animation removed; using JS auto-scroll for true infinite behaviour
-            (isDragging || isMomentum) && "[animation-play-state:paused]"
+            (isDragging || isMomentum) && "[animation-play-state:paused]",
           )}
         >
           {(() => {
@@ -545,7 +545,7 @@ export const InfiniteMovingCards = ({
                 items.push(
                   React.cloneElement(child, {
                     key: `${r}-${(child.key as string) ?? i}`,
-                  })
+                  }),
                 );
               }
             }

@@ -32,8 +32,8 @@ export default function NotFound() {
           We couldn&apos;t find that page
         </h1>
         <p className="mt-4 text-base text-slate-600 sm:text-lg">
-          The page you were looking for may have moved or no longer exists.
-          Here are some popular places to continue.
+          The page you were looking for may have moved or no longer exists. Here
+          are some popular places to continue.
         </p>
 
         <ul className="mt-8 flex flex-wrap justify-center gap-3">

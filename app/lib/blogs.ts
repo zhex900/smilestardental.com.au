@@ -9,7 +9,11 @@ import type {
   RelatedPostCard,
 } from "./blog-types";
 
-export type { BlogFrontmatter, BlogListCard, RelatedPostCard } from "./blog-types";
+export type {
+  BlogFrontmatter,
+  BlogListCard,
+  RelatedPostCard,
+} from "./blog-types";
 
 const BLOGS_DIR = path.join(process.cwd(), "app/contents/blogs");
 
@@ -38,9 +42,7 @@ export function getAllBlogListCards(): BlogListCard[] {
       author: { name: fm.author, avatar: fm.authorImage },
     });
   }
-  items.sort(
-    (a, b) => parsePostDate(b.date) - parsePostDate(a.date),
-  );
+  items.sort((a, b) => parsePostDate(b.date) - parsePostDate(a.date));
   return items;
 }
 

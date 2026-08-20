@@ -76,8 +76,7 @@ export default function Contact() {
                 <ul className="space-y-3">
                   {openingHours.map((schedule) => (
                     <li key={schedule.day} className="flex justify-between">
-                      <span>{schedule.day}</span>{" "}
-                      <span>{schedule.time}</span>
+                      <span>{schedule.day}</span> <span>{schedule.time}</span>
                     </li>
                   ))}
                 </ul>
@@ -131,8 +130,8 @@ export default function Contact() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto">
-                Don&apos;t wait to achieve the smile you&apos;ve always
-                wanted. Contact us today to schedule your consultation.
+                Don&apos;t wait to achieve the smile you&apos;ve always wanted.
+                Contact us today to schedule your consultation.
               </p>
             </Reveal>
             <Reveal

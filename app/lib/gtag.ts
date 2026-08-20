@@ -8,7 +8,8 @@ declare global {
 }
 
 const CALL_CONVERSION = process.env.NEXT_PUBLIC_GOOGLE_ADS_CALL_CONVERSION;
-const BOOKING_CONVERSION = process.env.NEXT_PUBLIC_GOOGLE_ADS_BOOKING_CONVERSION;
+const BOOKING_CONVERSION =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_BOOKING_CONVERSION;
 
 export const telHref = `tel:${PHONE_URI}`;
 
