@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHero
-        title="About Us"
+        title="Get to Know Our Warners Bay Dental Clinic"
         imageSrc="/images/location1.jpg"
         description="Dedicated to providing high-quality dental care with compassion, professional skill, and current technology."
       />
