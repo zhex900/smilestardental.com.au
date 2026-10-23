@@ -5,9 +5,9 @@ import { services as serviceList } from "./services";
 import { absUrl } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dental services — general, cosmetic & restorative care | Warners Bay",
+  title: "Dental Services Warners Bay & Newcastle | Smile Star Dental",
   description:
-    "General and family dentistry in Warners Bay with digital workflows: check-ups, hygiene, fillings, implants, clear aligners, whitening, crowns, children's dentistry, airway-focused care and emergency visits.",
+    "Explore dental services at Smile Star Dental in Warners Bay, serving Newcastle. From routine check-ups to implants, clear aligners and more. Book online.",
   path: "/services",
   keywords: [
     "dental services Warners Bay",
