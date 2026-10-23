@@ -3,9 +3,9 @@ import { JsonLd } from "../components/json-ld";
 import { breadcrumbJsonLd, buildMetadata } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About us — Smile Star Dental in Warners Bay",
+  title: "About Our Dental Clinic in Warners Bay | Smile Star Dental",
   description:
-    "Learn about Smile Star Dental (formerly Bay Arcade Dental) in Warners Bay on Lake Macquarie — our approach to family and general dentistry, technology and how to visit us.",
+    "Get to know Smile Star Dental, our Warners Bay dental clinic led by Dr Melody Healy. Providing personalised dental care to families across Newcastle and Lake Macquarie.",
   path: "/about",
   keywords: [
     "about Smile Star Dental",
