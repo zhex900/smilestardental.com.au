@@ -21,9 +21,9 @@ export function HeroSection() {
             <div>
               <div className="text-center md:text-left">
                 <h1 className="text-heading heading-mb animate-in fade-in slide-in-from-bottom-3 duration-700">
-                  Your Smile is Our{" "}
-                  <span className="brand-yellow animate-pulse">Star</span>{" "}
-                  Priority
+                  Your{" "}
+                  <span className="brand-yellow animate-pulse">Family Dentist</span>{" "}
+                  in Warners Bay, Serving Newcastle
                 </h1>
                 <p className="text-justify text-normal heading-mb animate-in fade-in slide-in-from-bottom-3 duration-700 [animation-delay:150ms]">
                   Experience exceptional dental care, proudly serving the
