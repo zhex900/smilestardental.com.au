@@ -46,7 +46,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHero
-        title="Our Services"
+        title="Dental Services in Warners Bay, Serving Newcastle"
         imageSrc="/images/dental-tools.jpg"
         description="Comprehensive dental care solutions tailored to meet your unique needs with the latest technology and experienced professionals."
       />
