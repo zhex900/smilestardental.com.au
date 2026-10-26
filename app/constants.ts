@@ -1,6 +1,6 @@
 export const address = {
   street: "4/12 King St",
-  city: "Warners Bay, NSW 2282",
+  city: "Warners Bay, NSW 2282, Australia",
 };
 
 export const openingHours = [
